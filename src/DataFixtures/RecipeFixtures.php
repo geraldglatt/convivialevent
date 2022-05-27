@@ -16,14 +16,14 @@ class RecipeFixtures extends Fixture
         $recipe = new Recipe();
         $recipe->setSlug('recipe1');
         $recipe->setTitle('title1');
-        $recipe->setNbPortion('nbPortion1');
+        $recipe->setNbPortion(1);
         $manager->persist($recipe);
         $this->addReference(self::RECIPE_REFERENCE1, $recipe);
 
         $recipe = new Recipe();
         $recipe->setSlug('recipe2');
         $recipe->setTitle('title2');
-        $recipe->setNbPortion('nbPortion2');
+        $recipe->setNbPortion(1);
         $manager->persist($recipe);
         $this->addReference(self::RECIPE_REFERENCE2, $recipe);
         

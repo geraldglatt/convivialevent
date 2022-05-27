@@ -4,9 +4,10 @@ namespace App\DataFixtures;
 
 use App\Entity\RecipeIngredient;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class RecipeIngredientFixtures extends Fixture 
+class RecipeIngredientFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -15,7 +16,7 @@ class RecipeIngredientFixtures extends Fixture
             {
                 $RecipeIngredient = new RecipeIngredient();
                 $RecipeIngredient->setName('name'.$i);
-                $RecipeIngredient->setQuantity('quantity'.$i);
+                $RecipeIngredient->setQuantity($i);
                 $RecipeIngredient->setQuantityName('quantity_name'.$i);
                 $RecipeIngredient->setRecipe($this->getReference($ref));
                 $manager->persist($RecipeIngredient);

@@ -9,12 +9,10 @@ use Doctrine\Persistence\ObjectManager;
 
 class UserFixtures extends Fixture
 {
-    private UserPasswordHasherInterface $hasher;
 
-    public function __construct(UserPasswordHasherInterface $hasher)
+    public function __construct(private UserPasswordHasherInterface $hasher)
    
     {
-        $this->hasher = $hasher;
     }
 
     public function load(ObjectManager $manager): void
@@ -22,8 +20,8 @@ class UserFixtures extends Fixture
         $user = new User();
         $user->setUsername('admin');
 
-        //$password = $this->hasher->hashPassword($user, 'azerty');
-        $user->setPassword($this->hasher->hashPassword($user, 'azerty'));
+        //$user->setPassword($this->hasher->hashPassword($user, 'azerty'));
+        $user->setPassword('azerty');
        
         $manager->persist($user);
         $manager->flush();

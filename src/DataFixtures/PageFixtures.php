@@ -9,8 +9,8 @@ use Doctrine\Persistence\ObjectManager;
 
 class PageFixtures extends Fixture 
 {
-    public const PAGE_REFERENCE1 = 'RECIPE_REFERENCE1';
-    public const PAGE_REFERENCE2 = 'RECIPE_REFERENCE2';
+    public const PAGE_REFERENCE1 = 'PAGE_REFERENCE1';
+    public const PAGE_REFERENCE2 = 'PAGE_REFERENCE2';
    
     public function load(ObjectManager $manager): void
     {
@@ -18,6 +18,7 @@ class PageFixtures extends Fixture
         $page->setSlug('recipe1');
         $page->setTitle('title1');
         $page->setContent('content1');
+        $page->setMetaDesc('lorem');
         $manager->persist($page);
         $this->addReference(self::PAGE_REFERENCE1, $page);
 
@@ -25,6 +26,7 @@ class PageFixtures extends Fixture
         $page->setSlug('recipe2');
         $page->setTitle('title2');
         $page->setContent('content2');
+        $page->setMetaDesc('lorem');
         $manager->persist($page);
         $this->addReference(self::PAGE_REFERENCE2, $page);
         

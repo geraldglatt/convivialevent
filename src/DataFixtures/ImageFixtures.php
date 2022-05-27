@@ -15,8 +15,11 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
             for ($i = 0; $i <10; $i++) {
                 $image = new Image();
                 $image->setImage('image'.$i);
-                $image->setPosition('position'.$i);
-                $image->setRecipe($this->getReference($ref));
+                $image->setPosition($i);
+
+                /** @var \App\Entity\Recipe */
+                $reciepe = $this->getReference($ref);
+                $image->setRecipe($reciepe);
 
                 $manager->persist($image);
                 

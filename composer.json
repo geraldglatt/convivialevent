@@ -28,6 +28,7 @@
         "symfony/mime": "6.0.*",
         "symfony/monolog-bundle": "^3.0",
         "symfony/notifier": "6.0.*",
+        "symfony/password-hasher": "6.0.*",
         "symfony/process": "6.0.*",
         "symfony/property-access": "6.0.*",
         "symfony/property-info": "6.0.*",
@@ -99,6 +100,9 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "ergebnis/phpstan-rules": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "phpstan/phpstan": "^1.7",
         "symfony/debug-bundle": "6.0.*",
         "symfony/maker-bundle": "^1.0",
         "symfony/stopwatch": "6.0.*",
