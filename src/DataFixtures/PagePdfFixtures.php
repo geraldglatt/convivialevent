@@ -10,13 +10,22 @@ class PagePdfFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        for($i = 0;$i < 10;$i++)
-        {
-            $pagePdf = new PagePdf();
-            $pagePdf->setTitle('title'.$i);
-            $manager->persist($pagePdf);
+        foreach([PageFixtures::PAGE_REFERENCE1,PageFixtures::PAGE_REFERENCE2] as $ref){
+            for($i = 0;$i < 10;$i++)
+            {
+                $pagePdf = new PagePdf();
+                $pagePdf->setTitle('title'.$i);
+                $pagePdf->setPage($this->getReference($ref));
+                $manager->persist($pagePdf);
+            }
         }
 
         $manager->flush();
+    }
+    public function getDependencies()
+    {
+        return [
+            PageFixtures::class,
+        ];
     }
 }
