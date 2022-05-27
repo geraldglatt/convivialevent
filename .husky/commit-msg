@@ -1,5 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/husky.sh"
 
 # Commit message
 if ! head -n1 "$1" | grep -q "^\(fix/CE-\|feat/CE-\|hot-fix\)"; then
