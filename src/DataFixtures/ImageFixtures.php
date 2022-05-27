@@ -17,7 +17,6 @@ class ImageFixtures extends Fixture
             $image = new Image();
             $image->setImage('image'.$i);
             $image->setPosition('position'.$i);
-            $image->setRecipe
             $manager->persist($image);
             
         }
