@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\RecipeIngredient;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -9,9 +10,14 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
-
+        for($i = 0;$i <10;$i++)
+        {
+            $RecipeIngredient = new RecipeIngredient();
+            $RecipeIngredient->setName('name'.$i);
+            $RecipeIngredient->setQuantity('quantity'.$i);
+            $RecipeIngredient->setQuantityName('quantity_name'.$i);
+            $manager->persist($RecipeIngredient);
+        }
         $manager->flush();
     }
 }
