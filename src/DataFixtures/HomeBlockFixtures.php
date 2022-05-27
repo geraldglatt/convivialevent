@@ -6,7 +6,7 @@ use App\Entity\HomeBlock;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class HomleBlockFixtures extends Fixture
+class HomeBlockFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
