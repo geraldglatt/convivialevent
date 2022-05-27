@@ -6,7 +6,7 @@ use App\Entity\RecipeStep;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class RecipestepFixtures extends Fixture
+class RecipeStepFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {

@@ -16,6 +16,10 @@ class PagePdf
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
 
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'pagePdfs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $page;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +33,18 @@ class PagePdf
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getPage(): ?Page
+    {
+        return $this->page;
+    }
+
+    public function setPage(?Page $page): self
+    {
+        $this->page = $page;
 
         return $this;
     }

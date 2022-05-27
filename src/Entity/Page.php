@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PageRepository::class)]
@@ -27,6 +29,14 @@ class Page
 
     #[ORM\Column(type: 'string', length: 60, nullable: true)]
     private $image;
+
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true)]
+    private $pagePdfs;
+
+    public function __construct()
+    {
+        $this->pagePdfs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +99,36 @@ class Page
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PagePdf>
+     */
+    public function getPagePdfs(): Collection
+    {
+        return $this->pagePdfs;
+    }
+
+    public function addPagePdf(PagePdf $pagePdf): self
+    {
+        if (!$this->pagePdfs->contains($pagePdf)) {
+            $this->pagePdfs[] = $pagePdf;
+            $pagePdf->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removePagePdf(PagePdf $pagePdf): self
+    {
+        if ($this->pagePdfs->removeElement($pagePdf)) {
+            // set the owning side to null (unless already changed)
+            if ($pagePdf->getPage() === $this) {
+                $pagePdf->setPage(null);
+            }
+        }
 
         return $this;
     }
