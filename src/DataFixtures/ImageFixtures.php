@@ -8,6 +8,8 @@ use Doctrine\Persistence\ObjectManager;
 
 class ImageFixtures extends Fixture
 {
+    public const IMAGE_REFERENCE = 'IMAGE_REFERENCE';
+
     public function load(ObjectManager $manager): void
     {
         for($i = 0;$i <10;$i++)
@@ -15,7 +17,9 @@ class ImageFixtures extends Fixture
             $image = new Image();
             $image->setImage('image'.$i);
             $image->setPosition('position'.$i);
+            $image->setRecipe
             $manager->persist($image);
+            
         }
 
         $manager->flush();
