@@ -19,6 +19,9 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $position;
 
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'image')]
+    private $recipe;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Image
     public function setPosition(int $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getRecipe(): ?Recipe
+    {
+        return $this->recipe;
+    }
+
+    public function setRecipe(?Recipe $recipe): self
+    {
+        $this->recipe = $recipe;
 
         return $this;
     }

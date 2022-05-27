@@ -22,6 +22,10 @@ class RecipeIngredient
     #[ORM\Column(type: 'string', length: 45)]
     private $quantity_name;
 
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipe')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $recipe;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +63,18 @@ class RecipeIngredient
     public function setQuantityName(string $quantity_name): self
     {
         $this->quantity_name = $quantity_name;
+
+        return $this;
+    }
+
+    public function getRecipe(): ?Recipe
+    {
+        return $this->recipe;
+    }
+
+    public function setRecipe(?Recipe $recipe): self
+    {
+        $this->recipe = $recipe;
 
         return $this;
     }
