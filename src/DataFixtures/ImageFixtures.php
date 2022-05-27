@@ -12,7 +12,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         foreach ([ RecipeFixtures::RECIPE_REFERENCE1, RecipeFixtures::RECIPE_REFERENCE2 ] as $ref) {
-            for ($i = 0; $i <10; $i++) {
+            for ($i = 0; $i <10; $i++) { 
                 $image = new Image();
                 $image->setImage('image'.$i);
                 $image->setPosition($i);
