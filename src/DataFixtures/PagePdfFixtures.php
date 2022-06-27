@@ -11,18 +11,20 @@ class PagePdfFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        foreach([PageFixtures::PAGE_REFERENCE1,PageFixtures::PAGE_REFERENCE2] as $ref){
-            for($i = 0;$i < 10;$i++)
-            {
+        foreach ([PageFixtures::PAGE_REFERENCE1, PageFixtures::PAGE_REFERENCE2, PageFixtures::PAGE_REFERENCE3, PageFixtures::PAGE_REFERENCE4] as $ref) {
+            for ($i = 0; $i < 3; ++$i) {
                 $pagePdf = new PagePdf();
-                $pagePdf->setTitle('title'.$i);
-                $pagePdf->setPage($this->getReference($ref));
+                $pagePdf->setTitle('options conviviales'.$i);
+
+                /** @var \App\Entity\Page */
+                $page = $this->getReference($ref);
+                $pagePdf->setPage($page);
                 $manager->persist($pagePdf);
             }
         }
-
         $manager->flush();
     }
+
     public function getDependencies()
     {
         return [

@@ -1,11 +1,19 @@
 {
     "devDependencies": {
         "@hotwired/stimulus": "^3.0.0",
+        "@popperjs/core": "^2.11.5",
         "@symfony/stimulus-bridge": "^3.0.0",
         "@symfony/webpack-encore": "^2.0.0",
+        "autoprefixer": "^10.4.7",
         "core-js": "^3.0.0",
+        "file-loader": "^6.0.0",
         "husky": "^8.0.1",
+        "jquery": "^3.6.0",
+        "postcss": "^8.4.14",
+        "postcss-loader": "^7.0.0",
         "regenerator-runtime": "^0.13.2",
+        "sass": "^1.52.1",
+        "sass-loader": "^12.0.0",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -16,5 +24,11 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "prepare": "husky install"
-    }
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.0-beta1"
+    },
+    "browserslist": [
+        "defaults"
+    ]
 }

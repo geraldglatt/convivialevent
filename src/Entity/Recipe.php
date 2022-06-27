@@ -27,16 +27,25 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class)]
     private $image;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true)]
-    private $recipe;
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class)]
+    private $recipeIngredient;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class)]
     private $recipeSteps;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $type;
+
+    #[ORM\Column(type: 'string', length: 45)]
+    private $difficulty;
+
+    #[ORM\Column(type: 'string', length: 60)]
+    private $time;
+
     public function __construct()
     {
         $this->image = new ArrayCollection();
-        $this->recipe = new ArrayCollection();
+        $this->recipeIngredient = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
     }
 
@@ -114,27 +123,27 @@ class Recipe
     /**
      * @return Collection<int, RecipeIngredient>
      */
-    public function getRecipe(): Collection
+    public function getIngredients(): Collection
     {
-        return $this->recipe;
+        return $this->recipeIngredient;
     }
 
-    public function addRecipe(RecipeIngredient $recipe): self
+    public function addIngredients(RecipeIngredient $recipeIngredient): self
     {
-        if (!$this->recipe->contains($recipe)) {
-            $this->recipe[] = $recipe;
-            $recipe->setRecipe($this);
+        if (!$this->recipeIngredient->contains($recipeIngredient)) {
+            $this->recipeIngredient[] = $recipeIngredient;
+            $recipeIngredient->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeRecipe(RecipeIngredient $recipe): self
+    public function removeIngredients(RecipeIngredient $recipeIngredient): self
     {
-        if ($this->recipe->removeElement($recipe)) {
+        if ($this->recipeIngredient->removeElement($recipeIngredient)) {
             // set the owning side to null (unless already changed)
-            if ($recipe->getRecipe() === $this) {
-                $recipe->setRecipe(null);
+            if ($recipeIngredient->getRecipe() === $this) {
+                $recipeIngredient->setRecipe(null);
             }
         }
 
@@ -170,4 +179,40 @@ class Recipe
 
         return $this;
     }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDifficulty(): ?string
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty(string $difficulty): self
+    {
+        $this->difficulty = $difficulty;
+
+        return $this;
+    }
+
+    public function getTime(): ?string
+    {
+        return $this->time;
+    }
+
+    public function setTime(string $time): self
+    {
+        $this->time = $time;
+        
+        return $this;   
+    }   
 }

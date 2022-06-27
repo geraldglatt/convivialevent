@@ -25,7 +25,7 @@ class Page
     private $content;
 
     #[ORM\Column(type: 'text')]
-    private $meta_desc;
+    private $metaDesc;
 
     #[ORM\Column(type: 'string', length: 60, nullable: true)]
     private $image;
@@ -33,9 +33,17 @@ class Page
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true)]
     private $pagePdfs;
 
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class)]
+    private $page;
+
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class)]
+    private $pages;
+
     public function __construct()
     {
         $this->pagePdfs = new ArrayCollection();
+        $this->page = new ArrayCollection();
+        $this->pages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -81,12 +89,12 @@ class Page
 
     public function getMetaDesc(): ?string
     {
-        return $this->meta_desc;
+        return $this->metaDesc;
     }
 
-    public function setMetaDesc(string $meta_desc): self
+    public function setMetaDesc(string $metaDesc): self
     {
-        $this->meta_desc = $meta_desc;
+        $this->metaDesc = $metaDesc;
 
         return $this;
     }
@@ -131,5 +139,43 @@ class Page
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getPage(): Collection
+    {
+        return $this->page;
+    }
+
+    public function addPage(Images $page): self
+    {
+        if (!$this->page->contains($page)) {
+            $this->page[] = $page;
+            $page->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removePage(Images $page): self
+    {
+        if ($this->page->removeElement($page)) {
+            // set the owning side to null (unless already changed)
+            if ($page->getPage() === $this) {
+                $page->setPage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, HomeBlock>
+     */
+    public function getPages(): Collection
+    {
+        return $this->pages;
     }
 }

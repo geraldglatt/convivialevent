@@ -15,9 +15,12 @@ if ! head -n1 "$1" | grep -q "^\(fix/CE-\|feat/CE-\|hot-fix\)"; then
 	exit 1
 fi
 
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+
 # Phpstan
 cd $SCRIPT_DIR
-cd ../../
+cd ../
+
 vendor/phpstan/phpstan/phpstan analyse -c .husky/phpstan.neon
 status=$?
 if test $status -eq 0

@@ -19,10 +19,10 @@ class RecipeIngredient
     #[ORM\Column(type: 'integer')]
     private $quantity;
 
-    #[ORM\Column(type: 'string', length: 45)]
+    #[ORM\Column(type: 'string', length: 120)]
     private $quantity_name;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipe')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeIngredient')]
     #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 

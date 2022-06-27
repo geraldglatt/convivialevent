@@ -20,3 +20,6 @@ yarn-error.log
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
+app.css
+app.css.map
+node_modules

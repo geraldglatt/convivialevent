@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des recettes{% endblock %}
+
+{% block body %}
+    <section1 class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="text-center mt-3 pb-3 ">
+                <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.jpg') }}" alt="logo convivial">
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</section1>
+<section2 class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <p class="listrecipePagetxtSection2">Les recettes que </br> vous propose </br> Convivial Event</p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</section2>
+<section3 class="container-fluid" id="bgListRecipePageS3">
+    {# <img class="imgHomeFixeS4" src="{{ asset('build/images/boulPizz.webp') }}" alt="photo image home fixe"> #}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <p class="listrecipePagetxtSection3">Une sélection de recettes </br> à faire chez vous oû </br> à partager avec vos amis !!!</p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Type de recette
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% for recipe in receipts %}
+                    <li>{{ recipe.type }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</section3>
+<section4 class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Difficulté
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% for recipe in receipts %}
+                    <ul>
+                        <li>{{ recipe.difficulty }}</li>
+                    </ul>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</section4>
+<section5 class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            {% for recipe in receipts %}
+                <div class="card-group">
+                    <div class="card">
+                        <img class="recipePageImgSection5" src="{{ asset('build/images/Recette-tataki.webp') }}" alt="photo mariage">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{{ path('receipts_detail', {slug:recipe.slug}) }}" src="recipe image">{{ recipe.slug }}</a></h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="textSection5">{{ recipe.difficulty}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-1"></div>
+    </div>
+</section5>
+{% endblock %}

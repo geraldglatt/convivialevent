@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+    
+{% block body %}
+<section1 class="container-fluid">
+    <div class="row">
+        <div class="text-center mt-3 pb-3 ">
+            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.jpg') }}" alt="logo convivial">
+        </div>
+    </div>
+</section1>
+<section2 class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="txtSection2">Votre traiteur sur mesure Conviviale & Responsable</h1>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-12">
+            <h2 class="txtSection2">présent dans l'Aube & dans l'Yonne</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="txtSmallSection2"><bold>Qu'il soit champêtre, dinatoire ou conviviale, nous personnaliserons vôtre mariage.</bold></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="txtSmallSection2">Selon vos désirs, ambiance, repas, brunch et surtout timing, tout sera à votre image !</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="txtSection2">Vous en rêviez , Convivial Event l'a fait !</h2>
+        </div>
+    </div>
+</section2>
+<section3 class="container-fluid" id="homeS3">
+    <div class="row">
+        <div class="col-12" id="cardS3Home">
+        {% for wedding in weddings %}
+            <div class="card text-center" id="divCardS3Home">
+                <img class="" src="{{ asset('build/images/' ~ wedding.image ~ '.jpg') }}" alt="photo mariage">
+                <div class="card-body">
+                    <h3 class="card-title">{{ wedding.title }}</h3>
+                    <p class="card-text">{{ wedding.content }}</p>
+                    <p class="card-text">{{ wedding.position }}</p>
+                    <div class="text-center" id="divButtonS5Page"><a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a></div>                
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section3>
+<section4 class="container-fluid">
+    <div class="row" id="bgGrey">
+        <div class="col-12">
+            <div class="contenantSection4">
+                <img class="imgHomeFixeS4" src="{{ asset('build/images/imageHomeFixe.jpeg') }}" alt="photo image home fixe">
+                <p class="txtSection4"><span class="span1HomeS4">CONVIVIALEVENT</span></span></br><span class="span2HomeS4">L'autre façon de recevoir...</span></p>
+            </div>
+        </div>
+    </div>
+</section4>
+<section5 class="container-fluid ">
+    <div class="row backgroundS4">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h2 id="temoignage" class="text-center">
+                Nos Témoignages
+            </h2>
+            <p class="temoignages">
+                Merci,pour ce mariage champêtre réussi,
+                si j’ai un peu stressé pour vous joindre,
+                je ne regrette pas . La déco des buffets,
+                votre organisation étaient parfaite et votre
+                équipe hyper souriante [...]
+            </p>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</section5>
+<section6 class="container-fluid">
+    <div class="row6">
+        <div class="col"><h2 class="titreS6">PARTENAIRES & LIEUX D'EXCEPTIONS</h2></div>
+    </div>
+    <div class="row text-center">
+        {% for wedding in weddings %}
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{{ asset('build/images/'~ wedding.image ~ '.jpg') }}" class="d-block w-100" alt="image mariage">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section6>
+<section7 class="container-fluid">
+    <div class="row" id="bgGrey">
+        <div class="contenantSection7">
+            <img class="imgHomeFixeS4" src="{{ asset('build/images/recip-book.webp') }}" alt="photo image home fixe">
+            <p class="txtSection7"><a href="{{ path('receipts_list') }}" src="">Voir les Recettes</p>
+        </div>
+    </div>
+    <div class="row" id="bgGrey"></div>
+</section7>
+<section8 class="container-fluid">
+    <div class="row">
+        <h2 class="titreS8 text-center">Comment nous contacter :</h2>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8" id="divButtonS8"><a id="buttonS8" href="#" role="button">Contactez-nous !</a></div>
+        <div class="col-2"></div>
+    </div>
+</section8>
+<section9 class="container-fluid">
+    <div class="row section9">
+        <div class="col-7">
+            <div class="section9Flex1"><h3>Nous contacter :</h3></div>
+            <div class="section9Flex1-1">
+                <img class="imgHomePhoneFlex1-1" src="{{ asset('build/images/phonelink-ring--v2.gif') }}" alt="icone phone home fixe">
+                <span class="tailleTxtFlex1-1">: 06 75 33 08 23</span>
+            </div>
+            <div class="section9Flex1-2">
+                <img class="section9FleximgMail" src="{{ asset('build/images/apple-mail.png') }}" alt="icones home mail">
+                <span class="section9FlexTxtMail">convivialevent@yahoo.fr</span>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="section9Flex2">
+                <h3>Horaires :</h3>
+            </div>
+            <div class="section9Flex2-2">
+                <p><span class="section9Flex2-2Txt">Du lundi au vendredi de 8h00 à 19h00</span></p>
+            </div>
+        </div>
+    </div>
+</section9>
+<section10 class="container-fluid text-center">
+    <div class="flex1S10">
+        <div>
+            <h3>Présent sur les réseaux sociaux, Rejoignez-nous sur :</h3> 
+        </div> 
+    </div>
+</section10>
+<section11 class="container">
+    <div class="flex2S11">
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.png') }}" alt="icones home pinterest">
+        </div>
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.png') }}" alt="icones home facebook">
+        </div>
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.png') }}" alt="icones home twitter">
+        </div>
+    </div>
+</section11>
+{% endblock %}

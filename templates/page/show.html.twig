@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de {{ page.slug }}{% endblock %}
+
+{% block body %}
+    <div class="section1">
+        <div class="container-fluid" id="bgS1Page">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="colorTxtS1Page">{{ page.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="container-fluid" id="bgS1Page">
+            <div class="row">
+                <div class="col-12">
+                        <img class="imgS2Page" src="{{ asset('build/images/cocktail.webp') }}" alt="image cocktail entreprise">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section2 text-center">
+        <div class="container-fluid" id="">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        {{ page.content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="container-fluid" id="">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        {{ page.metaDesc }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section4">
+        <div class="container-fluid" id="">
+            <div class="row">
+                <div class="col-12 text-center">
+                   <h3>Pour connaitre nos options et détails</br><span class="spanPageS4">Télécharger nos brochures :</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section5">
+        <div class="container-fluid" id="">
+            <div class="row">
+                {% for pdf in pagePdf %}
+                <div class="col-12 text-center" id="divButtonS5Page">
+                    <a id="buttonS5Page" href="#" role="button">{{ pdf.title }}</a>   
+                </div> 
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section6">
+        <div class="container-fluid" id="bgS1Page">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="colorTxtS1Page">Notre Galerie</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                            {% for pageImg in images %}
+                                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="10000">
+                                        <img src="{{ asset('build/images/'~ pageImg.title ~ '.jpg') }}" class="d-block w-100" alt="image mariage">
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
