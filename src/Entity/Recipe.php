@@ -212,7 +212,7 @@ class Recipe
     public function setTime(string $time): self
     {
         $this->time = $time;
-        
-        return $this;   
-    }   
+        // NO newline at end of file
+        return $this;
+    }
 }

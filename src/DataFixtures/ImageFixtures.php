@@ -20,7 +20,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
                 /** @var \App\Entity\Recipe */
                 $reciepe = $this->getReference($ref);
                 $image->setRecipe($reciepe);
-                $manager->persist($image);   
+                $manager->persist($image);
             }
         }
         $manager->flush();

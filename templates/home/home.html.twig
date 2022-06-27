@@ -42,7 +42,7 @@
         <div class="col-12" id="cardS3Home">
         {% for wedding in weddings %}
             <div class="card text-center" id="divCardS3Home">
-                <img class="" src="{{ asset('build/images/' ~ wedding.image ~ '.jpg') }}" alt="photo mariage">
+                <img class="" src="{{ asset('images/' ~ wedding.image ~ '.webp') }}" alt="photo convivialevent">
                 <div class="card-body">
                     <h3 class="card-title">{{ wedding.title }}</h3>
                     <p class="card-text">{{ wedding.content }}</p>
@@ -58,7 +58,7 @@
     <div class="row" id="bgGrey">
         <div class="col-12">
             <div class="contenantSection4">
-                <img class="imgHomeFixeS4" src="{{ asset('build/images/imageHomeFixe.jpeg') }}" alt="photo image home fixe">
+                <img class="imgHomeFixeS4" src="{{ asset('build/images/imageHomeFixe.webp') }}" alt="photo image home fixe">
                 <p class="txtSection4"><span class="span1HomeS4">CONVIVIALEVENT</span></span></br><span class="span2HomeS4">L'autre façon de recevoir...</span></p>
             </div>
         </div>
@@ -91,7 +91,7 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="{{ asset('build/images/'~ wedding.image ~ '.jpg') }}" class="d-block w-100" alt="image mariage">
+                    <img src="{{ asset('build/images/'~ wedding.image ~ '.webp') }}" class="d-block w-100" alt="image mariage">
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -158,13 +158,13 @@
 <section11 class="container">
     <div class="flex2S11">
         <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.png') }}" alt="icones home pinterest">
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.webp') }}" alt="icones home pinterest">
         </div>
         <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.png') }}" alt="icones home facebook">
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.webp') }}" alt="icones home facebook">
         </div>
         <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.png') }}" alt="icones home twitter">
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.webp') }}" alt="icones home twitter">
         </div>
     </div>
 </section11>

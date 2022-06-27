@@ -20,8 +20,8 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
                 /** @var \App\Entity\Page */
                 $page = $this->getReference($ref);
                 $image->setPage($page);
-                
-                $manager->persist($image);   
+
+                $manager->persist($image);
             }
         }
         $manager->flush();

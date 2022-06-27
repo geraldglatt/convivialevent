@@ -6,7 +6,7 @@ use App\Entity\Recipe;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class RecipeFixtures extends Fixture 
+class RecipeFixtures extends Fixture
 {
     public const RECIPE_REFERENCE1 = 'RECIPE_REFERENCE1';
     public const RECIPE_REFERENCE2 = 'RECIPE_REFERENCE2';
@@ -60,5 +60,5 @@ class RecipeFixtures extends Fixture
         $this->addReference(self::RECIPE_REFERENCE4, $recipe);
 
         $manager->flush();
-    } 
+    }
 }

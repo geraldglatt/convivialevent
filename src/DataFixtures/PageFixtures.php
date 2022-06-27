@@ -6,7 +6,7 @@ use App\Entity\Page;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class PageFixtures extends Fixture 
+class PageFixtures extends Fixture
 {
     public const PAGE_REFERENCE1 = 'PAGE_REFERENCE1';
     public const PAGE_REFERENCE2 = 'PAGE_REFERENCE2';
@@ -58,7 +58,7 @@ class PageFixtures extends Fixture
                             printer took a galley of type and scrambled it to make a type specimen book.');
         $manager->persist($page4);
         $this->addReference(self::PAGE_REFERENCE4, $page4);
-        
+
         $manager->flush();
-    }   
+    }
 }

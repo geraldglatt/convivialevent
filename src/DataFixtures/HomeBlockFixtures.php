@@ -7,13 +7,13 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class HomeBlockFixtures extends Fixture implements DependentFixtureInterface 
-{ 
+class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
+{
     public function load(ObjectManager $manager): void
-    { 
+    {
         $homeBlock1 = new HomeBlock();
         $homeBlock1->setTitle('Mariage champêtre');
-        $homeBlock1->setImage('image');
+        $homeBlock1->setImage('mariage-tradition.webp');
         $homeBlock1->setContent('content');
         $homeBlock1->setPosition(1);
 
@@ -24,7 +24,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
 
         $homeBlock2 = new HomeBlock();
         $homeBlock2->setTitle('Mariage Tradition & Prestige');
-        $homeBlock2->setImage('image');
+        $homeBlock2->setImage('table-st-remy.webp');
         $homeBlock2->setContent('content');
         $homeBlock2->setPosition(2);
 
@@ -35,7 +35,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
 
         $homeBlock3 = new HomeBlock();
         $homeBlock3->setTitle('BBQ & Cochon');
-        $homeBlock3->setImage('image');
+        $homeBlock3->setImage('Cochon-cirque.webp');
         $homeBlock3->setContent('content');
         $homeBlock3->setPosition(3);
 
@@ -46,7 +46,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
 
         $homeBlock4 = new HomeBlock();
         $homeBlock4->setTitle('Entreprise');
-        $homeBlock4->setImage('image');
+        $homeBlock4->setImage('cocktail-dinatoire.webp');
         $homeBlock4->setContent('content');
         $homeBlock4->setPosition(4);
 
