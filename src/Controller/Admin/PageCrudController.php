@@ -2,12 +2,12 @@
 
 namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use App\Entity\Page;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class PageCrudController extends AbstractCrudController
 {
@@ -16,7 +16,6 @@ class PageCrudController extends AbstractCrudController
         return Page::class;
     }
 
-    
     public function configureFields(string $page): iterable
     {
         return [
@@ -27,8 +26,7 @@ class PageCrudController extends AbstractCrudController
             TextEditorField::new('meta_desc'),
             ImageField::new('image')
                 ->setBasePath('upload/images/')
-                ->setUploadDir('public/build/images/')
+                ->setUploadDir('public/build/images/'),
         ];
     }
-    
 }

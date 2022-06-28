@@ -2,11 +2,11 @@
 
 namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use App\Entity\Recipe;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class RecipeCrudController extends AbstractCrudController
 {
@@ -15,7 +15,6 @@ class RecipeCrudController extends AbstractCrudController
         return Recipe::class;
     }
 
-    
     public function configureFields(string $recipe): iterable
     {
         return [
@@ -28,5 +27,4 @@ class RecipeCrudController extends AbstractCrudController
             TextField::new('time'),
         ];
     }
-    
 }
