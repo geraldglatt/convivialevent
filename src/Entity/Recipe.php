@@ -215,4 +215,9 @@ class Recipe
         // NO newline at end of file
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

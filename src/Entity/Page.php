@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 class Page
 {
@@ -177,5 +178,10 @@ class Page
     public function getPages(): Collection
     {
         return $this->pages;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }

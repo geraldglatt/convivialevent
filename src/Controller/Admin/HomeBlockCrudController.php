@@ -2,8 +2,14 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use App\Entity\HomeBlock;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 
 class HomeBlockCrudController extends AbstractCrudController
 {
@@ -12,14 +18,19 @@ class HomeBlockCrudController extends AbstractCrudController
         return HomeBlock::class;
     }
 
-    /*
-    public function configureFields(string $pageName): iterable
+    
+    public function configureFields(string $homeBlock): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')->hideOnForm(),
+            AssociationField::new('page'),
             TextField::new('title'),
-            TextEditorField::new('description'),
+            ImageField::new('image')
+                ->setBasePath('upload/images/')
+                ->setUploadDir('public/build/images/'),
+            TextEditorField::new('content'),
+            IntegerField::new('position'),
         ];
     }
-    */
+
 }

@@ -2,8 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use App\Entity\Recipe;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 
 class RecipeCrudController extends AbstractCrudController
 {
@@ -12,14 +15,18 @@ class RecipeCrudController extends AbstractCrudController
         return Recipe::class;
     }
 
-    /*
-    public function configureFields(string $pageName): iterable
+    
+    public function configureFields(string $recipe): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')->hideOnForm(),
+            TextField::new('slug'),
             TextField::new('title'),
-            TextEditorField::new('description'),
+            IntegerField::new('nb_portion'),
+            TextField::new('type'),
+            TextField::new('difficulty'),
+            TextField::new('time'),
         ];
     }
-    */
+    
 }
