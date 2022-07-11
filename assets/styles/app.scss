@@ -15,6 +15,10 @@ body {
     background-color: $convivialColor;
 }
 
+p {
+    font-size: 1.5em;
+}
+
 @include mediaquerries(xs) {
 //start of homePage
 //section header et subNav
@@ -44,6 +48,10 @@ body {
         padding-left: 1px;
         display:none;
     }
+    .spanSubNav2 {
+        margin-left: 5px;
+        padding-left: 5px;
+    }
     .navbar-toggler-icon {
         text-align: left;
         width: 2vh;
@@ -57,20 +65,38 @@ body {
         margin-top: 1px;
         display: none;
     }
-//Fin section header et subNav
+    .imageLogo1Convivial {
+        display: none;
+        max-width: 20%;
+        height: auto;    
+    }
+//end section header et subNav
+//start of footer
+#footer {
+    height: 50px;
+    line-height: 25px;
+    text-align: center;
+}
+.contactSubNav {
+    display:none
+}
+//end of footer
 //page home
 .imageLogoConvivial {
     width: 15vh;
     height: 10vh;
-          
+
     }
 //section 2
     .txtSection2 {
         text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
     .txtSmallSection2 {
         text-align: center;
-        font-size: 0.8em;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 //section 3
     body section3.container {
@@ -110,19 +136,18 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 1.5em;
         color:black;
     }
     .span1HomeS4{
-        padding-right: 90px;
-        font-size: 1.2em;
+        margin-right: 20px;
         color: $convivialColor2;
         font-style: italic;
+        font-size: 1.5em;
     }
     .span2HomeS4{
-        padding-left: 80px;
-        font-size: 0.8em;
         color: black;
+        font-size: 0.9em;
+        margin-left: 40px;
     }
 //section 5
     .backgroundS4{
@@ -134,8 +159,11 @@ body {
     #temoignage {
         font-size: 1.5em;
         text-align: center;
-        text-decoration: underline; 
         margin-top: 15px; 
+    }
+    #divButtonS5Page{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 //section 6
     .row6 {
@@ -143,172 +171,178 @@ body {
         font-size:2em;
         margin-bottom: 25px;
     }
-    .titreS6{
-        text-decoration: underline;
-    }
 //section 7
-    #bgGrey{
+    #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
         padding: 10px;
     }
-    .contenantSection7{
+    .contenantSection7 {
         position: relative;
         text-align: center;
     }
-    .txtSection7{
+    .txtSection7 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
+        text-decoration: none;
+        color: black;
+        font-size: 2em;
     }
 //section 8
-    .titreS8{
-        text-decoration: underline;
+    .titreS8 {
         margin-bottom: 40px;
         color: black;
+        text-align: center;
     }
-    #buttonS8{
+    #buttonS8 {
         text-decoration: none;
         border: 1px solid black;
-        text-align: center;
         color: black;
         background-color: $convivialColor;
         padding: 5px 20px 5px 20px;
         border-radius: 12px;
+        text-align: center;
     }
-    #divButtonS8{
-        align-items: center;
-        text-align: right;
-        margin-left: 30px;
-    }
-    
 //section 9
-    .row.section9{
+    .row.section9 {
         margin-top: 35px;
     }
-    .tailleTxtS9{
+    .tailleTxtS9 {
         font-size: 0.9em;
     }
-    .section9FleximgMail{
+    .section9FleximgMail {
         padding-top: 25px;
         width: 20%;
         align-items: center;
         padding-left: 2px;
     }
-    span.section9FlexTxtMail{
+    span.section9FlexTxtMail {
         font-size: 0.8em;
     }
-    .section9Flex1{
+    .section9Flex1 {
         display: flex;
         justify-content: space-between;
         margin-left: 10px;
     }
-    .section9Flex1-1{
+    .section9Flex1-1 {
         margin-left: 5px;
         justify-content: space-between;
     }
-    .imgHomePhoneFlex1-1{
+    .imgHomePhoneFlex1-1 {
         padding-top: 5px;
         width: 15%;
         align-items: center;
     }
-    .tailleTxtFlex1-1{
+    .tailleTxtFlex1-1 {
         font-size: 0.8em;
     }
-    .section9Flex1-2{
+    .section9Flex1-2 {
         justify-content: space-between;
     }
-    .section9Flex2{
+    .section9Flex2 {
         display: flex;
         justify-content: space-between;
         font-size: 0.5em;
     }
-    .section9Flex2-2{
+    .section9Flex2-2 {
         display: flex;
         
     }
-    .section9Flex2-2Txt{
+    .section9Flex2-2Txt {
         font-size: 0.8em;
     }
 //section 11
-    .flex1S10{
+    .flex1S10 {
         display: flex;
         flex-wrap: wrap;
         margin-top: 30px;
     }
-    .flex2S10{
+    .flex2S10 {
         display: flex;
         justify-content: space-between;
         padding: 30px;
         margin: 20px 20px;
     }
-    .flex2S11{
+    .flex2S11 {
         display: flex;
         justify-content: space-around;
         padding: 30px;
     }
-    .imgHomeIconesS11{
+    .imgHomeIconesS11 {
         height: 4vh;
     }
 //End Of Home Page
 //Start of list Recipes Page
-    #bgListRecipePageS3{
+    #bgListRecipePageS3 {
         background-image: url('/assets/images/boulPizz.webp');
     }
-    .listrecipePagetxtSection2{
+    .listrecipePagetxtSection2 {
         font-size: 2.5em;
         text-align: center;
     }
-    .listrecipePagetxtSection3{
+    .recipeListImgSection5 {
+        width: 70%;
+        height: auto;
+    }
+    .listrecipePagetxtSection3 {
         font-size: 1.5em;
         text-align: center;
         
     }
 
 //End of list Recipes Pages
-//Start of Recipe page
-.textSection3{
+//Start of details page
+.textSection3 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.textSection3Bis{
+.textSection3Bis {
     text-align: left;
 }
-#bgListRecipePageS3{
+#bgListRecipePageS3 {
     background-image: url('/assets/images/boulPizz.webp');
     text-align: center;
 }
-#marginRecipeSection3{
+#marginRecipeSection3 {
     margin-bottom: 10px;;
 }
-.recipePageImgSection3{
+.recipePageImgSection3 {
     width:30%;
     margin-bottom: 40px;
 }
-.recipePagetxtSection2{
+#recipePageImgSection3 {
+    width:30%;
+    margin-bottom: 40px;
+    margin-left: 10px;
+}
+.recipePagetxtSection2 {
     font-size: 2em;
     text-align: center;
 }
-.recipePagetxtSection3{
+.recipePagetxtSection3 {
     font-size: 2em;
     text-align: center;
 }
-#dropdownMenuButton1{
+#dropdownMenuButton1 {
     text-align: center;
     align-items: center;
     margin-left: 140px;
     border-radius: 12%;
     background-color: $convivialColor;
 }
-.recipePageImgSection5{
-    width:100%;
+#imgSection3Details {
     align-items: center;
+    text-align: center;
 }
-#section4{
+.recipePageImgSection5 {
+    width:100%;
+    min-height: auto;
+    text-align: center;
+}
+#section4 {
     background-color: black;
     text-align: center;
     align-items: center;
@@ -316,7 +350,7 @@ body {
     margin-top: 0px;
     padding-top: 5px;
 }
-#section5{
+#section5 {
     background-color: $convivialColor;
     text-align: center;
     align-items: center;
@@ -324,29 +358,30 @@ body {
     margin-top: 0px;
     padding-top: 5px;
 }
-#recipePageLiSection4{
+#recipePageLiSection4 {
     list-style-type: none;
+    align-items: center;
 }
-#recipePageLiSection5{
+#recipePageLiSection5 {
     list-style-type: none;
     color: black;
 }
 //end of Recipe page
 //start of page
-#bgS1Page{
+#bgS1Page {
     background-color: rgba(236, 240, 241);
     text-align: center;
     padding-top: 25px;
     padding-bottom: 15px;
 }
-.colorTxtS1Page{
+.colorTxtS1Page {
     color: $convivialColor;
 }
-.imgS2Page{
+.imgS2Page {
     width: 65%;
     max-height: 100%;
 }
-#buttonS5Page{
+#buttonS5Page {
     text-decoration: none;
     border: 1px solid black;
     text-align: center;
@@ -354,11 +389,9 @@ body {
     background-color: $convivialColor;
     padding: 5px 20px 5px 20px;
     border-radius: 12px;
-    
-}
-#divButtonS5Page{
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 //end of page
 }
@@ -404,7 +437,18 @@ body {
         margin-top: 1px;
         display: none;
     }
-//Fin section header et subNav
+    .imageLogo1Convivial {
+        max-width: 20%;
+        height: auto;
+    }
+//end section header et subNav
+//start of footer
+#footer {
+    height: 50px;
+    line-height: 25px;
+    text-align: center;
+}
+//end of footer
 //page home
 //section 1
 .imageLogoConvivial {
@@ -421,19 +465,20 @@ body {
         font-size: 0.8em;
     }
 //section 3
-    #cardS3Home {
+    #cardS3Home {      
+        align-items: center;
         display: flex;
         flex-wrap: wrap;
-        
     }
     div.card {
         min-width: 45%;
         border: 1px solid BLACk;
+        align-items: center;
         margin-top: 20px;
         margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 //section 4
     section4 {
@@ -489,9 +534,6 @@ body {
         font-size:2em;
         margin-bottom: 25px;
     }
-    .titreS6{
-        text-decoration: underline;
-    }
 //section 7
     #bgGrey{
         background-color: rgba(229, 229, 229, 0.44);
@@ -502,17 +544,17 @@ body {
         position: relative;
         text-align: center;
     }
-    .txtSection7{
+    .txtSection7 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
+        text-decoration: none;
+        color: $convivialColor2;
+        font-size: 3em;
     }
 //section 8
     .titreS8{
-        text-decoration: underline;
         margin-bottom: 40px;
         color: black;
     }
@@ -525,11 +567,7 @@ body {
         padding: 5px 20px 5px 20px;
         border-radius: 12px;
         font-size: 1.5em;
-    }
-    #divButtonS8{
-        align-items: center;
-        margin-left: 320px;
-    }   
+    }  
 //section 9
     .row.section9{
         margin-top: 35px;
@@ -609,6 +647,11 @@ body {
         width:30%;
         margin-bottom: 40px;
     }
+    #recipePageImgSection3 {
+        width:30%;
+        margin-bottom: 40px;
+        margin-left: 30px;
+    }
     .recipePagetxtSection2{
         font-size: 2em;
         text-align: center;
@@ -635,6 +678,7 @@ body {
         color: white;
         margin-top: 0px;
         padding-top: 5px;
+        font-size: 2em;
     }
     #section5{
         background-color: $convivialColor;
@@ -646,10 +690,12 @@ body {
     }
     #recipePageLiSection4{
         list-style-type: none;
+        font-size: 1em;
     }
     #recipePageLiSection5{
         list-style-type: none;
         color: black;
+        font-size: 1.5em;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -744,7 +790,18 @@ body {
         margin-top: 1px;
         display: none;
     }
-//Fin section header et subNav
+    .imageLogo1Convivial {
+        max-width: 20%;
+        height: auto;
+    }
+//end section header et subNav
+//start of footer
+#footer {
+    height: 50px;
+    line-height: 25px;
+    text-align: center;
+}
+//end of footer
 //page home
 //section 1
 .imageLogoConvivial {
@@ -761,10 +818,10 @@ body {
         font-size: 0.8em;
     }
 //section 3
-    #cardS3Home {
+    #cardS3Home {      
+        align-items: center;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
     }
     div.card {
         min-width: 45%;
@@ -772,9 +829,9 @@ body {
         align-items: center;
         margin-top: 20px;
         margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 //section 4
     section4 {
@@ -830,30 +887,27 @@ body {
         font-size:2em;
         margin-bottom: 25px;
     }
-    .titreS6{
-        text-decoration: underline;
-    }
 //section 7
-    #bgGrey{
+    #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
         padding: 10px;
     }
-    .contenantSection7{
+    .contenantSection7 {
         position: relative;
         text-align: center;
     }
-    .txtSection7{
+    .txtSection7 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
+        text-decoration: none;
+        color: $convivialColor2;
+        font-size: 3em;
     }
 //section 8
-    .titreS8{
-        text-decoration: underline;
+    .titreS8 {
         margin-bottom: 40px;
         color: black;
     }
@@ -866,119 +920,115 @@ body {
         padding: 5px 20px 5px 20px;
         border-radius: 12px;
         font-size: 1.5em;
-    }
-    #divButtonS8{
-        align-items: center;
-        margin-left: 320px;
     }   
 //section 9
-    .row.section9{
+    .row.section9 {
         margin-top: 35px;
     }
-    .imgHomePhoneFlex1-1{
+    .imgHomePhoneFlex1-1 {
         width: 10%;
         padding-top: 25px;
         width: 25%;
         align-items: center;
     }
-    .tailleTxtS9{
+    .tailleTxtS9 {
         font-size: 0.9em;
     }
-    .section9FleximgMail{
+    .section9FleximgMail {
         padding-top: 25px;
         width: 20%;
         align-items: center;
         padding-left: 2px;
     }
-    .section9FlexTxtMail{
+    .section9FlexTxtMail {
         font-size: 0.8em;
     }
-    .section9Flex1{
+    .section9Flex1 {
         display: flex;
         justify-content: center;
     }
-    .section9Flex1-1{
+    .section9Flex1-1 {
         display: flex;
         justify-content: space-around;
     }
-    .tailleTxtFlex1-1{
+    .tailleTxtFlex1-1 {
         font-size: 1.5em;
         display: flex;
         justify-content: space-around;
     }
-    .imgHomePhoneFlex1-1{
+    .imgHomePhoneFlex1-1 {
         width: 10%;
         display: flex;
         justify-content: space-between;
     }
-    .section9Flex1-2{
+    .section9Flex1-2 {
         justify-content: space-between;
     }
-    .section9Flex2{
+    .section9Flex2 {
         display: flex;
         justify-content: space-between;
         font-size: 0.5em;
     }
-    .section9Flex2-2{
+    .section9Flex2-2 {
         display: flex;
         margin-top: 15px;
     }
-    .section9Flex2-2Txt{
+    .section9Flex2-2Txt {
         font-size: 0.8em;
     }
 //section 11
-    .imgHomePhoneFlex1-1{
+    .imgHomePhoneFlex1-1 {
             width: 10%;
         }
-    .flex2S11{
+    .flex2S11 {
         display: flex;
         justify-content: space-around;
         margin-top: 20px;
     }
-    .imgHomeIconesS11{
+    .imgHomeIconesS11 {
         height: 5vh;
     }
 //End Of Home Page
 //Start of list Recipes Page
-    .textSection3{
+    .textSection3 {
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .textSection3Bis{
+    .textSection3Bis {
         text-align: left;
     }
-    #section3{
+    #section3 {
         background-color: $convivialColor;
         text-align: center;
     }
-    #marginRecipeSection3{
+    #marginRecipeSection3 {
         margin-bottom: 10px;;
     }
-    .recipePageImgSection3{
+    .recipePageImgSection3 {
         width:30%;
         margin-bottom: 40px;
     }
-    .recipePagetxtSection2{
+    .recipePagetxtSection2 {
         font-size: 2em;
         text-align: center;
     }
-    .recipePagetxtSection3{
+    .recipePagetxtSection3 {
         font-size: 2em;
         text-align: center;
     }
-    #dropdownMenuButton1{
+    #dropdownMenuButton1 {
         text-align: center;
         align-items: center;
         margin-left: 140px;
         border-radius: 12%;
         background-color: $convivialColor;
     }
-    .recipePageImgSection5{
+    .recipePageImgSection5 {
         width:100%;
         align-items: center;
     }
-    #section4{
+    #section4 {
         background-color: black;
         text-align: center;
         align-items: center;
@@ -986,7 +1036,7 @@ body {
         margin-top: 0px;
         padding-top: 5px;
     }
-    #section5{
+    #section5 {
         background-color: $convivialColor;
         text-align: center;
         align-items: center;
@@ -994,52 +1044,57 @@ body {
         margin-top: 0px;
         padding-top: 5px;
     }
-    #recipePageLiSection4{
+    #recipePageLiSection4 {
         list-style-type: none;
     }
-    #recipePageLiSection5{
+    #recipePageLiSection5 {
         list-style-type: none;
         color: black;
     }
 //End of list Recipes Pages
 //Start of Recipe page
-.textSection3{
+.textSection3 {
     text-align: center;
 }
-.textSection3Bis{
+.textSection3Bis {
     text-align: left;
 }
-#section3{
+#section3 {
     background-color: $convivialColor;
     text-align: center;
 }
-#marginRecipeSection3{
+#marginRecipeSection3 {
     margin-bottom: 50px;;
 }
-.recipePageImgSection3{
+.recipePageImgSection3 {
     width:30%;
     margin-bottom: 50px;
 }
-.recipePagetxtSection2{
+#recipePageImgSection3 {
+    width:30%;
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+.recipePagetxtSection2 {
     font-size: 2em;
     text-align: center;
 }
-.recipePagetxtSection3{
+.recipePagetxtSection3 {
     font-size: 2em;
     text-align: center;
 }
-#dropdownMenuButton1{
+#dropdownMenuButton1 {
     text-align: center;
     align-items: center;
     margin-left: 140px;
     border-radius: 12%;
     background-color: $convivialColor;
 }
-.recipePageImgSection5{
+.recipePageImgSection5 {
     width:100%;
     align-items: center;
 }
-#section4{
+#section4 {
     background-color: black;
     text-align: center;
     align-items: center;
@@ -1047,7 +1102,7 @@ body {
     margin-top: 0px;
     padding-top: 5px;
 }
-#recipePageLiSection4{
+#recipePageLiSection4 {
     list-style-type: none;
 }
 }
@@ -1065,7 +1120,7 @@ body {
         background-color: $convivialColor;
         
     }
-    .navPipe{
+    .navPipe {
         margin-left: 5px;
     }
     .imageLanguage {
@@ -1079,8 +1134,7 @@ body {
         margin-left: 10px;
         padding-top: 20px;
         padding-inline-start: 10px;
-        
-        
+           
     }
     .spanFR {
         text-align: right;
@@ -1101,7 +1155,24 @@ body {
         margin-top: 1px;
         display: none;
     }
-//Fin section header et subNav
+    .imageLogo1Convivial {
+        max-width: 20%;
+        height: auto;
+        margin-left: 20px;
+        border-radius: 50%;
+    }
+//end section header and subNav
+//start of footer
+#footerRow {
+   line-height: center;
+   height: 50px;
+   text-align: center; 
+}
+#footer {
+    display: inline-block;
+    vertical-align:middle;   
+}
+//end of footer
 //page home
 //section 1
     .imageLogoConvivial {
@@ -1112,17 +1183,19 @@ body {
 //section2
     .txtSection2 {
         text-align: center;
-        font-size: 2em;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     .txtSmallSection2 {
         text-align: center;
-        font-size: 0.8em;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 //section 3
-    #cardS3Home {
+    #cardS3Home {      
+        align-items: center;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
     }
     div.card {
         min-width: 45%;
@@ -1130,9 +1203,9 @@ body {
         align-items: center;
         margin-top: 20px;
         margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 //section 4
     section4 {
@@ -1141,32 +1214,47 @@ body {
     }
     .imgHomeFixeS4 {
         width: 100%;
-        height: 400px;
+        height: 500px;
         object-fit: cover;
         object-position: center;
         filter: opacity(30%);
         -webkit-filter: opacity(30%);
     }
-    .span1HomeS4{
+    .contenantSection4 {
+        position: relative;
+    }
+    .txtSection4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 1.5em;
+        color:black;
+    }
+    .span1HomeS4 {
         padding-right: 90px;
-        font-size: 1.2em;
+        font-size: 2em;
         color: $convivialColor2;
         font-style: italic;
     }
-    .span2HomeS4{
+    .span2HomeS4 { 
         padding-left: 80px;
-        font-size: 0.8em;
+        font-size: 2em;
         color: black;
     }
     //section 5
-    .backgroundS4{
+    .backgroundS4 {
         margin: 20px;
         background-color: $convivialColor;
+        height: 150px;
     }
-    #temoignage {
+    .temoignage {
         font-size: 2.5em;
         text-align: center;
-        text-decoration: underline;   
+    }
+    .temoignages {
+        font-size: 1.5em;
+        text-align: center;   
     }
 //section 6
     .row6 {
@@ -1174,22 +1262,35 @@ body {
         font-size:2em;
         margin-bottom: 25px;
     }
-    .titreS6{
-        text-decoration: underline;
-    }
 //section 7
-    #bgGrey{
+    #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
         padding: 10px;
     }
+    .contenantSection7 {
+        position: relative;
+        text-align: center;
+    }
+    .txtSection7 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-decoration: none;
+        color: $convivialColor2;
+        font-size: 3em;
+    }
 //section 8
-    .titreS8{
-        text-decoration: underline;
-        margin-bottom: 80px;
+    .titreS8 {
+        text-decoration: none;
+        margin-bottom: 50px;
         margin-top: 50px;
     }
-    #buttonS8{
+    #divHomeS8 {
+        text-align: center;
+    }
+    #buttonS8 {
         text-decoration: none;
         border: 1px solid black;
         text-align: center;
@@ -1197,109 +1298,111 @@ body {
         background-color: $convivialColor;
         padding: 5px 20px 5px 20px;
         border-radius: 12px;
-        font-size: 2em;
+        font-size: 1.7em;
     }
 //section 9
-    .section9Flex1{
+    .section9Flex1 {
         display: flex;
-        justify-content: center;
+        justify-content: left;
+        margin-left: 150px;
     }
-    .section9Flex1-1{
+    .section9Flex1-1 {
         display: flex;
-        margin-left: 300px;
+        margin-left: 200px;
         margin-top: 30px;
     }
-    .imgHomePhoneFlex1-1{
+    .imgHomePhoneFlex1-1 {
         width: 10%;
         
     }
-    .tailleTxtFlex1-1{
+    .tailleTxtFlex1-1 {
         font-size: 1.5em;
     }
-    .section9Flex1-2{
+    .section9Flex1-2 {
         display:flex;
-        margin-left: 300px;
+        margin-left: 200px;
         margin-top: 30px;
     }
-    .section9FleximgMail{
+    .section9FleximgMail {
         padding-top: 25px;
         width: 10%;
         align-items: center;
         padding-left: 2px;
     }
-    .section9FlexTxtMail{
+    .section9FlexTxtMail {
         font-size: 1.5em;
     }
-    .section9Flex2{
+    .section9Flex2 {
         display: flex;
         justify-content: center;
         font-size: 0.5em;
     }
-    .section9Flex2-2{
+    .section9Flex2-2 {
         display: flex;
-        margin-top: 15px;
+        margin-top: 30px;
         margin-left: 100px;
     }
-    .section9Flex2-2Txt{
-        font-size: 1.5em;
+    .section9Flex2-2Txt {
+        font-size: 1em;
     }
 //section 10
-    .flex1S10{
+    .flex1S10 {
         display: flex;
         justify-content: center;
         margin-top: 30px;
     }
 //section 11
-    .flex2S11{
+    .flex2S11 {
         display: flex;
         justify-content: space-around;
-        padding: 100px;
-        margin-left: 25px;
+        margin-top: 30px;
+        margin-left: 0px;
     }
-    .imgHomeIconesS11{
+    .imgHomeIconesS11 {
         height: 8vh;
     }
 //End Of Home Page
 //Start of list Recipes Page
-    .textSection3{
+    .textSection3 {
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .textSection3Bis{
+    .textSection3Bis {
         text-align: left;
     }
-    #section3{
+    #section3 {
         background-color: $convivialColor;
         text-align: center;
     }
-    #marginRecipeSection3{
+    #marginRecipeSection3 {
         margin-bottom: 10px;;
     }
-    .recipePageImgSection3{
+    .recipePageImgSection3 {
         width:30%;
         margin-bottom: 40px;
     }
-    .recipePagetxtSection2{
+    .recipePagetxtSection2 {
         font-size: 2em;
         text-align: center;
     }
-    .recipePagetxtSection3{
+    .recipePagetxtSection3 {
         font-size: 2em;
         text-align: center;
     }
-    #dropdownMenuButton1{
+    #dropdownMenuButton1 {
         text-align: center;
         align-items: center;
         margin-left: 140px;
         border-radius: 12%;
         background-color: $convivialColor;
     }
-    .recipePageImgSection5{
-        width:100%;
+    #imgSection3Details {
         align-items: center;
+        text-align: center;
     }
-    #section4{
+    
+    #section4 {
         background-color: black;
         text-align: center;
         align-items: center;
@@ -1307,63 +1410,69 @@ body {
         margin-top: 0px;
         padding-top: 5px;
     }
-    #section5{
+    #section5 {
         background-color: $convivialColor;
         text-align: center;
         align-items: center;
         color: white;
         margin-top: 0px;
         padding-top: 5px;
+        margin-bottom: 20px;
     }
-    #recipePageLiSection4{
+    #recipePageLiSection4 {
         list-style-type: none;
     }
-    #recipePageLiSection5{
+    #recipePageLiSection5 {
         list-style-type: none;
         color: black;
     }
 //End of list Recipes Pages
 //Start of Recipe page
-    .textSection3{
+    .textSection3 {
         text-align: center;
         margin-bottom: 50px;
     }
-    .textSection3Bis{
+    .textSection3Bis {
         text-align: left;
         font-size: 2.5em;
         margin-bottom: 30px;
     }
-    #section3{
+    #section3 {
         background-color: $convivialColor;
         text-align: center;
     }
-    .recipePageImgSection3{
+    .recipePageImgSection3 {
         width:20%;
         margin-bottom: 50px;
     }
-    #marginRecipeSection3{
+    #recipePageImgSection3 {
+        width:20%;
+        margin-bottom: 40px;
+        margin-left: 60px;
+    }
+    #marginRecipeSection3 {
         margin-bottom: 50px;;
     }
-    .recipePagetxtSection2{
+    .recipePagetxtSection2 {
         font-size: 2em;
         text-align: center;
     }
-    .recipePagetxtSection3{
+    .recipePagetxtSection3 {
         font-size: 2em;
         text-align: center;
     }
-    #dropdownMenuButton1{
+    #dropdownMenuButton1 {
         text-align: center;
         align-items: center;
         margin-left: 140px;
         border-radius: 12%;
         background-color: $convivialColor;
     }
-    .recipePageImgSection5{
+    .recipePageImgSection5 {
         width:100%;
         align-items: center;
     }
-    #section4{
+    #section4 {
         background-color: black;
         text-align: center;
         align-items: center;
@@ -1371,9 +1480,10 @@ body {
         margin-top: 0px;
         padding-top: 5px;
     }
-    #recipePageLiSection4{
+    #recipePageLiSection4 {
         list-style-type: none;
     }
+//end of Recipe page
 }
 
 

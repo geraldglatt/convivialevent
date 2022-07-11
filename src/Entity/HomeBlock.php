@@ -28,7 +28,7 @@ class HomeBlock
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'pages')]
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'homeBlocks')]
     #[ORM\JoinColumn(nullable: false)]
     private $page;
 

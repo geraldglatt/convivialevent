@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ImagesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ImagesRepository;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
+#[Vich\Uploadable]
 class Images
 {
     #[ORM\Id]
@@ -15,6 +18,9 @@ class Images
 
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
+
+    #[Vich\UploadableField(mapping:"convivialevent_images", fileNameProperty:"image")]
+    private $imageFile;
 
     #[ORM\Column(type: 'integer')]
     private $position;
@@ -38,6 +44,16 @@ class Images
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getImageFile(): ?file
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $image = null)
+    {
+        $this->imageFile = $image;
     }
 
     public function getPosition(): ?int

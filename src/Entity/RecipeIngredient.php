@@ -22,7 +22,7 @@ class RecipeIngredient
     #[ORM\Column(type: 'string', length: 120)]
     private $quantity_name;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeIngredient')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients')]
     #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 
@@ -77,5 +77,10 @@ class RecipeIngredient
         $this->recipe = $recipe;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getName(). ' - '.$this->getQuantity().$this->getQuantityName();
     }
 }

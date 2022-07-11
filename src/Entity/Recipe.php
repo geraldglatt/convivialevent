@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\RecipeRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\RecipeRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
+#[UniqueEntity('title')]
 class Recipe
 {
     #[ORM\Id]
@@ -25,27 +27,27 @@ class Recipe
     private $nb_portion;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class)]
-    private $image;
+    private $images;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class)]
-    private $recipeIngredient;
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: [ "persist" ])]
+    private $ingredients;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class)]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, cascade: [ "persist" ])]
     private $recipeSteps;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', columnDefinition:"ENUM('entrée', 'pièces cocktail', 'plat principal', 'dessert')", length: 255)]
     private $type;
 
-    #[ORM\Column(type: 'string', length: 45)]
+    #[ORM\Column(type: 'string', length: 45, columnDefinition:"ENUM('facile', 'moyen', 'difficile')")]
     private $difficulty;
 
-    #[ORM\Column(type: 'string', length: 60)]
+    #[ORM\Column(type: 'integer', length: 60)]
     private $time;
 
     public function __construct()
     {
-        $this->image = new ArrayCollection();
-        $this->recipeIngredient = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
     }
 
@@ -93,15 +95,15 @@ class Recipe
     /**
      * @return Collection<int, Image>
      */
-    public function getImage(): Collection
+    public function getImages(): Collection
     {
-        return $this->image;
+        return $this->images;
     }
 
     public function addImage(Image $image): self
     {
-        if (!$this->image->contains($image)) {
-            $this->image[] = $image;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
             $image->setRecipe($this);
         }
 
@@ -110,7 +112,7 @@ class Recipe
 
     public function removeImage(Image $image): self
     {
-        if ($this->image->removeElement($image)) {
+        if ($this->images->removeElement($image)) {
             // set the owning side to null (unless already changed)
             if ($image->getRecipe() === $this) {
                 $image->setRecipe(null);
@@ -125,22 +127,22 @@ class Recipe
      */
     public function getIngredients(): Collection
     {
-        return $this->recipeIngredient;
+        return $this->ingredients;
     }
 
-    public function addIngredients(RecipeIngredient $recipeIngredient): self
+    public function addIngredient(RecipeIngredient $recipeIngredient): self
     {
-        if (!$this->recipeIngredient->contains($recipeIngredient)) {
-            $this->recipeIngredient[] = $recipeIngredient;
+        if (!$this->ingredients->contains($recipeIngredient)) {
+            $this->ingredients[] = $recipeIngredient;
             $recipeIngredient->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeIngredients(RecipeIngredient $recipeIngredient): self
+    public function removeIngredient(RecipeIngredient $recipeIngredient): self
     {
-        if ($this->recipeIngredient->removeElement($recipeIngredient)) {
+        if ($this->ingredients->removeElement($recipeIngredient)) {
             // set the owning side to null (unless already changed)
             if ($recipeIngredient->getRecipe() === $this) {
                 $recipeIngredient->setRecipe(null);
@@ -204,12 +206,12 @@ class Recipe
         return $this;
     }
 
-    public function getTime(): ?string
+    public function getTime(): ?int
     {
         return $this->time;
     }
 
-    public function setTime(string $time): self
+    public function setTime(int $time): self
     {
         $this->time = $time;
         // NO newline at end of file

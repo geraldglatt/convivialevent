@@ -6,7 +6,11 @@ use App\Repository\PageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+/**
+ * @ORM\Entity
+ * @Vich\Uploadable
+ */
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 class Page
 {
@@ -16,6 +20,7 @@ class Page
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Regex(pattern: "/^[a-z0-9\-]+$/")]
     private $slug;
 
     #[ORM\Column(type: 'string', length: 60)]
@@ -30,20 +35,20 @@ class Page
     #[ORM\Column(type: 'string', length: 60, nullable: true)]
     private $image;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $pagePdfs;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class)]
-    private $page;
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class, cascade: [ "persist" ])]
+    private $pageImages;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class)]
-    private $pages;
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, cascade: [ "persist" ])]
+    private $homeBlocks;
 
     public function __construct()
     {
         $this->pagePdfs = new ArrayCollection();
-        $this->page = new ArrayCollection();
-        $this->pages = new ArrayCollection();
+        $this->pageImages = new ArrayCollection();
+        $this->homeBlocks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -144,27 +149,27 @@ class Page
     /**
      * @return Collection<int, Images>
      */
-    public function getPage(): Collection
+    public function getPageImages(): Collection
     {
-        return $this->page;
+        return $this->pageImages;
     }
 
-    public function addPage(Images $page): self
+    public function addPageImage(Images $pageImage): self
     {
-        if (!$this->page->contains($page)) {
-            $this->page[] = $page;
-            $page->setPage($this);
+        if (!$this->pageImages->contains($pageImage)) {
+            $this->pageImages[] = $pageImage;
+            $pageImage->setPage($this);
         }
 
         return $this;
     }
 
-    public function removePage(Images $page): self
+    public function removePageImage(Images $pageImage): self
     {
-        if ($this->page->removeElement($page)) {
+        if ($this->pageImages->removeElement($pageImage)) {
             // set the owning side to null (unless already changed)
-            if ($page->getPage() === $this) {
-                $page->setPage(null);
+            if ($pageImage->getPage() === $this) {
+                $pageImage->setPage(null);
             }
         }
 
@@ -174,9 +179,31 @@ class Page
     /**
      * @return Collection<int, HomeBlock>
      */
-    public function getPages(): Collection
+    public function getHomeBlocks(): Collection
     {
-        return $this->pages;
+        return $this->homeBlocks;
+    }
+
+    public function addHomeBlock(HomeBlock $homeBlock ): self
+    {
+        if (!$this->homeBlocks->contains($homeBlock)) {
+            $this->homeBlocks[] = $homeBlock;
+            $homeBlock->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHomeBlock(HomeBlock $homeBlock): self
+    {
+        if ($this->page->removeElement($homeBlock)) {
+            // set the owning side to null (unless already changed)
+            if ($homeBlock->getPage() === $this) {
+                $homeBlock->setPage(null);
+            }
+        }
+
+        return $this;
     }
 
     public function __toString()

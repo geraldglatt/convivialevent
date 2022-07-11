@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue Jun 28 08:59:00 2022
+
+# Make data base, printed on Mon Jul 11 10:36:32 2022
 
 # Variables
 
@@ -22,6 +25,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
+ 
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/glatt/projets/convivialevent
@@ -40,13 +44,13 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mr/3xcwg24s17z9hw7vjyjcvd8m0000gn/T/vscode-ipc-35b61909-5f66-486e-aeb4-bf020b53f2c8.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/mr/3xcwg24s17z9hw7vjyjcvd8m0000gn/T/vscode-ipc-fd2e10b7-4f60-403b-8641-caede80c3b44.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /Users/glatt/.platformsh/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
-LaunchInstanceID = 941C7385-5FA0-4E03-A50B-BC4E79C2F8AA
+LaunchInstanceID = 8D1A58C1-E5C0-4F2C-B336-8DC09C1522CB
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -54,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.1rCMAdBGNx/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eUUXerSWuO/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -78,7 +82,7 @@ VSCODE_CODE_CACHE_PATH = /Users/glatt/Library/Application Support/Code/CachedDat
 # environment
 LOGNAME = glatt
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -148,7 +152,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 633
+VSCODE_PID = 554
 # variable set hash-table stats:
 # Load=69/1024=7%, Rehash=0, Collisions=1/93=1%
 
@@ -158,9 +162,9 @@ VSCODE_PID = 633
 
 # Directories
 
-# . (device 16777233, inode 2537607): 32 files, no impossibilities.
+# . (device 16777232, inode 2537607): 37 files, no impossibilities.
 
-# 32 files, no impossibilities in 1 directories.
+# 37 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -222,8 +226,6 @@ rebuild:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 28 08:59:00 2022
+# Finished Make data base on Mon Jul 11 10:36:32 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

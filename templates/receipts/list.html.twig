@@ -8,7 +8,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <div class="text-center mt-3 pb-3 ">
-                <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.jpg') }}" alt="logo convivial">
+                <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
             </div>
         </div>
         <div class="col-1"></div>
@@ -24,7 +24,6 @@
     </div>
 </section2>
 <section3 class="container-fluid" id="bgListRecipePageS3">
-    {# <img class="imgHomeFixeS4" src="{{ asset('build/images/boulPizz.webp') }}" alt="photo image home fixe"> #}
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
@@ -33,60 +32,31 @@
         <div class="col-1"></div>
     </div>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Type de recette
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                {% for recipe in receipts %}
-                    <li>{{ recipe.type }}</li>
-                {% endfor %}
-                </ul>
-            </div>
+        <div class="col">
+            {{ form(form) }}     
         </div>
-        <div class="col-1"></div>
-    </div>
-</section3>
-<section4 class="container-fluid">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Difficulté
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                {% for recipe in receipts %}
-                    <ul>
-                        <li>{{ recipe.difficulty }}</li>
-                    </ul>
-                {% endfor %}
-                </ul>
-            </div>
-        </div>
-        <div class="col-1"></div>
     </div>
 </section4>
 <section5 class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            {% for recipe in receipts %}
+        <div class="col">
+            {% for res in recipe %}
                 <div class="card-group">
                     <div class="card">
-                        <img class="recipePageImgSection5" src="{{ asset('build/images/Recette-tataki.webp') }}" alt="photo mariage">
+                        <img class="recipeListImgSection5" src="{{ asset('build/images/Recette-tataki-saumon.webp') }}" alt="photo recettes">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ path('receipts_detail', {slug:recipe.slug}) }}" src="recipe image">{{ recipe.slug }}</a></h5>
+                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
                     </div>
                     <div class="card-footer">
-                        <p class="textSection5">{{ recipe.difficulty}}</p>
+                        <p class="textSection5">{{ res.difficulty}}</p>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <div class="col-1"></div>
     </div>
 </section5>
+<div class="navigation">
+    {{ knp_pagination_render(recipe) }}
+</div>
 {% endblock %}

@@ -6,54 +6,50 @@
 <section1 class="container-fluid">
     <div class="row">
         <div class="text-center mt-3 pb-3 ">
-            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.jpg') }}" alt="logo convivial">
+            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
         </div>
     </div>
 </section1>
 <section2 class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col">
             <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
         </div>
     </div>
 </section2>
 <section3 class="container-fluid">
     <div class="row">
-        <div class="col-2 section3"></div>
-        <div class="col-8" id="section3">
-            <div class="">
-                <h2 class="textSection3">{{ recipe.slug}}</h2>
+        <div class="col">
+            <h2 class="textSection3">{{ recipe.title}}</h2>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-5">
+                <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
+                <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
             </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-5">
-                    <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
-                    <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
-                </div>
-                <div class="col-5"><p class="textSection3Bis">{{ recipe.difficulty}}</p></div>
+            <div class="col-5"><p class="textSection3Bis">{{ recipe.difficulty}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-5" id="marginRecipeSection3">
+                <span><img id="recipePageImgSection3" src="{{ asset('build/images/time.webp') }}" alt="icone time"></span>
             </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-5" id="marginRecipeSection3">
-                    <span><img class="recipePageImgSection3" src="{{ asset('build/images/time.png') }}" alt="icone time"></span>
-                </div>
-                <div class="col-5">
-                    <p class="textSection3Bis">{{ recipe.time }}</p>
-                </div>
+            <div class="col-5">
+                <p class="textSection3Bis">{{ recipe.time }}</p>
             </div>
-            <div class="">
-                <div class="">
-                    <img class="recipePageImgSection5" src="{{ asset('build/images/Recette-tataki.webp') }}" alt="photo mariage">
-                </div>
-            </div>
-        <div class="col-2 section3"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="imgSection3Details">
+            <img class="recipePageImgSection5" src="{{ asset('build/images/Recette-tataki-saumon.webp') }}" alt="image recette">
         </div>
     </div>
 </section3>
 <section4 class="container">
     <div class="row">
         <div class="col" id="section4">
-            <ul id="recipePageLiSection4">Ingrédients 
+            <ul>Ingrédients 
             {% for recipeIngredient in recipeIngredients %}
                 <li id="recipePageLiSection4">
                     {{ recipeIngredient.quantity }}-{{ recipeIngredient.quantityName }}-{{ recipeIngredient.name }}
@@ -68,7 +64,7 @@
         <div class="col-2"></div>
         <div class="col-8" id="section5">
             {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">ÉTAPES {{ recipeStep.position }} :
+            <ul id="recipePageLiSection5">étapes {{ recipeStep.position }} :
                 <li id="recipePageLiSection4">
                     {{ recipeStep.content }}
                 </li>

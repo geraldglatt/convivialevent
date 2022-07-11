@@ -13,7 +13,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
     {
         $homeBlock1 = new HomeBlock();
         $homeBlock1->setTitle('Mariage champêtre');
-        $homeBlock1->setImage('mariage-tradition.webp');
+        $homeBlock1->setImage('mariage-tradition-2.webp');
         $homeBlock1->setContent('content');
         $homeBlock1->setPosition(1);
 

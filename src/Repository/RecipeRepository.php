@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +20,21 @@ class RecipeRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Recipe::class);
+    }
+
+    public function findTypeAndDifficulty(Recipe $recipe): Query {
+        $req = $this->createQueryBuilder('r');
+
+        if($recipe->getType()){
+            $req = $req ->andWhere('r.type = :type')
+            ->setParameter(':type', $recipe->getType());
+        }
+        if($recipe->getDifficulty()){
+            $req = $req ->andWhere('r.difficulty = :diff')
+            ->setParameter(':diff', $recipe->getDifficulty());
+        }
+
+        return $req->getQuery();
     }
 
     public function add(Recipe $entity, bool $flush = false): void

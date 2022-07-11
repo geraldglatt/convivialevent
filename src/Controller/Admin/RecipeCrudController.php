@@ -3,10 +3,17 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Recipe;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use App\Form\StepType;
+use App\Form\ImageType;
+use App\Form\IngredientType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class RecipeCrudController extends AbstractCrudController
 {
@@ -15,16 +22,47 @@ class RecipeCrudController extends AbstractCrudController
         return Recipe::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+    }
+
     public function configureFields(string $recipe): iterable
     {
-        return [
-            IdField::new('id')->hideOnForm(),
-            TextField::new('slug'),
-            TextField::new('title'),
-            IntegerField::new('nb_portion'),
-            TextField::new('type'),
-            TextField::new('difficulty'),
-            TextField::new('time'),
-        ];
+        yield FormField::addTab('Général');
+        yield IdField::new('id')->hideOnForm();
+        yield TextField::new('title');
+        yield IntegerField::new('nb_portion');
+        yield ChoiceField::new('type')->setChoices([
+            'entrée' => "entrée",
+            'pièces cocktail' => "pièces cocktail",
+            'plat principal' => "plat principal",
+            'dessert' => "dessert",
+        ]);
+        yield ChoiceField::new('difficulty')->setChoices([
+            "facile" => "facile",
+            "moyen" => "moyen",
+            "difficile" => "difficile"
+        ]);
+        yield IntegerField::new('time');
+
+        yield FormField::addTab('Ingrédients');
+        yield CollectionField::new('ingredients')
+                    ->setEntryType(IngredientType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
+
+        yield FormField::addTab('Etapes');
+        yield CollectionField::new('recipeSteps')
+                    ->setEntryType(StepType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
+
+        yield FormField::addTab('Images');
+        yield CollectionField::new('images')
+                    ->setEntryType(ImageType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
     }
 }
