@@ -7,10 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-/**
- * @ORM\Entity
- * @Vich\Uploadable
- */
+
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 class Page
 {
@@ -38,10 +35,10 @@ class Page
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $pagePdfs;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class, cascade: [ "persist" ])]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $pageImages;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, cascade: [ "persist" ])]
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $homeBlocks;
 
     public function __construct()

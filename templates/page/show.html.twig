@@ -7,7 +7,7 @@
         <div class="container-fluid" id="bgS1Page">
             <div class="row">
                 <div class="col">
-                    <h1 class="colorTxtS1Page">{{ page.title }}</h1>
+                    <h1 class="colorTxtS1Page">{{ page.title | striptags }}</h1>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
             <div class="row">
                 {% for image in images %}
                 <div class="col">
-                        <img class="imgS2Page" src="{{ asset('build/images/'~ image.title ~ '.webp') }}" alt="image convivialEvent">
+                        <img class="imgS2Page" src="{{ asset('build/images/'~ image.title) }}" alt="image convivialEvent">
                 </div>
                 {% endfor %}
             </div>
@@ -69,7 +69,7 @@
                                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active" data-bs-interval="10000">
-                                        <img src="{{ asset('build/images/'~ pageImg.title ~ '.webp') }}" class="d-block w-100" alt="image mariage">
+                                        <img src="{{ asset('build/images/'~ pageImg.title) }}" class="d-block w-75" alt="image mariage">
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

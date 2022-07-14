@@ -22,7 +22,7 @@ class RecipeIngredient
     #[ORM\Column(type: 'string', length: 120)]
     private $quantity_name;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients', cascade: [ "persist" ])]
     #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 

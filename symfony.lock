@@ -149,6 +149,9 @@
             "ref": "e5a4aa21f2e98d7440ae9aab6b56e307f99dd084"
         }
     },
+    "imagine/imagine": {
+        "version": "1.3.2"
+    },
     "jms/metadata": {
         "version": "2.6.1"
     },
@@ -172,6 +175,19 @@
     },
     "laminas/laminas-code": {
         "version": "4.5.1"
+    },
+    "liip/imagine-bundle": {
+        "version": "2.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.8",
+            "ref": "d1227d002b70d1a1f941d91845fcd7ac7fbfc929"
+        },
+        "files": [
+            "config/packages/liip_imagine.yaml",
+            "config/routes/liip_imagine.yaml"
+        ]
     },
     "monolog/monolog": {
         "version": "2.6.0"

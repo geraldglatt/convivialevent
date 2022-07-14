@@ -26,7 +26,7 @@ class Recipe
     #[ORM\Column(type: 'integer')]
     private $nb_portion;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class)]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , cascade: [ "persist" ])]
     private $images;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: [ "persist" ])]

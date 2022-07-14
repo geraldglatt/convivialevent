@@ -60,7 +60,7 @@ class RecipeCrudController extends AbstractCrudController
                     ->hideOnIndex();
 
         yield FormField::addTab('Images');
-        yield CollectionField::new('images')
+        yield CollectionField::new('image')
                     ->setEntryType(ImageType::class)
                     ->setEntryIsComplex(true)
                     ->hideOnIndex();
