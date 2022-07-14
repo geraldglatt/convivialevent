@@ -78,14 +78,13 @@ p {
     text-align: center;
 }
 .contactSubNav {
-    display:none
+    display:none;
 }
 //end of footer
 //page home
 .imageLogoConvivial {
     width: 15vh;
     height: 10vh;
-
     }
 //section 2
     .txtSection2 {
@@ -114,6 +113,10 @@ p {
         margin-left: 5px;
         margin-right: 5px;
         text-align: center;
+    }
+    #cardS3Home {
+        width: 100%;
+        height: auto;
     }
 //section 4
     section4 {
@@ -171,11 +174,31 @@ p {
         font-size:2em;
         margin-bottom: 25px;
     }
+    #carousel-row{
+        margin-left: 50px;
+    }
+    .carousel-size{
+        font-size: 1em;
+        color:black; 
+    }
+    #carouselItemS6Bis {
+        position: relative;
+        text-align: center;
+    }
+    #carouselSizeS6Bis {
+        position: absolute;
+        top: 90%;
+        left: 30%;
+        transform: translate(-50%,-20%);
+    }
+    #divCarouselCaptionS6Bis {
+        padding-top: 80px;
+        text-align: center;
+    }
 //section 7
     #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
-        padding: 10px;
     }
     .contenantSection7 {
         position: relative;
@@ -534,11 +557,14 @@ p {
         font-size:2em;
         margin-bottom: 25px;
     }
+    .carousel-size{
+        font-size: 2em;
+        color:black;
+    }
 //section 7
     #bgGrey{
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
-        padding: 10px;
     }
     .contenantSection7{
         position: relative;
@@ -887,11 +913,14 @@ p {
         font-size:2em;
         margin-bottom: 25px;
     }
+    .carousel-size{
+        font-size: 2em;
+        color:black;
+    }
 //section 7
     #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
-        padding: 10px;
     }
     .contenantSection7 {
         position: relative;
@@ -1192,21 +1221,28 @@ p {
         margin-bottom: 20px;
     }
 //section 3
-    #cardS3Home {      
-        align-items: center;
+    .card-img-top {
+        width: 85%;
+        height: 15vw;
+        object-fit: cover;
+    }
+    body.section3.container {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
     }
     div.card {
-        min-width: 45%;
+        flex: 1;
+        min-width: 85%;
         border: 1px solid BLACk;
         align-items: center;
         margin-top: 20px;
         margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
     }
+    
 //section 4
     section4 {
         margin-top: 20px;
@@ -1262,11 +1298,18 @@ p {
         font-size:2em;
         margin-bottom: 25px;
     }
+    .carousel-size{
+        font-size: 2em;
+        color: black;
+    }
+    .carousel-size{
+        font-size: 2em;
+        color:black;
+    }
 //section 7
     #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
-        padding: 10px;
     }
     .contenantSection7 {
         position: relative;

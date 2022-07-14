@@ -20,22 +20,21 @@ class ReceiptsController extends AbstractController
     public function list(RecipeRepository $recipeRepository, PaginatorInterface $paginatorInterface, Request $request): Response
     {
         $recipe = new Recipe();
-        $form = $this->createForm(RecipeType::class, $recipe);
 
+        $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
-        $recipe = $paginatorInterface->paginate(
+
+        $recipes = $paginatorInterface->paginate(
             $recipeRepository->findTypeAndDifficulty($recipe),
             $request->query->getInt('page', 1), /* page number */
             6 /* limit per page */
-        );
-
             
-    
+        );
 
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
-            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 7),
-            'recipe' => $recipe
+            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 6),
+            'recipes' => $recipes
             
 
         ]);

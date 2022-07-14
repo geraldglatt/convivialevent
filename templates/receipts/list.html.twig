@@ -40,23 +40,23 @@
 <section5 class="container-fluid">
     <div class="row">
         <div class="col">
-            {% for res in recipe %}
-                <div class="card-group">
-                    <div class="card">
-                        <img class="recipeListImgSection5" src="{{ asset('build/images/Recette-tataki-saumon.webp') }}" alt="photo recettes">
-                    </div>
-                    <div class="card-body">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
-                    </div>
-                    <div class="card-footer">
-                        <p class="textSection5">{{ res.difficulty}}</p>
-                    </div>
+            <div class="card-group">
+            {% for res in recipes %}
+                <div class="card">
+                    <img class="recipeListImgSection5" src="{{ asset('images/' ~ res.title ~ '.webp') }}" alt="photo recettes">
                 </div>
-            {% endfor %}
+                <div class="card-body">
+                    <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
+                </div>
+                <div class="card-footer">
+                    <p class="textSection5">{{ res.difficulty}}</p>
+                </div>
+                {% endfor %}
+                <div class="navigation">
+                    {{ knp_pagination_render(recipes) }}
+                </div>
+            </div>
         </div>
     </div>
 </section5>
-<div class="navigation">
-    {{ knp_pagination_render(recipe) }}
-</div>
 {% endblock %}

@@ -19,7 +19,7 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'image')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'images', cascade: [ "persist" ])]
     private $recipe;
 
     public function getId(): ?int
