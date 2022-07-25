@@ -37,19 +37,19 @@
         </div>
     </div>
 </section2>
-<section3 class="container-fluid" id="homeS3">
-    <div class="row">
-        <div class="" id="cardS3Home">
-        {% for wedding in weddings %}
-            <div class="card">
+<section3 class="wrapper">
+    <div class="container">
+        <div class="row">
+            {% for wedding in weddings %}
+            <card class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-4 mt-5 pb-4 text-center">
                 <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                 <div class="card-body">
                     <h2 class="card-title">{{ wedding.title }}</h2>
                     <p class="card-text">{{ wedding.content | length > 150 ? wedding.content |slice(0,149) ~ '[...]' : wedding.content | striptags }}</p>
-                    <div class="text-center"><a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a></div>                
+                    <a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
                 </div>
-            </div>
-        {% endfor %}
+            </card>
+            {% endfor %}
         </div>
     </div>
 </section3>
@@ -85,7 +85,7 @@
     </div>
 </section6>
 <section6bis>
-    <div class="row" id="carousel-row">
+    <div class="row align-items-center" id="carousel-row">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" id="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">

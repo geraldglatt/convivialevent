@@ -15,6 +15,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
         $homeBlock1->setTitle('Mariage champêtre');
         $homeBlock1->setImage('mariage-tradition-2');
         $homeBlock1->setContent('content');
+        $homeBlock1->setUpdatedAt(new \DateTimeImmutable('now'));
         $homeBlock1->setPosition(1);
 
         /** @var \App\Entity\Page */
@@ -26,6 +27,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
         $homeBlock2->setTitle('Mariage Tradition & Prestige');
         $homeBlock2->setImage('table-st-remy');
         $homeBlock2->setContent('content');
+        $homeBlock2->setUpdatedAt(new \DateTimeImmutable('now'));
         $homeBlock2->setPosition(2);
 
         /** @var \App\Entity\Page */
@@ -37,6 +39,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
         $homeBlock3->setTitle('BBQ & Cochon');
         $homeBlock3->setImage('Cochon-cirque-scaled');
         $homeBlock3->setContent('content');
+        $homeBlock3->setUpdatedAt(new \DateTimeImmutable('now'));
         $homeBlock3->setPosition(3);
 
         /** @var \App\Entity\Page */
@@ -48,6 +51,7 @@ class HomeBlockFixtures extends Fixture implements DependentFixtureInterface
         $homeBlock4->setTitle('Entreprise');
         $homeBlock4->setImage('cocktail-dinatoire-1');
         $homeBlock4->setContent('content');
+        $homeBlock4->setUpdatedAt(new \DateTimeImmutable('now'));
         $homeBlock4->setPosition(4);
 
         /** @var \App\Entity\Page */

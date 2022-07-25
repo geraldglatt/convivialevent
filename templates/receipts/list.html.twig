@@ -37,23 +37,23 @@
         </div>
     </div>
 </section4>
-<section5 class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card-group">
-            {% for res in recipes %}
-                <div class="card">
-                    <img class="recipeListImgSection5" src="{{ asset('images/' ~ res.title ~ '.webp') }}" alt="photo recettes">
-                </div>
-                <div class="card-body">
-                    <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
-                </div>
-                <div class="card-footer">
-                    <p class="textSection5">{{ res.difficulty}}</p>
-                </div>
+<section5 class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                {% for res in recipes %}
+                <card>
+                    <img class="card-img-top" src="{{ vich_uploader_asset(res.image[0],'imageFile') }}" alt="photo recettes">
+                    <div class="card-body">
+                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
+                    </div>
+                    <div class="card-footer">
+                        <p class="textSection5">{{ res.difficulty}}</p>
+                    </div>
+                </card>
                 {% endfor %}
                 <div class="navigation">
-                    {{ knp_pagination_render(recipes) }}
+                        {{ knp_pagination_render(recipes) }}
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ class RecipeCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->setNumberFormat('%.2d')
             ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
@@ -59,7 +60,7 @@ class RecipeCrudController extends AbstractCrudController
                     ->setEntryIsComplex(true)
                     ->hideOnIndex();
 
-        yield FormField::addTab('Images');
+        yield FormField::addTab('Image');
         yield CollectionField::new('image')
                     ->setEntryType(ImageType::class)
                     ->setEntryIsComplex(true)
