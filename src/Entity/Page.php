@@ -6,8 +6,12 @@ use App\Repository\PageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: PageRepository::class)]
+#[Vich\Uploadable]
 class Page
 {
     #[ORM\Id]
@@ -16,6 +20,7 @@ class Page
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\Regex(pattern: "/^[a-z0-9\-]+$/")]
     private $slug;
 
     #[ORM\Column(type: 'string', length: 60)]
@@ -25,17 +30,31 @@ class Page
     private $content;
 
     #[ORM\Column(type: 'text')]
-    private $meta_desc;
+    private $metaDesc;
 
     #[ORM\Column(type: 'string', length: 60, nullable: true)]
     private $image;
 
-    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true)]
+    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
+    private $imageFile;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $updatedAt;
+
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: PagePdf::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $pagePdfs;
+
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: Images::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $pageImages;
+
+    #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $homeBlocks;
 
     public function __construct()
     {
         $this->pagePdfs = new ArrayCollection();
+        $this->pageImages = new ArrayCollection();
+        $this->homeBlocks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -81,12 +100,12 @@ class Page
 
     public function getMetaDesc(): ?string
     {
-        return $this->meta_desc;
+        return $this->metaDesc;
     }
 
-    public function setMetaDesc(string $meta_desc): self
+    public function setMetaDesc(string $metaDesc): self
     {
-        $this->meta_desc = $meta_desc;
+        $this->metaDesc = $metaDesc;
 
         return $this;
     }
@@ -99,6 +118,34 @@ class Page
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+        
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -131,5 +178,70 @@ class Page
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getPageImages(): Collection
+    {
+        return $this->pageImages;
+    }
+
+    public function addPageImage(Images $pageImage): self
+    {
+        if (!$this->pageImages->contains($pageImage)) {
+            $this->pageImages[] = $pageImage;
+            $pageImage->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removePageImage(Images $pageImage): self
+    {
+        if ($this->pageImages->removeElement($pageImage)) {
+            // set the owning side to null (unless already changed)
+            if ($pageImage->getPage() === $this) {
+                $pageImage->setPage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, HomeBlock>
+     */
+    public function getHomeBlocks(): Collection
+    {
+        return $this->homeBlocks;
+    }
+
+    public function addHomeBlock(HomeBlock $homeBlock ): self
+    {
+        if (!$this->homeBlocks->contains($homeBlock)) {
+            $this->homeBlocks[] = $homeBlock;
+            $homeBlock->setPage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHomeBlock(HomeBlock $homeBlock): self
+    {
+        if ($this->page->removeElement($homeBlock)) {
+            // set the owning side to null (unless already changed)
+            if ($homeBlock->getPage() === $this) {
+                $homeBlock->setPage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }

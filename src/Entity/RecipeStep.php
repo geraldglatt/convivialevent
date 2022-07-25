@@ -22,7 +22,7 @@ class RecipeStep
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeSteps')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeSteps', cascade: [ "persist" ])]
     #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 

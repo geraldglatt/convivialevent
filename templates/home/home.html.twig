@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+    
+{% block body %}
+<section1 class="container-fluid">
+    <div class="row">
+        <div class="text-center mt-3 pb-3 ">
+            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
+        </div>
+    </div>
+</section1>
+<section2 class="container-fluid">
+    <div class="row">
+        <div class="col">
+           <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
+        </div>
+    </div>
+     <div class="row">
+        <div class="col"> 
+            <h1 class="txtSection2">Votre traiteur sur mesure Conviviale & Responsable</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="txtSmallSection2">Qu'il soit champêtre, dinatoire ou conviviale, nous personnaliserons vôtre mariage.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="txtSmallSection2">Selon vos désirs, ambiance, repas, brunch et surtout timing, tout sera à votre image !</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="txtSection2">Vous en rêviez , Convivial Event l'a fait !</h1>
+        </div>
+    </div>
+</section2>
+<section3 class="wrapper">
+    <div class="container">
+        <div class="row">
+            {% for wedding in weddings %}
+            <card class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-4 mt-5 pb-4 text-center">
+                <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
+                <div class="card-body">
+                    <h2 class="card-title">{{ wedding.title }}</h2>
+                    <p class="card-text">{{ wedding.content | length > 150 ? wedding.content |slice(0,149) ~ '[...]' : wedding.content | striptags }}</p>
+                    <a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
+                </div>
+            </card>
+            {% endfor %}
+        </div>
+    </div>
+</section3>
+<section4 class="container-fluid">
+    <div class="row" id="bgGrey">
+        <div class="col">
+            <div class="contenantSection4">
+                <img class="imgHomeFixeS4" src="{{ asset('build/images/imageHomeFixe.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
+                <p class="txtSection4"><span class="span1HomeS4">CONVIVIALEVENT</span></span></br><span class="span2HomeS4">l'autre façon de recevoir...</span></p>
+            </div>
+        </div>
+    </div>
+</section4>
+<section5 class="container-fluid ">
+    <div class="row backgroundS4">
+        <div class="col">
+            <h2 id="temoignage" class="text-center">
+                Nos témoignages
+            </h2>
+            <p class="temoignages">
+                Merci,pour ce mariage champêtre réussi,
+                si j’ai un peu stressé pour vous joindre,
+                je ne regrette pas . La déco des buffets,
+                votre organisation étaient parfaite et votre
+                équipe hyper souriante [...]
+            </p>
+        </div>
+    </div>
+</section5>
+<section6 class="container-fluid">
+    <div class="row6">
+        <div class="col"><h2 class="titreS6">PARTENAIRES & LIEUX D'EXCEPTIONS</h2></div>
+    </div>
+</section6>
+<section6bis>
+    <div class="row align-items-center" id="carousel-row">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">
+                    <img src="{{ asset('build/images/Château-du-Fey.webp') | imagine_filter('my_thumb_scale') }}" class="d-block w-75" alt="image partenaire">
+                    <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                        <h5 class="carousel-size" id="carouselSizeS6Bis">Château du Fey</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                    <img src="{{ asset('build/images/Abbaye-Vauluisant.webp') | imagine_filter('my_thumb_scale') }}" class="d-block w-75" alt="image partenaire">
+                    <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                        <h5 class="carousel-size" id="carouselSizeS6Bis">Abbaye de Vauluisant</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                    <img src="{{ asset('build/images/Les-Beauchots.webp') | imagine_filter('my_thumb_scale') }}" class="d-block w-75" alt="image partenaire">
+                    <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                        <h5 class="carousel-size" id="carouselSizeS6Bis">Les Beauchots</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                    <img src="{{ asset('build/images/Chateau-Montabert.webp') | imagine_filter('my_thumb_scale') }}" class="d-block w-75" alt="image partenaire">
+                    <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                        <h5 class="carousel-size" id="carouselSizeS6Bis">Château de Montabert</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section6bis>
+<section7 class="container-fluid">
+    <div class="row" id="bgGrey">
+        <div class="contenantSection7">
+            <img class="imgHomeFixeS4" src="{{ asset('build/images/recip-book.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
+            <a class="txtSection7" href="{{ path('receipts_list') }}">Voir les Recettes</a>
+        </div>
+    </div>
+    <div class="row" id="bgGrey"></div>
+</section7>
+<section8 class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="titreS8">Comment nous contacter :</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center" id="divHomeS8">
+            <a id="buttonS8" href="{{ path('app_contact') }}" role="button">Contactez-nous !</a>
+        </div>
+    </div>
+</section8>
+<section9 class="container-fluid">
+    <div class="row section9">
+        <div class="col-7">
+            <div class="section9Flex1"><h3>Nous contacter :</h3></div>
+            <div class="section9Flex1-1">
+                <img class="imgHomePhoneFlex1-1" src="{{ asset('build/images/phonelink-ring--v2.webp') }}" alt="icone phone home fixe">
+                <span class="tailleTxtFlex1-1">: 06 75 33 08 23</span>
+            </div>
+            <div class="section9Flex1-2">
+                <img class="section9FleximgMail" src="{{ asset('build/images/apple-mail.webp') | imagine_filter('my_thumb') }}" alt="icones home mail">
+                <span class="section9FlexTxtMail">convivialevent@yahoo.fr</span>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="section9Flex2">
+                <h3>Horaires :</h3>
+            </div>
+            <div class="section9Flex2-2">
+                <p><span class="section9Flex2-2Txt">Du lundi au vendredi de 8h00 à 19h00</span></p>
+            </div>
+        </div>
+    </div>
+</section9>
+<section10 class="container-fluid text-center">
+    <div class="flex1S10">
+        <div>
+            <h3>Présent sur les réseaux sociaux, Rejoignez-nous sur :</h3> 
+        </div> 
+    </div>
+</section10>
+<section11 class="container">
+    <div class="flex2S11">
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.webp') }}" alt="icones home pinterest">
+        </div>
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.webp') | imagine_filter('my_thumb') }}" alt="icones home facebook">
+        </div>
+        <div>
+            <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.webp') | imagine_filter('my_thumb') }}" alt="icones home twitter">
+        </div>
+    </div>
+</section11>
+{% endblock %}
