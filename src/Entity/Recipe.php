@@ -26,13 +26,13 @@ class Recipe
     #[ORM\Column(type: 'integer')]
     private $nb_portion;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , cascade: [ "persist" ])]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
     private $images;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, cascade: [ "persist" ])]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $ingredients;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, cascade: [ "persist" ])]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
 
     #[ORM\Column(type: 'string', columnDefinition:"ENUM('entrée', 'pièces cocktail', 'plat principal', 'dessert')", length: 255)]
@@ -95,7 +95,7 @@ class Recipe
     /**
      * @return Collection<int, Image>
      */
-    public function getImages(): Collection
+    public function getImage(): Collection
     {
         return $this->images;
     }

@@ -2,9 +2,8 @@
 
 namespace App\Controller\Admin;
 
-use Vich\Uploadable;
 use App\Entity\HomeBlock;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -19,17 +18,20 @@ class HomeBlockCrudController extends AbstractCrudController
         return HomeBlock::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+    }
+
     public function configureFields(string $homeBlock): iterable
     {
         return [
-            IdField::new('id')
-                ->hideOnForm()
-                ->hideOnIndex(),
             AssociationField::new('page'),
             TextField::new('title'),
             ImageField::new('image')
-                ->setBasePath('upload/images/')
-                ->setUploadDir('public/build/images/'),
+                ->setBasePath('images/')
+                ->setUploadDir('public/images/convivialevent_images'),
             TextEditorField::new('content'),
             IntegerField::new('position'),
         ];

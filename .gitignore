@@ -37,3 +37,4 @@ node_modules
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+/public/uploads/convivialevent_images

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Recipe;
 use App\Form\RecipeType;
+use App\Repository\ImageRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -23,13 +24,16 @@ class ReceiptsController extends AbstractController
 
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
-
+        if($form->isSubmitted() && $form->isValid()) {
+            $recipe = $form->getData();
+        }
+        
         $recipes = $paginatorInterface->paginate(
             $recipeRepository->findTypeAndDifficulty($recipe),
             $request->query->getInt('page', 1), /* page number */
             6 /* limit per page */
-            
         );
+        
 
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
@@ -41,12 +45,13 @@ class ReceiptsController extends AbstractController
     }
 
     #[Route('/{slug}', name: 'detail')]
-    public function detail(Recipe $recipe, RecipeIngredientRepository $recipeIngredients, RecipeStepRepository $recipeSteps): Response
+    public function detail(Recipe $recipe, RecipeIngredientRepository $recipeIngredients, RecipeStepRepository $recipeSteps, ImageRepository $image): Response
     {
         return $this->render('receipts/detail.html.twig', [
             'recipe' => $recipe,
             'recipeIngredients' => $recipeIngredients->findAll(),
             'recipeSteps' => $recipeSteps->findAll(),
+            'image' => $image->findAll(),
         ]);
     }
 }

@@ -42,7 +42,7 @@
     </div>
     <div class="row">
         <div class="col" id="imgSection3Details">
-            <img class="recipePageImgSection5" src="{{ asset('build/images/Recette-tataki-saumon.webp') }}" alt="image recette">
+            <img class="recipePageImgSection5" src="{{ vich_uploader_asset(recipe.image[0],'imageFile') }}" alt="image recette">
         </div>
     </div>
 </section3>

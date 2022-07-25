@@ -5,6 +5,8 @@
 
 *{  
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -98,26 +100,7 @@ p {
         margin-bottom: 15px;
     }
 //section 3
-    body section3.container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-    div.card {
-        flex: 1;
-        min-width: 85%;
-        border: 1px solid BLACk;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
-        text-align: center;
-    }
-    #cardS3Home {
-        width: 100%;
-        height: auto;
-    }
+    
 //section 4
     section4 {
         margin-top: 20px;
@@ -488,21 +471,7 @@ p {
         font-size: 0.8em;
     }
 //section 3
-    #cardS3Home {      
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    div.card {
-        min-width: 45%;
-        border: 1px solid BLACk;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
+
 //section 4
     section4 {
         margin-top: 20px;
@@ -844,21 +813,7 @@ p {
         font-size: 0.8em;
     }
 //section 3
-    #cardS3Home {      
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    div.card {
-        min-width: 45%;
-        border: 1px solid BLACk;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
+
 //section 4
     section4 {
         margin-top: 20px;
@@ -1221,27 +1176,6 @@ p {
         margin-bottom: 20px;
     }
 //section 3
-    .card-img-top {
-        width: 85%;
-        height: 15vw;
-        object-fit: cover;
-    }
-    body.section3.container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-    div.card {
-        flex: 1;
-        min-width: 85%;
-        border: 1px solid BLACk;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
-        text-align: center;
-    }
     
 //section 4
     section4 {

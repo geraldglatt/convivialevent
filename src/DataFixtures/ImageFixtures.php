@@ -3,9 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Image;
+use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
-use Doctrine\Persistence\ObjectManager;
 
 class ImageFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -16,6 +16,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
                 $image = new Image();
                 $image->setImage('image'.$i);
                 $image->setPosition($i);
+                $image->setUpdatedAt(new \DateTimeImmutable('now'));
 
                 /** @var \App\Entity\Recipe */
                 $reciepe = $this->getReference($ref);

@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Thu Jul 14 08:11:18 2022
+# Make data base, printed on Sun Jul 24 09:50:58 2022
 
 # Variables
 
@@ -29,7 +26,7 @@ CURDIR := /Users/glatt/projets/convivialevent
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/Users/glatt/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/Users/glatt/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/Users/glatt/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/Users/glatt/Library/Application Support/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"8e1a08857df44efaeace20a1f4372f40.fr","_translationsConfigFile":"/Users/glatt/Library/Application Support/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/tcf.json","_cacheRoot":"/Users/glatt/Library/Application Support/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr","_resolvedLanguagePackCoreLocation":"/Users/glatt/Library/Application Support/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/Users/glatt/Library/Application Support/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
@@ -43,13 +40,13 @@ VSCODE_CWD = /
 # environment
 PATH = /Users/glatt/.platformsh/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
-LaunchInstanceID = 2FE4DA8C-CB5A-4959-B68B-B4537B330B3F
+LaunchInstanceID = AE285C1E-E4DC-4498-AD33-7BF9DE93BC55
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.iTeNGy67Hn/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.K0Kpwa4lb1/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -99,7 +96,6 @@ MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # environment
 TMPDIR = /var/folders/mr/3xcwg24s17z9hw7vjyjcvd8m0000gn/T/
 # automatic
- 
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/glatt/Library/Application Support/Code/1.69.1-main.sock
@@ -132,7 +128,7 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # environment
-SECURITYSESSIONID = 186b1
+SECURITYSESSIONID = 186b3
 # automatic
 ^F = $(notdir $^)
 # default
@@ -144,7 +140,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 568
+VSCODE_PID = 520
 # variable set hash-table stats:
 # Load=65/1024=6%, Rehash=0, Collisions=1/89=1%
 
@@ -154,7 +150,7 @@ VSCODE_PID = 568
 
 # Directories
 
-# . (device 16777231, inode 2537607): 36 files, no impossibilities.
+# . (device 16777232, inode 2537607): 36 files, no impossibilities.
 
 # 36 files, no impossibilities in 1 directories.
 
@@ -182,7 +178,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-20 17:04:14
+#  Last modified 2022-07-22 19:40:28
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -218,6 +214,8 @@ rebuild:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jul 14 08:11:18 2022
+# Finished Make data base on Sun Jul 24 09:50:58 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+

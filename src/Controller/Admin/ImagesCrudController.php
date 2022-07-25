@@ -6,6 +6,7 @@ use App\Entity\Images;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -22,8 +23,10 @@ class ImagesCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             AssociationField::new('page'),
-            TextField::new('title'),
             TextField::new('imageFile')->setFormType(VichImageType::class),
+            ImageField::new('title')
+                ->setBasePath('images/')
+                ->setUploadDir('public/images/convivialevent_images'),
             IntegerField::new('position'),
         ];
     }

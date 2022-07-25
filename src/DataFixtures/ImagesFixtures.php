@@ -16,6 +16,7 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
                 $image = new Images();
                 $image->setTitle('title'.$i);
                 $image->setPosition($i);
+                $image->setUpdatedAt(new \DateTimeImmutable('now'));
 
                 /** @var \App\Entity\Page */
                 $page = $this->getReference($ref);

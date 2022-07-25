@@ -22,19 +22,26 @@ class RecipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Recipe::class);
     }
 
-    public function findTypeAndDifficulty(Recipe $recipe): Query {
-        $req = $this->createQueryBuilder('r');
+    public function findTypeAndDifficulty(Recipe $recipe): array {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.type = :type')
+            ->setParameter(':type', $recipe->getType())
+            ->andWhere('r.difficulty = :diff')
+            ->setParameter(':diff', $recipe->getDifficulty())
+            ->getQuery()
+            ->getResult();
 
-        if($recipe->getType()){
-            $req = $req ->andWhere('r.type = :type')
-            ->setParameter(':type', $recipe->getType());
-        }
-        if($recipe->getDifficulty()){
-            $req = $req ->andWhere('r.difficulty = :diff')
-            ->setParameter(':diff', $recipe->getDifficulty());
-        }
+        // if($recipe->getType()){
+        //     $req = $req ->andWhere('r.type = :type')
+        //     ->setParameter(':type', $recipe->getType());
+        // }
+        // if($recipe->getDifficulty()){
+        //     $req = $req ->andWhere('r.difficulty = :diff')
+        //     ->setParameter(':diff', $recipe->getDifficulty());
+        // }
 
-        return $req->getQuery();
+    //     $req->getQuery();
+    //     return $req->getResult();
     }
 
     public function add(Recipe $entity, bool $flush = false): void
