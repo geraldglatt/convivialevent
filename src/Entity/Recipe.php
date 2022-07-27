@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\RecipeRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\RecipeRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
+#[UniqueEntity('title')]
 class Recipe
 {
     #[ORM\Id]
@@ -24,19 +26,28 @@ class Recipe
     #[ORM\Column(type: 'integer')]
     private $nb_portion;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class)]
-    private $image;
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
+    private $images;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true)]
-    private $recipe;
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $ingredients;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class)]
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
+
+    #[ORM\Column(type: 'string', columnDefinition:"ENUM('entrée', 'pièces cocktail', 'plat principal', 'dessert')", length: 255)]
+    private $type;
+
+    #[ORM\Column(type: 'string', length: 45, columnDefinition:"ENUM('facile', 'moyen', 'difficile')")]
+    private $difficulty;
+
+    #[ORM\Column(type: 'integer', length: 60)]
+    private $time;
 
     public function __construct()
     {
-        $this->image = new ArrayCollection();
-        $this->recipe = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
     }
 
@@ -86,13 +97,13 @@ class Recipe
      */
     public function getImage(): Collection
     {
-        return $this->image;
+        return $this->images;
     }
 
     public function addImage(Image $image): self
     {
-        if (!$this->image->contains($image)) {
-            $this->image[] = $image;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
             $image->setRecipe($this);
         }
 
@@ -101,7 +112,7 @@ class Recipe
 
     public function removeImage(Image $image): self
     {
-        if ($this->image->removeElement($image)) {
+        if ($this->images->removeElement($image)) {
             // set the owning side to null (unless already changed)
             if ($image->getRecipe() === $this) {
                 $image->setRecipe(null);
@@ -114,27 +125,27 @@ class Recipe
     /**
      * @return Collection<int, RecipeIngredient>
      */
-    public function getRecipe(): Collection
+    public function getIngredients(): Collection
     {
-        return $this->recipe;
+        return $this->ingredients;
     }
 
-    public function addRecipe(RecipeIngredient $recipe): self
+    public function addIngredient(RecipeIngredient $recipeIngredient): self
     {
-        if (!$this->recipe->contains($recipe)) {
-            $this->recipe[] = $recipe;
-            $recipe->setRecipe($this);
+        if (!$this->ingredients->contains($recipeIngredient)) {
+            $this->ingredients[] = $recipeIngredient;
+            $recipeIngredient->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeRecipe(RecipeIngredient $recipe): self
+    public function removeIngredient(RecipeIngredient $recipeIngredient): self
     {
-        if ($this->recipe->removeElement($recipe)) {
+        if ($this->ingredients->removeElement($recipeIngredient)) {
             // set the owning side to null (unless already changed)
-            if ($recipe->getRecipe() === $this) {
-                $recipe->setRecipe(null);
+            if ($recipeIngredient->getRecipe() === $this) {
+                $recipeIngredient->setRecipe(null);
             }
         }
 
@@ -169,5 +180,46 @@ class Recipe
         }
 
         return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDifficulty(): ?string
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty(string $difficulty): self
+    {
+        $this->difficulty = $difficulty;
+
+        return $this;
+    }
+
+    public function getTime(): ?int
+    {
+        return $this->time;
+    }
+
+    public function setTime(int $time): self
+    {
+        $this->time = $time;
+        // NO newline at end of file
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }
