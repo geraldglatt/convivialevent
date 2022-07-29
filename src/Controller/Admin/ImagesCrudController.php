@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Images;
+use App\Form\PageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -21,13 +22,15 @@ class ImagesCrudController extends AbstractCrudController
     public function configureFields(string $images): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
-            AssociationField::new('page'),
-            TextField::new('imageFile')->setFormType(VichImageType::class),
-            ImageField::new('title')
+            yield IdField::new(propertyName:'id')->hideOnForm(),
+            yield AssociationField::new('page')
+                ->setCrudController(PageType::class),
+            yield TextField::new('title', label: 'titre'),
+            yield TextField::new('imageFile')->setFormType(VichImageType::class),
+            yield ImageField::new('image')
                 ->setBasePath('images/')
                 ->setUploadDir('public/images/convivialevent_images'),
-            IntegerField::new('position'),
+            yield IntegerField::new('position'),
         ];
     }
 }

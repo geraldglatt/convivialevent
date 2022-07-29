@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\HomeBlock;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -21,19 +22,22 @@ class HomeBlockCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
+            ->setDateTimeFormat(dateFormatOrPattern:DateTimeField::FORMAT_LONG)
             ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
     public function configureFields(string $homeBlock): iterable
     {
         return [
-            AssociationField::new('page'),
-            TextField::new('title'),
-            ImageField::new('image')
+            yield TextField::new('title', label: 'titre'),
+            yield ImageField::new('image')
                 ->setBasePath('images/')
                 ->setUploadDir('public/images/convivialevent_images'),
-            TextEditorField::new('content'),
-            IntegerField::new('position'),
+            yield TextEditorField::new('content' , label: 'contenu'),
+            yield DateTimeField::new('updatedAt', label: 'Modifié le'),
+            yield IntegerField::new('position'),
+            yield AssociationField::new('page')
+                ->setCrudController(pageCrudController::class),
         ];
     }
 }

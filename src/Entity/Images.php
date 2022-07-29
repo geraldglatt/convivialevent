@@ -19,7 +19,10 @@ class Images
     #[ORM\Column(type: 'string', length: 255)]
     private $title;
 
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'title')]
+    #[ORM\Column(type: 'string', length: 255, nullable: false)]
+    private $image;
+
+    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
     private $imageFile;
 
     #[ORM\Column(type: 'integer')]
@@ -35,6 +38,18 @@ class Images
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 
     public function getTitle(): ?string
@@ -98,6 +113,11 @@ class Images
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 
 }

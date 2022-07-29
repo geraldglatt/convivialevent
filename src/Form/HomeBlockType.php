@@ -13,7 +13,7 @@ class HomeBlockType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
+            ->add('title' , CKEditorType::class)
             ->add('image')
             ->add('content', CKEditorType::class)
             ->add('position')

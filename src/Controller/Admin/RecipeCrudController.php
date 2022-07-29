@@ -33,20 +33,20 @@ class RecipeCrudController extends AbstractCrudController
     {
         yield FormField::addTab('Général');
         yield IdField::new('id')->hideOnForm();
-        yield TextField::new('title');
-        yield IntegerField::new('nb_portion');
+        yield TextField::new('title' , label: 'titre');
+        yield IntegerField::new('nb_portion' , label: 'nombre de portions');
         yield ChoiceField::new('type')->setChoices([
             'entrée' => "entrée",
             'pièces cocktail' => "pièces cocktail",
             'plat principal' => "plat principal",
             'dessert' => "dessert",
         ]);
-        yield ChoiceField::new('difficulty')->setChoices([
+        yield ChoiceField::new('difficulty' , label: 'difficulté')->setChoices([
             "facile" => "facile",
             "moyen" => "moyen",
             "difficile" => "difficile"
         ]);
-        yield IntegerField::new('time');
+        yield IntegerField::new('time', label: 'temps de préparation');
 
         yield FormField::addTab('Ingrédients');
         yield CollectionField::new('ingredients')
@@ -55,7 +55,7 @@ class RecipeCrudController extends AbstractCrudController
                     ->hideOnIndex();
 
         yield FormField::addTab('Etapes');
-        yield CollectionField::new('recipeSteps')
+        yield CollectionField::new('recipeSteps' , label: 'étapes de la recette')
                     ->setEntryType(StepType::class)
                     ->setEntryIsComplex(true)
                     ->hideOnIndex();

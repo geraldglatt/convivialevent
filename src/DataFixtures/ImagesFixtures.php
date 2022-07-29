@@ -15,6 +15,7 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
             for ($i = 0; $i < 4; ++$i) {
                 $image = new Images();
                 $image->setTitle('title'.$i);
+                $image->setImage('image'.$i);
                 $image->setPosition($i);
                 $image->setUpdatedAt(new \DateTimeImmutable('now'));
 
