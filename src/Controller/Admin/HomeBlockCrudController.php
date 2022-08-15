@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\HomeBlock;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -28,11 +29,13 @@ class HomeBlockCrudController extends AbstractCrudController
     {
         return [
             AssociationField::new('page'),
-            TextField::new('title'),
+            TextField::new('title')
+                ->setFormType(CKEditorType::class),
             ImageField::new('image')
                 ->setBasePath('images/')
                 ->setUploadDir('public/images/convivialevent_images'),
-            TextEditorField::new('content'),
+            TextEditorField::new('content')
+                ->setFormType(CKEditorType::class),
             IntegerField::new('position'),
         ];
     }

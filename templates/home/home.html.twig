@@ -45,7 +45,7 @@
                 <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                 <div class="card-body">
                     <h2 class="card-title">{{ wedding.title }}</h2>
-                    <p class="card-text">{{ wedding.content | length > 150 ? wedding.content |slice(0,149) ~ '[...]' : wedding.content | striptags }}</p>
+                    <p class="card-text">{{ wedding.content | length > 150 ? wedding.content |slice(0,149) ~ '[...]' : wedding.content | striptags | raw }}</p>
                     <a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
                 </div>
             </card>

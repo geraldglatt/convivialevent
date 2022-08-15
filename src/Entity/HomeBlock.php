@@ -16,7 +16,7 @@ class HomeBlock
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 100)]
+    #[ORM\Column(type: 'string', length: 120)]
     private $title;
 
     #[ORM\Column(type: 'string', length: 60, nullable: true)]

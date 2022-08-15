@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Page;
 use App\Form\ImagesType;
 use App\Form\PagePdfType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
@@ -34,9 +35,12 @@ class PageCrudController extends AbstractCrudController
         yield IdField::new('id')
             ->hideOnForm()
             ->hideOnIndex();
-        yield TextField::new('title');
-        yield TextEditorField::new('content');
-        yield TextEditorField::new('meta_desc');
+        yield TextField::new('title')
+            ->setFormType(CKEditorType::class);
+        yield TextEditorField::new('content')
+            ->setFormType(CKEditorType::class);
+        yield TextEditorField::new('meta_desc')
+        ->setFormType(CKEditorType::class);
         yield ImageField::new('image')
             ->setBasePath('images/')
             ->setUploadDir('public/images/convivialevent_images');

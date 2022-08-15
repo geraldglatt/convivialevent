@@ -23,7 +23,7 @@ class Page
     #[Assert\Regex(pattern: "/^[a-z0-9\-]+$/")]
     private $slug;
 
-    #[ORM\Column(type: 'string', length: 60)]
+    #[ORM\Column(type: 'string', length: 120)]
     private $title;
 
     #[ORM\Column(type: 'text')]

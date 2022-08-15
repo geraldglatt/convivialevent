@@ -7,7 +7,7 @@
     <div class="container-fluid" id="bgS1Page">
         <div class="row">
             <div class="col text-center mt-5">
-                <h1 class="colorTxtS1Page">{{ page.title | striptags }}</h1>
+                <h1 class="colorTxtS1Page">{{ page.title | striptags | raw  }}</h1>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
             <card class="col mb-4 mt-5 pb-4 text-center">
                 <img class="card-img-top" style="max-width: 700px" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                 <div class="card-body">
-                    <p class="card-text mt-5">{{ page.content | striptags }}</p>
+                    <p class="card-text mt-5">{{ page.content | striptags | raw }}</p>
                 </div>
             </card>
         </div>
@@ -38,7 +38,7 @@
         <div class="row">
             {% for pdf in pagePdf %}
             <div class="col text-center" id="divButtonS5Page">
-                <a id="buttonS5Page" href="#" role="button">{{ pdf.title }}</a>   
+                <a id="buttonS5Page" href="#" role="button">{{ pdf.title | striptags | raw }}</a>   
             </div> 
             {% endfor %}
             </div>
@@ -57,8 +57,8 @@
                     {% for pageImg in images %}
                         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="{{ asset('build/images/'~ pageImg.title) }}" style="max-width: 400px" alt="image mariage">
+                                <div class="carousel-item {% if loop.first == 0 %}active{% endif %}" data-bs-interval="10000">
+                                <img src="{{ asset('images/convivialevent_images/'~ pageImg.title) }}" style="max-width: 400px" alt="{{ pageImg.title }}">
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
