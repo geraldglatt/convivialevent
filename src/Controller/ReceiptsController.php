@@ -38,7 +38,7 @@ class ReceiptsController extends AbstractController
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
             'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 6),
-            'recipes' => $recipes
+            'recipes' => $recipes,
             
 
         ]);

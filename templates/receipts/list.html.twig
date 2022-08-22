@@ -16,20 +16,19 @@
 </section1>
 <section2 class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-4 mt-5 pb-4 text-center">
             <p class="listrecipePagetxtSection2">Les recettes que </br> vous propose </br> Convivial Event</p>
         </div>
-        <div class="col-1"></div>
     </div>
 </section2>
-<section3 class="container-fluid" id="bgListRecipePageS3">
+<section3 class="container">
+    <div class="contenantSection4">
+                <img class="imgHomeFixeS4" src="{{ asset('/build/images/boulPizz.0648ce00.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
+            </div>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-4 mt-5 pb-4 text-center">
             <p class="listrecipePagetxtSection3">Une sélection de recettes </br> à faire chez vous oû </br> à partager avec vos amis !!!</p>
         </div>
-        <div class="col-1"></div>
     </div>
     <div class="row">
         <div class="col">
@@ -52,10 +51,10 @@
                     </div>
                 </card>
                 {% endfor %}
-                <div class="navigation">
-                        {{ knp_pagination_render(recipes) }}
-                </div>
             </div>
+        </div>
+        <div class="navigation">
+        {{ knp_pagination_render(recipes) }}
         </div>
     </div>
 </section5>

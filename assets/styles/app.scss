@@ -282,7 +282,7 @@ p {
 //End Of Home Page
 //Start of list Recipes Page
     #bgListRecipePageS3 {
-        background-image: url('/assets/images/boulPizz.webp');
+        background-image: url('../images/boulPizz.webp');
     }
     .listrecipePagetxtSection2 {
         font-size: 2.5em;
@@ -529,6 +529,33 @@ p {
     .carousel-size{
         font-size: 2em;
         color:black;
+    }
+
+    .row6 {
+        text-align: center;
+        font-size:2em;
+        margin-bottom: 25px;
+    }
+    #carousel-row{
+        margin-left: 50px;
+    }
+    .carousel-size{
+        font-size: 1em;
+        color:black; 
+    }
+    #carouselItemS6Bis {
+        position: relative;
+        text-align: center;
+    }
+    #carouselSizeS6Bis {
+        position: absolute;
+        top: 90%;
+        left: 30%;
+        transform: translate(-50%,-20%);
+    }
+    #divCarouselCaptionS6Bis {
+        padding-top: 80px;
+        text-align: center;
     }
 //section 7
     #bgGrey{
@@ -871,6 +898,33 @@ p {
     .carousel-size{
         font-size: 2em;
         color:black;
+    }
+
+    .row6 {
+        text-align: center;
+        font-size:2em;
+        margin-bottom: 25px;
+    }
+    #carousel-row{
+        margin-left: 50px;
+    }
+    .carousel-size{
+        font-size: 1em;
+        color:black; 
+    }
+    #carouselItemS6Bis {
+        position: relative;
+        text-align: center;
+    }
+    #carouselSizeS6Bis {
+        position: absolute;
+        top: 90%;
+        left: 30%;
+        transform: translate(-50%,-20%);
+    }
+    #divCarouselCaptionS6Bis {
+        padding-top: 80px;
+        text-align: center;
     }
 //section 7
     #bgGrey {
@@ -1236,9 +1290,32 @@ p {
         font-size: 2em;
         color: black;
     }
+    
+    .row6 {
+        text-align: center;
+        font-size:2em;
+        margin-bottom: 25px;
+    }
+    #carousel-row{
+        margin-left: 50px;
+    }
     .carousel-size{
-        font-size: 2em;
-        color:black;
+        font-size: 1em;
+        color:black; 
+    }
+    #carouselItemS6Bis {
+        position: relative;
+        text-align: center;
+    }
+    #carouselSizeS6Bis {
+        position: absolute;
+        top: 90%;
+        left: 30%;
+        transform: translate(-50%,-20%);
+    }
+    #divCarouselCaptionS6Bis {
+        padding-top: 80px;
+        text-align: center;
     }
 //section 7
     #bgGrey {
