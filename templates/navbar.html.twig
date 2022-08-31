@@ -5,13 +5,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto ml-5 mb-lg-0">
+            <ul class="navbar-nav mx-auto ml-5">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="{{ path("app_home") }}">Accueil<img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a> 
+                    <a class="navbar-brand" href="{{ path("app_home") }}">Accueil</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="{{ path("app_contact") }}">Contact<img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a> 
+                    <a class="navbar-brand" href="{{ path("app_contact") }}">Contact</a> 
                 </li>
+                {% for wedding in weddings %}
+                <li class="nav-item">
+                    <a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">{{ wedding.title | raw }}</a>               
+                </li>
+                {% endfor %}
             </ul>
         </div>
     </nav>

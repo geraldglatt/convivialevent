@@ -3,14 +3,14 @@
 {% block title %}Accueil{% endblock %}
     
 {% block body %}
-<section1 class="container-fluid">
+<section class="container-fluid">
     <div class="row">
         <div class="text-center mt-3 pb-3 ">
             <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
         </div>
     </div>
-</section1>
-<section2 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row">
         <div class="col">
            <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
@@ -36,12 +36,12 @@
             <h1 class="txtSection2">Vous en rêviez , Convivial Event l'a fait !</h1>
         </div>
     </div>
-</section2>
-<section3 class="wrapper">
+</section>
+<section class="wrapper">
     <div class="container">
         <div class="row">
             {% for wedding in weddings %}
-            <card class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-4 mt-5 pb-4 text-center">
+            <card class="col-xs-12 col-sm-6 mb-4 mt-5 pb-4 text-center">
                 <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                 <div class="card-body">
                     <h2 class="card-title">{{ wedding.title | raw }}</h2>
@@ -52,8 +52,8 @@
             {% endfor %}
         </div>
     </div>
-</section3>
-<section4 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row" id="bgGrey">
         <div class="col">
             <div class="contenantSection4">
@@ -62,8 +62,8 @@
             </div>
         </div>
     </div>
-</section4>
-<section5 class="container-fluid ">
+</section>
+<section class="container-fluid ">
     <div class="row backgroundS4">
         <div class="col">
             <h2 id="temoignage" class="text-center">
@@ -78,15 +78,15 @@
             </p>
         </div>
     </div>
-</section5>
-<section6 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row6">
         <div class="col"><h2 class="titreS6">PARTENAIRES & LIEUX D'EXCEPTIONS</h2></div>
     </div>
-</section6>
-<section6bis class="container">
+</section>
+<section class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-4 mt-2 pb-4">
+        <div class="col mb-4 mt-2 pb-4">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">
@@ -131,8 +131,8 @@
             </div>
         </div>
     </div>
-</section6bis>
-<section7 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row" id="bgGrey">
         <div class="contenantSection7">
             <img class="imgHomeFixeS4" src="{{ asset('build/images/recip-book.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
@@ -140,8 +140,18 @@
         </div>
     </div>
     <div class="row" id="bgGrey"></div>
-</section7>
-<section8 class="container-fluid">
+</section>
+<section>
+    <div class="slider-area text-center">
+        <h2>Ils nous ont fait confiance en 2022</h2>
+        <div class="wrapper">
+            <div class="item"><img src="{{ asset('build/images/logo-amf-bas (1).png') | imagine_filter('my_thumb') }}" alt="logo amf"></div>
+            <div class="item"><img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') | imagine_filter('my_thumb') }}" alt="logo utt"></div>
+            <div class="item"><img src="{{ asset('build/images/téléchargement (1).jpg') | imagine_filter('my_thumb') }}" alt="logo estp"></div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
     <div class="row">
         <div class="col text-center">
             <h2 class="titreS8">Comment nous contacter :</h2>
@@ -152,8 +162,8 @@
             <a id="buttonS8" href="{{ path('app_contact') }}" role="button">Contactez-nous !</a>
         </div>
     </div>
-</section8>
-<section9 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row section9">
         <div class="col-7">
             <div class="section9Flex1"><h3>Nous contacter :</h3></div>
@@ -175,15 +185,15 @@
             </div>
         </div>
     </div>
-</section9>
-<section10 class="container-fluid text-center">
+</section>
+<section class="container-fluid text-center">
     <div class="flex1S10">
         <div>
             <h3>Présent sur les réseaux sociaux, Rejoignez-nous sur :</h3> 
         </div> 
     </div>
-</section10>
-<section11 class="container">
+</section>
+<section class="container">
     <div class="flex2S11">
         <div>
             <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.webp') }}" alt="icones home pinterest">
@@ -195,5 +205,26 @@
             <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.webp') | imagine_filter('my_thumb') }}" alt="icones home twitter">
         </div>
     </div>
-</section11>
+</section>
 {% endblock %}
+{% block javascript %}
+<script>
+     $('.brand-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        autoplay:true,
+        responsive:{
+            0:{
+            items:1
+            },
+            600:{
+            items:3
+            },
+            1000:{
+            items:5
+            }
+        }
+    })
+</script>
+{% endblock %}
+

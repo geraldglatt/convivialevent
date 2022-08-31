@@ -3,7 +3,7 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block body %}
-<section1 class="section1">
+<section class="section1">
     <div class="container-fluid" id="bgS1Page">
         <div class="row">
             <div class="col text-center mt-5">
@@ -11,8 +11,8 @@
             </div>
         </div>
     </div>
-</section1>
-<section2 class="wrapper">
+</section>
+<section class="wrapper">
     <div class="container">
         <div class="row">
             <card class="col mb-4 mt-5 pb-4 text-center">
@@ -23,8 +23,8 @@
             </card>
         </div>
     </div>
-</section2>
-<section3 class="section4">
+</section>
+<section class="section4">
     <div class="container-fluid" id="">
         <div class="row">
             <div class="col-12 text-center">
@@ -32,8 +32,8 @@
             </div>
         </div>
     </div>
-</section3>
-<section4 class="section5">
+</section>
+<section class="section5">
     <div class="container-fluid" id="">
         <div class="row">
             {% for pdf in pagePdf %}
@@ -41,11 +41,10 @@
                 <a id="buttonS5Page" href="#" role="button">{{ pdf.title | striptags | raw }}</a>   
             </div> 
             {% endfor %}
-            </div>
         </div>
-    </section4>
-</section4>
-<section5 class="container-fluid" id="bgS1Page">
+    </div>
+</section>
+<section class="container-fluid" id="bgS1Page">
     <div class="row">
         <div class="col text-center">
             <h2 class="colorTxtS1Page">Notre Galerie</h2>
@@ -76,5 +75,5 @@
         </div>
     </div>
 </div>
-</section5>
+</section>
 {% endblock %}

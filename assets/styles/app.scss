@@ -3,14 +3,15 @@
 @import "mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 
-*{  
+
+* {  
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-   margin:0; 
+   margin:0;
+   padding: 0;
+   height: 100%; 
 }
 
 .navbar {
@@ -147,9 +148,12 @@ p {
         text-align: center;
         margin-top: 15px; 
     }
-    #divButtonS5Page{
+    #buttonS5Page{
         margin-top: 10px;
         margin-bottom: 10px;
+        color: $convivialColor2;
+        font-size: 1.5em;
+
     }
 //section 6
     .row6 {
@@ -196,6 +200,18 @@ p {
         color: black;
         font-size: 2em;
     }
+//section 7 bis
+.slider-area h2{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: auto;
+}
+
+//fin section 7 bis
 //section 8
     .titreS8 {
         margin-bottom: 40px;
@@ -296,6 +312,19 @@ p {
         font-size: 1.5em;
         text-align: center;
         
+    }
+    .txtSection3List{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-135%);
+        color:black;
+    }
+    .span1ListS3{
+        margin-right: 20px;
+        color: $convivialColor2;
+        font-style: italic;
+        font-size: 0.9em;
     }
 
 //End of list Recipes Pages
@@ -575,6 +604,38 @@ p {
         color: $convivialColor2;
         font-size: 3em;
     }
+//section 7 bis
+    .slider-area h2{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 60px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .wrapper{
+        width: 950px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 180px;  
+    }
+    .item{
+        animation: animate 25s alternate linear infinite;
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+    .wrapper:hover .item{
+        animation-play-state: paused;   
+    }
+    @keyframes animate {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(-1100px, 0, 0);
+        }
+    }
+//fin section 7 bis
 //section 8
     .titreS8{
         margin-bottom: 40px;
@@ -718,6 +779,23 @@ p {
         list-style-type: none;
         color: black;
         font-size: 1.5em;
+    }
+    .txtSection3List{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-130%);
+        color:black;
+    }
+    .span1ListS3{
+        margin-right: 20px;
+        color: $convivialColor2;
+        font-style: italic;
+        font-size: 1.3em;
+    }
+    .listrecipePagetxtSection2 {
+        font-size: 2.5em;
+        text-align: center;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -944,6 +1022,37 @@ p {
         color: $convivialColor2;
         font-size: 3em;
     }
+//section 7 Bis
+    .slider-area h2{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 60px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .wrapper{
+        width: 750px;
+        margin: 0 auto;
+        display: flex;
+        overflow: hidden;
+        border-radius: 180px;  
+    }
+    .item{
+        animation: animate 25s alternate linear infinite;
+    }
+    .wrapper:hover .item{
+        animation-play-state: paused;   
+    }
+    @keyframes animate {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+        100% {
+            transform: translate3d(-1100px, 0, 0);
+        }
+    }
+//section 7 Bis
 //section 8
     .titreS8 {
         margin-bottom: 40px;
@@ -1088,6 +1197,23 @@ p {
     #recipePageLiSection5 {
         list-style-type: none;
         color: black;
+    }
+    .txtSection3List{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-135%);
+        color:black;
+    }
+    .span1ListS3{
+        margin-right: 20px;
+        color: $convivialColor2;
+        font-style: italic;
+        font-size: 1.3em;
+    }
+    .listrecipePagetxtSection2 {
+        font-size: 2.5em;
+        text-align: center;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -1335,6 +1461,39 @@ p {
         color: $convivialColor2;
         font-size: 3em;
     }
+//section 7 bis
+    .slider-area h2{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 60px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .wrapper{
+        width: 900px;
+        margin: 0 auto;
+        display: flex;
+        overflow: hidden;
+        border-radius: 180px;  
+    }
+    .item{
+        animation: animate 25s alternate linear infinite;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .wrapper:hover .item{
+        animation-play-state: paused;   
+    }
+    @keyframes animate {
+        0% {
+            transform: translate3d(+500px, 0, 0);
+        }
+        100% {
+            transform: translate3d(-500px, 0, 0);
+        }
+    }
+//fin section 7 bis
 //section 8
     .titreS8 {
         text-decoration: none;
@@ -1479,6 +1638,23 @@ p {
     #recipePageLiSection5 {
         list-style-type: none;
         color: black;
+    }
+    .txtSection3List{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-200%);
+        color:black;
+    }
+    .span1ListS3{
+        margin-right: 20px;
+        color: $convivialColor2;
+        font-style: italic;
+        font-size: 2em;
+    }
+    .listrecipePagetxtSection2 {
+        font-size: 2.5em;
+        text-align: center;
     }
 //End of list Recipes Pages
 //Start of Recipe page

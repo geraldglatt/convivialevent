@@ -31,7 +31,7 @@ class HomeBlock
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $link;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'text')]
     private $content;
 
     #[ORM\Column(type: 'integer')]

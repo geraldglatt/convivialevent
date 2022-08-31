@@ -7,27 +7,36 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class RecipeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('type', EntityType::class, [
+            ->add('type', ChoiceType::class, [
                 'placeholder' => "Type de la recette de votre choix",
-                'class' => Recipe::class,
-                'choice_label' => 'type',
+                'choices' => [
+                    'Pièces cocktail' => 'Pièces cocktail',
+                    'Entrée' => 'entrée',
+                    'Plat Principal' => 'plat principal',
+                    'Dessert' => 'dessert',
+                ],
+
             ])
-            ->add('difficulty', EntityType::class, [
+            ->add('difficulty', ChoiceType::class, [
                 'placeholder' => "Niveau de difficulté de la recette",
-                'class' => Recipe::class,
-                'choice_label' => 'difficulty',
-                
+                'choices' => [
+                    'Facile' => 'Facile',
+                    'Moyen' => 'Moyen',
+                    'Difficile' => 'Difficile',
+                ]  
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4'
+                    'class' => 'btn btn-primary mt-4 text-center'
                 ],
                 'label' => 'Validez votre choix'
             ]);
