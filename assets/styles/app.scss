@@ -148,11 +148,12 @@ p {
         text-align: center;
         margin-top: 15px; 
     }
-    #buttonS5Page{
+    #lienS5Home{
         margin-top: 10px;
         margin-bottom: 10px;
         color: $convivialColor2;
         font-size: 1.5em;
+        text-decoration: none;
 
     }
 //section 6
@@ -548,6 +549,14 @@ p {
         text-align: center;
         text-decoration: underline; 
         margin-top: 15px; 
+    }
+    #lienS5Home{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $convivialColor2;
+        font-size: 1.5em;
+        text-decoration: none;
+
     }
 //section 6
     .row6 {
@@ -967,6 +976,14 @@ p {
         text-decoration: underline; 
         margin-top: 15px; 
     }
+    #lienS5Home{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $convivialColor2;
+        font-size: 1.5em;
+        text-decoration: none;
+
+    }
 //section 6
     .row6 {
         text-align: center;
@@ -1336,6 +1353,10 @@ p {
     display: inline-block;
     vertical-align:middle;   
 }
+.contactSubNav {
+    text-decoration: none;
+    color: black;
+}
 //end of footer
 //page home
 //section 1
@@ -1392,6 +1413,11 @@ p {
         font-size: 2em;
         color: black;
     }
+    #lienS4Home{
+        color: $convivialColor2;
+        font-size: 1.5em;
+        text-decoration: underline;
+    }
     //section 5
     .backgroundS4 {
         margin: 20px;
@@ -1405,6 +1431,15 @@ p {
     .temoignages {
         font-size: 1.5em;
         text-align: center;   
+    }
+    #lienS5Home{
+        color: black;
+        font-size: 0.7em;
+        text-decoration: none;
+        margin-top: 25px;
+        padding-right: 10px;
+        margin-right: 15px;
+
     }
 //section 6
     .row6 {

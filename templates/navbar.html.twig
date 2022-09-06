@@ -1,23 +1,62 @@
-<header class="container-fluid">  
+<header class="container-fluid"> 
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path("app_home") }}"><img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">Accueil</span>
+             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path("app_home") }}">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mariage & Entreprise
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            {% for navHomeBlock in home.getHome %}
+                            <li><a href="{{ path('page_show', {slug:navHomeBlock.page.slug}) }}" id="lienS5Home">{{ navHomeBlock.title | raw }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1">Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('receipts_list') }}" tabindex="-1">Recettes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path("app_contact") }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="{{ path("app_home") }}"><img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto ml-5">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{ path("app_home") }}">Accueil</a> 
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{ path("app_contact") }}">Contact</a> 
                 </li>
-                {% for wedding in weddings %}
-                <li class="nav-item">
-                    <a id="buttonS5Page" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">{{ wedding.title | raw }}</a>               
-                </li>
-                {% endfor %}
             </ul>
         </div>
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Mariage
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            {% for navHomeBlock in home.getHome %}
+            <li><a href="{{ path('page_show', {slug:navHomeBlock.page.slug}) }}" id="lienS5Home">{{ navHomeBlock.title | raw }}</a></li>
+            {% endfor %}
+        </ul>
+</div>
     </nav>
 </header>
