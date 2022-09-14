@@ -474,6 +474,14 @@ button{
 }
 
 @include mediaquerries(sm) {
+//navbar
+    #navbarHome{
+        margin-left: 100px;
+        font-size: 1.2em;
+        text-align:left;
+        
+    } 
+//end navbar
 //section header et subNav
     .iconesResSoc {
         display: none;
@@ -932,6 +940,14 @@ button{
 }
 
 @include mediaquerries(md) {
+//navbar
+    #navbarHome{
+        margin-left: 80px;
+        font-size: 1.2em;
+        text-align: center;
+        
+    } 
+//end navbar
 //section header et subNav
     .iconesResSoc {
         width: 2vh;
@@ -939,7 +955,8 @@ button{
         object-fit: cover;
     }
     .navbar {
-        background-color: white;
+        background-color: $convivialColor;
+        
     }
     .imageLanguage {
         text-align: right;
@@ -1397,12 +1414,11 @@ button{
 @include mediaquerries(lg) {
 //navbar
     #navbarHome{
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-left: 150px;
         font-size: 1.2em;
+        text-align: center;
         
-    }
-    
+    } 
 //end navbar
 //section header et subNav
     .iconesResSoc {
