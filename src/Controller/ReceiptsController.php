@@ -7,7 +7,6 @@ use App\Form\RecipeType;
 use App\Repository\ImageRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\RecipeIngredientRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ReceiptsController extends AbstractController
 {
     #[Route('/', name: 'list')]
-    public function list(RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request): Response
+    public function list(RecipeRepository $recipeRepository, Request $request): Response
     {
         $recipe = new Recipe();
         $recipes = new Recipe();
@@ -29,7 +28,6 @@ class ReceiptsController extends AbstractController
             $recipe = $form->getData();
 
             $recipes = $recipeRepository->findTypeAndDifficulty($recipe); 
-            
         };
         
         
@@ -41,6 +39,7 @@ class ReceiptsController extends AbstractController
             'recipe' => $recipe
             
         ]);
+        
     }
 
     #[Route('/{slug}', name: 'detail')]

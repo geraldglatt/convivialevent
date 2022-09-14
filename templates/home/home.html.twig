@@ -37,15 +37,14 @@
         </div>
     </div>
 </section>
-<section class="wrapper">
-    <div class="container">
+<section class="container-fluid">
         <div class="row">
             {% for wedding in weddings %}
             <card class="col-xs-12 col-sm-6 mb-4 mt-5 pb-4 text-center">
                 <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                 <div class="card-body">
                     <h2 class="card-title">{{ wedding.title | raw }}</h2>
-                    <p class="card-text">{{ wedding.content |striptags| length > 150 ? wedding.content | slice(0,149) ~ '[...]' : wedding.content}}</p>
+                    <p class="card-text">{{ wedding.content | raw }}</p>
                     <a id="lienS4Home" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
                 </div>
             </card>

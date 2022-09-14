@@ -6,14 +6,13 @@
 <section class="section1">
     <div class="container-fluid" id="bgS1Page">
         <div class="row">
-            <div class="col text-center mt-5">
+            <div class="col text-center mt-1">
                 <h1 class="colorTxtS1Page">{{ page.title | striptags | raw  }}</h1>
             </div>
         </div>
     </div>
 </section>
-<section class="wrapper">
-    <div class="container">
+<section class="container-fluid">
         <div class="row">
             <card class="col mb-4 mt-5 pb-4 text-center">
                 <img class="card-img-top" style="max-width: 700px" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
@@ -22,25 +21,26 @@
                 </div>
             </card>
         </div>
-    </div>
 </section>
 <section class="section4">
     <div class="container-fluid" id="">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col text-center">
                 <h3>Pour connaitre nos options et détails</br><span class="spanPageS4">Télécharger nos brochures :</span></h3>
             </div>
         </div>
     </div>
 </section>
 <section class="section5">
-    <div class="container-fluid" id="">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 text-center">
             {% for pdf in pagePdf %}
-            <div class="col text-center" id="divButtonS5Page">
-                <a id="buttonS5Page" href="#" role="button">{{ pdf.title | striptags | raw }}</a>   
-            </div> 
+                <button class=""><a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}" alt="{{ pdf.title }}">{{ pdf.title }}</a></button>
             {% endfor %}
+            </div> 
+            <div class="col-4"></div>
         </div>
     </div>
 </section>

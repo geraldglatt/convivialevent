@@ -42,7 +42,9 @@
     </div>
     <div class="row">
         <div class="col" id="imgSection3Details">
-            <img class="recipePageImgSection5" src="{{ asset('build/images/wrap_poulet.jpeg') }}" alt="image recette">
+            {% for img in recipe.image %}
+                <img class="recipePageImgSection5 w-50" src="{{ asset('build/images/' ~ img.image) }}" alt="image recette">
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -64,9 +66,9 @@
         <div class="col-2"></div>
         <div class="col-8" id="section5">
             {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">étapes {{ recipeStep.position }} :
+            <ul id="recipePageLiSection5">étapes {{ recipeStep.position  }} :
                 <li id="recipePageLiSection4">
-                    {{ recipeStep.content }}
+                    {{ recipeStep.content | raw }}
                 </li>
             </ul>
             {% endfor %}

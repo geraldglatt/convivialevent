@@ -297,16 +297,34 @@ p {
         height: 4vh;
     }
 //End Of Home Page
+//start of Page
+button{
+    background-color: $convivialColor;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid $convivialColor;
+    float: right;
+    margin-top: 25px;
+    margin-right: -20px;
+    margin-bottom: 30px;
+    align-items: center;
+    width: 180px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+//end of Page
 //Start of list Recipes Page
     #bgListRecipePageS3 {
         background-image: url('../images/boulPizz.webp');
     }
     .listrecipePagetxtSection2 {
-        font-size: 2.5em;
+        font-size: 2em;
         text-align: center;
     }
     .recipeListImgSection5 {
-        width: 70%;
+        width: 50%;
         height: auto;
     }
     .listrecipePagetxtSection3 {
@@ -323,9 +341,32 @@ p {
     }
     .span1ListS3{
         margin-right: 20px;
-        color: $convivialColor2;
+        color: black;
         font-style: italic;
         font-size: 0.9em;
+    }
+    #bgRecipePageTxtSection2{
+        background: black;
+        color:white;
+    }
+    #bgRecipePageTxtSection3{
+        background: $convivialColor;
+        color:black;
+    }
+    #btnColorPageRecipeSection3{
+        color:$convivialColor;
+    }
+    .card-footer{
+        border: 2px solid black;
+        height: 50px;
+        margin-top:30px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: $convivialColor2;
+    }
+    .card-title{
+        margin-top: 3Opx;
+        text-align: center;
     }
 
 //End of list Recipes Pages
@@ -719,6 +760,24 @@ p {
         height: 5vh;
     }
 //End Of Home Page
+//start of Page
+button{
+    background-color: $convivialColor;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid $convivialColor;
+    float:right;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    align-items: center;
+    width: 200px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+//end of Page
 //Start of list Recipes Page
     .textSection3{
         text-align: center;
@@ -736,7 +795,7 @@ p {
         margin-bottom: 10px;;
     }
     .recipePageImgSection3{
-        width:30%;
+        width:40%;
         margin-bottom: 40px;
     }
     #recipePageImgSection3 {
@@ -798,13 +857,27 @@ p {
     }
     .span1ListS3{
         margin-right: 20px;
-        color: $convivialColor2;
+        color: black;
         font-style: italic;
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
-    .listrecipePagetxtSection2 {
-        font-size: 2.5em;
+    #bgRecipePageTxtSection2{
+        background: black;
+        color:white;
+    }
+    #bgRecipePageTxtSection3{
+        background: $convivialColor;
+    }
+    .card-footer{
+        border: 2px solid black;
+        height: 100px;
+        margin-top:50px;
+        margin-bottom: 50px;
         text-align: center;
+        color:$convivialColor2
+    }
+    .card-title{
+        margin-top: 5Opx;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -1153,6 +1226,24 @@ p {
         height: 5vh;
     }
 //End Of Home Page
+//start of Page
+button{
+    background-color: $convivialColor;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid $convivialColor;
+    float:right;
+    margin-right: 70px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    align-items: center;
+    width: 200px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+//end of Page
 //Start of list Recipes Page
     .textSection3 {
         text-align: center;
@@ -1219,18 +1310,33 @@ p {
         position: absolute;
         top: 40%;
         left: 50%;
-        transform: translate(-50%,-135%);
+        transform: translate(-50%,-150%);
         color:black;
     }
     .span1ListS3{
         margin-right: 20px;
-        color: $convivialColor2;
+        color: black;
         font-style: italic;
-        font-size: 1.3em;
+        font-size: 2em;
     }
-    .listrecipePagetxtSection2 {
-        font-size: 2.5em;
+    #bgRecipePageTxtSection2{
+        background: black;
+        color:white;
+    }
+    #bgRecipePageTxtSection3{
+        background: $convivialColor;
+        margin: 30px 30px;
+    }
+    .card-footer{
+        border: 2px solid black;
+        height: 100px;
+        margin-top:50px;
+        margin-bottom: 50px;
         text-align: center;
+        color:$convivialColor2
+    }
+    .card-title{
+        margin-top: 5Opx;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -1619,6 +1725,23 @@ p {
         height: 8vh;
     }
 //End Of Home Page
+//start of Page
+    button{
+        background-color: $convivialColor;
+        border-radius: 100px;
+        text-decoration: none;
+        border: 1px solid $convivialColor;
+        float:right;
+        margin-right: 120px;
+        margin-top: 25px;
+        align-items: center;
+        width: 250px;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+//end of Page
 //Start of list Recipes Page
     .textSection3 {
         text-align: center;
@@ -1692,13 +1815,31 @@ p {
     }
     .span1ListS3{
         margin-right: 20px;
-        color: $convivialColor2;
+        color: black;
         font-style: italic;
         font-size: 2em;
     }
     .listrecipePagetxtSection2 {
         font-size: 2.5em;
         text-align: center;
+    }
+    #bgRecipePageTxtSection2{
+        background: black;
+        color:white;
+    }
+    #bgRecipePageTxtSection3{
+        background: $convivialColor;
+    }
+    .card-footer{
+        border: 2px solid black;
+        height: 100px;
+        margin-top:50px;
+        margin-bottom: 50px;
+        text-align: center;
+        color:$convivialColor2
+    }
+    .card-title{
+        margin-top: 5Opx;
     }
 //End of list Recipes Pages
 //Start of Recipe page
