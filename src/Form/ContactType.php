@@ -103,7 +103,7 @@ class ContactType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4'
+                    'class' => 'btn btn-primary mx-auto'
                 ],
                 'label' => 'Envoyer votre demande'
             ])

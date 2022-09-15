@@ -33,6 +33,11 @@ p {
     }
     .navbar {
         background-color: white;
+        text-align: left;
+    }
+    button .navbar-toggler{
+        text-align: center;
+        align-items: center;
     }
     .imageLanguage {
         text-align: right;
@@ -75,14 +80,21 @@ p {
     }
 //end section header et subNav
 //start of footer
-#footer {
-    height: 50px;
-    line-height: 25px;
-    text-align: center;
-}
 .contactSubNav {
     display:none;
 }
+footer {
+    background: #212529;
+  }
+  .footerFontSize{
+    font-size: 0.8em;
+  }
+  .footerFontSizeAccueil{
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-decoration: none;
+  }
 //end of footer
 //page home
 .imageLogoConvivial {
@@ -552,6 +564,17 @@ button{
     line-height: 25px;
     text-align: center;
 }
+footer {
+    background: #212529;
+  }
+  .footerFontSize{
+    font-size: 0.8em;
+  }
+  .footerFontSizeAccueil{
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
 //end of footer
 //page home
 //section 1
@@ -1038,6 +1061,17 @@ button{
     line-height: 25px;
     text-align: center;
 }
+footer {
+    background: #212529;
+  }
+  .footerFontSize{
+    font-size: 0.8em;
+  }
+  .footerFontSizeAccueil{
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
 //end of footer
 //page home
 //section 1
@@ -1532,19 +1566,40 @@ button{
     }
 //end section header and subNav
 //start of footer
-#footerRow {
-   line-height: center;
-   height: 50px;
-   text-align: center; 
-}
-#footer {
-    display: inline-block;
-    vertical-align:middle;   
-}
-.contactSubNav {
+// #footerRow {
+//    line-height: center;
+//    height: 50px;
+//    text-align: center; 
+// }
+// #footer {
+//     display: inline-block;
+//     vertical-align:middle;   
+// }
+// .contactSubNav {
+//     text-decoration: none;
+//     color: black;
+// }
+a {
+    color: inherit;
     text-decoration: none;
-    color: black;
-}
+    transition: all 0.3s;
+  }
+  
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+  
+  footer {
+    background: #212529;
+  }
+  .footerFontSize{
+    font-size: 0.8em;
+  }
+  .footerFontSizeAccueil{
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
 //end of footer
 //page home
 //section 1
