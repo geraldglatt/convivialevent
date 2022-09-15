@@ -1,11 +1,11 @@
 <!-- FOOTER -->
-<footer class="w-100 py-4 flex-shrink-0 text-center">
+<footer class="w-100 py-4 flex-shrink-0 text-center mt-4">
     <div class="container py-4">
         <div class="row gy-4 gx-5">
             <div class="col-lg-2 col-md-6">
                 <h5 class="text-white mb-3">Èvènementiel</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="#">Accueil</a></li>
+                    <li><a class="footerFontSizeAccueil" href="{{ path("app_home") }}">Accueil</a></li>
                     {% for footer in home.getHome %}
                     <li><a class="footerFontSize" href="{{ path('page_show', {slug:footer.page.slug}) }}">{{ footer.title | raw }}</a></li>
                     {% endfor %}
@@ -23,7 +23,7 @@
             <div class="col-lg-2 col-md-6">
                 <h5 class="text-white mb-3">Autres liens</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path("app_partenaires") }}">Partenaires</a></li>
+                    <li><a class="footerFontSizeAccueil" href="{{ path('app_mentions_legales') }}">Mentions légales</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path('receipts_list') }}">Recettes</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path("app_contact") }}">Demander un devis</a></li>
                     <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
@@ -31,9 +31,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="text-center mt-3 pb-3 ">
-                    <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
+                    <img class="imageLogo1Convivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
                 </div>
-                <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">convivialevent.com</a></p>
+                <p class="small text-white mb-0">Copyrights &copy;2022. All rights reserved. <a class="text-primary" href="#">convivialevent.com</a></p>
             </div>
         </div>
     </div>

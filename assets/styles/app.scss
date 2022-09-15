@@ -95,6 +95,9 @@ footer {
     margin-top: 25px;
     text-decoration: none;
   }
+  a{
+    color:white;
+  }
 //end of footer
 //page home
 .imageLogoConvivial {
@@ -114,7 +117,7 @@ footer {
     }
 //section 3
 card img{
-    width: 250px;
+    width: 100%;
     height: 250px;
     -webkit-filter: grayscale(0) blur(0px);
     filter: grayscale(0) blur(0px);
@@ -122,46 +125,59 @@ card img{
     transition: all 0.5s ease;
 }
 card:hover img {
-    width: 300px; /* on affiche l'image au carré */
+    width: 100%; /* on affiche l'image au carré */
     height: 300px;
     border-radius: 50%;  /* on arrondit l'image */
     -webkit-transform: rotate(360deg); /* rotation de l'image */
     transform: rotate(360deg);
 }
 //section 4
-    section4 {
-        margin-top: 20px;
-        padding-top: 50px;
-    }
-    .imgHomeFixeS4 {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-        filter: opacity(30%);
-        -webkit-filter: opacity(30%);
-    }
-    .contenantSection4{
-        position: relative;
-    }
-    .txtSection4{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        color:black;
-    }
-    .span1HomeS4{
-        margin-right: 20px;
-        color: $convivialColor2;
-        font-style: italic;
-        font-size: 1.5em;
-    }
-    .span2HomeS4{
-        color: black;
-        font-size: 0.9em;
-        margin-left: 40px;
-    }
+.imgHomeFixeS4 {
+    width: 95%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(30%);
+    -webkit-filter: opacity(30%);
+}
+#contenantSection4 {
+    position: relative;
+    background-image: url('../../public/build/images/bgHome.webp');
+    background-attachment: fixed;
+    object-fit: cover;
+    width: 95%;
+    height: 250px;
+    background-repeat: no-repeat;
+
+}
+p.txtSection4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5em;
+    color:black;
+    font-size: 1em;
+}
+.span1HomeS4 {
+    padding-right: 100px;
+    font-size: 1.5em;
+    color: black;
+    font-style: italic;
+}
+.span2HomeS4 { 
+    padding-left: 20px;
+    font-size: 1.3em;
+    color: black;
+}
+#lienS4Home{
+    color: $convivialColor2;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+h2.font.mt-5{
+    font-size: 0.7em;
+}
 //section 5
     .backgroundS4{
         margin: 20px;
@@ -175,11 +191,12 @@ card:hover img {
         margin-top: 15px; 
     }
     #lienS5Home{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        color: $convivialColor2;
-        font-size: 1.5em;
+        color:black;
+        font-size: 0.7em;
         text-decoration: none;
+        margin-top: 15px;
+        padding-right: 10px;
+        margin-right: 15px;
 
     }
 //section 6
@@ -232,7 +249,7 @@ card:hover img {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 50PX;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: auto;
@@ -567,6 +584,9 @@ button{
 footer {
     background: #212529;
   }
+  footer {
+    background: #212529;
+  }
   .footerFontSize{
     font-size: 0.8em;
   }
@@ -574,6 +594,10 @@ footer {
     font-size: 1.4em;
     margin-bottom: 25px;
     margin-top: 25px;
+    text-decoration: none;
+  }
+  a{
+    color:white;
   }
 //end of footer
 //page home
@@ -593,7 +617,7 @@ footer {
     }
 //section 3
     card img{
-        width: 400px;
+        width: 100%;
         height: 400px;
         -webkit-filter: grayscale(0) blur(0px);
         filter: grayscale(0) blur(0px);
@@ -608,40 +632,51 @@ footer {
         transform: rotate(360deg);
     }
 //section 4
-    section4 {
-        margin-top: 20px;
-        padding-top: 50px;
-    }
-    .imgHomeFixeS4 {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-        filter: opacity(30%);
-        -webkit-filter: opacity(30%);
-    }
-    .contenantSection4{
-        position: relative;
-    }
-    .txtSection4{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
-    }
-    .span1HomeS4{
-        padding-right: 90px;
-        font-size: 1.2em;
-        color: $convivialColor2;
-        font-style: italic;
-    }
-    .span2HomeS4{
-        padding-left: 80px;
-        font-size: 0.8em;
-        color: black;
-    }
+.imgHomeFixeS4 {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(30%);
+    -webkit-filter: opacity(30%);
+}
+#contenantSection4 {
+    position: relative;
+    background-image: url('../../public/build/images/bgHome.webp');
+    background-attachment: fixed;
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+
+}
+p.txtSection4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5em;
+    color:black;
+}
+.span1HomeS4 {
+    padding-right: 90px;
+    font-size: 2em;
+    color: $convivialColor2;
+    font-style: italic;
+}
+.span2HomeS4 { 
+    padding-left: 80px;
+    font-size: 2em;
+    color: black;
+}
+#lienS4Home{
+    color: $convivialColor2;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+h2{
+    font-size: 1em;
+}
 //section 5
     .backgroundS4{
         margin: 20px;
@@ -656,11 +691,12 @@ footer {
         margin-top: 15px; 
     }
     #lienS5Home{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        color: $convivialColor2;
-        font-size: 1.5em;
+        color:black;
+        font-size: 1em;
         text-decoration: none;
+        margin-top: 15px;
+        padding-right: 10px;
+        margin-right: 15px;
 
     }
 //section 6
@@ -723,12 +759,12 @@ footer {
         text-align: center;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 60px;
-        font-weight: 500;
+        font-weight: 50px;
         text-transform: uppercase;
         letter-spacing: 2px;
     }
     .wrapper{
-        width: 950px;
+        width: 95%;
         display: flex;
         overflow: hidden;
         border-radius: 180px;  
@@ -819,6 +855,12 @@ footer {
     .section9Flex2-2Txt{
         font-size: 1em;
     }
+//section10
+    .flex1S10{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+//fin section10
 //section 11
     .flex2S11{
         display: flex;
@@ -1001,13 +1043,30 @@ button{
 }
 
 @include mediaquerries(md) {
-//navbar
+    //navbar
     #navbarHome{
-        margin-left: 80px;
-        font-size: 1.2em;
+        margin-left: 100px;
+        font-size: 1.7em;
         text-align: center;
         
+    }
+    a#navbarHome.nav-link.active{
+        color: white;
     } 
+    a#navbarDropdown.nav-link.dropdown-toggle{
+        color: white;
+    }
+    a#navbarHome.nav-link{
+        color: white;
+    } 
+    .navbar {
+        background-image: url('../../public/build/images/bgHome.webp');
+        background-attachment: fixed;
+        object-fit: cover;
+        width: 100%;
+        height: 150px;
+        background-repeat: no-repeat;
+    }
 //end navbar
 //section header et subNav
     .iconesResSoc {
@@ -1105,40 +1164,51 @@ footer {
         transform: rotate(360deg);
     }
 //section 4
-    section4 {
-        margin-top: 20px;
-        padding-top: 50px;
-    }
-    .imgHomeFixeS4 {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-        filter: opacity(30%);
-        -webkit-filter: opacity(30%);
-    }
-    .contenantSection4{
-        position: relative;
-    }
-    .txtSection4{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
-    }
-    .span1HomeS4{
-        padding-right: 90px;
-        font-size: 1.2em;
-        color: $convivialColor2;
-        font-style: italic;
-    }
-    .span2HomeS4{
-        padding-left: 80px;
-        font-size: 0.8em;
-        color: black;
-    }
+.imgHomeFixeS4 {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(30%);
+    -webkit-filter: opacity(30%);
+}
+#contenantSection4 {
+    position: relative;
+    background-image: url('../../public/build/images/bgHome.webp');
+    background-attachment: fixed;
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+
+}
+p.txtSection4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5em;
+    color:black;
+}
+.span1HomeS4 {
+    padding-right: 90px;
+    font-size: 2em;
+    color: $convivialColor2;
+    font-style: italic;
+}
+.span2HomeS4 { 
+    padding-left: 80px;
+    font-size: 2em;
+    color: black;
+}
+#lienS4Home{
+    color: $convivialColor2;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+h2{
+    font-size: 1em;
+}
 //section 5
     .backgroundS4{
         margin: 20px;
@@ -1153,11 +1223,12 @@ footer {
         margin-top: 15px; 
     }
     #lienS5Home{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        color: $convivialColor2;
-        font-size: 1.5em;
+        color:black;
+        font-size: 0.7em;
         text-decoration: none;
+        margin-top: 15px;
+        padding-right: 10px;
+        margin-right: 15px;
 
     }
 //section 6
@@ -1505,80 +1576,30 @@ button{
 @include mediaquerries(lg) {
 //navbar
     #navbarHome{
-        margin-left: 150px;
-        font-size: 1.2em;
+        margin-left: 100px;
+        font-size: 1.7em;
         text-align: center;
         
+    }
+    a#navbarHome.nav-link.active{
+        color: white;
     } 
-//end navbar
-//section header et subNav
-    .iconesResSoc {
-        width: 3vh;
-        height: 3vh;
-        object-fit: cover;
-        margin: 10px 10px;
-        margin-inline: 15px;
+    a#navbarDropdown.nav-link.dropdown-toggle{
+        color: white;
     }
+    a#navbarHome.nav-link{
+        color: white;
+    } 
     .navbar {
-        background-color: $convivialColor;
-        
-    }
-    .navPipe {
-        margin-left: 5px;
-    }
-    .imageLanguage {
-        text-align: right;
-        width: 2vh;
-        height: 2vh;
-        margin-top: 0px;
+        background-image: url('../../public/build/images/bgHome.webp');
+        background-attachment: fixed;
         object-fit: cover;
+        width: 100%;
+        height: 150px;
+        background-repeat: no-repeat;
     }
-    .spanSubNav {
-        margin-left: 10px;
-        padding-top: 20px;
-        padding-inline-start: 10px;
-           
-    }
-    .spanFR {
-        text-align: right;
-        margin-top: 20px;
-        
-    }
-    .navbar-toggler-icon {
-        text-align: left;
-        width: 2vh;
-        height: 2vh;
-        display: none;
-
-    }
-    .imageLogo {
-        width: 10vh;
-        height: 5vh;
-        object-fit: cover;
-        margin-top: 1px;
-        display: none;
-    }
-    .imageLogo1Convivial {
-        max-width: 20%;
-        height: auto;
-        margin-left: 10px;
-        border-radius: 50%;
-    }
-//end section header and subNav
-//start of footer
-// #footerRow {
-//    line-height: center;
-//    height: 50px;
-//    text-align: center; 
-// }
-// #footer {
-//     display: inline-block;
-//     vertical-align:middle;   
-// }
-// .contactSubNav {
-//     text-decoration: none;
-//     color: black;
-// }
+//end navbar
+//footer
 a {
     color: inherit;
     text-decoration: none;
@@ -1603,43 +1624,71 @@ a {
 //end of footer
 //page home
 //section 1
-    .imageLogoConvivial {
-        max-width: 30vh;
-        max-height: 30vh;
+    p.card-text{
+        font-size: 1.5em;
+    }
+    #logoHome1{
+        width: 250px;
+        height: 250px;
+        border-radius: 60%;
+    }
+    .imageLogo1Convivial {
+        width: 250px;
+        height: 150pxw;
           
+    }
+    #bgSection1Home{
+        background-image: url('../../public/build/images/bgHome.webp');
+        background-position: 15% 5% 5%;
+        background-attachment: fixed;
+        background-color: white;
+        object-fit: cover;
+        width: 100%;
+        height: 850px;
+        background-repeat: no-repeat;
+        
     }
 //section2
     .txtSection2 {
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-size: 2em;
+        color: white;
     }
     .txtSmallSection2 {
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-size: 1.5em;
+        color: white;
+        
+        
     }
 //section 3
     card img{
-        width: 600px;
-        height: 600px;
+        width: 300px;
+        height: 250px;
         -webkit-filter: grayscale(0) blur(0px);
         filter: grayscale(0) blur(0px);
         -webkit-transition: all 0.5s ease;
         transition: all 0.5s ease;
     }
     card:hover img {
-        width: 500px; /* on affiche l'image au carré */
-        height: 500px;
+        width: 250px; /* on affiche l'image au carré */
+        height: 250px;
         border-radius: 50%;  /* on arrondit l'image */
         -webkit-transform: rotate(360deg); /* rotation de l'image */
         transform: rotate(360deg);
     }
-//section 4
-    section {
-        margin-top: 20px;
-        padding-top: 20px;
+    .span1ListS3{
+        position: absolute;
+        margin-top: 150px;
     }
+    .txtSection3List{
+        position: relative;
+    }
+//section 4
     .imgHomeFixeS4 {
         width: 100%;
         height: 500px;
@@ -1648,10 +1697,17 @@ a {
         filter: opacity(30%);
         -webkit-filter: opacity(30%);
     }
-    .contenantSection4 {
+    #contenantSection4 {
         position: relative;
+        background-image: url('../../public/build/images/bgHome.webp');
+        background-attachment: fixed;
+        object-fit: cover;
+        width: 100%;
+        height: 450px;
+        background-repeat: no-repeat;
+
     }
-    .txtSection4 {
+    p.txtSection4 {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1675,7 +1731,11 @@ a {
         font-size: 1.5em;
         text-decoration: underline;
     }
-    //section 5
+    h2{
+        font-size: 1em;
+    }
+//fin section 4
+//section 5
     .backgroundS4 {
         margin: 20px;
         background-color: $convivialColor;
@@ -1690,10 +1750,10 @@ a {
         text-align: center;   
     }
     #lienS5Home{
-        color: black;
+        color:black;
         font-size: 0.7em;
         text-decoration: none;
-        margin-top: 25px;
+        margin-top: 20px;
         padding-right: 10px;
         margin-right: 15px;
 
