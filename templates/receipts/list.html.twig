@@ -6,16 +6,16 @@
 <section class="container-fluid">
     <div class="row">
         <div class="col-6 mx-auto">
-            <div class="text-center mt-3 pb-3 ">
-                <img class="imageLogo1Convivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
+            <div class="text-center mt-5 mb-5 ">
+                <img class="imageLogoListConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
             </div>
         </div>
     </div>
 </section>
-<section class="container-fluid" id="bgRecipePageTxtSection2">
+<section class="container" id="bgRecipePageTxtSection2">
     <div class="row">
         <div class="col mb-4 mt-5 pb-4 text-center">
-            <p class="listrecipePagetxtSection2">Les recettes que </br> vous propose </br> Convivial Event</p>
+            <p class="listrecipePagetxtSection3">Les recettes que </br> vous propose </br> Convivial Event</p>
         </div>
     </div>
 </section>
@@ -24,7 +24,7 @@
                 <img class="imgHomeFixeS4" src="{{ asset('/build/images/boulPizz.0648ce00.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
             </div>
     <div class="row">
-        <div class="col mb-4 mt-5 pb-4 text-center">
+        <div class="col mb-4 mt-5 pb-4 mt-5 text-center">
             <div class="contenantSection4">
                 <p class="txtSection3List"><span class="span1ListS3">Une sélection de recettes</br>à faire chez vous oû</br>à partager avec vos amis !!!</span></p>
             </div>
@@ -34,7 +34,7 @@
         <div class="col-6 mx-auto">
             {{ form_start(form) }}
 
-            <div class="form-group">
+            <div class="form-group mb-5">
                 {{ form_label(form.type) }}
                 {{ form_widget(form.type) }}
                 <div>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="form-group text-center">
+            <div class="form-group text-center mt-5 mb-5 mx-auto">
                 {{ form_row(form.submit) }}
             </div>
 
@@ -59,11 +59,11 @@
     </div>
 </section>
 </section>
-<section class="container">
+<section class="container mt-5">
         <div class="row">
             <div class="col">
                 {% for res in recipes %}
-                    <img class="card-img-top w-100 text-center mb-5" src="{{ asset('build/images/' ~ res.image[0]) }}" alt="photo recettes">
+                    <img class="card-img-top" src="{{ asset('build/images/' ~ res.image[0]) }}" alt="photo recettes">
                     <div class="card-body text-center">
                         <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.title }}</a></P>
                     </div>

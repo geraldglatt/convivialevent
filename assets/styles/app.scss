@@ -78,6 +78,10 @@ p {
         max-width: 20%;
         height: auto;    
     }
+    .imageLogoListConvivial{
+        width: 80%;
+        height: 80%;
+    }
 //end section header et subNav
 //start of footer
 .contactSubNav {
@@ -382,16 +386,18 @@ button{
     }
     .txtSection3List{
         position: absolute;
-        top: 40%;
+        top: 90%;
         left: 50%;
-        transform: translate(-50%,-135%);
+        transform: translate(-50%,-130%);
         color:black;
     }
     .span1ListS3{
+        position: relative;
         margin-right: 20px;
         color: black;
         font-style: italic;
-        font-size: 0.9em;
+        font-size: 1em;
+        color:black;
     }
     #bgRecipePageTxtSection2{
         background: black;
@@ -415,6 +421,10 @@ button{
     .card-title{
         margin-top: 3Opx;
         text-align: center;
+    }
+    .imageLogoListConvivial{
+        width: 70%;
+        height: 50%;
     }
 
 //End of list Recipes Pages
@@ -576,6 +586,7 @@ button{
     }
 //end section header et subNav
 //start of footer
+//start of footer
 #footer {
     height: 50px;
     line-height: 25px;
@@ -584,18 +595,27 @@ button{
 footer {
     background: #212529;
   }
-  footer {
-    background: #212529;
-  }
   .footerFontSize{
-    font-size: 0.8em;
+    font-size: 1em;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: $convivialColor2;
   }
   .footerFontSizeAccueil{
     font-size: 1.4em;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: $convivialColor2;
   }
+  .imageLogo1Convivial{
+    width: 70%;
+    height: auto;
+    margin-left: 50px;
+  }
+//end of footer
   a{
     color:white;
   }
@@ -922,6 +942,21 @@ button{
         font-size: 2em;
         text-align: center;
     }
+    .txtSection3List{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%,-130%);
+        color:black;
+    }
+    .span1ListS3{
+        position: relative;
+        margin-right: 20px;
+        color: black;
+        font-style: italic;
+        font-size: 1.8em;
+        color:black;
+    }
     #dropdownMenuButton1{
         text-align: center;
         align-items: center;
@@ -959,25 +994,15 @@ button{
         color: black;
         font-size: 1.5em;
     }
-    .txtSection3List{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%,-130%);
-        color:black;
-    }
-    .span1ListS3{
-        margin-right: 20px;
-        color: black;
-        font-style: italic;
-        font-size: 1.2em;
-    }
     #bgRecipePageTxtSection2{
         background: black;
         color:white;
     }
     #bgRecipePageTxtSection3{
         background: $convivialColor;
+    }
+    .listrecipePagetxtSection3{
+        font-size: 2em;
     }
     .card-footer{
         border: 2px solid black;
@@ -989,6 +1014,10 @@ button{
     }
     .card-title{
         margin-top: 5Opx;
+    }
+    .imageLogoListConvivial{
+        width: 50%;
+        height: 50%;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -1016,6 +1045,10 @@ button{
 .recipePagetxtSection3{
     font-size: 2em;
     text-align: center;
+}
+.imageLogoListConvivial{
+    width: 80%;
+    height: 80%; 
 }
 #dropdownMenuButton1{
     text-align: center;
@@ -1069,21 +1102,22 @@ button{
     }
 //end navbar
 //section header et subNav
-    .iconesResSoc {
-        width: 2vh;
-        height: 2vh;
-        object-fit: cover;
-    }
     .navbar {
-        background-color: $convivialColor;
+        background-image: url('../../public/build/images/bgHome.webp');
+        background-attachment: fixed;
+        background-size: 100%;
+        object-fit: cover;
+        width: 100%;
+        height: 70px;
+        background-repeat: no-repeat;
+        z-index:1;
+        position: fixed;
+        scrollbar-color: $convivialColor2;
         
     }
-    .imageLanguage {
-        text-align: right;
-        width: 2vh;
-        height: 2vh;
-        margin-top: 25px;
-        object-fit: cover;
+    .navbar:hover{
+        background:black;
+        color: black;
     }
     .spanSubNav {
         margin-left: 1px;
@@ -1109,10 +1143,6 @@ button{
         margin-top: 1px;
         display: none;
     }
-    .imageLogo1Convivial {
-        max-width: 20%;
-        height: auto;
-    }
 //end section header et subNav
 //start of footer
 #footer {
@@ -1124,12 +1154,24 @@ footer {
     background: #212529;
   }
   .footerFontSize{
-    font-size: 0.8em;
+    font-size: 1em;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: $convivialColor2;
   }
   .footerFontSizeAccueil{
     font-size: 1.4em;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: $convivialColor2;
+  }
+  .imageLogo1Convivial{
+    width: 70%;
+    height: auto;
+    margin-left: 50px;
   }
 //end of footer
 //page home
@@ -1148,9 +1190,13 @@ footer {
         font-size: 0.8em;
     }
 //section 3
+    .card-img-top-home{
+        width: 70%;
+        height: 70%;
+    }
     card img{
-        width: 600px;
-        height: 550px;
+        width: 45px;
+        height: 45px;
         -webkit-filter: grayscale(0) blur(0px);
         filter: grayscale(0) blur(0px);
         -webkit-transition: all 0.5s ease;
@@ -1487,16 +1533,17 @@ button{
     }
     .txtSection3List{
         position: absolute;
-        top: 40%;
+        top: 60%;
         left: 50%;
-        transform: translate(-50%,-150%);
+        transform: translate(-50%,180%);
         color:black;
     }
     .span1ListS3{
-        margin-right: 20px;
+        position: relative;
+        margin-right: 100px;
         color: black;
         font-style: italic;
-        font-size: 2em;
+        font-size: 1.5em;
     }
     #bgRecipePageTxtSection2{
         background: black;
@@ -1516,6 +1563,10 @@ button{
     }
     .card-title{
         margin-top: 5Opx;
+    }
+    .imageLogoListConvivial{
+        width: 50%;
+        height: 50%;
     }
 //End of list Recipes Pages
 //Start of Recipe page
@@ -1577,7 +1628,7 @@ button{
 //navbar
     #navbarHome{
         margin-left: 100px;
-        font-size: 1.7em;
+        font-size: 1.5em;
         text-align: center;
         
     }
@@ -1593,10 +1644,19 @@ button{
     .navbar {
         background-image: url('../../public/build/images/bgHome.webp');
         background-attachment: fixed;
+        background-size: 100%;
         object-fit: cover;
         width: 100%;
-        height: 150px;
+        height: 70px;
         background-repeat: no-repeat;
+        z-index:1;
+        position: fixed;
+        scrollbar-color: $convivialColor2;
+        
+    }
+    .navbar:hover{
+        background:black;
+        color: black;
     }
 //end navbar
 //footer
@@ -1615,11 +1675,14 @@ a {
   }
   .footerFontSize{
     font-size: 0.8em;
+    color: $convivialColor2;
+    
   }
   .footerFontSizeAccueil{
     font-size: 1.4em;
     margin-bottom: 25px;
     margin-top: 25px;
+    color: $convivialColor2;
   }
 //end of footer
 //page home
@@ -1628,9 +1691,10 @@ a {
         font-size: 1.5em;
     }
     #logoHome1{
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
         border-radius: 60%;
+        align-items: flex-end;
     }
     .imageLogo1Convivial {
         width: 250px;
@@ -1639,10 +1703,9 @@ a {
     }
     #bgSection1Home{
         background-image: url('../../public/build/images/bgHome.webp');
-        background-position: 15% 5% 5%;
         background-attachment: fixed;
         background-color: white;
-        object-fit: cover;
+        background-size: 100%;
         width: 100%;
         height: 850px;
         background-repeat: no-repeat;
@@ -1667,7 +1730,7 @@ a {
     }
 //section 3
     card img{
-        width: 300px;
+        width: 250px;
         height: 250px;
         -webkit-filter: grayscale(0) blur(0px);
         filter: grayscale(0) blur(0px);
@@ -1712,19 +1775,19 @@ a {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        font-size: 1.5em;
-        color:black;
+        font-size: 2em;
+        color:white;
     }
     .span1HomeS4 {
         padding-right: 90px;
-        font-size: 2em;
-        color: $convivialColor2;
+        font-size: 2.5em;
+        color:white;
         font-style: italic;
     }
     .span2HomeS4 { 
         padding-left: 80px;
         font-size: 2em;
-        color: black;
+        color:white;
     }
     #lienS4Home{
         color: $convivialColor2;
@@ -1739,11 +1802,13 @@ a {
     .backgroundS4 {
         margin: 20px;
         background-color: $convivialColor;
-        height: 150px;
+        height: 200px;
     }
-    .temoignage {
+    #temoignage {
         font-size: 2.5em;
         text-align: center;
+        margin-top: 25px;
+        margin-bottom:25px;
     }
     .temoignages {
         font-size: 1.5em;
@@ -1847,13 +1912,20 @@ a {
     }
 //fin section 7 bis
 //section 8
+    #bgColorSectionContact{
+        margin-left:5px;
+        margin-right:5px;
+    }
     .titreS8 {
         text-decoration: none;
         margin-bottom: 50px;
         margin-top: 50px;
+        font-size: 2em;
     }
     #divHomeS8 {
         text-align: center;
+        margin-top: 25px;
+        margin-bottom: 50px;
     }
     #buttonS8 {
         text-decoration: none;
@@ -1862,7 +1934,7 @@ a {
         color: black;
         background-color: $convivialColor;
         padding: 5px 20px 5px 20px;
-        border-radius: 12px;
+        border-radius: 25px;
         font-size: 1.7em;
     }
 //section 9
@@ -1988,6 +2060,20 @@ a {
         align-items: center;
         text-align: center;
     }
+    .txtSection3List{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,180%);
+        color:black;
+    }
+    .span1ListS3{
+        position: relative;
+        margin-right: 100px;
+        color: black;
+        font-style: italic;
+        font-size: 2.3em;
+    }
     
     #section4 {
         background-color: black;
@@ -2013,19 +2099,6 @@ a {
         list-style-type: none;
         color: black;
     }
-    .txtSection3List{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%,-200%);
-        color:black;
-    }
-    .span1ListS3{
-        margin-right: 20px;
-        color: black;
-        font-style: italic;
-        font-size: 2em;
-    }
     .listrecipePagetxtSection2 {
         font-size: 2.5em;
         text-align: center;
@@ -2037,6 +2110,11 @@ a {
     #bgRecipePageTxtSection3{
         background: $convivialColor;
     }
+    .card-img-top{
+        width: 350px;
+        height: 350px;
+        text-align: center;
+    }
     .card-footer{
         border: 2px solid black;
         height: 100px;
@@ -2047,6 +2125,13 @@ a {
     }
     .card-title{
         margin-top: 5Opx;
+    }
+    .textSection5{
+        margin-top:25px;
+    }
+    .imageLogoListConvivial{
+        width: 50%;
+        height: 50%;
     }
 //End of list Recipes Pages
 //Start of Recipe page

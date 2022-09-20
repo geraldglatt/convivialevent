@@ -3,13 +3,14 @@
 {% block title %}Accueil{% endblock %}
     
 {% block body %}
+
 <section class="container-fluid" id="bgSection1Home">
     <div class="row">
         <div class="col">
-           <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
+        <h1 class="txtSection2 mt-5">Présent dans l'Aube & dans l'Yonne</h1> 
         </div>
     </div>
-     <div class="row">
+    <div class="row">
         <div class="col"> 
             <h1 class="txtSection2">Votre traiteur sur mesure Conviviale & Responsable</h1>
         </div>
@@ -42,7 +43,7 @@
         <div class="row mt-5 mb-5">
             {% for wedding in weddings %}
                 <card class="col-xs-12 col-sm-6 mb-3 mt-4 pb-3 text-center">
-                    <img class="card-img-top" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
+                    <img class="card-img-top-home" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                     <div class="card-body">
                         <h2 class="card-title">{{ wedding.title | raw }}</h2>
                         <p class="card-text">{{ wedding.content | raw }}</p>
@@ -66,7 +67,7 @@
     <div class="row backgroundS4">
         <div class="col">
             <h2 id="temoignage" class="text-center">
-                Nos témoignages
+                Nos Témoignages
             </h2>
             <p class="temoignages">
                 Merci,pour ce mariage champêtre réussi,
@@ -140,7 +141,7 @@
     </div>
     <div class="row" id="bgGrey"></div>
 </section>
-<section>
+<section class="container">
     <div class="slider-area text-center">
         <h2 class="font mt-5">Ils nous ont fait confiance en 2022</h2>
         <div class="wrapper mx-auto">
@@ -150,7 +151,7 @@
         </div>
     </div>
 </section>
-<section class="container-fluid">
+<section class="container-fluid" id="bgColorSectionContact">
     <div class="row">
         <div class="col text-center">
             <h2 class="titreS8">Comment nous contacter :</h2>
