@@ -18,19 +18,9 @@ body {
     background-color: $convivialColor;
 }
 
-p {
-    font-size: 1.5em;
-}
-
 @include mediaquerries(xs) {
 //start of homePage
 //section header et subNav
-    .iconesResSoc {
-        display: none;
-        width: 2vh;
-        height: 2vh;
-        object-fit: cover;
-    }
     .navbar {
         background-color: white;
         text-align: left;
@@ -38,13 +28,6 @@ p {
     button .navbar-toggler{
         text-align: center;
         align-items: center;
-    }
-    .imageLanguage {
-        text-align: right;
-        width: 2vh;
-        height: 2vh;
-        margin-top: 25px;
-        object-fit: cover;
     }
     .spanFR {
         text-align: right;
@@ -61,7 +44,7 @@ p {
         padding-left: 5px;
     }
     .navbar-toggler-icon {
-        text-align: left;
+        text-align: center;
         width: 2vh;
         height: 2vh;
 
@@ -74,8 +57,7 @@ p {
         display: none;
     }
     .imageLogo1Convivial {
-        display: none;
-        max-width: 20%;
+        max-width: 40%;
         height: auto;    
     }
     .imageLogoListConvivial{
@@ -104,22 +86,30 @@ footer {
   }
 //end of footer
 //page home
-.imageLogoConvivial {
-    width: 15vh;
-    height: 10vh;
-    }
+.logoHome1 {
+    width: 10vh;
+        height: 5vh;
+        object-fit: cover;
+        margin-top: 1px;
+        display: none;
+}
 //section 2
     .txtSection2 {
         text-align: center;
         margin-bottom: 10px;
         margin-top: 10px;
+        font-size: 1em;
     }
     .txtSmallSection2 {
         text-align: center;
         margin-top: 15px;
         margin-bottom: 15px;
+        font-size: 0.8em;
     }
 //section 3
+p {
+    font-size: 1.2em;
+}
 card img{
     width: 100%;
     height: 250px;
@@ -146,7 +136,7 @@ card:hover img {
 }
 #contenantSection4 {
     position: relative;
-    background-image: url('../../public/build/images/bgHome.webp');
+    background-image: url('../images/bgHome.webp');
     background-attachment: fixed;
     object-fit: cover;
     width: 95%;
@@ -159,38 +149,45 @@ p.txtSection4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-size: 1.5em;
+    font-size: 1.2em;
     color:black;
     font-size: 1em;
 }
 .span1HomeS4 {
-    padding-right: 100px;
+    padding-right: 90px;
     font-size: 1.5em;
-    color: black;
+    color:white;
     font-style: italic;
 }
 .span2HomeS4 { 
     padding-left: 20px;
-    font-size: 1.3em;
-    color: black;
+    font-size: 1.5em;
+    color: white;
 }
 #lienS4Home{
     color: $convivialColor2;
     font-size: 1.5em;
     text-decoration: underline;
 }
-h2.font.mt-5{
-    font-size: 0.7em;
-}
 //section 5
+    .logoHomeSection5{
+        width: 25%;
+        height: auto;
+        text-align: center;
+    }
     .backgroundS4{
-        margin: 20px;
         background-color: $convivialColor;
         border-radius: 12px;
 
     }
     #temoignage {
-        font-size: 1.5em;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 15px; 
+
+    }
+    .temoignages {
+        font-size: 0.8em;
         text-align: center;
         margin-top: 15px; 
     }
@@ -206,7 +203,7 @@ h2.font.mt-5{
 //section 6
     .row6 {
         text-align: center;
-        font-size:2em;
+        font-size:1.5em;
         margin-bottom: 25px;
     }
     #carousel-row{
@@ -214,7 +211,9 @@ h2.font.mt-5{
     }
     .carousel-size{
         font-size: 1em;
-        color:black; 
+        color:black;
+        margin-left: 47px;
+        margin-top: 15px;
     }
     #carouselItemS6Bis {
         position: relative;
@@ -231,6 +230,11 @@ h2.font.mt-5{
         text-align: center;
     }
 //section 7
+    h2.font.mt-5{
+        font-size: 0.8em;
+        margin-top: 25px;
+        margin-bottom:25px;
+    }
     #bgGrey {
         background-color: rgba(229, 229, 229, 0.44);
         border:rgba(229, 229, 229, 0.44) solid;
@@ -344,6 +348,7 @@ h2.font.mt-5{
         display: flex;
         justify-content: space-around;
         padding: 30px;
+        margin-bottom: 30px;
     }
     .imgHomeIconesS11 {
         height: 4vh;
@@ -529,6 +534,26 @@ button{
     
 }
 //end of page
+//start of contact
+#h1ContactMarginTop{
+    margin-top:20px;
+    padding-top: 50px;
+}
+#buttonContactCenter{
+    color: $convivialColor2;
+}
+.bgInviteForm{
+    background-color: $convivialColor;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    border-radius: 8%;
+}
+.titreInviteForm{
+    font-size: 2em;
+    text-decoration:underline;
+}
+//End of contact
 }
 
 @include mediaquerries(sm) {
@@ -618,24 +643,34 @@ footer {
 //end of footer
   a{
     color:white;
-  }
+}
 //end of footer
 //page home
 //section 1
-.imageLogoConvivial {
+img.logoHome1 {
     width: 20vh;
-    height: 15vh;
-          
-    }
+    height: auto;
+    object-fit: cover;
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
 //section2
-    .txtSection2 {
-        text-align: center;
-    }
-    .txtSmallSection2 {
-        text-align: center;
-        font-size: 0.8em;
-    }
+.txtSection2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 2em;
+}
+.txtSmallSection2 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
 //section 3
+    p {
+        font-size: 1.5em;
+    }
     card img{
         width: 100%;
         height: 400px;
@@ -662,7 +697,7 @@ footer {
 }
 #contenantSection4 {
     position: relative;
-    background-image: url('../../public/build/images/bgHome.webp');
+    background-image: url('../images/bgHome.webp');
     background-attachment: fixed;
     object-fit: cover;
     width: 100%;
@@ -679,15 +714,15 @@ p.txtSection4 {
     color:black;
 }
 .span1HomeS4 {
-    padding-right: 90px;
+    padding-right: 100px;
     font-size: 2em;
-    color: $convivialColor2;
+    color: white;
     font-style: italic;
 }
 .span2HomeS4 { 
-    padding-left: 80px;
-    font-size: 2em;
-    color: black;
+    padding-left: 60px;
+    font-size: 1.7em;
+    color: white;
 }
 #lienS4Home{
     color: $convivialColor2;
@@ -698,8 +733,12 @@ h2{
     font-size: 1em;
 }
 //section 5
+    .logoHomeSection5{
+        width: 18%;
+        height: auto;
+        text-align: center;
+    }
     .backgroundS4{
-        margin: 20px;
         background-color: $convivialColor;
         border-radius: 12px;
 
@@ -1072,6 +1111,26 @@ button{
 #recipePageLiSection4{
     list-style-type: none;
 }
+//start of contact
+#h1ContactMarginTop{
+    margin-top:50px;
+    padding-top: 50px;
+}
+#buttonContactCenter{
+    color: $convivialColor2;
+}
+.bgInviteForm{
+    background-color: $convivialColor;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    border-radius: 8%;
+}
+.titreInviteForm{
+    font-size: 2em;
+    text-decoration:underline;
+}
+//End of contact
 
 }
 
@@ -1093,7 +1152,7 @@ button{
         color: white;
     } 
     .navbar {
-        background-image: url('../../public/build/images/bgHome.webp');
+        background-image: url('../images/bgHome.webp');
         background-attachment: fixed;
         object-fit: cover;
         width: 100%;
@@ -1103,7 +1162,7 @@ button{
 //end navbar
 //section header et subNav
     .navbar {
-        background-image: url('../../public/build/images/bgHome.webp');
+        background-image: url('../images/bgHome.webp');
         background-attachment: fixed;
         background-size: 100%;
         object-fit: cover;
@@ -1220,7 +1279,7 @@ footer {
 }
 #contenantSection4 {
     position: relative;
-    background-image: url('../../public/build/images/bgHome.webp');
+    background-image: url('../images/bgHome.webp');
     background-attachment: fixed;
     object-fit: cover;
     width: 100%;
@@ -1622,6 +1681,26 @@ button{
 #recipePageLiSection4 {
     list-style-type: none;
 }
+//start of contact
+#h1ContactMarginTop{
+    margin-top:50px;
+    padding-top: 50px;
+}
+#buttonContactCenter{
+    color: $convivialColor2;
+}
+.bgInviteForm{
+    background-color: $convivialColor;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    border-radius: 8%;
+}
+.titreInviteForm{
+    font-size: 2em;
+    text-decoration:underline;
+}
+//End of contact
 }
 
 @include mediaquerries(lg) {
@@ -1642,12 +1721,12 @@ button{
         color: white;
     } 
     .navbar {
-        background-image: url('../../public/build/images/bgHome.webp');
+        background-image: url('../images/bgHome.webp');
         background-attachment: fixed;
         background-size: 100%;
         object-fit: cover;
         width: 100%;
-        height: 70px;
+        height: auto;
         background-repeat: no-repeat;
         z-index:1;
         position: fixed;
@@ -1665,18 +1744,15 @@ a {
     text-decoration: none;
     transition: all 0.3s;
   }
-  
   a:hover, a:focus {
     text-decoration: none;
   }
-  
   footer {
     background: #212529;
   }
   .footerFontSize{
     font-size: 0.8em;
     color: $convivialColor2;
-    
   }
   .footerFontSizeAccueil{
     font-size: 1.4em;
@@ -1684,49 +1760,46 @@ a {
     margin-top: 25px;
     color: $convivialColor2;
   }
+  .imageLogo1Convivial{
+    width: 80%;
+  }
 //end of footer
-//page home
-//section 1
+//page home  
     p.card-text{
         font-size: 1.5em;
     }
-    #logoHome1{
-        width: 150px;
-        height: 150px;
-        border-radius: 60%;
+    img.logoHome1{
+        width: 200px;
+        height: 200px;
+        border-radius: 55%;
         align-items: flex-end;
-    }
-    .imageLogo1Convivial {
-        width: 250px;
-        height: 150pxw;
-          
+        margin-top: 80px;
+        text-align: center;
     }
     #bgSection1Home{
-        background-image: url('../../public/build/images/bgHome.webp');
+        background-image: url('../images/bgHome.webp');
+        backdrop-filter: blur(20px);
         background-attachment: fixed;
         background-color: white;
         background-size: 100%;
         width: 100%;
-        height: 850px;
-        background-repeat: no-repeat;
-        
+        height: 800px;
+        background-repeat: no-repeat;   
     }
 //section2
     .txtSection2 {
         text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-size: 2em;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 2.2em;
         color: white;
     }
     .txtSmallSection2 {
         text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-size: 1.5em;
-        color: white;
-        
-        
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+        color: white;    
     }
 //section 3
     card img{
@@ -1762,13 +1835,12 @@ a {
     }
     #contenantSection4 {
         position: relative;
-        background-image: url('../../public/build/images/bgHome.webp');
+        background-image: url('../images/bgHome.webp');
         background-attachment: fixed;
         object-fit: cover;
         width: 100%;
         height: 450px;
         background-repeat: no-repeat;
-
     }
     p.txtSection4 {
         position: absolute;
@@ -1799,10 +1871,16 @@ a {
     }
 //fin section 4
 //section 5
+    img.logoHomeSection5{
+        width: 15%;
+        margin: auto;
+        text-align: center;
+    }
     .backgroundS4 {
-        margin: 20px;
+        margin-top: 25px;
+        margin-bottom: 25px;
         background-color: $convivialColor;
-        height: 200px;
+        height: 600px; 
     }
     #temoignage {
         font-size: 2.5em;
@@ -1821,7 +1899,6 @@ a {
         margin-top: 20px;
         padding-right: 10px;
         margin-right: 15px;
-
     }
 //section 6
     .row6 {
@@ -2119,7 +2196,6 @@ a {
         border: 2px solid black;
         height: 100px;
         margin-top:50px;
-        margin-bottom: 50px;
         text-align: center;
         color:$convivialColor2
     }
@@ -2191,6 +2267,27 @@ a {
         list-style-type: none;
     }
 //end of Recipe page
+//start of contact
+    #h1ContactMarginTop{
+        margin-top:50px;
+        padding-top: 50px;
+    }
+    #buttonContactCenter{
+        color: $convivialColor2;
+        text-align: center;
+    }
+    .bgInviteForm{
+        background-color: $convivialColor;
+        padding-left: 25px;
+        padding-bottom: 25px;
+        padding-right: 25px;
+        border-radius: 8%;
+    }
+    .titreInviteForm{
+        font-size: 2em;
+        text-decoration:underline;
+    }
+//End of contact
 }
 
 

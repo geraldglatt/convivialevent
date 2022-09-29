@@ -6,18 +6,21 @@
 
 <section class="container-fluid" id="bgSection1Home">
     <div class="row">
-        <div class="col">
-        <h1 class="txtSection2 mt-5">Présent dans l'Aube & dans l'Yonne</h1> 
+        <div class="col mt-5 pb-2">
+            <div class="text-center">
+                <img class="logoHome1" src="{{ asset('build/images/logo1.webp') | imagine_filter('my_thumb') }}" alt="logo1 convivial">
+            </div>
         </div>
     </div>
     <div class="row">
+        <div class=""></div>
         <div class="col"> 
-            <h1 class="txtSection2">Votre traiteur sur mesure Conviviale & Responsable</h1>
+            <h1 class="txtSection2">Votre traiteur événementiel Conviviale & Responsable</h1>
         </div>
     </div>
     <div class="row">
-        <div class="text-center mt-3 pb-2 ">
-            <img id="logoHome1" class="imageLogoConvivial" src="{{ asset('build/images/logo1.5b7d95f1.webp') }}" alt="logo convivial">
+        <div class="col">
+        <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
         </div>
     </div>
     <div class="row">
@@ -45,16 +48,16 @@
                 <card class="col-xs-12 col-sm-6 mb-3 mt-4 pb-3 text-center">
                     <img class="card-img-top-home" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
                     <div class="card-body">
-                        <h2 class="card-title">{{ wedding.title | raw }}</h2>
+                        <h2 class="card-title mt-3">{{ wedding.title | raw }}</h2>
                         <p class="card-text">{{ wedding.content | raw }}</p>
-                        <a id="lienS4Home" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
+                        <a class="" id="lienS4Home" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
                     </div>
                 </card>
             {% endfor %}
         </div>
     </div>
 </section>
-<section class="container" id="bgSection4Home">
+<section class="container-fluid" id="contenantSection4">
     <div class="row" id="bgGrey">
         <div class="col" id="contenantSection4">
             <div class="">
@@ -63,19 +66,25 @@
         </div>
     </div>
 </section>
-<section class="container-fluid mt-5 mb-5 ">
-    <div class="row backgroundS4">
-        <div class="col">
-            <h2 id="temoignage" class="text-center">
-                Nos Témoignages
-            </h2>
-            <p class="temoignages">
-                Merci,pour ce mariage champêtre réussi,
-                si j’ai un peu stressé pour vous joindre,
-                je ne regrette pas . La déco des buffets,
-                votre organisation étaient parfaite et votre
-                équipe hyper souriante [...]
-            </p>
+<section class="container-fluid backgroundS4 mt-5 mb-5 ">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 text-center">
+            <img class="logoHomeSection5 mt-3 mb-3" src="{{ asset('build/images/badge-rated-10.webp') | imagine_filter('my_thumb') }}" alt="logo mariage.net">
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="row">
+                <h2 id="temoignage" class="text-center">
+                    Nos Témoignages
+                </h2>
+
+                <p class="temoignages">
+                    Merci,pour ce mariage champêtre réussi,
+                    si j’ai un peu stressé pour vous joindre,
+                    je ne regrette pas . La déco des buffets,
+                    votre organisation étaient parfaite et votre
+                    équipe hyper souriante [...]
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -145,9 +154,9 @@
     <div class="slider-area text-center">
         <h2 class="font mt-5">Ils nous ont fait confiance en 2022</h2>
         <div class="wrapper mx-auto">
-            <div class="item mx-auto"><img src="{{ asset('build/images/logo-amf-bas (1).png') | imagine_filter('my_thumb') }}" alt="logo amf"></div>
-            <div class="item mx-auto"><img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') | imagine_filter('my_thumb') }}" alt="logo utt"></div>
-            <div class="item mx-auto"><img src="{{ asset('build/images/téléchargement (1).jpg') | imagine_filter('my_thumb') }}" alt="logo estp"></div>
+            <div class="item mx-auto mt-4 mb-4"><img src="{{ asset('build/images/logo-amf-bas (1).png') | imagine_filter('my_thumb') }}" alt="logo amf"></div>
+            <div class="item mx-auto mt-4 mb-4"><img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') | imagine_filter('my_thumb') }}" alt="logo utt"></div>
+            <div class="item mx-auto mt-4 mb-4"><img src="{{ asset('build/images/téléchargement (1).jpg') | imagine_filter('my_thumb') }}" alt="logo estp"></div>
         </div>
     </div>
 </section>
@@ -207,24 +216,11 @@
     </div>
 </section>
 {% endblock %}
-{% block javascript %}
-<script>
-     $('.brand-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        autoplay:true,
-        responsive:{
-            0:{
-            items:1
-            },
-            600:{
-            items:3
-            },
-            1000:{
-            items:5
-            }
-        }
-    })
-</script>
+{% block javascripts %}
+    {{ parent() }}
+ <!--Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 {% endblock %}
 

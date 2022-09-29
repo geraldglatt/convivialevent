@@ -1,45 +1,78 @@
-<section class="position-relative mb-5">
-    <div class="ChildColorNav">
-        <header class="colorNav">
-            <div class="container-fluid"> 
-                <div class="row text-center">
-                    <div class="col">
-                        <nav class="navbar navbar-expand-lg">
-                                <button class="navbar-toggler mx-left" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="textColorNav">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="{{ path("app_home") }}" id="navbarHome">Accueil</a>
-                                        </li>
-                                        <li class="nav-item dropdown" id="navbarHome">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Événementiel
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                {% for navHomeBlock in home.getHome %}
-                                                <li><a href="{{ path('page_show', {slug:navHomeBlock.page.slug}) }}" id="lienS5Home">{{ navHomeBlock.title | raw }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ path("app_partenaires") }}" tabindex="-1" id="navbarHome" >Partenaires</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ path('receipts_list') }}" tabindex="-1" id="navbarHome">Recettes</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ path("app_contact") }}" id="navbarHome">Demander un devis</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
+<section class="container-fluid relative"> 
+    <div class="row text-center">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto" id="textColorNav">
+                            <li class="nav-item active">
+                                <a class="nav-link" aria-current="page" href="{{ path("app_home") }}" id="navbarHome">Accueil</a>
+                            </li>
+                            <li class="nav-item dropdown" id="navbarHome">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Événementiel
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    {% for navHomeBlock in home.getHome %}
+                                    <li class="dropown-item"><a href="{{ path('page_show', {slug:navHomeBlock.page.slug}) }}" id="lienS5Home">{{ navHomeBlock.title | raw }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("app_partenaires") }}" tabindex="-1" id="navbarHome" >Partenaires</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('receipts_list') }}" tabindex="-1" id="navbarHome">Recettes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("app_contact") }}" id="navbarHome">Demander un devis</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </header>
-    <div>
+            </nav>
+        </div>
+    </div>
 </section>
+{# <section class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section> #}
 

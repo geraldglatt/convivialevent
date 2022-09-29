@@ -19,16 +19,9 @@ class PageController extends AbstractController
     {
         return $this->render('page/show.html.twig', [
             'page' => $page,
-            'pagePdf' => $pagePdf->findAll(),
+            'pagePdf' => $pagePdf->findBy([], ['id' => 'ASC'], 4),
             'images' => $images->findBy(['page' => $page]),
         ]);
     }
-
-    // #[Route('/pdf/{id}', name: 'document.pdf')]
-    // public function generatePdfDoc(PagePdf $pagePdf, PdfService $pdf)
-    // {
-    //     $html = $this->render('page/show.html.twig', ['pagepdf' => $pagePdf]);
-    //     $pdf->showPdfFile($html);
-    // }
    
 }
