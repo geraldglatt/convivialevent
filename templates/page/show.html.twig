@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ page.title | striptags }}{% endblock %}
 
 {% block body %}
 <section class="section1">
@@ -15,8 +15,8 @@
 <section class="container-fluid">
         <div class="row">
             <card class="col mb-4 mt-5 pb-4 text-center">
-                <img class="card-img-top" style="max-width: 700px" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
-                <div class="card-body">
+                <img class="imgPage" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
+                <div class="card">
                     <p class="card-text mt-5">{{ page.content | striptags | raw }}</p>
                 </div>
             </card>
@@ -71,6 +71,7 @@
                         </div>
                     {% endfor %}
                     </div>
+                </div>
             </div>
         </div>
     </div>

@@ -34,15 +34,6 @@ body {
         margin-top: 25px;
         
     }
-    .spanSubNav {
-        margin-left: 1px;
-        padding-left: 1px;
-        display:none;
-    }
-    .spanSubNav2 {
-        margin-left: 5px;
-        padding-left: 5px;
-    }
     .navbar-toggler-icon {
         text-align: center;
         width: 2vh;
@@ -77,12 +68,15 @@ footer {
   }
   .footerFontSizeAccueil{
     font-size: 1.4em;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-top: 15px;
     text-decoration: none;
   }
   a{
     color:white;
+  }
+  div.container.mt-5{
+    margin-top: 100px;
   }
 //end of footer
 //page home
@@ -111,19 +105,21 @@ p {
     font-size: 1.2em;
 }
 card img{
-    width: 100%;
-    height: 250px;
+    width: 95%;
+    height: 200px;
     -webkit-filter: grayscale(0) blur(0px);
     filter: grayscale(0) blur(0px);
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    border: 3px solid white;
 }
 card:hover img {
-    width: 100%; /* on affiche l'image au carré */
-    height: 300px;
+    width: 200px; /* on affiche l'image au carré */
+    height: 200px;
     border-radius: 50%;  /* on arrondit l'image */
     -webkit-transform: rotate(360deg); /* rotation de l'image */
     transform: rotate(360deg);
+    border: 5px solid $convivialColor2;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -170,6 +166,12 @@ p.txtSection4 {
     text-decoration: underline;
 }
 //section 5
+    a.textButtonSection5 {
+        width:50px;
+        height: auto;
+        color: white;
+        text-align: center;
+    }
     .logoHomeSection5{
         width: 25%;
         height: auto;
@@ -181,15 +183,27 @@ p.txtSection4 {
 
     }
     #temoignage {
-        font-size: 1.2em;
+        font-size: 1.5em;
         text-align: center;
-        margin-top: 15px; 
-
+        margin-top: 20px;
+        margin-bottom:20px;
+    }
+    #temoignage::before {
+        content:'';
+        width: 50px;
+        border-bottom: 2px solid black;
+        display: inline-block;
+    }
+    #temoignage::after {
+        content:'';
+        width: 50px;
+        border-top: 2px solid black;
+        display: inline-block;
     }
     .temoignages {
-        font-size: 0.8em;
+        font-size: 1em;
         text-align: center;
-        margin-top: 15px; 
+        margin-top: 35px;   
     }
     #lienS5Home{
         color:black;
@@ -355,6 +369,15 @@ p.txtSection4 {
     }
 //End Of Home Page
 //start of Page
+    .card{
+        margin-top: 400px;
+    }
+    .imgPage {
+        margin-top: 350px;
+        width: 40%;
+        height: 40%;
+        animation:none;
+    }
 button{
     background-color: $convivialColor;
     border-radius: 100px;
@@ -391,7 +414,7 @@ button{
     }
     .txtSection3List{
         position: absolute;
-        top: 90%;
+        top: 67%;
         left: 50%;
         transform: translate(-50%,-130%);
         color:black;
@@ -434,10 +457,19 @@ button{
 
 //End of list Recipes Pages
 //Start of details page
+.imageLogoConvivialRecipeDetail {
+    width:80%;
+    height:80%;
+}
 .textSection3 {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+    float: left;
+    margin-left: 25%;
+    color: black;
 }
 .textSection3Bis {
     text-align: left;
@@ -668,23 +700,25 @@ img.logoHome1 {
     font-size: 1.2em;
 }
 //section 3
-    p {
-        font-size: 1.5em;
-    }
-    card img{
-        width: 100%;
-        height: 400px;
-        -webkit-filter: grayscale(0) blur(0px);
-        filter: grayscale(0) blur(0px);
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
+p {
+    font-size: 1.2em;
+}
+card img{
+    width: 400px;
+    height: 400px;
+    -webkit-filter: grayscale(0) blur(0px);
+    filter: grayscale(0) blur(0px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    border: 3px solid white;
+}
     card:hover img {
-        width: 400px; /* on affiche l'image au carré */
-        height: 400px;
+        width: 300px; /* on affiche l'image au carré */
+        height: 300px;
         border-radius: 50%;  /* on arrondit l'image */
         -webkit-transform: rotate(360deg); /* rotation de l'image */
         transform: rotate(360deg);
+        border: 3px solid $convivialColor2;
     }
 //section 4
 .imgHomeFixeS4 {
@@ -744,10 +778,27 @@ h2{
 
     }
     #temoignage {
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 35px;
+        margin-bottom:35px;
+    }
+    #temoignage::before {
+        content:'';
+        width: 500px;
+        border-bottom: 3px solid black;
+        display: inline-block;
+    }
+    #temoignage::after {
+        content:'';
+        width: 500px;
+        border-top: 3px solid black;
+        display: inline-block;
+    }
+    .temoignages {
         font-size: 1.5em;
         text-align: center;
-        text-decoration: underline; 
-        margin-top: 15px; 
+        margin-top: 35px;   
     }
     #lienS5Home{
         color:black;
@@ -931,6 +982,15 @@ h2{
     }
 //End Of Home Page
 //start of Page
+    .card{
+        margin-top: 400px;
+    }
+    .imgPage {
+        margin-top: 350px;
+        width: 40%;
+        height: 40%;
+        animation:none;
+    }
 button{
     background-color: $convivialColor;
     border-radius: 100px;
@@ -1249,24 +1309,23 @@ footer {
         font-size: 0.8em;
     }
 //section 3
-    .card-img-top-home{
-        width: 70%;
-        height: 70%;
-    }
-    card img{
-        width: 45px;
-        height: 45px;
-        -webkit-filter: grayscale(0) blur(0px);
-        filter: grayscale(0) blur(0px);
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
+p {
+    font-size: 1.2em;
+}
+card img{
+    width: 450px;
+    height: 450px;
+    -webkit-filter: grayscale(0) blur(0px);
+    filter: grayscale(0) blur(0px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    border: 3px solid white;
+}
     card:hover img {
         width: 350px; /* on affiche l'image au carré */
         height: 350px;
         border-radius: 50%;  /* on arrondit l'image */
-        -webkit-transform: rotate(360deg); /* rotation de l'image */
-        transform: rotate(360deg);
+        border: 3px solid $convivialColor2;
     }
 //section 4
 .imgHomeFixeS4 {
@@ -1322,10 +1381,27 @@ h2{
 
     }
     #temoignage {
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 35px;
+        margin-bottom:35px;
+    }
+    #temoignage::before {
+        content:'';
+        width: 500px;
+        border-bottom: 3px solid black;
+        display: inline-block;
+    }
+    #temoignage::after {
+        content:'';
+        width: 500px;
+        border-top: 3px solid black;
+        display: inline-block;
+    }
+    .temoignages {
         font-size: 1.5em;
         text-align: center;
-        text-decoration: underline; 
-        margin-top: 15px; 
+        margin-top: 35px;   
     }
     #lienS5Home{
         color:black;
@@ -1511,6 +1587,15 @@ h2{
     }
 //End Of Home Page
 //start of Page
+    .card{
+        margin-top: 400px;
+    }
+    .imgPage {
+        margin-top: 350px;
+        width: 40%;
+        height: 40%;
+        animation:none;
+    }
 button{
     background-color: $convivialColor;
     border-radius: 100px;
@@ -1783,7 +1868,7 @@ a {
         background-color: white;
         background-size: 100%;
         width: 100%;
-        height: 800px;
+        height: 900px;
         background-repeat: no-repeat;   
     }
 //section2
@@ -1802,27 +1887,66 @@ a {
         color: white;    
     }
 //section 3
+    .trait_dessus {
+        border-top: 2px solid black;
+        width: 500px;
+    }
+    .trait_dessous {
+        border-bottom: 2px solid black;
+        width: 500px;
+    }
+    .sizeSection3{
+        height: 500px;
+    }
+    p {
+        font-size: 1.3em;
+    }
+    .reception {
+        position: relative;
+    }
     card img{
-        width: 250px;
-        height: 250px;
+        margin-bottom: 50px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: -60px;
+        width: 200px;
+        height: 200px;
         -webkit-filter: grayscale(0) blur(0px);
         filter: grayscale(0) blur(0px);
         -webkit-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        border: 3px solid white;
     }
     card:hover img {
-        width: 250px; /* on affiche l'image au carré */
-        height: 250px;
+        width: 200px; /* on affiche l'image au carré */
+        height: 200px;
         border-radius: 50%;  /* on arrondit l'image */
-        -webkit-transform: rotate(360deg); /* rotation de l'image */
-        transform: rotate(360deg);
+        border: 3px solid $convivialColor2;
+    }
+    .card-body {
+        margin-top: 50px;
+        font-style: italic;
+    }
+    .card-title {
+        margin-bottom: 50px;
+        font-weight: bold;
+    }
+    .card-text {
+        margin-bottom: 50px;
+        margin-top: 50px;
     }
     .span1ListS3{
         position: absolute;
+        transform: translate(-50%,-50%);
         margin-top: 150px;
     }
     .txtSection3List{
         position: relative;
+    }
+    #lienS3Home{
+        color: $convivialColor2;
+        font-size: 1em;
+        text-decoration: none;
     }
 //section 4
     .imgHomeFixeS4 {
@@ -1880,17 +2004,30 @@ a {
         margin-top: 25px;
         margin-bottom: 25px;
         background-color: $convivialColor;
-        height: 600px; 
+        height: 800px; 
     }
     #temoignage {
         font-size: 2.5em;
         text-align: center;
-        margin-top: 25px;
-        margin-bottom:25px;
+        margin-top: 35px;
+        margin-bottom:35px;
+    }
+    #temoignage::before {
+        content:'';
+        width: 500px;
+        border-bottom: 3px solid black;
+        display: inline-block;
+    }
+    #temoignage::after {
+        content:'';
+        width: 500px;
+        border-top: 3px solid black;
+        display: inline-block;
     }
     .temoignages {
         font-size: 1.5em;
-        text-align: center;   
+        text-align: center;
+        margin-top: 35px;   
     }
     #lienS5Home{
         color:black;
@@ -1899,6 +2036,15 @@ a {
         margin-top: 20px;
         padding-right: 10px;
         margin-right: 15px;
+    }
+    
+    .apostrophe {
+        width:1%;
+        padding-bottom: 25px;
+    }
+    .apostrophe2 {
+        width:1%;
+        padding-top: 25px;
     }
 //section 6
     .row6 {
@@ -1960,7 +2106,7 @@ a {
         text-align: center;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 60px;
-        font-weight: 500;
+        font-weight: 400px;
         text-transform: uppercase;
         letter-spacing: 2px;
     }
@@ -1990,40 +2136,50 @@ a {
 //fin section 7 bis
 //section 8
     #bgColorSectionContact{
-        margin-left:5px;
-        margin-right:5px;
+        background-image: url('../images/bgHome.webp');
+        background-attachment: fixed;
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+        background-repeat: no-repeat;
+        margin-top: 100px;
     }
     .titreS8 {
         text-decoration: none;
-        margin-bottom: 50px;
-        margin-top: 50px;
         font-size: 2em;
+        color:white;
+        margin-top: 100px;
     }
     #divHomeS8 {
         text-align: center;
         margin-top: 25px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+        color: white;
     }
     #buttonS8 {
         text-decoration: none;
         border: 1px solid black;
         text-align: center;
         color: black;
-        background-color: $convivialColor;
+        background-color: white;
         padding: 5px 20px 5px 20px;
         border-radius: 25px;
         font-size: 1.7em;
     }
 //section 9
     #section9{
-        background-color: lightgrey;
-        margin-left: 5px;
-        margin-right: 5px;
+        background-image: url('../images/bgHome.webp');
+        background-attachment: fixed;
+        object-fit: cover;
+        width: 102%;
+        height: 300px;
+        background-repeat: no-repeat;
     }
     .section9Flex1 {
         display: flex;
         justify-content: left;
         margin-left: 150px;
+        color: white;
     }
     .section9Flex1-1 {
         display: flex;
@@ -2036,6 +2192,7 @@ a {
     }
     .tailleTxtFlex1-1 {
         font-size: 1.5em;
+        color: white;
     }
     .section9Flex1-2 {
         display:flex;
@@ -2050,38 +2207,54 @@ a {
     }
     .section9FlexTxtMail {
         font-size: 1.5em;
+        color: white;
     }
     .section9Flex2 {
         display: flex;
         justify-content: center;
-        font-size: 0.5em;
+        font-size: 1em;
+        color: white;
     }
     .section9Flex2-2 {
         display: flex;
         margin-top: 30px;
         margin-left: 100px;
+        color:white;
     }
     .section9Flex2-2Txt {
         font-size: 1em;
+        color: white;
     }
 //section 10
     .flex1S10 {
         display: flex;
         justify-content: center;
         margin-top: 30px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 //section 11
-    .flex2S11 {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-        margin-left: 0px;
-    }
     .imgHomeIconesS11 {
-        height: 8vh;
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+        width: 50%;
+        height: 50%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 15px;
     }
 //End Of Home Page
 //start of Page
+    .card{
+        margin-top: 400px;
+    }
+    .imgPage {
+        margin-top: 350px;
+        width: 40%;
+        height: 40%;
+        animation:none;
+    }
     button{
         background-color: $convivialColor;
         border-radius: 100px;

@@ -27,6 +27,7 @@ class RecipeType extends AbstractType
 
             ])
             ->add('difficulty', ChoiceType::class, [
+                'label' => 'Difficulté',
                 'placeholder' => "Niveau de difficulté de la recette",
                 'choices' => [
                     'Facile' => 'Facile',
@@ -36,7 +37,7 @@ class RecipeType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4 text-center'
+                    'class' => 'btn mt-2 ml-2 text-center'
                 ],
                 'label' => 'Validez votre choix'
             ]);

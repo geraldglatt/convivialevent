@@ -16,11 +16,13 @@ class HomeController extends AbstractController
             'weddings' => $homeBlockRepository->findBy([], ['position' => 'ASC'], 6),
         ]);
     }
+    
     #[Route('/mentions_legales', name: 'mentions_legales')]
     public function mentionsLegales(): Response
     {
         return $this->render('home/mentionsLegales.html.twig');
     }
+
     #[Route('/partenaires', name: 'partenaires')]
     public function partenaires(): Response
     {

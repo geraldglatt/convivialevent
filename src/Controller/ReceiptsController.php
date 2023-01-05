@@ -47,9 +47,9 @@ class ReceiptsController extends AbstractController
     {
         return $this->render('receipts/detail.html.twig', [
             'recipe' => $recipe,
-            'recipeIngredients' => $recipeIngredients->findAll(),
-            'recipeSteps' => $recipeSteps->findAll(),
-            'image' => $image->findAll(),
+            'recipeIngredients' => $recipeIngredients->findBy(['recipe' => $recipe]),
+            'recipeSteps' => $recipeSteps->findBy(['recipe' => $recipe]),
+            'image' => $image->findBy(['recipe' => $recipe]),
         ]);
     }
 }

@@ -39,18 +39,19 @@
         </div>
     </div>
 </section>
-<section class="container-fluid mt-5 mb-5">
-        <div class="row text-center mt-5 mb-5">
-            <h1>Nos Prestations Traiteur</h1>
-        </div>
-        <div class="row mt-5 mb-5">
+<section class="container-fluid sizeSection3 mt-5 mb-5">
+        <div class="row reception mt-5 mb-5">
             {% for wedding in weddings %}
-                <card class="col-xs-12 col-sm-6 mb-3 mt-4 pb-3 text-center">
+                <card class="col-lg-3 col-xs-4 mb-3 mt-4 pb-3 text-center">
                     <img class="card-img-top-home" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
-                    <div class="card-body">
+                    <div class="card-body text-center mx-auto">
                         <h2 class="card-title mt-3">{{ wedding.title | raw }}</h2>
                         <p class="card-text">{{ wedding.content | raw }}</p>
-                        <a class="" id="lienS4Home" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">Venez découvrir</a>               
+                    </div>
+                    <div class="mx-auto">
+                        <a class="" id="lienS3Home" href="{{ path('page_show', {slug:wedding.page.slug}) }}" role="button">
+                        Venez découvrir
+                        </a>               
                     </div>
                 </card>
             {% endfor %}
@@ -68,23 +69,32 @@
 </section>
 <section class="container-fluid backgroundS4 mt-5 mb-5 ">
     <div class="row">
-        <div class="col-lg-6 col-md-12 text-center">
+        <div class="col text-center">
             <img class="logoHomeSection5 mt-3 mb-3" src="{{ asset('build/images/badge-rated-10.webp') | imagine_filter('my_thumb') }}" alt="logo mariage.net">
         </div>
-        <div class="col-lg-6 col-md-12">
-            <div class="row">
-                <h2 id="temoignage" class="text-center">
-                    Nos Témoignages
-                </h2>
-
-                <p class="temoignages">
-                    Merci,pour ce mariage champêtre réussi,
-                    si j’ai un peu stressé pour vous joindre,
-                    je ne regrette pas . La déco des buffets,
-                    votre organisation étaient parfaite et votre
-                    équipe hyper souriante [...]
-                </p>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2 id="temoignage" class="text-center">
+                Nos Témoignages
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col temoignages">
+            <h3>
+                Mariage de Kris et Carry(le 30/07/2022)
+            </h3>
+            <p class="">
+               <img class="apostrophe" src="{{ asset('build/images/kisspng-apostrophe-comma-quotation-marks-in-english-wiktio-english-irish-dictionary-5b25bd2157ce45.webp') }}"></img><img class="apostrophe" src="{{ asset('build/images/kisspng-apostrophe-comma-quotation-marks-in-english-wiktio-english-irish-dictionary-5b25bd2157ce45.webp') }}"></img>Que dire de Convivial Évent? Une équipe au top, nous avons été reçu pour la dégustation par Francis et avons été épaté. C'était succulent, les bouchées des pièces de cocktail sont très copieuses contrairement à d'autres traîteurs ou le foie gras n'est pas plus gros que le pouce. Son risotto au chaource est une tuerie, tout était parfait. Les cuisiniers sont jovials, aiment taquiner ce qui a été très apprécié par nos invités et avaient le sourire, les serveurs(ses)sont attentionnés et discrets. Rien a redire sur cette équipe de choc. Nous avons eu que de bons retours. Je recommande vivement.<img class="apostrophe2" src="{{ asset('build/images/kisspng-apostrophe-comma-quotation-marks-in-english-wiktio-english-irish-dictionary-5b25bd2157ce45.webp') }}"></img><img class="apostrophe2" src="{{ asset('build/images/kisspng-apostrophe-comma-quotation-marks-in-english-wiktio-english-irish-dictionary-5b25bd2157ce45.webp') }}"></img>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="mx-auto">
+                <a class="textButtonSection5" href='https://www.mariages.net/traiteur-mariage/convivial-event--e136299' target="blank">D'autres commentaires
+            </button>
         </div>
     </div>
 </section>
@@ -203,15 +213,17 @@
     </div>
 </section>
 <section class="container">
-    <div class="flex2S11">
-        <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.webp') }}" alt="icones home pinterest">
-        </div>
-        <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.webp') | imagine_filter('my_thumb') }}" alt="icones home facebook">
-        </div>
-        <div>
-            <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.webp') | imagine_filter('my_thumb') }}" alt="icones home twitter">
+    <div class="row">
+        <div class="col flex1S10">
+            <div>
+                <img class="imgHomeIconesS11" src="{{ asset('build/images/pinterest.webp') | imagine_filter('my_thumb') }}" alt="icones home pinterest">
+            </div>
+            <div>
+                <img class="imgHomeIconesS11" src="{{ asset('build/images/facebook.webp') | imagine_filter('my_thumb') }}" alt="icones home facebook">
+            </div>
+            <div>
+                <img class="imgHomeIconesS11" src="{{ asset('build/images/twitter.webp') | imagine_filter('my_thumb') }}" alt="icones home twitter">
+            </div>
         </div>
     </div>
 </section>
