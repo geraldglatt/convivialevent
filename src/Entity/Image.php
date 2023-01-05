@@ -16,7 +16,7 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: false)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $image;
 
     #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]

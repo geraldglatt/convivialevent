@@ -3,21 +3,21 @@
 {% block title %}Détails de {{ recipe.title }}{% endblock %}
 
 {% block body %}
-<section1 class="container-fluid">
+<section class="container-fluid">
     <div class="row">
         <div class="text-center mt-3 pb-3 ">
-            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
+            <img class="imageLogoConvivialRecipeDetail" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
         </div>
     </div>
-</section1>
-<section2 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row">
         <div class="col">
             <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
         </div>
     </div>
-</section2>
-<section3 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row">
         <div class="col">
             <h2 class="textSection3">{{ recipe.title}}</h2>
@@ -42,11 +42,13 @@
     </div>
     <div class="row">
         <div class="col" id="imgSection3Details">
-            <img class="recipePageImgSection5" src="{{ vich_uploader_asset(recipe.image[0],'imageFile') }}" alt="image recette">
+            {% for img in recipe.image %}
+                <img class="recipePageImgSection5 w-25" src="{{ asset('../images/' ~ img.image ) }}" alt="image recette">
+            {% endfor %}
         </div>
     </div>
-</section3>
-<section4 class="container">
+</section>
+<section class="container">
     <div class="row">
         <div class="col" id="section4">
             <ul>Ingrédients 
@@ -58,24 +60,21 @@
             </ul>
         </div>
     </div>
-</section4>
-<section5 class="container">
+</section>
+<section class="container mb-5">
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8" id="section5">
             {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">étapes {{ recipeStep.position }} :
+            <ul id="recipePageLiSection5">étapes {{ recipeStep.position  }} :
                 <li id="recipePageLiSection4">
-                    {{ recipeStep.content }}
+                    {{ recipeStep.content | raw }}
                 </li>
             </ul>
             {% endfor %}
         </div>
-        <div class="col-2"></div>
-</section5>
-<section6 class="container-fluid">
-    <div class="card-body">
-        <p class="textSection3"><a href="{{ path('receipts_list') }}" src="">Retour vers les Recettes</p>
-    </div>
-</section6>
+         <div class="">
+            <button class="textSection3"><a href="{{ path('receipts_list') }}">Retour vers les Recettes</button>
+        </div>
+</section>
 {% endblock %}

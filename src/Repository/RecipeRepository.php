@@ -24,6 +24,9 @@ class RecipeRepository extends ServiceEntityRepository
 
     public function findTypeAndDifficulty(Recipe $recipe): array {
         return $this->createQueryBuilder('r')
+            // ->leftJoin('r.image', 'image')
+            // ->where('image.recipe', ':recipe')
+            // ->setParameter(':recipe',$recipe->getImage())
             ->andWhere('r.type = :type')
             ->setParameter(':type', $recipe->getType())
             ->andWhere('r.difficulty = :diff')
@@ -31,14 +34,16 @@ class RecipeRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
 
-        // if($recipe->getType()){
-        //     $req = $req ->andWhere('r.type = :type')
-        //     ->setParameter(':type', $recipe->getType());
-        // }
-        // if($recipe->getDifficulty()){
-        //     $req = $req ->andWhere('r.difficulty = :diff')
-        //     ->setParameter(':diff', $recipe->getDifficulty());
-        // }
+    //     if($recipe->getType()){
+
+    //         $req = $req->andWhere('r.type = :type')
+    //         ->setParameter(':type', $recipe->getType());
+    //     }
+    //     if($recipe->getDifficulty()){
+            
+    //         $req = $req->andWhere('r.difficulty = :diff')
+    //         ->setParameter(':diff', $recipe->getDifficulty());
+    //     }
 
     //     $req->getQuery();
     //     return $req->getResult();

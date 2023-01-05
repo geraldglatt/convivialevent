@@ -7,41 +7,39 @@ use App\Form\RecipeType;
 use App\Repository\ImageRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\RecipeIngredientRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/receipts', name: 'receipts_')]
+#[Route('/receipts', name: 'receipts_', methods: ['GET', 'POST'])]
 class ReceiptsController extends AbstractController
 {
     #[Route('/', name: 'list')]
-    public function list(RecipeRepository $recipeRepository, PaginatorInterface $paginatorInterface, Request $request): Response
+    public function list(RecipeRepository $recipeRepository, Request $request): Response
     {
         $recipe = new Recipe();
+        $recipes = new Recipe();
 
         $form = $this->createForm(RecipeType::class, $recipe);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
             $recipe = $form->getData();
-        }
+
+            $recipes = $recipeRepository->findTypeAndDifficulty($recipe); 
+        };
         
-        $recipes = $paginatorInterface->paginate(
-            $recipeRepository->findTypeAndDifficulty($recipe),
-            $request->query->getInt('page', 1), /* page number */
-            6 /* limit per page */
-        );
         
 
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
-            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 6),
-            'recipes' => $recipes
+            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
+            'recipes' => $recipes,
+            'recipe' => $recipe
             
-
         ]);
+        
     }
 
     #[Route('/{slug}', name: 'detail')]
@@ -49,9 +47,9 @@ class ReceiptsController extends AbstractController
     {
         return $this->render('receipts/detail.html.twig', [
             'recipe' => $recipe,
-            'recipeIngredients' => $recipeIngredients->findAll(),
-            'recipeSteps' => $recipeSteps->findAll(),
-            'image' => $image->findAll(),
+            'recipeIngredients' => $recipeIngredients->findBy(['recipe' => $recipe]),
+            'recipeSteps' => $recipeSteps->findBy(['recipe' => $recipe]),
+            'image' => $image->findBy(['recipe' => $recipe]),
         ]);
     }
 }

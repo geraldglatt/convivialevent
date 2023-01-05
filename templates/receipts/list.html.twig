@@ -3,60 +3,89 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-    <section1 class="container-fluid">
+<section class="container-fluid">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="text-center mt-3 pb-3 ">
-                <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
+        <div class="col-6 mx-auto">
+            <div class="text-center mt-5 mb-5 ">
+                <img class="imageLogoListConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
             </div>
         </div>
-        <div class="col-1"></div>
     </div>
-</section1>
-<section2 class="container-fluid">
+</section>
+<section class="container" id="bgRecipePageTxtSection2">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <p class="listrecipePagetxtSection2">Les recettes que </br> vous propose </br> Convivial Event</p>
-        </div>
-        <div class="col-1"></div>
-    </div>
-</section2>
-<section3 class="container-fluid" id="bgListRecipePageS3">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <p class="listrecipePagetxtSection3">Une sélection de recettes </br> à faire chez vous oû </br> à partager avec vos amis !!!</p>
-        </div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {{ form(form) }}     
+        <div class="col mb-4 mt-5 pb-4 text-center">
+            <p class="listrecipePagetxtSection3">Les recettes que </br> vous propose </br> Convivial Event</p>
         </div>
     </div>
-</section4>
-<section5 class="wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                {% for res in recipes %}
-                <card>
-                    <img class="card-img-top" src="{{ vich_uploader_asset(res.image[0],'imageFile') }}" alt="photo recettes">
-                    <div class="card-body">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
-                    </div>
-                    <div class="card-footer">
-                        <p class="textSection5">{{ res.difficulty}}</p>
-                    </div>
-                </card>
-                {% endfor %}
-                <div class="navigation">
-                        {{ knp_pagination_render(recipes) }}
+</section>
+<section class="container" id="bgRecipePageTxtSection3">
+    <div class="contenantSection4">
+                <img class="imgHomeFixeS4" src="{{ asset('/build/images/boulPizz.0648ce00.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
+            </div>
+    <div class="row">
+        <div class="col mb-4 mt-5 pb-4 mt-5 text-center">
+            <div class="contenantSection4">
+                <p class="txtSection3List"><span class="span1ListS3">Une sélection de recettes</br>à faire chez vous oû</br>à partager avec vos amis !!!</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {{ form_start(form) }}
+
+            <div class="form-group mb-5">
+                {{ form_label(form.type) }}
+                {{ form_widget(form.type) }}
+                <div>
+                    {{ form_errors(form.type) }}
                 </div>
             </div>
+
+            <div class="form-group">
+                {{ form_label(form.difficulty) }}
+                {{ form_widget(form.difficulty) }}
+                <div>
+                    {{ form_errors(form.difficulty) }}
+                </div>
+            </div>
+
+            <div class="form-group text-center mt-5 mb-5 mx-auto">
+                {{ form_row(form.submit) }}
+            </div>
+
+            {{ form_end(form) }}
         </div>
     </div>
-</section5>
+</section>
+</section>
+<section class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {% for res in recipes %}
+                    <img class="card-img-top" src="{{ asset('build/images/' ~ res.image[0]) }}" alt="photo recettes">
+                    <div class="card-body text-center">
+                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.title }}</a></P>
+                    </div>
+                    <div class="row mx-auto my-auto">
+                        <div class="card-footer col-6">
+                            <p class="textSection5">{{ res.time ~ ' minutes'}}</p>
+                        </div>
+                        <div class="card-footer col-6">
+                            <p class="textSection5">{{ res.difficulty}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</section>
+{% endblock %}
+{% block javascript %}
+    {{ parent() }}
+
+<script>
+    $(document).ready(function() {
+        $('select').formSelect();
+    });
+</script>
 {% endblock %}
