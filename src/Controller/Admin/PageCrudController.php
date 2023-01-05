@@ -33,30 +33,33 @@ class PageCrudController extends AbstractCrudController
     {
         yield FormField::addTab('Général');
         
-        SlugField::new('slug')
-            ->setTargetFieldName('nom')
-            ->hideOnIndex();
+        // yield SlugField::new('slug')
+        //     ->setTargetFieldName('nom')
+        //     ->hideOnIndex();
 
-        TextField::new('title')
+        yield TextField::new('title')
             ->setFormType(CKEditorType::class);
-        TextEditorField::new('content')
+
+        yield TextEditorField::new('content')
             ->setFormType(CKEditorType::class);
-        TextEditorField::new('meta_desc')
+
+        yield TextEditorField::new('meta_desc')
         ->setFormType(CKEditorType::class);
-        ImageField::new('image')
+
+        yield ImageField::new('image')
             ->setBasePath('images/')
             ->setUploadDir('public/images/convivialevent_images');
 
-        // yield FormField::addTab('Pagepdfs');
-        // CollectionField::new('pagePdfs')
-        //             ->setEntryType(PagePdfType::class)
-        //             ->setEntryIsComplex(true)
-        //             ->hideOnIndex();
+        yield FormField::addTab('Pagepdfs');
+        yield CollectionField::new('pagePdfs')
+                    ->setEntryType(PagePdfType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
 
-        // yield FormField::addTab('Images');
-        // yield CollectionField::new('pageImages')
-        //             ->setEntryType(ImagesType::class)
-        //             ->setEntryIsComplex(true)
-        //             ->hideOnIndex();
+        yield FormField::addTab('Images');
+        yield CollectionField::new('pageImages')
+                    ->setEntryType(ImagesType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
     }
 }

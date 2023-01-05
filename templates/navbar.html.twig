@@ -1,6 +1,6 @@
 <section class="container-fluid relative"> 
     <div class="row text-center">
-        <div class="col">
+        <div class="col-12">
             <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Événementiel
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu ml-1" aria-labelledby="dropdownMenuButton1">
                                     {% for navHomeBlock in home.getHome %}
                                     <li class="dropown-item"><a href="{{ path('page_show', {slug:navHomeBlock.page.slug}) }}" id="lienS5Home">{{ navHomeBlock.title | raw }}</a></li>
                                     {% endfor %}

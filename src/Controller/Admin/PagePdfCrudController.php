@@ -18,7 +18,6 @@ class PagePdfCrudController extends AbstractCrudController
     public function configureFields(string $pagePdf): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
             AssociationField::new('page'),
             TextField::new('title'),
         ];

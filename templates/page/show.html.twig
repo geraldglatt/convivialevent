@@ -7,17 +7,23 @@
     <div class="container-fluid" id="bgS1Page">
         <div class="row">
             <div class="col text-center mt-1">
-                <h1 class="colorTxtS1Page">{{ page.title | striptags | raw  }}</h1>
+                <h1 class="colorTxtS1Page">
+                {{ page.title | striptags | raw  }}
+                </h1>
             </div>
         </div>
     </div>
 </section>
 <section class="container-fluid">
         <div class="row">
-            <card class="col mb-4 mt-5 pb-4 text-center">
-                <img class="imgPage" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
+            <card class="col mb-3 mt-3 pb-3 text-center">
+                <img class="imgPage" 
+                src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" 
+                alt="photo convivialevent">
                 <div class="card">
-                    <p class="card-text mt-5">{{ page.content | striptags | raw }}</p>
+                    <p class="card-text mt-2">
+                    {{ page.content | striptags | raw }}
+                    </p>
                 </div>
             </card>
         </div>
@@ -26,7 +32,12 @@
     <div class="container-fluid" id="">
         <div class="row">
             <div class="col text-center">
-                <h3>Pour connaitre nos options et détails</br><span class="spanPageS4">Télécharger nos brochures :</span></h3>
+                <h3>Pour connaitre nos options et détails
+                </br>
+                <span class="spanPageS4">
+                Télécharger nos brochures :
+                </span>
+                </h3>
             </div>
         </div>
     </div>
@@ -34,13 +45,16 @@
 <section class="section5">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4 text-center">
+            <div class="col-12 d-flex">
             {% for pdf in pagePdf %}
-                <button class=""><a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}" alt="{{ pdf.title }}">{{ pdf.title }}</a></button>
+                <button class="">
+                <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}" 
+                alt="{{ pdf.title }}">
+                {{ pdf.title }}
+                </a>
+                </button>
             {% endfor %}
             </div> 
-            <div class="col-4"></div>
         </div>
     </div>
 </section>
@@ -51,10 +65,13 @@
         </div>
         <div class="row">
             <div class="col mb-4 mt-5 ml-5 pb-4 text-center align-items-center">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleControls" 
+                class="carousel slide" 
+                data-bs-ride="carousel">
                     <div class="carousel-inner">
                     {% for pageImg in images %}
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselExampleInterval" 
+                        class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item {% if loop.first == 0 %}active{% endif %}" data-bs-interval="10000">
                                 <img src="{{ asset('images/convivialevent_images/'~ pageImg.title) }}" style="max-width: 400px" alt="{{ pageImg.title }}">
