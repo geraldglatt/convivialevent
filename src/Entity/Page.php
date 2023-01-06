@@ -32,11 +32,11 @@ class Page
     #[ORM\Column(type: 'text')]
     private $metaDesc;
 
-    #[ORM\Column(type: 'string', length: 60, nullable: true)]
-    private $image;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
 
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
+    #[Vich\UploadableField(mapping:'page_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
@@ -110,31 +110,31 @@ class Page
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getFile(): ?string
     {
-        return $this->image;
+        return $this->file;
     }
 
-    public function setImage(?string $image): self
+    public function setFile(string $file): self
     {
-        $this->image = $image;
+        $this->file = $file;
 
         return $this;
     }
 
-    public function getImageFile(): ?File
+    public function getImageFile(): ?Image
     {
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?Image $imageFile = null): void
     {
         $this->imageFile = $imageFile;
         
         if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable('now');
         }
     }
 
@@ -230,7 +230,7 @@ class Page
 
     public function removeHomeBlock(HomeBlock $homeBlock): self
     {
-        if ($this->page->removeElement($homeBlock)) {
+        if ($this->homeBlocks->removeElement($homeBlock)) {
             // set the owning side to null (unless already changed)
             if ($homeBlock->getPage() === $this) {
                 $homeBlock->setPage(null);
@@ -244,4 +244,5 @@ class Page
     {
         return $this->title;
     }
+
 }

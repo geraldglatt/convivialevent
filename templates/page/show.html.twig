@@ -17,14 +17,16 @@
 <section class="container-fluid">
         <div class="row">
             <card class="col mb-3 mt-3 pb-3 text-center">
+                {% for page in pages %}
                 <img class="imgPage" 
-                src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" 
+                src="{{ vich_uploader_asset(page,'imageFile') | imagine_filter('my_thumb') }}" 
                 alt="photo convivialevent">
                 <div class="card">
                     <p class="card-text mt-2">
                     {{ page.content | striptags | raw }}
                     </p>
                 </div>
+                {% endfor %}
             </card>
         </div>
 </section>
@@ -74,7 +76,7 @@
                         class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item {% if loop.first == 0 %}active{% endif %}" data-bs-interval="10000">
-                                <img src="{{ asset('images/convivialevent_images/'~ pageImg.title) }}" style="max-width: 400px" alt="{{ pageImg.title }}">
+                                <img src="{{ vich_uploader_asset(pageImg, 'imageFile') }}" style="max-width: 400px" alt="{{ pageImg.title }}">
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

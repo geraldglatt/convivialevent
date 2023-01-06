@@ -21,13 +21,12 @@ class ImagesCrudController extends AbstractCrudController
     public function configureFields(string $images): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
-            AssociationField::new('page'),
-            TextField::new('imageFile')->setFormType(VichImageType::class),
-            ImageField::new('title')
-                ->setBasePath('images/')
-                ->setUploadDir('public/images/convivialevent_images'),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            ImageField::new('file')
+                ->setBasePath('/uploads/imagesPage/')
+                ->hideOnIndex(),
             IntegerField::new('position'),
+            AssociationField::new('page')
         ];
     }
 }
