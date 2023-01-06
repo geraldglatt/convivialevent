@@ -32,7 +32,6 @@ class RecipeCrudController extends AbstractCrudController
     public function configureFields(string $recipe): iterable
     {
         yield FormField::addTab('Général');
-        yield IdField::new('id')->hideOnForm();
         yield TextField::new('title');
         yield IntegerField::new('nb_portion');
         yield ChoiceField::new('type')->setChoices([

@@ -20,11 +20,10 @@ class RecipeStepCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
-            AssociationField::new('recipe'),
             TextField::new('title'),
             TextEditorField::new('content'),
             IntegerField::new('position'),
+            AssociationField::new('recipe'),
         ];
     }
 }
