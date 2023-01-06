@@ -16,12 +16,6 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $image;
-
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
-
     #[ORM\Column(type: 'integer')]
     private $position;
 
@@ -31,36 +25,42 @@ class Image
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
+    private ?File $imageFile;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getImage(): ?string
+    public function getFile(): ?string
     {
-        return $this->image;
+        return $this->file;
     }
 
-    public function setImage(?string $image): self
+    public function setFile(string $file): self
     {
-        $this->image = $image;
+        $this->file = $file;
 
         return $this;
     }
 
-    public function getImageFile(): ?File
+    public function getImageFile(): ?Image
     {
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?Image $imageFile = null): void
     {
         $this->imageFile = $imageFile;
         
         if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable('now');
         }
     }
 
@@ -102,6 +102,7 @@ class Image
 
     public function __toString()
     {
-        return $this->image;
+        return $this->file;
     }
+
 }

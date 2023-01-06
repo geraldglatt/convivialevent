@@ -14,6 +14,7 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
         foreach ([PageFixtures::PAGE_REFERENCE1, PageFixtures::PAGE_REFERENCE2, PageFixtures::PAGE_REFERENCE3, PageFixtures::PAGE_REFERENCE4] as $ref) {
             for ($i = 0; $i < 4; ++$i) {
                 $image = new Images();
+                $image->setFile('champêtre-2.webp');
                 $image->setTitle('title'.$i);
                 $image->setPosition($i);
                 $image->setUpdatedAt(new \DateTimeImmutable('now'));

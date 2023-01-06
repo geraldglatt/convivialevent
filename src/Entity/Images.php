@@ -17,11 +17,8 @@ class Images
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $title;
-
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'title')]
-    private $imageFile;
-
+    private ?string $title;
+   
     #[ORM\Column(type: 'integer')]
     private $position;
 
@@ -31,6 +28,13 @@ class Images
     #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'page')]
     #[ORM\JoinColumn(nullable: false)]
     private $page;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    #[Vich\UploadableField(mapping:'page_images', fileNameProperty:'file')]
+    private $imageFile;
+
 
     public function getId(): ?int
     {
@@ -47,22 +51,6 @@ class Images
         $this->title = $title;
 
         return $this;
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
-        
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
     }
 
     public function getPosition(): ?int
@@ -98,6 +86,34 @@ class Images
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+        
+        if ($imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable('now');
+        }
     }
 
 }

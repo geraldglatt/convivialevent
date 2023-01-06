@@ -19,11 +19,11 @@ class HomeBlock
     #[ORM\Column(type: 'string', length: 120)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 60, nullable: true)]
-    private $image;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
 
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
+    #[Vich\UploadableField(mapping:'homeblock_images', fileNameProperty:'image')]
+    private ?File $imageFile;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
@@ -54,18 +54,6 @@ class HomeBlock
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
@@ -142,6 +130,18 @@ class HomeBlock
     public function setPage(?Page $page): self
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
 
         return $this;
     }
