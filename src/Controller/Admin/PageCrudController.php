@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PageCrudController extends AbstractCrudController
 {
@@ -32,10 +33,6 @@ class PageCrudController extends AbstractCrudController
     public function configureFields(string $page): iterable
     {
         yield FormField::addTab('Général');
-        
-        // yield SlugField::new('slug')
-        //     ->setTargetFieldName('nom')
-        //     ->hideOnIndex();
 
         yield TextField::new('title')
             ->setFormType(CKEditorType::class);
@@ -46,9 +43,10 @@ class PageCrudController extends AbstractCrudController
         yield TextEditorField::new('meta_desc')
         ->setFormType(CKEditorType::class);
 
-        yield ImageField::new('image')
-            ->setBasePath('images/')
-            ->setUploadDir('public/images/convivialevent_images');
+        yield TextField::new('imageFile')->setFormType(VichImageType::class);
+
+        yield ImageField::new('file')
+            ->setBasePath('/uploads/imagesPage/')->onlyOnIndex();
 
         yield FormField::addTab('Pagepdfs');
         yield CollectionField::new('pagePdfs')

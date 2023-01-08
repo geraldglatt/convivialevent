@@ -15,12 +15,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PageController extends AbstractController
 {
     #[Route('/{slug}', methods: ['GET'], name: 'show')]
-    public function show(Page $page, PagePdfRepository $pagePdf, ImagesRepository $images): Response
+    public function show(Page $pages, PagePdfRepository $pagePdf, ImagesRepository $images): Response
     {
         return $this->render('page/show.html.twig', [
-            'page' => $page,
+            'pages' => $pages,
             'pagePdf' => $pagePdf->findBy([], ['id' => 'ASC'], 4),
-            'images' => $images->findBy(['page' => $page]),
+            'images' => $images->findBy(['page' => $pages]),
         ]);
     }
    
