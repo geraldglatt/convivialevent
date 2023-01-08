@@ -12,7 +12,7 @@ class PagePdfFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         foreach ([PageFixtures::PAGE_REFERENCE1, PageFixtures::PAGE_REFERENCE2, PageFixtures::PAGE_REFERENCE3, PageFixtures::PAGE_REFERENCE4] as $ref) {
-            for ($i = 0; $i < 3; ++$i) {
+            for ($i = 0; $i < 1; ++$i) {
                 $pagePdf = new PagePdf();
                 $pagePdf->setTitle('options conviviales'.$i);
 

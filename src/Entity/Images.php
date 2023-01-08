@@ -25,7 +25,7 @@ class Images
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
 
-    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'page')]
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'pageImages')]
     #[ORM\JoinColumn(nullable: false)]
     private $page;
 
@@ -105,11 +105,11 @@ class Images
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $file = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
         
-        if ($imageFile) {
+        if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable('now');

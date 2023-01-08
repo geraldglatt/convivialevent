@@ -26,10 +26,10 @@ class Image
     private $updatedAt;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $file;
+    private ?string $file;
 
     #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
-    private ?File $imageFile;
+    private ?File $imageFile = null;
 
     public function getId(): ?int
     {
@@ -48,16 +48,16 @@ class Image
         return $this;
     }
 
-    public function getImageFile(): ?Image
+    public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
 
-    public function setImageFile(?Image $imageFile = null): void
+    public function setImageFile(?File $file = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
         
-        if (null !== $imageFile) {
+        if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable('now');

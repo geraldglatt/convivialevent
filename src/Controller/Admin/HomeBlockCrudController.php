@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class HomeBlockCrudController extends AbstractCrudController
 {
@@ -31,9 +32,12 @@ class HomeBlockCrudController extends AbstractCrudController
             AssociationField::new('page'),
             TextField::new('title')
                 ->setFormType(CKEditorType::class),
-            ImageField::new('image')
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->onlyWhenCreating(),
+            ImageField::new('file')
                 ->setBasePath('images/')
-                ->setUploadDir('public/images/convivialevent_images'),
+                ->setUploadDir('/uploads/imagesHomeblock/'),
             TextEditorField::new('content')
                 ->setFormType(CKEditorType::class),
             IntegerField::new('position'),

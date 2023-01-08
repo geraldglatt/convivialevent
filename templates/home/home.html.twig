@@ -43,7 +43,10 @@
         <div class="row reception mt-5 mb-5">
             {% for wedding in weddings %}
                 <card class="col-lg-3 col-xs-4 mb-3 mt-4 pb-3 text-center">
-                    <img class="card-img-top-home" src="{{ asset('build/images/' ~ wedding.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
+                    <img class="card-img-top-home" src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent">
+                    <pre>
+                        {{ dump(wedding) }}
+                    </pre>
                     <div class="card-body text-center mx-auto">
                         <h2 class="card-title mt-3">{{ wedding.title | raw }}</h2>
                         <p class="card-text">{{ wedding.content | raw }}</p>
@@ -70,7 +73,7 @@
 <section class="container-fluid backgroundS4 mt-5 mb-5 ">
     <div class="row">
         <div class="col text-center">
-            <img class="logoHomeSection5 mt-3 mb-3" src="{{ asset('build/images/badge-rated-10.webp') | imagine_filter('my_thumb') }}" alt="logo mariage.net">
+            <img class="logoHomeSection5 mt-3 mb-3" src="" alt="logo mariage.net">
         </div>
     </div>
     <div class="row">

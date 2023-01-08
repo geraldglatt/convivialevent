@@ -24,9 +24,9 @@ class ImageCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             AssociationField::new('recipe'),
             TextField::new('imageFile')->setFormType(VichImageType::class),
-            ImageField::new('image')
-                ->setBasePath('images/')
-                ->setUploadDir('public/images/convivialevent_images'),
+            ImageField::new('file')
+                ->setBasePath('/uploads/imagesRecipe/')
+                ->onlyOnIndex(),
             IntegerField::new('position')->hideOnForm(),
         ];
     }

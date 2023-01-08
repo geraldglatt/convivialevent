@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title | striptags }}{% endblock %}
+{% block title %}{{ pages.title | striptags }}{% endblock %}
 
 {% block body %}
 <section class="section1">
@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col text-center mt-1">
                 <h1 class="colorTxtS1Page">
-                {{ page.title | striptags | raw  }}
+                {{ pages.title | striptags | raw  }}
                 </h1>
             </div>
         </div>
