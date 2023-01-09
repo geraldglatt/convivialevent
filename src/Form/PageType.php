@@ -18,9 +18,6 @@ class PageType extends AbstractType
             ->add('title', TextType::class)
             ->add('content', CKEditorType::class)
             ->add('metaDesc',CKEditorType::class)
-            ->add('image',VichImageType::class, [
-                'multiple' => true
-            ])
         ;
     }
 

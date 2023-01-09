@@ -43,7 +43,7 @@ class PageCrudController extends AbstractCrudController
         yield TextEditorField::new('meta_desc')
         ->setFormType(CKEditorType::class);
 
-        yield TextField::new('imageFile')->setFormType(VichImageType::class);
+        yield TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating();
 
         yield ImageField::new('file')
             ->setBasePath('/uploads/imagesPage/')->onlyOnIndex();

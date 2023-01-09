@@ -44,9 +44,6 @@
             {% for wedding in weddings %}
                 <card class="col-lg-3 col-xs-4 mb-3 mt-4 pb-3 text-center">
                     <img class="card-img-top-home" src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent">
-                    <pre>
-                        {{ dump(wedding) }}
-                    </pre>
                     <div class="card-body text-center mx-auto">
                         <h2 class="card-title mt-3">{{ wedding.title | raw }}</h2>
                         <p class="card-text">{{ wedding.content | raw }}</p>

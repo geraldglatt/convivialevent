@@ -19,7 +19,7 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'images', cascade: [ "persist" ])]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'files', cascade: [ "persist" ])]
     private $recipe;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]

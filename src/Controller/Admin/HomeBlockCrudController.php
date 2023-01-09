@@ -29,18 +29,18 @@ class HomeBlockCrudController extends AbstractCrudController
     public function configureFields(string $homeBlock): iterable
     {
         return [
-            AssociationField::new('page'),
             TextField::new('title')
                 ->setFormType(CKEditorType::class),
             TextField::new('imageFile')
                 ->setFormType(VichImageType::class)
                 ->onlyWhenCreating(),
             ImageField::new('file')
-                ->setBasePath('images/')
-                ->setUploadDir('/uploads/imagesHomeblock/'),
+                ->setBasePath('/uploads/imagesHomeblock/')
+                ->setUploadDir('assets/images/'),
             TextEditorField::new('content')
                 ->setFormType(CKEditorType::class),
             IntegerField::new('position'),
+            AssociationField::new('page'),
         ];
     }
 }
