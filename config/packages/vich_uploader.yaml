@@ -10,19 +10,19 @@ vich_uploader:
             upload_destination: '%kernel.project_dir%/public%page_images%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: false
-            delete_on_update: true
-            delete_on_remove: true
+            delete_on_update: false
+            delete_on_remove: false
         recipe_images:
             uri_prefix: '%recipe_images%'
             upload_destination: '%kernel.project_dir%/public%recipe_images%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: false
-            delete_on_update: true
-            delete_on_remove: true
+            delete_on_update: false
+            delete_on_remove: false
         homeblock_images:
             uri_prefix: '%homeblock_images%'
             upload_destination: '%kernel.project_dir%/public%homeblock_images%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: false
-            delete_on_update: true
-            delete_on_remove: true
+            delete_on_update: false
+            delete_on_remove: false

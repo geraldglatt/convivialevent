@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class RecipeCrudController extends AbstractCrudController
 {
@@ -60,9 +61,9 @@ class RecipeCrudController extends AbstractCrudController
                     ->hideOnIndex();
 
         yield FormField::addTab('Image');
-        yield CollectionField::new('image')
-                    ->setEntryType(ImageType::class)
-                    ->setEntryIsComplex(true)
-                    ->hideOnIndex();
+        yield TextField::new('imageFile')->setFormType(VichImageType::class);
+              ImageField::new('file')
+                ->setBasePath('/uploads/imagesRecipe/')
+                ->onlyOnIndex();
     }
 }

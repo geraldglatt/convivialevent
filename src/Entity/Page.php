@@ -48,13 +48,13 @@ class Page
     private $pageImages;
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, orphanRemoval: true, cascade: [ "persist" ])]
-    private $homeBlocks;
+    private $filesHomeblock;
 
     public function __construct()
     {
         $this->pagePdfs = new ArrayCollection();
         $this->pageImages = new ArrayCollection();
-        $this->homeBlocks = new ArrayCollection();
+        $this->filesHomeblock = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,22 +188,22 @@ class Page
         return $this->pageImages;
     }
 
-    public function addPageImage(Images $pageImage): self
+    public function addPageImage(Images $image): self
     {
-        if (!$this->pageImages->contains($pageImage)) {
-            $this->pageImages[] = $pageImage;
-            $pageImage->setPage($this);
+        if (!$this->pageImages->contains($image)) {
+            $this->pageImages[] = $image;
+            $image->setPage($this);
         }
 
         return $this;
     }
 
-    public function removePageImage(Images $pageImage): self
+    public function removePageImage(Images $image): self
     {
-        if ($this->pageImages->removeElement($pageImage)) {
+        if ($this->pageImages->removeElement($image)) {
             // set the owning side to null (unless already changed)
-            if ($pageImage->getPage() === $this) {
-                $pageImage->setPage(null);
+            if ($image->getPage() === $this) {
+                $image->setPage(null);
             }
         }
 
@@ -215,13 +215,13 @@ class Page
      */
     public function getHomeBlocks(): Collection
     {
-        return $this->homeBlocks;
+        return $this->filesHomeblock;
     }
 
     public function addHomeBlock(HomeBlock $homeBlock ): self
     {
-        if (!$this->homeBlocks->contains($homeBlock)) {
-            $this->homeBlocks[] = $homeBlock;
+        if (!$this->filesHomeblock->contains($homeBlock)) {
+            $this->filesHomeblock[] = $homeBlock;
             $homeBlock->setPage($this);
         }
 
@@ -230,7 +230,7 @@ class Page
 
     public function removeHomeBlock(HomeBlock $homeBlock): self
     {
-        if ($this->homeBlocks->removeElement($homeBlock)) {
+        if ($this->filesHomeblock->removeElement($homeBlock)) {
             // set the owning side to null (unless already changed)
             if ($homeBlock->getPage() === $this) {
                 $homeBlock->setPage(null);

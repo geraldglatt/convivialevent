@@ -37,7 +37,7 @@ class HomeBlock
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'homeBlocks')]
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'filesHomeblock')]
     #[ORM\JoinColumn(nullable: false)]
     private $page;
 

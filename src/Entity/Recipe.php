@@ -27,7 +27,7 @@ class Recipe
     private $nb_portion;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
-    private $images;
+    private $files;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $ingredients;
@@ -46,7 +46,7 @@ class Recipe
 
     public function __construct()
     {
-        $this->images = new ArrayCollection();
+        $this->files = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
     }
@@ -95,27 +95,27 @@ class Recipe
     /**
      * @return Collection<int, Image>
      */
-    public function getImage(): Collection
+    public function getFile(): Collection
     {
-        return $this->images;
+        return $this->files;
     }
 
-    public function addImage(Image $image): self
+    public function addFile(Image $file): self
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setRecipe($this);
+        if (!$this->files->contains($file)) {
+            $this->files[] = $file;
+            $file->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeImage(Image $image): self
+    public function removeFile(Image $file): self
     {
-        if ($this->images->removeElement($image)) {
+        if ($this->files->removeElement($file)) {
             // set the owning side to null (unless already changed)
-            if ($image->getRecipe() === $this) {
-                $image->setRecipe(null);
+            if ($file->getRecipe() === $this) {
+                $file->setRecipe(null);
             }
         }
 
