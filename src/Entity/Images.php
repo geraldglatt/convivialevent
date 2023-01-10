@@ -116,4 +116,9 @@ class Images
         }
     }
 
+    public function __toString()
+    {
+        return $this->title;
+    }
+
 }

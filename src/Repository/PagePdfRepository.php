@@ -39,6 +39,18 @@ class PagePdfRepository extends ServiceEntityRepository
         }
     }
 
+    public function findpdfpageChampêtre(PagePdfRepository $pagePdfRepository){
+        return $pagePdfRepository->findBy([
+            'page' => 1,
+        ]);
+    }
+
+    public function findpdfBypage($id,PagePdfRepository $pagePdfRepository){
+        return $pagePdfRepository->findBy([
+            'page' => $id,
+        ]);
+    }
+
 //    /**
 //     * @return PagePdf[] Returns an array of PagePdf objects
 //     */

@@ -18,9 +18,11 @@
         <div class="row">
             <card class="col mb-3 mt-3 pb-3 text-center">
                 {% for page in pages %}
-                <img class="imgPage" 
-                src="{{ vich_uploader_asset(page,'imageFile')}}" 
-                alt="photo convivialevent">
+                    {% for image in images %}
+                    <img class="imgPage" 
+                    src="{{ vich_uploader_asset(image,'imageFile')}}" 
+                    alt="photo convivialevent">
+                    {% endfor %}
                 <div class="card">
                     <p class="card-text mt-2">
                     {{ page.content | striptags | raw }}
@@ -47,10 +49,10 @@
 <section class="section5">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-lg-4 d-flex">
-            {% for pdf in pagePdf %}
-                <button class="">
-                <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}" 
+            <div class="col col-lg-4">
+            {% for pdf in findPdfs %}
+                <button>
+                <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
                 {{ pdf.title }}
                 </a>
