@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PageCrudController extends AbstractCrudController
@@ -43,10 +44,12 @@ class PageCrudController extends AbstractCrudController
         yield TextEditorField::new('meta_desc')
         ->setFormType(CKEditorType::class);
 
-        yield TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating();
+        yield TextField::new('imageFile')->setFormType(VichImageType::class);
 
         yield ImageField::new('file')
             ->setBasePath('/uploads/imagesPage/')->onlyOnIndex();
+
+        yield AssociationField::new('pageImages');
 
         yield FormField::addTab('Pagepdfs');
         yield CollectionField::new('pagePdfs')
@@ -54,10 +57,7 @@ class PageCrudController extends AbstractCrudController
                     ->setEntryIsComplex(true)
                     ->hideOnIndex();
 
-        yield FormField::addTab('Images');
-        yield CollectionField::new('pageImages')
-                    ->setEntryType(ImagesType::class)
-                    ->setEntryIsComplex(true)
-                    ->hideOnIndex();
+        
+            
     }
 }
