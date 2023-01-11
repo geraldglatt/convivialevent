@@ -32,9 +32,9 @@
             </card>
         </div>
 </section>
-<section class="section4">
-    <div class="container-fluid" id="">
-        <div class="row">
+<section class="section">
+    <div class="container-fluid">
+        <div class="row mb-5">
             <div class="col text-center">
                 <h3>Pour connaitre nos options et détails
                 </br>
@@ -46,26 +46,27 @@
         </div>
     </div>
 </section>
-<section class="section5">
-    <div class="container-fluid">
+<section class="section">
+    <div class="container">
         <div class="row">
-            <div class="col col-lg-4">
             {% for pdf in findPdfs %}
-                <button>
+            <div class="">
+                <button class="" id="buttonpdf">
                 <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
-                {{ pdf.title }}
+                {{ pdf.title }}  <i class="fa-solid fa-file-import ml-2" style="color:black"></i>
                 </a>
                 </button>
+            </div>
             {% endfor %}
-            </div> 
+             
         </div>
     </div>
 </section>
 <section class="container-fluid" id="bgS1Page">
     <div class="row">
         <div class="col text-center">
-            <h2 class="colorTxtS1Page">Notre Galerie</h2>
+            <h2 class="GalerieShowPage mt-3">Notre Galerie</h2>
         </div>
         <div class="row">
             <div class="col mb-4 mt-5 ml-5 pb-4 text-center align-items-center">
