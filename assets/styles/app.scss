@@ -382,18 +382,26 @@ p.txtSection4 {
         height: 300px;
         animation:none;
     }
-button{
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid $convivialColor;
-    align-items:center;
-    width: 80px;
-    a{
+    button{
+        background-color: $convivialColor;
+        border-radius: 100px;
         text-decoration: none;
-        color: black;
+        border: 1px solid $convivialColor;
+        width: 300px;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        justify-content: space-between;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        #buttonpdf{
+            text-align: center;
+        }
+
+
     }
-}
 //end of Page
 //Start of list Recipes Page
     #bgListRecipePageS3 {
@@ -556,14 +564,8 @@ button{
 #buttonS5Page {
     text-decoration: none;
     border: 1px solid black;
-    text-align: center;
     color: black;
-    background-color: $convivialColor;
-    padding: 5px 20px 5px 20px;
     border-radius: 12px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
 }
 //end of page
 //start of contact
@@ -668,7 +670,7 @@ footer {
     color: $convivialColor2;
   }
   .imageLogo1Convivial{
-    width: 70%;
+    width: 50%;
     height: auto;
     margin-left: 50px;
   }
@@ -991,22 +993,30 @@ h2{
         height: 40%;
         animation:none;
     }
-button{
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid $convivialColor;
-    float:right;
-    margin-right: 30px;
-    margin-top: 25px;
-    margin-bottom: 30px;
-    align-items: center;
-    width: 200px;
-    a{
+    button{
+        background-color: $convivialColor;
+        border-radius: 100px;
         text-decoration: none;
-        color: black;
-    }
-}
+        border: 1px solid $convivialColor;
+        width: 400px;
+        min-height: 50px;
+        margin-bottom: 50px;
+        margin-left: 150px;
+        justify-content: space-between;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+        #buttonpdf{
+            text-align: center;
+        }
+    
+    
+        .GalerieShowPage{
+            font-size: 2em;
+        }
+    
 //end of Page
 //Start of list Recipes Page
     .textSection3{
@@ -1596,22 +1606,26 @@ h2{
         height: 40%;
         animation:none;
     }
-button{
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid $convivialColor;
-    float:right;
-    margin-right: 70px;
-    margin-top: 25px;
-    margin-bottom: 30px;
-    align-items: center;
-    width: 200px;
-    a{
+    button{
+        background-color: $convivialColor;
+        border-radius: 100px;
         text-decoration: none;
-        color: black;
+        border: 1px solid $convivialColor;
+        width: 400px;
+        min-height: 50px;
+        margin-bottom: 40px;
+        margin-left: 250px;
+        justify-content: space-between;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: white;
+        }
     }
-}
+
+        #buttonpdf{
+            text-align: center;
+        }
 //end of Page
 //Start of list Recipes Page
     .textSection3 {
@@ -2260,16 +2274,20 @@ a {
         border-radius: 100px;
         text-decoration: none;
         border: 1px solid $convivialColor;
-        float:right;
-        margin-right: 120px;
-        margin-top: 25px;
-        align-items: center;
-        width: 250px;
-        a{
-            text-decoration: none;
-            color: black;
+        width: 500px;
+        min-height: 50px;
+        margin-bottom: 50px;
+        margin-left: 400px;
+        justify-content: space-between;
+            a{
+                text-decoration: none;
+                color: white;
+            }
         }
-    }
+        #buttonpdf{
+            text-align: center;
+        }
+    
 //end of Page
 //Start of list Recipes Page
     .textSection3 {
