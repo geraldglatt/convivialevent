@@ -23,6 +23,8 @@ body {
 //section header et subNav
     button.navbar-toggler{
         align-items: center;
+        margin-top: 20px;
+        margin-right: 35px;
     }
     .navbar {
         background-color: white;
@@ -48,7 +50,7 @@ body {
         height: 5vh;
         object-fit: cover;
         margin-top: 1px;
-        display: none;
+        // display: none;
     }
     .imageLogo1Convivial {
         max-width: 40%;
@@ -70,7 +72,7 @@ footer {
     font-size: 0.8em;
   }
   .footerFontSizeAccueil{
-    font-size: 1.4em;
+    font-size: 1em;
     margin-bottom: 15px;
     margin-top: 15px;
     text-decoration: none;
@@ -389,7 +391,7 @@ p.txtSection4 {
         border: 1px solid $convivialColor;
         width: 300px;
         margin-bottom: 50px;
-        margin-left: 30px;
+        margin-left: 40px;
         justify-content: space-between;
         a{
             text-decoration: none;
@@ -597,18 +599,26 @@ p.txtSection4 {
         font-size: 1.2em;
         text-align:left;
         
+    }
+    button.navbar-toggler{
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 150px;
     } 
 //end navbar
 //section header et subNav
+
     .iconesResSoc {
         display: none;
         width: 2vh;
         height: 2vh;
         object-fit: cover;
     }
+
     .navbar {
         background-color: white;
     }
+
     .imageLanguage {
         text-align: right;
         width: 2vh;
@@ -1805,7 +1815,7 @@ h2{
 @include mediaquerries(lg) {
 //navbar
     #navbarHome{
-        margin-left: 100px;
+        margin-left: 150px;
         font-size: 1.5em;
         text-align: center;
         

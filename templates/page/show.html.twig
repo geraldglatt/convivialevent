@@ -6,7 +6,7 @@
 <section class="section1">
     <div class="container-fluid" id="bgS1Page">
         <div class="row">
-            <div class="col text-center mt-1">
+            <div class="col text-center mt-5 mb-3">
                 <h1 class="colorTxtS1Page">
                 {{ pages.title | striptags | raw  }}
                 </h1>
@@ -54,7 +54,7 @@
                 <button class="" id="buttonpdf">
                 <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
-                {{ pdf.title }}  <i class="fa-solid fa-file-import ml-2" style="color:black"></i>
+                {{ pdf.title }}  <i class=""><i class="fa-regular fa-file-pdf pl-2"></i></i>
                 </a>
                 </button>
             </div>
@@ -69,7 +69,7 @@
             <h2 class="GalerieShowPage mt-3">Notre Galerie</h2>
         </div>
         <div class="row">
-            <div class="col mb-4 mt-5 ml-5 pb-4 text-center align-items-center">
+            <div class="col mb-4 mt-5 ml-5 pb-5 text-center">
                 <div id="carouselExampleControls" 
                 class="carousel slide" 
                 data-bs-ride="carousel">
