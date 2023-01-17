@@ -17,41 +17,37 @@ body {
 @include mediaquerries(xs) {
 //start of homePage
 //section header et subNav
-    button.navbar-toggler{
-        align-items: center;
-        margin-top: 20px;
-        margin-right: 120px;
-    }
-    button .navbar-toggler{
-        text-align: center;
-        align-items: center;
-    }
-    .spanFR {
-        text-align: right;
-        margin-top: 25px;
-        
-    }
-    .navbar-toggler-icon {
-        text-align: center;
-        width: 2vh;
-        height: 2vh;
+button.navbar-toggler{
+    align-items: center;
+    margin-top: 25px;
+    margin-right: 40px;
+}
+.spanFR {
+    text-align: right;
+    margin-top: 25px;
+    
+}
+.navbar-toggler-icon {
+    text-align: center;
+    width: 2vh;
+    height: 2vh;
 
-    }
-    .imageLogo {
-        width: 10vh;
-        height: 5vh;
-        object-fit: cover;
-        margin-top: 1px;
-        // display: none;
-    }
-    .imageLogo1Convivial {
-        max-width: 40%;
-        height: auto;    
-    }
-    .imageLogoListConvivial{
-        width: 80%;
-        height: 80%;
-    }
+}
+.imageLogo {
+    width: 10vh;
+    height: 5vh;
+    object-fit: cover;
+    margin-top: 1px;
+    // display: none;
+}
+.imageLogo1Convivial {
+    max-width: 40%;
+    height: auto;    
+}
+.imageLogoListConvivial{
+    width: 80%;
+    height: 80%;
+}
 //end section header et subNav
 //start of footer
 .contactSubNav {
@@ -81,22 +77,22 @@ img.logoHome1 {
     width: 15vh;
     height: auto;
     object-fit: cover;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 //section 2
-    .txtSection2 {
-        text-align: center;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        font-size: 1em;
-    }
-    .txtSmallSection2 {
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        font-size: 0.8em;
-    }
+.txtSection2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1em;
+}
+.txtSmallSection2 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 0.8em;
+}
 //section 3
 .card-img-top{
     width: 100%;
@@ -195,23 +191,24 @@ p.txtSection4 {
     .backgroundS4{
         background-color: $convivialColor;
         border-radius: 12px;
+        width: 95%;
 
     }
     #temoignage {
-        font-size: 1.5em;
+        font-size: 1.4em;
         text-align: center;
         margin-top: 20px;
         margin-bottom:20px;
     }
     #temoignage::before {
         content:'';
-        width: 50px;
+        width: 40px;
         border-bottom: 2px solid black;
         display: inline-block;
     }
     #temoignage::after {
         content:'';
-        width: 50px;
+        width: 40px;
         border-top: 2px solid black;
         display: inline-block;
     }
@@ -231,6 +228,9 @@ p.txtSection4 {
     }
     
 //section 6
+.titreS6{
+    color: black;
+}
     .row6 {
         text-align: center;
         font-size:1.5em;
@@ -260,6 +260,14 @@ p.txtSection4 {
         text-align: center;
     }
 //section 7
+.imgHomeFixeS7 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(40%);
+    -webkit-filter: opacity(30%);
+}
     h2.font.mt-5{
         font-size: 0.8em;
         margin-top: 25px;
@@ -283,6 +291,9 @@ p.txtSection4 {
         font-size: 2em;
     }
 //section 7 bis
+h2.font.mt-5{
+    font-size: 1em;
+}
 .slider-area h2{
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -299,6 +310,7 @@ p.txtSection4 {
         margin-bottom: 40px;
         color: black;
         text-align: center;
+        font-size: 1.5em;
     }
     #buttonS8 {
         text-decoration: none;
@@ -784,7 +796,7 @@ p.txtSection4 {
     font-style: italic;
 }
 .span2HomeS4 { 
-    padding-left: 60px;
+    padding-left: 40px;
     font-size: 1.7em;
     color: white;
 }
@@ -797,365 +809,384 @@ h2{
     font-size: 1em;
 }
 //section 5
-    .logoHomeSection5{
-        width: 18%;
-        height: auto;
-        text-align: center;
-    }
-    .backgroundS4{
-        background-color: $convivialColor;
-        border-radius: 12px;
+.buttonSection5{
+    margin-left: 190px;
+}
+a.textButtonSection5 {
+    width:50px;
+    height: auto;
+    color: white;
+    align-items: center;
+    
+}
+.logoHomeSection5{
+    width: 18%;
+    height: auto;
+    text-align: center;
+}
+.backgroundS4{
+    background-color: $convivialColor;
+    border-radius: 12px;
 
-    }
-    #temoignage {
-        font-size: 2.5em;
-        text-align: center;
-        margin-top: 35px;
-        margin-bottom:35px;
-    }
-    #temoignage::before {
-        content:'';
-        width: 500px;
-        border-bottom: 3px solid black;
-        display: inline-block;
-    }
-    #temoignage::after {
-        content:'';
-        width: 500px;
-        border-top: 3px solid black;
-        display: inline-block;
-    }
-    .temoignages {
-        font-size: 1.5em;
-        text-align: center;
-        margin-top: 35px;   
-    }
-    #lienS5Home{
-        color:black;
-        font-size: 1em;
-        text-decoration: none;
-        margin-top: 15px;
-        padding-right: 10px;
-        margin-right: 15px;
+}
+#temoignage {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom:35px;
+}
+#temoignage::before {
+    content:'';
+    width: 150px;
+    border-bottom: 3px solid black;
+    display: inline-block;
+}
+#temoignage::after {
+    content:'';
+    width: 150px;
+    border-top: 3px solid black;
+    display: inline-block;
+}
+.temoignages {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 35px;   
+}
+#lienS5Home{
+    color:black;
+    font-size: 1em;
+    text-decoration: none;
+    margin-top: 15px;
+    padding-right: 10px;
+    margin-right: 15px;
 
-    }
+}
 //section 6
-    .row6 {
-        text-align: center;
-        font-size:2em;
-        margin-bottom: 25px;
-    }
-    .carousel-size{
-        font-size: 2em;
-        color:black;
-    }
+.row6 {
+    text-align: center;
+    font-size:2em;
+    margin-bottom: 25px;
+}
+.carousel-size{
+    font-size: 2em;
+    color:black;
+}
 
-    .row6 {
-        text-align: center;
-        font-size:2em;
-        margin-bottom: 25px;
-    }
-    #carousel-row{
-        margin-left: 50px;
-    }
-    .carousel-size{
-        font-size: 1em;
-        color:black; 
-    }
-    #carouselItemS6Bis {
-        position: relative;
-        text-align: center;
-    }
-    #carouselSizeS6Bis {
-        position: absolute;
-        top: 90%;
-        left: 30%;
-        transform: translate(-50%,-20%);
-    }
-    #divCarouselCaptionS6Bis {
-        padding-top: 80px;
-        text-align: center;
-    }
+.row6 {
+    text-align: center;
+    font-size:2em;
+    margin-bottom: 25px;
+}
+#carousel-row{
+    margin-left: 50px;
+}
+.carousel-size{
+    font-size: 1em;
+    color:black; 
+}
+#carouselItemS6Bis {
+    position: relative;
+    text-align: center;
+}
+#carouselSizeS6Bis {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    transform: translate(-50%,-20%);
+}
+#divCarouselCaptionS6Bis {
+    padding-top: 80px;
+    text-align: center;
+}
 //section 7
-    #bgGrey{
-        background-color: rgba(229, 229, 229, 0.44);
-        border:rgba(229, 229, 229, 0.44) solid;
-    }
-    .contenantSection7{
-        position: relative;
-        text-align: center;
-    }
-    .txtSection7 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-decoration: none;
-        color: $convivialColor2;
-        font-size: 3em;
-    }
+.imgHomeFixeS7 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(40%);
+    -webkit-filter: opacity(30%);
+}
+#bgGrey{
+    background-color: rgba(229, 229, 229, 0.44);
+    border:rgba(229, 229, 229, 0.44) solid;
+}
+.contenantSection7{
+    position: relative;
+    text-align: center;
+}
+.txtSection7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: none;
+    color: $convivialColor2;
+    font-size: 3em;
+}
 //section 7 bis
-    .slider-area h2{
-        text-align: center;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 60px;
-        font-weight: 50px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+h2.font.mt-5{
+    font-size: 1.5em;
+}
+.slider-area h2{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5em;
+    font-weight: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.wrapper{
+    width: 95%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 180px;  
+}
+.item{
+    animation: animate 25s alternate linear infinite;
+    margin-top: 25px;
+    padding-top: 25px;
+}
+.wrapper:hover .item{
+    animation-play-state: paused;   
+}
+@keyframes animate {
+    0% {
+        transform: translate3d(0, 0, 0);
     }
-    .wrapper{
-        width: 95%;
-        display: flex;
-        overflow: hidden;
-        border-radius: 180px;  
+    100% {
+        transform: translate3d(-1100px, 0, 0);
     }
-    .item{
-        animation: animate 25s alternate linear infinite;
-        margin-top: 25px;
-        padding-top: 25px;
-    }
-    .wrapper:hover .item{
-        animation-play-state: paused;   
-    }
-    @keyframes animate {
-        0% {
-            transform: translate3d(0, 0, 0);
-        }
-        100% {
-            transform: translate3d(-1100px, 0, 0);
-        }
-    }
+}
 //fin section 7 bis
 //section 8
-    .titreS8{
-        margin-bottom: 40px;
-        color: black;
-    }
-    #buttonS8{
-        text-decoration: none;
-        border: 1px solid black;
-        text-align: center;
-        color: black;
-        background-color: $convivialColor;
-        padding: 5px 20px 5px 20px;
-        border-radius: 12px;
-        font-size: 1.5em;
-    }  
+.titreS8{
+    margin-bottom: 40px;
+    color: black;
+}
+#buttonS8{
+    text-decoration: none;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+    background-color: $convivialColor;
+    padding: 5px 20px 5px 20px;
+    border-radius: 12px;
+    font-size: 1.5em;
+}  
 //section 9
-    #section9{
-        background-color: lightgrey;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .row.section9{
-        margin-top: 35px;
-    }
-    .imgHomePhoneFlex1-1{
-        width: 10%;
-        padding-top: 25px;
-        width: 25%;
-        align-items: center;
-    }
-    .tailleTxtS9{
-        font-size: 0.9em;
-    }
-    .section9FleximgMail{
-        padding-top: 25px;
-        width: 20%;
-        align-items: center;
-        padding-left: 2px;
-    }
-    .section9FlexTxtMail{
-        font-size: 1em;
-    }
-    .section9Flex1{
-        display: flex;
-        justify-content: space-between;
-        margin-left: 10px;
-    }
-    .section9Flex1-1{
-        margin-left: 5px;
-        justify-content: space-between;
-    }
-    .tailleTxtFlex1-1{
-        font-size: 0.8em;
-    }
-    .section9Flex1-2{
-        justify-content: space-between;
-    }
-    .section9Flex2{
-        display: flex;
-        justify-content: space-between;
-        font-size: 1em;
-    }
-    .section9Flex2-2{
-        display: flex;
-        margin-top: 15px;
-    }
-    .section9Flex2-2Txt{
-        font-size: 1em;
-    }
+#section9{
+    background-color: lightgrey;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.row.section9{
+    margin-top: 35px;
+}
+.imgHomePhoneFlex1-1{
+    width: 10%;
+    padding-top: 25px;
+    width: 25%;
+    align-items: center;
+}
+.tailleTxtS9{
+    font-size: 0.9em;
+}
+.section9FleximgMail{
+    padding-top: 25px;
+    width: 20%;
+    align-items: center;
+    padding-left: 2px;
+}
+.section9FlexTxtMail{
+    font-size: 1em;
+}
+.section9Flex1{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.section9Flex1-1{
+    margin-left: 5px;
+    justify-content: space-between;
+}
+.tailleTxtFlex1-1{
+    font-size: 0.8em;
+}
+.section9Flex1-2{
+    justify-content: space-between;
+}
+.section9Flex2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+}
+.section9Flex2-2{
+    display: flex;
+    margin-top: 15px;
+}
+.section9Flex2-2Txt{
+    font-size: 1em;
+}
 //section10
-    .flex1S10{
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
+.flex1S10{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 //fin section10
 //section 11
-    .flex2S11{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-    }
-    .imgHomeIconesS11{
-        height: 5vh;
-    }
+.flex2S11{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.imgHomeIconesS11{
+    height: 5vh;
+}
 //End Of Home Page
 //start of Page
-    .card{
-        margin-top: 400px;
-    }
-    .imgPage {
-        margin-top: 350px;
-        width: 40%;
-        height: 40%;
-        animation:none;
-    }
-    button{
-        background-color: $convivialColor;
-        border-radius: 100px;
-        text-decoration: none;
-        border: 1px solid $convivialColor;
-        width: 400px;
-        min-height: 50px;
-        margin-bottom: 50px;
-        margin-left: 150px;
-        justify-content: space-between;
-            a{
-                text-decoration: none;
-                color: white;
-            }
+.card{
+    margin-top: 400px;
+}
+.imgPage {
+    margin-top: 350px;
+    width: 40%;
+    height: 40%;
+    animation:none;
+}
+button{
+    background-color: $convivialColor;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid $convivialColor;
+    width: 400px;
+    min-height: 50px;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    justify-content: space-between;
+        a{
+            text-decoration: none;
+            color: white;
         }
-        #buttonpdf{
-            text-align: center;
-        }
-    
-    
-        .GalerieShowPage{
-            font-size: 2em;
-        }
+}
+#buttonpdf{
+    text-align: center;
+}
+.GalerieShowPage{
+    font-size: 2em;
+}
     
 //end of Page
 //Start of list Recipes Page
-    .textSection3{
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .textSection3Bis{
-        text-align: left;
-    }
-    #section3{
-        background-color: $convivialColor;
-        text-align: center;
-    }
-    #marginRecipeSection3{
-        margin-bottom: 10px;;
-    }
-    .recipePageImgSection3{
-        width:40%;
-        margin-bottom: 40px;
-    }
-    #recipePageImgSection3 {
-        width:30%;
-        margin-bottom: 40px;
-        margin-left: 30px;
-    }
-    .recipePagetxtSection2{
-        font-size: 2em;
-        text-align: center;
-    }
-    .recipePagetxtSection3{
-        font-size: 2em;
-        text-align: center;
-    }
-    .txtSection3List{
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translate(-50%,-130%);
-        color:black;
-    }
-    .span1ListS3{
-        position: relative;
-        margin-right: 20px;
-        color: black;
-        font-style: italic;
-        font-size: 1.8em;
-        color:black;
-    }
-    #dropdownMenuButton1{
-        text-align: center;
-        align-items: center;
-        margin-left: 140px;
-        border-radius: 12%;
-        background-color: $convivialColor;
-    }
-    .recipePageImgSection5{
-        width:100%;
-        align-items: center;
-    }
-    #section4{
-        background-color: black;
-        text-align: center;
-        align-items: center;
-        color: white;
-        margin-top: 0px;
-        padding-top: 5px;
-        font-size: 2em;
-    }
-    #section5{
-        background-color: $convivialColor;
-        text-align: center;
-        align-items: center;
-        color: white;
-        margin-top: 0px;
-        padding-top: 5px;
-    }
-    #recipePageLiSection4{
-        list-style-type: none;
-        font-size: 1em;
-    }
-    #recipePageLiSection5{
-        list-style-type: none;
-        color: black;
-        font-size: 1.5em;
-    }
-    #bgRecipePageTxtSection2{
-        background: black;
-        color:white;
-    }
-    #bgRecipePageTxtSection3{
-        background: $convivialColor;
-    }
-    .listrecipePagetxtSection3{
-        font-size: 2em;
-    }
-    .card-footer{
-        border: 2px solid black;
-        height: 100px;
-        margin-top:50px;
-        margin-bottom: 50px;
-        text-align: center;
-        color:$convivialColor2
-    }
-    .card-title{
-        margin-top: 5Opx;
-    }
-    .imageLogoListConvivial{
-        width: 50%;
-        height: 50%;
-    }
+.textSection3{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.textSection3Bis{
+    text-align: left;
+}
+#section3{
+    background-color: $convivialColor;
+    text-align: center;
+}
+#marginRecipeSection3{
+    margin-bottom: 10px;;
+}
+.recipePageImgSection3{
+    width:40%;
+    margin-bottom: 40px;
+}
+#recipePageImgSection3 {
+    width:30%;
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+.recipePagetxtSection2{
+    font-size: 2em;
+    text-align: center;
+}
+.recipePagetxtSection3{
+    font-size: 2em;
+    text-align: center;
+}
+.txtSection3List{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-130%);
+    color:black;
+}
+.span1ListS3{
+    position: relative;
+    margin-right: 20px;
+    color: black;
+    font-style: italic;
+    font-size: 1.8em;
+    color:black;
+}
+#dropdownMenuButton1{
+    text-align: center;
+    align-items: center;
+    margin-left: 140px;
+    border-radius: 12%;
+    background-color: $convivialColor;
+}
+.recipePageImgSection5{
+    width:100%;
+    align-items: center;
+}
+#section4{
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    color: white;
+    margin-top: 0px;
+    padding-top: 5px;
+    font-size: 2em;
+}
+#section5{
+    background-color: $convivialColor;
+    text-align: center;
+    align-items: center;
+    color: white;
+    margin-top: 0px;
+    padding-top: 5px;
+}
+#recipePageLiSection4{
+    list-style-type: none;
+    font-size: 1em;
+}
+#recipePageLiSection5{
+    list-style-type: none;
+    color: black;
+    font-size: 1.5em;
+}
+#bgRecipePageTxtSection2{
+    background: black;
+    color:white;
+}
+#bgRecipePageTxtSection3{
+    background: $convivialColor;
+}
+.listrecipePagetxtSection3{
+    font-size: 2em;
+}
+.card-footer{
+    border: 2px solid black;
+    height: 100px;
+    margin-top:50px;
+    margin-bottom: 50px;
+    text-align: center;
+    color:$convivialColor2
+}
+.card-title{
+    margin-top: 5Opx;
+}
+.imageLogoListConvivial{
+    width: 50%;
+    height: 50%;
+}
 //End of list Recipes Pages
 //Start of Recipe page
 .textSection3{
@@ -1405,6 +1436,20 @@ h2{
     font-size: 1em;
 }
 //section 5
+.buttonSection5{
+    margin-left: 300px;
+}
+a.textButtonSection5 {
+    width:50px;
+    height: auto;
+    color: white;
+    align-items: center;
+}
+img.logoHomeSection5{
+    width: 15%;
+    margin: auto;
+    text-align: center;
+}
 .backgroundS4{
     background-color: $convivialColor;
     border-radius: 12px;
@@ -1418,13 +1463,13 @@ h2{
 }
 #temoignage::before {
     content:'';
-    width: 280px;
+    width: 200px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 280px;
+    width: 200px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -1480,6 +1525,14 @@ h2{
     text-align: center;
 }
 //section 7
+.imgHomeFixeS7 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(40%);
+    -webkit-filter: opacity(30%);
+}
 #bgGrey {
     background-color: rgba(229, 229, 229, 0.44);
     border:rgba(229, 229, 229, 0.44) solid;
@@ -1871,8 +1924,8 @@ p.card-text{
     font-size: 1em;
 }
 img.logoHome1{
-    width: 250px;
-    height: 250px;
+    width: 270px;
+    height: auto;
     border-radius: 55%;
     align-items: flex-end;
     margin-top: 80px;
@@ -1929,11 +1982,11 @@ p {
 }
 //section 4
 .imgHomeFixeS4 {
-    width: 100%;
-    height: 500px;
+    width: 70%;
+    height: auto;
     object-fit: cover;
     object-position: center;
-    filter: opacity(30%);
+    filter: opacity(40%);
     -webkit-filter: opacity(30%);
 }
 #contenantSection4 {
@@ -1954,14 +2007,14 @@ p.txtSection4 {
     color:white;
 }
 .span1HomeS4 {
-    padding-right: 90px;
-    font-size: 2.5em;
+    padding-right: 120px;
+    font-size: 2em;
     color:white;
     font-style: italic;
 }
 .span2HomeS4 { 
-    padding-left: 80px;
-    font-size: 2em;
+    padding-left: 30px;
+    font-size: 1.8em;
     color:white;
 }
 #lienS4Home{
@@ -1975,7 +2028,7 @@ h2{
 //fin section 4
 //section 5
 img.logoHomeSection5{
-    width: 20%;
+    width: 15%;
     margin: auto;
     text-align: center;
 }
@@ -1983,7 +2036,7 @@ img.logoHomeSection5{
     margin-top: 25px;
     margin-bottom: 25px;
     background-color: $convivialColor;
-    height: 800px; 
+    height: 900px; 
 }
 #temoignage {
     font-size: 2.5em;
@@ -1993,13 +2046,13 @@ img.logoHomeSection5{
 }
 #temoignage::before {
     content:'';
-    width: 500px;
+    width: 300px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 500px;
+    width: 300px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -2063,9 +2116,20 @@ img.logoHomeSection5{
     text-align: center;
 }
 //section 7
+.imgHomeFixeS7 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(40%);
+    -webkit-filter: opacity(30%);
+}
 #bgGrey {
     background-color: rgba(229, 229, 229, 0.44);
     border:rgba(229, 229, 229, 0.44) solid;
+}
+div.contenantSection7{
+    width:100%;
 }
 .contenantSection7 {
     position: relative;
