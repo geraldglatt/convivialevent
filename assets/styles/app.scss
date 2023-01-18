@@ -56,21 +56,21 @@ button.navbar-toggler{
 footer {
     background: #212529;
   }
-  .footerFontSize{
-    font-size: 0.8em;
-  }
-  .footerFontSizeAccueil{
-    font-size: 1em;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-decoration: none;
-  }
-  a{
-    color:white;
-  }
-  div.container.mt-5{
-    margin-top: 100px;
-  }
+.footerFontSize{
+font-size: 0.8em;
+}
+.footerFontSizeAccueil{
+font-size: 1em;
+margin-bottom: 15px;
+margin-top: 15px;
+text-decoration: none;
+}
+a{
+color:white;
+}
+div.container.mt-5{
+margin-top: 100px;
+}
 //end of footer
 //page home
 img.logoHome1 {
@@ -177,88 +177,88 @@ p.txtSection4 {
     text-decoration: underline;
 }
 //section 5
-    a.textButtonSection5 {
-        width:50px;
-        height: auto;
-        color: white;
-        align-items: center;
-    }
-    .logoHomeSection5{
-        width: 25%;
-        height: auto;
-        text-align: center;
-    }
-    .backgroundS4{
-        background-color: $convivialColor;
-        border-radius: 12px;
-        width: 95%;
+a.textButtonSection5 {
+    width:50px;
+    height: auto;
+    color: white;
+    align-items: center;
+}
+.logoHomeSection5{
+    width: 25%;
+    height: auto;
+    text-align: center;
+}
+.backgroundS4{
+    background-color: $convivialColor;
+    border-radius: 12px;
+    width: 95%;
 
-    }
-    #temoignage {
-        font-size: 1.4em;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom:20px;
-    }
-    #temoignage::before {
-        content:'';
-        width: 40px;
-        border-bottom: 2px solid black;
-        display: inline-block;
-    }
-    #temoignage::after {
-        content:'';
-        width: 40px;
-        border-top: 2px solid black;
-        display: inline-block;
-    }
-    .temoignages {
-        font-size: 1em;
-        text-align: center;
-        margin-top: 35px;   
-    }
-    #lienS5Home{
-        color:black;
-        font-size: 0.7em;
-        text-decoration: none;
-        margin-top: 15px;
-        padding-right: 10px;
-        margin-right: 15px;
+}
+#temoignage {
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+#temoignage::before {
+    content:'';
+    width: 40px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+}
+#temoignage::after {
+    content:'';
+    width: 40px;
+    border-top: 2px solid black;
+    display: inline-block;
+}
+.temoignages {
+    font-size: 1em;
+    text-align: center;
+    margin-top: 35px;   
+}
+#lienS5Home{
+    color:black;
+    font-size: 0.7em;
+    text-decoration: none;
+    margin-top: 15px;
+    padding-right: 10px;
+    margin-right: 15px;
 
-    }
+}
     
 //section 6
 .titreS6{
     color: black;
 }
-    .row6 {
-        text-align: center;
-        font-size:1.5em;
-        margin-bottom: 25px;
-    }
-    #carousel-row{
-        margin-left: 50px;
-    }
-    .carousel-size{
-        font-size: 1em;
-        color:black;
-        margin-left: 47px;
-        margin-top: 15px;
-    }
-    #carouselItemS6Bis {
-        position: relative;
-        text-align: center;
-    }
-    #carouselSizeS6Bis {
-        position: absolute;
-        top: 90%;
-        left: 30%;
-        transform: translate(-50%,-20%);
-    }
-    #divCarouselCaptionS6Bis {
-        padding-top: 80px;
-        text-align: center;
-    }
+.row6 {
+    text-align: center;
+    font-size:1.5em;
+    margin-bottom: 25px;
+}
+#carousel-row{
+    margin-left: 50px;
+}
+.carousel-size{
+    font-size: 1em;
+    color:black;
+    margin-left: 47px;
+    margin-top: 15px;
+}
+#carouselItemS6Bis {
+    position: relative;
+    text-align: center;
+}
+#carouselSizeS6Bis {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    transform: translate(-50%,-20%);
+}
+#divCarouselCaptionS6Bis {
+    padding-top: 80px;
+    text-align: center;
+}
 //section 7
 .imgHomeFixeS7 {
     width: 100%;
@@ -268,28 +268,28 @@ p.txtSection4 {
     filter: opacity(40%);
     -webkit-filter: opacity(30%);
 }
-    h2.font.mt-5{
-        font-size: 0.8em;
-        margin-top: 25px;
-        margin-bottom:25px;
-    }
-    #bgGrey {
-        background-color: rgba(229, 229, 229, 0.44);
-        border:rgba(229, 229, 229, 0.44) solid;
-    }
-    .contenantSection7 {
-        position: relative;
-        text-align: center;
-    }
-    .txtSection7 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-decoration: none;
-        color: black;
-        font-size: 2em;
-    }
+h2.font.mt-5{
+    font-size: 0.8em;
+    margin-top: 25px;
+    margin-bottom:25px;
+}
+#bgGrey {
+    background-color: rgba(229, 229, 229, 0.44);
+    border:rgba(229, 229, 229, 0.44) solid;
+}
+.contenantSection7 {
+    position: relative;
+    text-align: center;
+}
+.txtSection7 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+}
 //section 7 bis
 h2.font.mt-5{
     font-size: 1em;
@@ -306,186 +306,190 @@ h2.font.mt-5{
 
 //fin section 7 bis
 //section 8
-    .titreS8 {
-        margin-bottom: 40px;
-        color: black;
-        text-align: center;
-        font-size: 1.5em;
-    }
-    #buttonS8 {
-        text-decoration: none;
-        border: 1px solid black;
-        color: black;
-        background-color: $convivialColor;
-        padding: 5px 20px 5px 20px;
-        border-radius: 12px;
-        text-align: center;
-    }
+.titreS8 {
+    margin-bottom: 40px;
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+}
+#buttonS8 {
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+    background-color: $convivialColor;
+    padding: 5px 20px 5px 20px;
+    border-radius: 12px;
+    text-align: center;
+}
 //section 9
-    #section9{
-        background-color: #E8E8E8;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .row.section9 {
-        margin-top: 35px;
-    }
-    .tailleTxtS9 {
-        font-size: 0.9em;
-    }
-    .section9FleximgMail {
-        padding-top: 25px;
-        width: 20%;
-        align-items: center;
-        padding-left: 2px;
-    }
-    span.section9FlexTxtMail {
-        font-size: 0.8em;
-    }
-    .section9Flex1 {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 10px;
-    }
-    .section9Flex1-1 {
-        margin-left: 5px;
-        justify-content: space-between;
-    }
-    .imgHomePhoneFlex1-1 {
-        padding-top: 5px;
-        width: 15%;
-        align-items: center;
-    }
-    .tailleTxtFlex1-1 {
-        font-size: 0.8em;
-    }
-    .section9Flex1-2 {
-        justify-content: space-between;
-    }
-    .section9Flex2 {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.5em;
-    }
-    .section9Flex2-2 {
-        display: flex;
-        
-    }
-    .section9Flex2-2Txt {
+#section9{
+    background-color: #E8E8E8;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.row.section9 {
+    margin-top: 35px;
+}
+.tailleTxtS9 {
+    font-size: 0.9em;
+}
+.section9FleximgMail {
+    padding-top: 25px;
+    width: 20%;
+    align-items: center;
+    padding-left: 2px;
+}
+span.section9FlexTxtMail {
+    font-size: 0.8em;
+}
+.section9Flex1 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.section9Flex1-1 {
+    margin-left: 5px;
+    justify-content: space-between;
+}
+.imgHomePhoneFlex1-1 {
+    padding-top: 5px;
+    width: 15%;
+    align-items: center;
+}
+.tailleTxtFlex1-1 {
+    font-size: 0.8em;
+}
+.section9Flex1-2 {
+    justify-content: space-between;
+}
+.section9Flex2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.5em;
+}
+.section9Flex2-2 {
+    display: flex;
+    
+}
+.section9Flex2-2Txt {
         font-size: 0.8em;
     }
 //section 11
-    .flex1S10 {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-    .flex2S10 {
-        display: flex;
-        justify-content: space-between;
-        padding: 30px;
-        margin: 20px 20px;
-    }
-    .flex2S11 {
-        display: flex;
-        justify-content: space-around;
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-    .imgHomeIconesS11 {
-        height: 4vh;
-    }
+.flex1S10 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.flex2S10 {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 20px 20px;
+}
+.flex2S11 {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.imgHomeIconesS11 {
+    height: 4vh;
+}
 //End Of Home Page
 //start of Page
-    .card{
-        margin-top: 30px;
-    }
-    .imgPage {
-        margin-top: 30px;
-        width: 300px;
-        height: 300px;
-        animation:none;
-    }
-    button{
-        background-color: $convivialColor;
-        border-radius: 100px;
+img.rounded.mx-auto.d-block{
+    max-width: 50%;
+    height: auto;
+}
+.card{
+    margin-top: 30px;
+}
+.imgPage {
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+    animation:none;
+}
+button{
+    background-color: $convivialColor;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid $convivialColor;
+    width: 300px;
+    margin-bottom: 50px;
+    margin-left: 40px;
+    justify-content: space-between;
+    a{
         text-decoration: none;
-        border: 1px solid $convivialColor;
-        width: 300px;
-        margin-bottom: 50px;
-        margin-left: 40px;
-        justify-content: space-between;
-        a{
-            text-decoration: none;
-            color: white;
-        }
-
-        #buttonpdf{
-            text-align: center;
-        }
-
-
+        color: white;
     }
+
+    #buttonpdf{
+        text-align: center;
+    }
+
+
+}
 //end of Page
 //Start of list Recipes Page
-    #bgListRecipePageS3 {
-        background-image: url('../images/boulPizz.webp');
-    }
-    .listrecipePagetxtSection2 {
-        font-size: 2em;
-        text-align: center;
-    }
-    .recipeListImgSection5 {
-        width: 50%;
-        height: auto;
-    }
-    .listrecipePagetxtSection3 {
-        font-size: 1.5em;
-        text-align: center;
-        
-    }
-    .txtSection3List{
-        position: absolute;
-        top: 67%;
-        left: 50%;
-        transform: translate(-50%,-130%);
-        color:black;
-    }
-    .span1ListS3{
-        position: relative;
-        margin-right: 20px;
-        color: black;
-        font-style: italic;
-        font-size: 1em;
-        color:black;
-    }
-    #bgRecipePageTxtSection2{
-        background: black;
-        color:white;
-    }
-    #bgRecipePageTxtSection3{
-        background: $convivialColor;
-        color:black;
-    }
-    #btnColorPageRecipeSection3{
-        color:$convivialColor;
-    }
-    .card-footer{
-        border: 2px solid black;
-        height: 50px;
-        margin-top:30px;
-        margin-bottom: 30px;
-        text-align: center;
-        color: $convivialColor2;
-    }
-    .card-title{
-        margin-top: 3Opx;
-        text-align: center;
-    }
-    .imageLogoListConvivial{
-        width: 70%;
-        height: 50%;
-    }
+#bgListRecipePageS3 {
+    background-image: url('../images/boulPizz.webp');
+}
+.listrecipePagetxtSection2 {
+    font-size: 2em;
+    text-align: center;
+}
+.recipeListImgSection5 {
+    width: 50%;
+    height: auto;
+}
+.listrecipePagetxtSection3 {
+    font-size: 1.5em;
+    text-align: center;
+    
+}
+.txtSection3List{
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-130%);
+    color:black;
+}
+.span1ListS3{
+    position: relative;
+    margin-right: 20px;
+    color: black;
+    font-style: italic;
+    font-size: 1em;
+    color:black;
+}
+#bgRecipePageTxtSection2{
+    background: black;
+    color:white;
+}
+#bgRecipePageTxtSection3{
+    background: $convivialColor;
+    color:black;
+}
+#btnColorPageRecipeSection3{
+    color:$convivialColor;
+}
+.card-footer{
+    border: 2px solid black;
+    height: 50px;
+    margin-top:30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: $convivialColor2;
+}
+.card-title{
+    margin-top: 3Opx;
+    text-align: center;
+}
+.imageLogoListConvivial{
+    width: 70%;
+    height: 50%;
+}
 
 //End of list Recipes Pages
 //Start of details page
@@ -1045,6 +1049,10 @@ h2.font.mt-5{
 }
 //End Of Home Page
 //start of Page
+img.rounded.mx-auto.d-block{
+    max-width: 40%;
+    height: auto;
+}
 .card{
     margin-top: 400px;
 }
