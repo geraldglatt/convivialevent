@@ -49,11 +49,15 @@ class PageCrudController extends AbstractCrudController
         yield ImageField::new('file')
             ->setBasePath('/uploads/imagesPage/')->onlyOnIndex();
 
-        yield AssociationField::new('pageImages');
-
         yield FormField::addTab('Pagepdfs');
         yield CollectionField::new('pagePdfs')
                     ->setEntryType(PagePdfType::class)
+                    ->setEntryIsComplex(true)
+                    ->hideOnIndex();
+
+        yield FormField::addTab('PageImages');
+        yield CollectionField::new('pageImages')
+                    ->setEntryType(ImagesType::class)
                     ->setEntryIsComplex(true)
                     ->hideOnIndex();
 
