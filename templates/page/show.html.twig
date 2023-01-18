@@ -1,36 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ pages.title | striptags }}{% endblock %}
+{% block title %}{{ pages.title | striptags | raw }}{% endblock %}
 
 {% block body %}
-<section class="section1">
-    <div class="container-fluid" id="bgS1Page">
+<section class="">
+    <div class="container-fluid" id="">
         <div class="row">
             <div class="col text-center mt-5 mb-3">
-                <h1 class="colorTxtS1Page">
+                <h1 class="">
                 {{ pages.title | striptags | raw  }}
                 </h1>
             </div>
         </div>
     </div>
-</section>
-<section class="container-fluid">
-        <div class="row">
-            <card class="col mb-3 mt-3 pb-3 text-center">
-                {% for page in pages %}
-                    {% for image in images %}
-                    <img class="imgPage" 
-                    src="{{ vich_uploader_asset(image,'imageFile')}}" 
-                    alt="photo convivialevent">
-                    {% endfor %}
-                <div class="card">
-                    <p class="card-text mt-2">
-                    {{ page.content | striptags | raw }}
-                    </p>
-                </div>
-                {% endfor %}
-            </card>
-        </div>
 </section>
 <section class="section">
     <div class="container-fluid">
@@ -50,7 +32,7 @@
     <div class="container">
         <div class="row">
             {% for pdf in findPdfs %}
-            <div class="">
+            <div>
                 <button class="" id="buttonpdf">
                 <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
@@ -74,7 +56,7 @@
                 class="carousel slide" 
                 data-bs-ride="carousel">
                     <div class="carousel-inner">
-                    {% for pageImg in images %}
+                    {% for pageImg in findImages %}
                         <div id="carouselExampleInterval" 
                         class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">

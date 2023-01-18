@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Images;
 use App\Entity\Page;
 use App\Entity\PagePdf;
 use App\Service\PdfService;
@@ -16,16 +17,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PageController extends AbstractController
 {
     #[Route('/{slug}', methods: ['GET'], name: 'show')]
-    public function show(Page $pages, PagePdfRepository $pagePdf, ImagesRepository $images): Response
-    {
+    public function show(Page $pages, 
+    PagePdfRepository $pagePdf, 
+    ImagesRepository $findImage,
+    ImagesRepository $imagesRepository
+    ): Response
+    {  
+        
+        $findImages = $imagesRepository->findImageBypage($pages->getId(), $imagesRepository);
+
         // $findpdf = $pagePdf->findpdfpageChampêtre($pagePdf);
         $findPdfs = $pagePdf->findpdfBypage($pages->getId(),$pagePdf);
 
         return $this->render('page/show.html.twig', [
             'pages' => $pages,
             'pagePdf' => $pagePdf,
-            'images' => $images->findBy([],['id' => 'DESC'], 6),
-            'findPdfs' => $findPdfs
+            'images' => $findImage,
+            'findPdfs' => $findPdfs,
+            'findImages' => $findImages
         ]);
     }
    
