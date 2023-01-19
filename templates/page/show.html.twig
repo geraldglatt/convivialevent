@@ -33,7 +33,7 @@
         <div class="row">
             {% for pdf in findPdfs %}
             <div>
-                <button class="" id="buttonpdf">
+                <button type="button" class="mx-auto active" id="buttonpdf">
                 <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
                 {{ pdf.title }}  <i class=""><i class="fa-regular fa-file-pdf pl-2"></i></i>
@@ -45,7 +45,7 @@
         </div>
     </div>
 </section>
-<section class="container-fluid" id="bgS1Page">
+<section class="container" id="bgS1Page">
     <div class="row">
         <div class="col text-center">
             <h2 class="GalerieShowPage mt-3">Notre Galerie</h2>

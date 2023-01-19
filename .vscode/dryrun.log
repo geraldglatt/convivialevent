@@ -4,6 +4,5 @@ symfony console d:d:d -f
 symfony console d:d:c
 symfony console d:s:u -f
 symfony console d:f:l -n
- 
 make: Leaving directory `/Users/glatt/projets/convivialevent'
  
