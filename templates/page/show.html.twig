@@ -14,6 +14,29 @@
         </div>
     </div>
 </section>
+{% for page in findId %}
+    {% if page.id == 1 %}
+        {% include "shared/_blockPage1.html.twig" 
+        with{'slug': 'mariage-champetre'} 
+        only 
+        %}
+    {% elseif page.id == 2 %}
+        {% include "shared/_blockPage2.html.twig" 
+        with{'slug': 'mariage-tradition-prestige'} 
+        only 
+        %}
+    {% elseif page.id == 3 %}
+        {% include "shared/_blockPage3.html.twig" 
+        with{'slug': 'bbq-cochon'} 
+        only 
+        %}
+    {% elseif page.id == 4 %}
+        {% include "shared/_blockPage4.html.twig" 
+        with{'slug': 'entreprise'} 
+        only 
+        %}
+    {% endif %}
+{% endfor %}
 <section class="section">
     <div class="container-fluid">
         <div class="row mb-5">

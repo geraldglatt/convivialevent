@@ -19,8 +19,10 @@ body {
 //section header et subNav
 button.navbar-toggler{
     align-items: center;
+    display: block;
+    margin: auto;
     margin-top: 25px;
-    margin-right: 40px;
+    color: $convivialColor2;
 }
 .spanFR {
     text-align: right;
@@ -54,7 +56,6 @@ button.navbar-toggler{
     text-decoration: none;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-left: 20px;
 }
 //end section header et subNav
 //start of footer
@@ -185,11 +186,15 @@ p.txtSection4 {
     text-decoration: underline;
 }
 //section 5
+button.buttonSection5-mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
+}
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
 }
 .logoHomeSection5{
     width: 25%;
@@ -585,11 +590,13 @@ button{
 }
 //end of Recipe page
 //start of page
+col.mb-4.mt-5.ml-5.pb-5.text-center{
+    display: block;
+    margin: auto;
+}
 #bgS1Page {
     background-color: rgba(236, 240, 241);
     text-align: center;
-    padding-top: 25px;
-    padding-bottom: 15px;
 }
 .colorTxtS1Page {
     color: $convivialColor;
@@ -637,8 +644,10 @@ button{
     }
     button.navbar-toggler{
         align-items: center;
-        margin-top: 20px;
-        margin-right: 200px;
+        display: block;
+        margin: auto;
+        margin-top: 25px;
+        color: $convivialColor2;
     }
     #lienNav{
         color:$convivialColor2;
@@ -830,15 +839,15 @@ h2{
     font-size: 1em;
 }
 //section 5
-.buttonSection5{
-    margin-left: 190px;
+button.buttonSection5.mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
 }
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
-    
 }
 .logoHomeSection5{
     width: 18%;
@@ -1476,14 +1485,15 @@ h2{
     font-size: 1em;
 }
 //section 5
-.buttonSection5{
-    margin-left: 300px;
+button.buttonSection5.mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
 }
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
 }
 img.logoHomeSection5{
     width: 15%;
@@ -1503,13 +1513,13 @@ img.logoHomeSection5{
 }
 #temoignage::before {
     content:'';
-    width: 200px;
+    width: 150px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 200px;
+    width: 150px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -2017,10 +2027,6 @@ img.logoHome1{
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
     transition: all .3s ease-in-out;
 }
-.card.img {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
-    transition: all .3s ease-in-out;
-}
 p {
     font-size: 0.7em;
 }
@@ -2086,6 +2092,19 @@ h2{
 }
 //fin section 4
 //section 5
+.col-12.col-lg-4{
+    margin: auto;
+}
+button.buttonSection5.mt-3.mx-auto{
+    display: block;
+    margin: auto;
+    width:350px; 
+    text-align:center;
+}
+a.textButtonSection5 {
+    height: auto;
+    color: white;
+}
 img.logoHomeSection5{
     width: 15%;
     margin: auto;
@@ -2105,13 +2124,13 @@ img.logoHomeSection5{
 }
 #temoignage::before {
     content:'';
-    width: 300px;
+    width: 200px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 300px;
+    width: 200px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -2358,9 +2377,6 @@ img.rounded.mx-auto.d-block{
     max-width: 50%;
     height: auto;
 }
-.card{
-    margin-top: 400px;
-}
 .imgPage {
     margin-top: 350px;
     width: 40%;
@@ -2579,6 +2595,8 @@ button{
 }
 }
 //End of contact
+
+
 
 
 
