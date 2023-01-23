@@ -38,6 +38,11 @@ class PageRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function findIdBypage($id,PageRepository $pageIdRepository){
+        return $pageIdRepository->findBy([
+            'id' => $id,
+        ]);
+    }
 
 //    /**
 //     * @return Page[] Returns an array of Page objects

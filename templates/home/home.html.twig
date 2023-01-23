@@ -4,25 +4,25 @@
     
 {% block body %}
 
-<section class="container-fluid mb-4" id="bgSection1Home">
-    <div class="row">
+<section class="container mb-5 mt-5">
+    <div class="row mb-2">
         <div class="col"> 
             <h1 class="txtSection2">Votre traiteur événementiel Conviviale & Responsable</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-4">
         <div class="col">
         <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-1">
         <div class="col">
             <p class="txtSmallSection2">
             Qu'il soit champêtre, dinatoire ou conviviale, nous personnaliserons vôtre mariage.
             </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-4">
         <div class="col">
             <p class="txtSmallSection2">
             Selon vos désirs, ambiance, repas, brunch et surtout timing, tout sera à votre image !
@@ -40,21 +40,21 @@
         >
             {% for key, wedding in weddings %}
                 {% if loop.index % 2 %}
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="card shadow-light-lg lift-lift-lg mt-4 mb-4" 
+                <div class="col-12 d-flex mt-2 mb-3">
+                    <div class="card card-row shadow-light-lg mb-4 mt-4 lift lift-lg" 
                     data-aos="zoom-in-right"
                     data-aos-easing="ease-in-back"
-                    data-aos-duration="950"
+                    data-aos-duration="1100"
                     >
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                                    <img class="card-img-top" 
+                        <div class="row no-gutters mx-auto">
+                            <div class="col-md-5">
+                                    <img class="figure-img img-fluid rounded" 
                                     src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent"
                                     >  
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title mt-2">{{ wedding.title | raw }}</h2>
+                            <div class="col-md-7 align-self-center ml-5">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ wedding.title | raw }}</h2>
                                     <p class="card-text">{{ wedding.content | raw }}</p>
                                     <a class="" id="lienS3Home" 
                                     href="{{ path('page_show', {slug:wedding.page.slug}) }}">
@@ -65,30 +65,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-0"></div>
                 {% else %}
-                <div class="col-lg-4 col-md-4 col-sm-0"></div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="card shadow-light-lg lift-lift-lg mt-5 mb-5" 
-                    data-aos="zoom-in-left"
-                    data-aos-easing="ease-in-back"
-                    data-aos-duration="950"
-                    >
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title mt-2">{{ wedding.title | raw }}</h2>
-                                    <p class="card-text">{{ wedding.content | raw }}</p>
-                                    <a class="" id="lienS3Home" 
-                                    href="{{ path('page_show', {slug:wedding.page.slug}) }}"
-                                    >Clicker ici pour découvrir
-                                    </a>
+                <div class="row">
+                    <div class="col-12 d-flex mt-2 mb-3">
+                        <div class="card card-row shadow-light-lg mt-4 mb-4 lift lift-lg" 
+                        data-aos="zoom-in-left"
+                        data-aos-easing="ease-in-back"
+                        data-aos-duration="1100"
+                        >
+                            <div class="row no-gutters mx-auto">
+                                <div class="col-md-7 align-self-center ml-5">
+                                    <div class="card-body">
+                                        <h2 class="card-title">{{ wedding.title | raw }}</h2>
+                                        <p class="card-text">{{ wedding.content | raw }}</p>
+                                        <a class="" id="lienS3Home" 
+                                        href="{{ path('page_show', {slug:wedding.page.slug}) }}"
+                                        >Clicker ici pour découvrir
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                                    <img class="card-img-top" 
-                                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent"
-                                    >
+                                <div class="col-md-5">
+                                        <img class="figure-img img-fluid rounded" 
+                                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent"
+                                        >
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -147,8 +147,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-4 align-items-center">
-            <button class="buttonSection5 mt-3">
+        <div class="col-12 col-lg-4">
+            <button class="buttonSection5 mt-3 mb-5 mx-auto">
                 <a class="textButtonSection5" 
                 href='https://www.mariages.net/traiteur-mariage/convivial-event--e136299' 
                 target="blank">D'autres commentaires

@@ -14,6 +14,29 @@
         </div>
     </div>
 </section>
+{% for page in findId %}
+    {% if page.id == 1 %}
+        {% include "shared/_blockPage1.html.twig" 
+        with{'slug': 'mariage-champetre'} 
+        only 
+        %}
+    {% elseif page.id == 2 %}
+        {% include "shared/_blockPage2.html.twig" 
+        with{'slug': 'mariage-tradition-prestige'} 
+        only 
+        %}
+    {% elseif page.id == 3 %}
+        {% include "shared/_blockPage3.html.twig" 
+        with{'slug': 'bbq-cochon'} 
+        only 
+        %}
+    {% elseif page.id == 4 %}
+        {% include "shared/_blockPage4.html.twig" 
+        with{'slug': 'entreprise'} 
+        only 
+        %}
+    {% endif %}
+{% endfor %}
 <section class="section">
     <div class="container-fluid">
         <div class="row mb-5">
@@ -33,7 +56,7 @@
         <div class="row">
             {% for pdf in findPdfs %}
             <div>
-                <button class="" id="buttonpdf">
+                <button type="button" class="mx-auto active" id="buttonpdf">
                 <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
                 alt="{{ pdf.title }}">
                 {{ pdf.title }}  <i class=""><i class="fa-regular fa-file-pdf pl-2"></i></i>
@@ -45,7 +68,7 @@
         </div>
     </div>
 </section>
-<section class="container-fluid" id="bgS1Page">
+<section class="container" id="bgS1Page">
     <div class="row">
         <div class="col text-center">
             <h2 class="GalerieShowPage mt-3">Notre Galerie</h2>

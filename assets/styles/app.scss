@@ -19,8 +19,10 @@ body {
 //section header et subNav
 button.navbar-toggler{
     align-items: center;
+    display: block;
+    margin: auto;
     margin-top: 25px;
-    margin-right: 40px;
+    color: $convivialColor2;
 }
 .spanFR {
     text-align: right;
@@ -47,6 +49,13 @@ button.navbar-toggler{
 .imageLogoListConvivial{
     width: 80%;
     height: 80%;
+}
+#lienNav{
+    color:$convivialColor2;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 //end section header et subNav
 //start of footer
@@ -85,13 +94,13 @@ img.logoHome1 {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .txtSmallSection2 {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 //section 3
 .card-img-top{
@@ -115,7 +124,8 @@ img.logoHome1 {
     transition: all .3s ease-in-out;
 }
 p {
-    font-size: 0.7em;
+    font-size: 1em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -123,14 +133,18 @@ p {
 }
 .card-title {
     font-weight: bold;
+    font-size: 1.5em;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
-#lienS3Home{
+a#lienS3Home{
+    display: block;
     color: $convivialColor2;
     font-size: 1.2em;
     text-decoration: none;
+    text-align: center;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -177,11 +191,15 @@ p.txtSection4 {
     text-decoration: underline;
 }
 //section 5
+button.buttonSection5-mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
+}
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
 }
 .logoHomeSection5{
     width: 25%;
@@ -219,7 +237,7 @@ a.textButtonSection5 {
 }
 #lienS5Home{
     color:black;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-decoration: none;
     margin-top: 15px;
     padding-right: 10px;
@@ -411,14 +429,14 @@ img.rounded.mx-auto.d-block{
     animation:none;
 }
 button{
+    display: block;
     background-color: $convivialColor;
     border-radius: 100px;
     text-decoration: none;
     border: 1px solid $convivialColor;
-    width: 300px;
+    width: 200px;
+    align-items: center;
     margin-bottom: 50px;
-    margin-left: 40px;
-    justify-content: space-between;
     a{
         text-decoration: none;
         color: white;
@@ -426,6 +444,7 @@ button{
 
     #buttonpdf{
         text-align: center;
+        margin: auto;
     }
 
 
@@ -576,11 +595,13 @@ button{
 }
 //end of Recipe page
 //start of page
+col.mb-4.mt-5.ml-5.pb-5.text-center{
+    display: block;
+    margin: auto;
+}
 #bgS1Page {
     background-color: rgba(236, 240, 241);
     text-align: center;
-    padding-top: 25px;
-    padding-bottom: 15px;
 }
 .colorTxtS1Page {
     color: $convivialColor;
@@ -628,8 +649,18 @@ button{
     }
     button.navbar-toggler{
         align-items: center;
-        margin-top: 20px;
-        margin-right: 200px;
+        display: block;
+        margin: auto;
+        margin-top: 25px;
+        color: $convivialColor2;
+    }
+    #lienNav{
+        color:$convivialColor2;
+        font-size: 1.5em;
+        text-decoration: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 20px;
     } 
 //end navbar
 //section header et subNav
@@ -749,7 +780,8 @@ img.logoHome1 {
     transition: all .3s ease-in-out;
 }
 p {
-    font-size: 0.7em;
+    font-size: 0.8em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -757,14 +789,19 @@ p {
 }
 .card-title {
     font-weight: bold;
+    text-align: center;
+    font-size: 1.4em;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
 #lienS3Home{
     color: $convivialColor2;
-    font-size: 1.2em;
+    font-size: 1em;
     text-decoration: none;
+    display: block;
+    text-align: center;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -813,15 +850,15 @@ h2{
     font-size: 1em;
 }
 //section 5
-.buttonSection5{
-    margin-left: 190px;
+button.buttonSection5.mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
 }
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
-    
 }
 .logoHomeSection5{
     width: 18%;
@@ -1063,6 +1100,7 @@ img.rounded.mx-auto.d-block{
     animation:none;
 }
 button{
+    display: block;
     background-color: $convivialColor;
     border-radius: 100px;
     text-decoration: none;
@@ -1082,6 +1120,12 @@ button{
 }
 .GalerieShowPage{
     font-size: 2em;
+}
+#bgS1Page {
+    background-color: rgba(236, 240, 241);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
 }
     
 //end of Page
@@ -1280,13 +1324,21 @@ button{
     
 }
 a#navbarHome.nav-link.active{
-    color: white;
+    color: black;
 } 
 a#navbarDropdown.nav-link.dropdown-toggle{
-    color: white;
+    color: black;
 }
 a#navbarHome.nav-link{
-    color: white;
+    color: black;
+}
+#lienNav{
+    color:$convivialColor2;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
 } 
 //end navbar
 //section header et subNav
@@ -1355,7 +1407,7 @@ footer {
 }
 .txtSmallSection2 {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 //section 3
 .card-img-top{
@@ -1380,6 +1432,7 @@ footer {
 }
 p {
     font-size: 1em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -1388,14 +1441,18 @@ p {
 .card-title {
     font-weight: bold;
     font-size: 1.5em;
+    text-align: center;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
 a#lienS3Home{
     color: $convivialColor2;
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-decoration: none;
+    text-align:center;
+    display: block;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -1444,14 +1501,18 @@ h2{
     font-size: 1em;
 }
 //section 5
-.buttonSection5{
-    margin-left: 300px;
+.col-12.col-lg-4{
+    margin: auto;
+}
+button.buttonSection5.mt-3{
+    display: block;
+    margin: auto;
+    align-items: center;
 }
 a.textButtonSection5 {
     width:50px;
     height: auto;
     color: white;
-    align-items: center;
 }
 img.logoHomeSection5{
     width: 15%;
@@ -1471,13 +1532,13 @@ img.logoHomeSection5{
 }
 #temoignage::before {
     content:'';
-    width: 200px;
+    width: 150px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 200px;
+    width: 150px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -1678,6 +1739,16 @@ img.logoHomeSection5{
 }
 //End Of Home Page
 //start of Page
+#bgS1Page {
+    background-color: rgba(236, 240, 241);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+img.rounded.mx-auto.d-block{
+    max-width: 30%;
+    height: auto;
+}
 .card{
     margin-top: 400px;
 }
@@ -1688,6 +1759,7 @@ img.logoHomeSection5{
     animation:none;
 }
 button{
+    display: block;
     background-color: $convivialColor;
     border-radius: 100px;
     text-decoration: none;
@@ -1885,6 +1957,14 @@ text-decoration:underline;
 
 @include mediaquerries(lg) {
 //navbar
+#lienNav{
+    color:$convivialColor2;
+    font-size: 1.6em;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
 #navbarHome{
     margin-left: 100px;
     font-size: 1.5em;
@@ -1892,13 +1972,13 @@ text-decoration:underline;
     
 }
 a#navbarHome.nav-link.active{
-    color: white;
+    color:black;
 } 
 a#navbarDropdown.nav-link.dropdown-toggle{
-    color: white;
+    color: black;
 }
 a#navbarHome.nav-link{
-    color: white;
+    color: black;
 } 
 //end navbar
 //footer
@@ -1944,14 +2024,14 @@ img.logoHome1{
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 2em;
+    font-size: 2.2em;
     color: dark;
 }
 .txtSmallSection2 {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: dark;    
 }
 //section 3
@@ -1966,12 +2046,9 @@ img.logoHome1{
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
     transition: all .3s ease-in-out;
 }
-.card.img {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
-    transition: all .3s ease-in-out;
-}
 p {
-    font-size: 0.7em;
+    font-size: 1.3em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -1979,14 +2056,18 @@ p {
 }
 .card-title {
     font-weight: bold;
+    text-align: center;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
-#lienS3Home{
+a#lienS3Home{
     color: $convivialColor2;
-    font-size: 1.2em;
+    font-size: 1.7em;
     text-decoration: none;
+    text-align:center;
+    display: block;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -2011,19 +2092,19 @@ p.txtSection4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-size: 2em;
     color:white;
-}
-.span1HomeS4 {
-    padding-right: 120px;
     font-size: 2em;
+}
+span.span1HomeS4 {
+    padding-right: 170px;
     color:white;
     font-style: italic;
+    font-size: 2em;
 }
-.span2HomeS4 { 
-    padding-left: 30px;
-    font-size: 1.8em;
+span.span2HomeS4 { 
+    padding-left: 50px;
     color:white;
+    font-size: 1.8em;
 }
 #lienS4Home{
     color: $convivialColor2;
@@ -2035,6 +2116,19 @@ h2{
 }
 //fin section 4
 //section 5
+.col-12.col-lg-4{
+    margin: auto;
+}
+button.buttonSection5.mt-3.mx-auto{
+    display: block;
+    margin: auto;
+    width:350px; 
+    text-align:center;
+}
+a.textButtonSection5 {
+    height: auto;
+    color: white;
+}
 img.logoHomeSection5{
     width: 15%;
     margin: auto;
@@ -2054,13 +2148,13 @@ img.logoHomeSection5{
 }
 #temoignage::before {
     content:'';
-    width: 300px;
+    width: 200px;
     border-bottom: 3px solid black;
     display: inline-block;
 }
 #temoignage::after {
     content:'';
-    width: 300px;
+    width: 200px;
     border-top: 3px solid black;
     display: inline-block;
 }
@@ -2297,8 +2391,15 @@ div.contenantSection7{
 }
 //End Of Home Page
 //start of Page
-.card{
-    margin-top: 400px;
+#bgS1Page {
+    background-color: rgba(236, 240, 241);
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+img.rounded.mx-auto.d-block{
+    max-width: 50%;
+    height: auto;
 }
 .imgPage {
     margin-top: 350px;
@@ -2307,6 +2408,7 @@ div.contenantSection7{
     animation:none;
 }
 button{
+    display: block;
     background-color: $convivialColor;
     border-radius: 100px;
     text-decoration: none;
@@ -2517,6 +2619,8 @@ button{
 }
 }
 //End of contact
+
+
 
 
 
