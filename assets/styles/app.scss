@@ -94,13 +94,13 @@ img.logoHome1 {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .txtSmallSection2 {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 //section 3
 .card-img-top{
@@ -124,7 +124,8 @@ img.logoHome1 {
     transition: all .3s ease-in-out;
 }
 p {
-    font-size: 0.7em;
+    font-size: 1em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -132,14 +133,18 @@ p {
 }
 .card-title {
     font-weight: bold;
+    font-size: 1.5em;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
-#lienS3Home{
+a#lienS3Home{
+    display: block;
     color: $convivialColor2;
     font-size: 1.2em;
     text-decoration: none;
+    text-align: center;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -775,7 +780,8 @@ img.logoHome1 {
     transition: all .3s ease-in-out;
 }
 p {
-    font-size: 0.7em;
+    font-size: 0.8em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -783,14 +789,19 @@ p {
 }
 .card-title {
     font-weight: bold;
+    text-align: center;
+    font-size: 1.4em;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
 #lienS3Home{
     color: $convivialColor2;
-    font-size: 1.2em;
+    font-size: 1em;
     text-decoration: none;
+    display: block;
+    text-align: center;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -1396,7 +1407,7 @@ footer {
 }
 .txtSmallSection2 {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 //section 3
 .card-img-top{
@@ -1421,6 +1432,7 @@ footer {
 }
 p {
     font-size: 1em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -1429,14 +1441,18 @@ p {
 .card-title {
     font-weight: bold;
     font-size: 1.5em;
+    text-align: center;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
 a#lienS3Home{
     color: $convivialColor2;
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-decoration: none;
+    text-align:center;
+    display: block;
 }
 //section 4
 .imgHomeFixeS4 {
@@ -1485,6 +1501,9 @@ h2{
     font-size: 1em;
 }
 //section 5
+.col-12.col-lg-4{
+    margin: auto;
+}
 button.buttonSection5.mt-3{
     display: block;
     margin: auto;
@@ -2028,7 +2047,8 @@ img.logoHome1{
     transition: all .3s ease-in-out;
 }
 p {
-    font-size: 0.7em;
+    font-size: 1.3em;
+    text-align: center;
 }
 .card-body {
     margin-top: 20px;
@@ -2036,14 +2056,18 @@ p {
 }
 .card-title {
     font-weight: bold;
+    text-align: center;
 }
 .card-text {
     margin-top: 10px;
+    text-align: center;
 }
-#lienS3Home{
+a#lienS3Home{
     color: $convivialColor2;
-    font-size: 1.2em;
+    font-size: 1.7em;
     text-decoration: none;
+    text-align:center;
+    display: block;
 }
 //section 4
 .imgHomeFixeS4 {
