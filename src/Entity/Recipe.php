@@ -7,6 +7,7 @@ use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\Mapping\JoinTable;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 #[UniqueEntity('title')]
@@ -29,8 +30,9 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
     private $files;
 
-    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
-    private $ingredients;
+    #[ORM\ManyToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
+    #[JoinTable('recipe_ingredient_recipe')]
+    private Collection $ingredients;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
@@ -134,7 +136,6 @@ class Recipe
     {
         if (!$this->ingredients->contains($recipeIngredient)) {
             $this->ingredients[] = $recipeIngredient;
-            $recipeIngredient->setRecipe($this);
         }
 
         return $this;

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\RecipeIngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+
 
 #[ORM\Entity(repositoryClass: RecipeIngredientRepository::class)]
 class RecipeIngredient
@@ -22,8 +24,8 @@ class RecipeIngredient
     #[ORM\Column(type: 'string', length: 120)]
     private $quantity_name;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients', cascade: [ "persist" ])]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\ManyToMany(targetEntity: Recipe::class, inversedBy: 'ingredients', cascade: [ "persist" ])]
+    #[JoinTable('recipe_ingredient_recipe')]
     private $recipe;
 
     public function getId(): ?int

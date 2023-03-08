@@ -58,12 +58,11 @@
         </div>
     </div>
 </section>
-</section>
 <section class="container mt-5">
         <div class="row">
             <div class="col">
                 {% for res in recipes %}
-                    <img class="card-img-top" src="{{ asset('build/images/' ~ res.image[0]) }}" alt="photo recettes">
+                    {# <img class="card-img-top" src="{{ asset('build/images/' ~ res.title.image) }}" alt="photo recettes"> #}
                     <div class="card-body text-center">
                         <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.title }}</a></P>
                     </div>
