@@ -37,7 +37,7 @@ class RecipeType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn mt-2 ml-2 text-center'
+                    'class' => 'btn btn-dark align-items-center mt-2 mr-2 text-center'
                 ],
                 'label' => 'Validez votre choix'
             ]);

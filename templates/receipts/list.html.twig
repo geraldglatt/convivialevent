@@ -3,15 +3,6 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-<section class="container-fluid">
-    <div class="row">
-        <div class="col-6 mx-auto">
-            <div class="text-center mt-5 mb-5 ">
-                <img class="imageLogoListConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-            </div>
-        </div>
-    </div>
-</section>
 <section class="container" id="bgRecipePageTxtSection2">
     <div class="row">
         <div class="col mb-4 mt-5 pb-4 text-center">
@@ -50,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="form-group text-center mt-5 mb-5 mx-auto">
+            <div class="text-center mt-5 mb-5 mx-auto">
                 {{ form_row(form.submit) }}
             </div>
 
@@ -62,9 +53,11 @@
         <div class="row">
             <div class="col">
                 {% for res in recipes %}
-                    {# <img class="card-img-top" src="{{ asset('build/images/' ~ res.title.image) }}" alt="photo recettes"> #}
+                    {# <img class="card-img-top" src="{{ asset('build/images/' ~ res.title.image) }}" 
+                    alt="photo recettes"> #}
                     <div class="card-body text-center">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.title }}</a></P>
+                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" 
+                        src="recipe image">{{ res.title }}</a></P>
                     </div>
                     <div class="row mx-auto my-auto">
                         <div class="card-footer col-6">

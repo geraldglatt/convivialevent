@@ -22,17 +22,17 @@ class ReceiptsController extends AbstractController
         $recipe = new Recipe();
         $recipes = new Recipe();
 
-        $form = $this->createForm(RecipeType::class, $recipe);
+        $form = $this->createForm(RecipeType::class, $recipes);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $recipe = $form->getData();
+            $recipes = $form->getData();
 
-            $recipes = $recipeRepository->findTypeAndDifficulty($recipe);
+            $recipes = $recipeRepository->findTypeAndDifficulty($recipes);
         }
 
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
-            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
+            // 'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
             'recipes' => $recipes,
             'recipe' => $recipe,
         ]);

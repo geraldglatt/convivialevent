@@ -7,7 +7,9 @@
 <section class="container mb-5 mt-5">
     <div class="row mb-2">
         <div class="col"> 
-            <h1 class="txtSection2">Votre traiteur événementiel Conviviale & Responsable</h1>
+            <h1 class="txtSection2">
+            Votre traiteur événementiel Conviviale & Responsable
+            </h1>
         </div>
     </div>
     <div class="row mb-4">
@@ -18,14 +20,16 @@
     <div class="row mb-1">
         <div class="col">
             <p class="txtSmallSection2">
-            Qu'il soit champêtre, dinatoire ou conviviale, nous personnaliserons vôtre mariage.
+            Qu'il soit champêtre, dinatoire ou conviviale, 
+            nous personnaliserons vôtre mariage.
             </p>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col">
             <p class="txtSmallSection2">
-            Selon vos désirs, ambiance, repas, brunch et surtout timing, tout sera à votre image !
+            Selon vos désirs, ambiance, repas, brunch et surtout timing, 
+            tout sera à votre image !
             </p>
         </div>
     </div>
@@ -41,7 +45,8 @@
             {% for key, wedding in weddings %}
                 {% if loop.index % 2 %}
                 <div class="col-12 d-flex mt-2 mb-3">
-                    <div class="card card-row shadow-light-lg mb-4 mt-4 lift lift-lg" 
+                    <div class="card card-row shadow-light-lg mb-4 mt-4 lift 
+                    lift-lg" 
                     data-aos="zoom-in-right"
                     data-aos-easing="ease-in-back"
                     data-aos-duration="1100"
@@ -49,15 +54,21 @@
                         <div class="row no-gutters mx-auto">
                             <div class="col-md-5">
                                     <img class="figure-img img-fluid rounded" 
-                                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent"
+                                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                                    alt="photo convivialevent"
                                     >  
                             </div>
                             <div class="col-md-7 align-self-center ml-5">
                                 <div class="card-body">
-                                    <h2 class="card-title">{{ wedding.title | raw }}</h2>
-                                    <p class="card-text">{{ wedding.content | raw }}</p>
+                                    <h2 class="card-title">
+                                    {{ wedding.title | raw }}
+                                    </h2>
+                                    <p class="card-text">
+                                    {{ wedding.content | raw }}
+                                    </p>
                                     <a class="" id="lienS3Home" 
-                                    href="{{ path('page_show', {slug:wedding.page.slug}) }}">
+                                    href="{{ path('page_show', 
+                                    {slug:wedding.page.slug}) }}">
                                     Clicker ici pour découvrir
                                     </a>
                                 </div>
@@ -86,7 +97,8 @@
                                 </div>
                                 <div class="col-md-5">
                                         <img class="figure-img img-fluid rounded" 
-                                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" alt="photo convivialevent"
+                                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                                        alt="photo convivialevent"
                                         >
                                 </div>
                             </div>
@@ -151,7 +163,7 @@
             <button class="buttonSection5 mt-3 mb-5 mx-auto">
                 <a class="textButtonSection5" 
                 href='https://www.mariages.net/traiteur-mariage/convivial-event--e136299' 
-                target="blank">D'autres commentaires
+                target="blank">D'autres commentaires</a>
             </button>
         </div>
     </div>
@@ -237,15 +249,18 @@
         <h2 class="font mt-5">Ils nous ont fait confiance en 2022</h2>
         <div class="wrapper mx-auto">
             <div class="item mx-auto mt-4 mb-4"><img 
-            src="{{ asset('build/images/logo-amf-bas (1).png') | imagine_filter('my_thumb') }}" 
+            src="{{ asset('build/images/logo-amf-bas (1).png') | 
+            imagine_filter('my_thumb') }}" 
             alt="logo amf"
             ></div>
             <div class="item mx-auto mt-4 mb-4">
-                <img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') | imagine_filter('my_thumb') }}" 
+                <img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') 
+                | imagine_filter('my_thumb') }}" 
             alt="logo utt">
             </div>
             <div class="item mx-auto mt-4 mb-4">
-                <img src="{{ asset('build/images/téléchargement (1).jpg') | imagine_filter('my_thumb') }}" 
+                <img src="{{ asset('build/images/téléchargement (1).jpg') 
+                | imagine_filter('my_thumb') }}" 
                 alt="logo estp">
             </div>
         </div>
@@ -259,7 +274,8 @@
     </div>
     <div class="row">
         <div class="col text-center" id="divHomeS8">
-            <a id="buttonS8" href="{{ path('app_contact') }}" role="button">Contactez-nous !</a>
+            <a id="buttonS8" href="{{ path('app_contact') }}" role="button">
+            Contactez-nous !</a>
         </div>
     </div>
 </section>
@@ -268,13 +284,15 @@
         <div class="col-7">
             <div class="section9Flex1"><h3>Nous contacter :</h3></div>
             <div class="section9Flex1-1">
-                <img class="imgHomePhoneFlex1-1" src="{{ asset('build/images/phonelink-ring--v2.webp') }}" 
+                <img class="imgHomePhoneFlex1-1" src="
+                {{ asset('build/images/phonelink-ring--v2.webp') }}" 
                 alt="icone phone home fixe">
                 <span class="tailleTxtFlex1-1">: 06 75 33 08 23</span>
             </div>
             <div class="section9Flex1-2">
                 <img class="section9FleximgMail" 
-                src="{{ asset('build/images/apple-mail.webp') | imagine_filter('my_thumb') }}" 
+                src="{{ asset('build/images/apple-mail.webp') 
+                | imagine_filter('my_thumb') }}" 
                 alt="icones home mail">
                 <span class="section9FlexTxtMail">convivialevent@yahoo.fr</span>
             </div>

@@ -24,9 +24,6 @@ class RecipeRepository extends ServiceEntityRepository
 
     public function findTypeAndDifficulty(Recipe $recipe): array {
         return $this->createQueryBuilder('r')
-            // ->leftJoin('r.image', 'image')
-            // ->where('image.recipe', ':recipe')
-            // ->setParameter(':recipe',$recipe->getImage())
             ->andWhere('r.type = :type')
             ->setParameter(':type', $recipe->getType())
             ->andWhere('r.difficulty = :diff')
@@ -34,19 +31,6 @@ class RecipeRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
 
-    //     if($recipe->getType()){
-
-    //         $req = $req->andWhere('r.type = :type')
-    //         ->setParameter(':type', $recipe->getType());
-    //     }
-    //     if($recipe->getDifficulty()){
-            
-    //         $req = $req->andWhere('r.difficulty = :diff')
-    //         ->setParameter(':diff', $recipe->getDifficulty());
-    //     }
-
-    //     $req->getQuery();
-    //     return $req->getResult();
     }
 
     public function add(Recipe $entity, bool $flush = false): void
@@ -66,29 +50,4 @@ class RecipeRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-//    /**
-//     * @return Recipe[] Returns an array of Recipe objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Recipe
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }
