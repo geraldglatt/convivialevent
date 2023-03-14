@@ -5,13 +5,6 @@
 {% block body %}
 <section class="container-fluid">
     <div class="row">
-        <div class="text-center mt-3 pb-3 ">
-            <img class="imageLogoConvivialRecipeDetail" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-        </div>
-    </div>
-</section>
-<section class="container-fluid">
-    <div class="row">
         <div class="col">
             <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
         </div>
@@ -41,9 +34,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col" id="imgSection3Details">
-            {% for img in recipe.image %}
-                <img class="recipePageImgSection5 w-25" src="{{ asset('../images/' ~ img.image ) }}" alt="image recette">
+        <div class="col" id="imgSection3Details" style:"width:150px; heigth:150px">
+            {% for img in recipeImage %}
+                <img class="figure-img img-fluid rounded" 
+                src="{{ vich_uploader_asset(recipeImage, 'imageFile') }}" 
+                alt="photo recette"
+                >              
             {% endfor %}
         </div>
     </div>

@@ -20,13 +20,14 @@ class Image
     private $position;
 
     #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeImages', cascade: [ "persist" ])]
+    #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private ?string $file;
+    private string $file;
 
     #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
     private ?File $imageFile = null;

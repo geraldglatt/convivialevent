@@ -2,17 +2,18 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Doctrine\ORM\Mapping\JoinTable;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[UniqueEntity('title')]
 #[Vich\Uploadable]
 class Recipe
@@ -34,7 +35,7 @@ class Recipe
     #[ORM\Column(type: 'string', length: 255)]
     private $file;
 
-    #[Vich\UploadableField(mapping:'page_images', fileNameProperty:'file')]
+    #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
@@ -43,9 +44,8 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeImages;
 
-    #[ORM\ManyToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
-    #[JoinTable('recipe_ingredient_recipe')]
-    private Collection $ingredients;
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $ingredients;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
@@ -64,6 +64,18 @@ class Recipe
         $this->recipeImages = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function prePersist()
+    {
+        $this->slug = (new Slugify())->Slugify($this->title);
+    }
+
+    #[ORM\PreUpdate]
+    public function preUpdate()
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -159,6 +171,7 @@ class Recipe
     {
         if (!$this->recipeImages->contains($recipeImage)) {
             $this->recipeImages[] = $recipeImage;
+            $recipeImage->setRecipe($this);
         }
 
         return $this;
@@ -188,6 +201,7 @@ class Recipe
     {
         if (!$this->ingredients->contains($recipeIngredient)) {
             $this->ingredients[] = $recipeIngredient;
+            $recipeIngredient->setRecipe($this);
         }
 
         return $this;

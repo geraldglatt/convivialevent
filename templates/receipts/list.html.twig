@@ -51,15 +51,22 @@
 </section>
 <section class="container mt-5">
         <div class="row">
-            <div class="col">
-                {% for res in recipes %}
-                    {# <img class="card-img-top" src="{{ asset('build/images/' ~ res.title.image) }}" 
-                    alt="photo recettes"> #}
+            <div class="card-group space-between">
+            {% for res in recipe %}
+                <div class="card" style="width:16rem">
+                    <img class="card-img-top rounded" 
+                        src="{{ vich_uploader_asset(res, 'imageFile') }}" 
+                        alt="photo recette" style="min-width:250px; min-heigth:200px"
+                    >  
                     <div class="card-body text-center">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" 
-                        src="recipe image">{{ res.title }}</a></P>
+                        <P class="card-title">
+                            <a href="{{ path('receipts_detail', 
+                            {slug:res.slug}) }}" 
+                            src="recipe image">{{ res.title|capitalize }}
+                            </a>
+                        </P>
                     </div>
-                    <div class="row mx-auto my-auto">
+                    <div class="row mx-auto my-auto mb-5">
                         <div class="card-footer col-6">
                             <p class="textSection5">{{ res.time ~ ' minutes'}}</p>
                         </div>
@@ -67,7 +74,8 @@
                             <p class="textSection5">{{ res.difficulty}}</p>
                         </div>
                     </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
             </div>
         </div>
 </section>

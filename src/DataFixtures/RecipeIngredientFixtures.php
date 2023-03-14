@@ -19,36 +19,25 @@ class RecipeIngredientFixtures extends Fixture implements DependentFixtureInterf
     ObjectManager $manager
     ): void
     {
+    foreach ([RecipeFixtures::RECIPE_REFERENCE1, RecipeFixtures::RECIPE_REFERENCE2] as $ref) {
+        for ($i = 0; $i < 10; ++$i) {
+            $recipeIngredient = new RecipeIngredient();
+            $recipeIngredient->setName('name'.$i);
+            $recipeIngredient->setQuantity($i);
+            $recipeIngredient->setQuantityName('quantity_name'.$i);
 
-        $recipes = $this->recipeRepository->findAll();
+            /** @var \App\Entity\Recipe */
+            $recipe = $this->getReference($ref);
+            $recipeIngredient->setRecipe($recipe);
 
-        //RecipeIngredient
-        $recipeIngredients = [];
-
-            for ($i = 0; $i < 10; ++$i) {
-                $recipeIngredient = new RecipeIngredient();
-                $recipeIngredient->setName('name'.$i);
-                $recipeIngredient->setQuantity($i);
-                $recipeIngredient->setQuantityName('quantity_name'.$i);
-
-                // /** @var \App\Entity\Recipe */
-                // $recipe = $this->getReference($ref);
-                // $recipeIngredient->setRecipe($recipe);
-
-                $recipeIngredients[] = $recipeIngredient;
-                $manager->persist($recipeIngredient);
-            }
-
-            foreach($recipes as $r) {
-                for($i =0; $i < mt_rand(0,3);$i++) {
-                    $r->addIngredient(
-                        $recipeIngredients[mt_rand(0, count($recipeIngredients)-1 )]
-                    );
-                }
-            }
+            $recipeIngredients[] = $recipeIngredient;
+            $manager->persist($recipeIngredient);
+        }
 
         $manager->flush();
     }
+}
+    
 
     public function getDependencies()
     {

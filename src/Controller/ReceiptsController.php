@@ -30,24 +30,28 @@ class ReceiptsController extends AbstractController
             $recipes = $recipeRepository->findTypeAndDifficulty($recipes);
         }
 
+        $recipe = $recipeRepository->findAll();
+
         return $this->renderForm('receipts/list.html.twig', [
             'form' => $form,
-            // 'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
+            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
             'recipes' => $recipes,
             'recipe' => $recipe,
         ]);
     }
 
     #[Route('/{slug}', name: 'detail')]
-    public function detail(Recipe $recipe, 
+    public function detail(
+    Recipe $recipe, 
     RecipeIngredientRepository $recipeIngredients, 
-    RecipeStepRepository $recipeSteps, ImageRepository $image): Response
+    RecipeStepRepository $recipeSteps, ImageRepository $recipeImage
+    ): Response
     {
         return $this->render('receipts/detail.html.twig', [
             'recipe' => $recipe,
-            'recipeIngredients' => $recipeIngredients->findBy(['recipe' => $recipe]),
+            'recipeIngredients' => $recipeIngredients->findIngredientByRecipe($recipe->getId(), $recipeIngredients),
             'recipeSteps' => $recipeSteps->findBy(['recipe' => $recipe]),
-            'image' => $image->findBy(['recipe' => $recipe]),
+            'recipeImage' => $recipeImage->findImageByRecipe($recipe->getId(), $recipeImage),
         ]);
     }
 }

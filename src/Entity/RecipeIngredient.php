@@ -24,9 +24,9 @@ class RecipeIngredient
     #[ORM\Column(type: 'string', length: 120)]
     private $quantity_name;
 
-    #[ORM\ManyToMany(targetEntity: Recipe::class, inversedBy: 'ingredients', cascade: [ "persist" ])]
-    #[JoinTable('recipe_ingredient_recipe')]
-    private $recipe;
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'ingredients', cascade: [ "persist" ])]
+    #[ORM\JoinColumn(nullable: false)]
+    private $recipe = null;
 
     public function getId(): ?int
     {

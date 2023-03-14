@@ -1,4 +1,7 @@
 {
+    "cocur/slugify": {
+        "version": "v4.3.0"
+    },
     "composer/pcre": {
         "version": "3.0.0"
     },
