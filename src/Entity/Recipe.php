@@ -2,14 +2,20 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[UniqueEntity('title')]
+#[Vich\Uploadable]
 class Recipe
 {
     #[ORM\Id]
@@ -26,8 +32,17 @@ class Recipe
     #[ORM\Column(type: 'integer')]
     private $nb_portion;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $updatedAt;
+
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
-    private $files;
+    private $recipeImages;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $ingredients;
@@ -46,9 +61,21 @@ class Recipe
 
     public function __construct()
     {
-        $this->files = new ArrayCollection();
+        $this->recipeImages = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function prePersist()
+    {
+        $this->slug = (new Slugify())->Slugify($this->title);
+    }
+
+    #[ORM\PreUpdate]
+    public function preUpdate()
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -92,30 +119,70 @@ class Recipe
         return $this;
     }
 
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $file = null): void
+    {
+        $this->imageFile = $file;
+        
+        if ($file) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable('now');
+        }
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Image>
      */
-    public function getFile(): Collection
+    public function getRecipeImages(): Collection
     {
-        return $this->files;
+        return $this->recipeImages;
     }
 
-    public function addFile(Image $file): self
+    public function addRecipeImage(Image $recipeImage): self
     {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
-            $file->setRecipe($this);
+        if (!$this->recipeImages->contains($recipeImage)) {
+            $this->recipeImages[] = $recipeImage;
+            $recipeImage->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeFile(Image $file): self
+    public function removeRecipeImage(Image $recipeImage): self
     {
-        if ($this->files->removeElement($file)) {
+        if ($this->recipeImages->removeElement($recipeImage)) {
             // set the owning side to null (unless already changed)
-            if ($file->getRecipe() === $this) {
-                $file->setRecipe(null);
+            if ($recipeImage->getRecipe() === $this) {
+                $recipeImage->setRecipe(null);
             }
         }
 

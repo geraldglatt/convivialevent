@@ -3,15 +3,6 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-<section class="container-fluid">
-    <div class="row">
-        <div class="col-6 mx-auto">
-            <div class="text-center mt-5 mb-5 ">
-                <img class="imageLogoListConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-            </div>
-        </div>
-    </div>
-</section>
 <section class="container" id="bgRecipePageTxtSection2">
     <div class="row">
         <div class="col mb-4 mt-5 pb-4 text-center">
@@ -50,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="form-group text-center mt-5 mb-5 mx-auto">
+            <div class="text-center mt-5 mb-5 mx-auto">
                 {{ form_row(form.submit) }}
             </div>
 
@@ -58,16 +49,24 @@
         </div>
     </div>
 </section>
-</section>
 <section class="container mt-5">
         <div class="row">
-            <div class="col">
-                {% for res in recipes %}
-                    <img class="card-img-top" src="{{ asset('build/images/' ~ res.image[0]) }}" alt="photo recettes">
+            <div class="card-group space-between">
+            {% for res in recipe %}
+                <div class="card" style="width:16rem">
+                    <img class="card-img-top rounded" 
+                        src="{{ vich_uploader_asset(res, 'imageFile') }}" 
+                        alt="photo recette" style="min-width:250px; min-heigth:200px"
+                    >  
                     <div class="card-body text-center">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.title }}</a></P>
+                        <P class="card-title">
+                            <a href="{{ path('receipts_detail', 
+                            {slug:res.slug}) }}" 
+                            src="recipe image">{{ res.title|capitalize }}
+                            </a>
+                        </P>
                     </div>
-                    <div class="row mx-auto my-auto">
+                    <div class="row mx-auto my-auto mb-5">
                         <div class="card-footer col-6">
                             <p class="textSection5">{{ res.time ~ ' minutes'}}</p>
                         </div>
@@ -75,7 +74,8 @@
                             <p class="textSection5">{{ res.difficulty}}</p>
                         </div>
                     </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
             </div>
         </div>
 </section>

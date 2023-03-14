@@ -2,16 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Images;
 use App\Entity\Page;
-use App\Entity\PagePdf;
-use App\Service\PdfService;
 use App\Repository\ImagesRepository;
 use App\Repository\PagePdfRepository;
 use App\Repository\PageRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/page', name: 'page_')]
 class PageController extends AbstractController
@@ -20,18 +17,17 @@ class PageController extends AbstractController
     public function show(
     PageRepository $pageBlock,
     Page $pages,
-    PageRepository $pageId, 
-    PagePdfRepository $pagePdf, 
+    PageRepository $pageId,
+    PagePdfRepository $pagePdf,
     ImagesRepository $findImage,
     ImagesRepository $imagesRepository
-    ): Response
-    {
+    ): Response {
         $findId = $pageId->findIdBypage($pages->getId(), $pageId);
-        
+
         $findImages = $imagesRepository->findImageBypage($pages->getId(), $imagesRepository);
 
         // $findpdf = $pagePdf->findpdfpageChampêtre($pagePdf);
-        $findPdfs = $pagePdf->findpdfBypage($pages->getId(),$pagePdf);
+        $findPdfs = $pagePdf->findpdfBypage($pages->getId(), $pagePdf);
 
         return $this->render('page/show.html.twig', [
             'pagesBlock' => $pageBlock->findAll(),
@@ -40,8 +36,7 @@ class PageController extends AbstractController
             'images' => $findImage,
             'findId' => $findId,
             'findPdfs' => $findPdfs,
-            'findImages' => $findImages
+            'findImages' => $findImages,
         ]);
     }
-   
 }

@@ -6,6 +6,7 @@ use App\Repository\HomeBlockRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 #[Route('/', name: 'app_')]
 class HomeController extends AbstractController
 {
@@ -16,7 +17,7 @@ class HomeController extends AbstractController
             'weddings' => $homeBlockRepository->findBy([], ['position' => 'ASC'], 6),
         ]);
     }
-    
+
     #[Route('/mentions_legales', name: 'mentions_legales')]
     public function mentionsLegales(): Response
     {

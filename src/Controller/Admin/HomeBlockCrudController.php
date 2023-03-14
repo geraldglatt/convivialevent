@@ -33,7 +33,7 @@ class HomeBlockCrudController extends AbstractCrudController
                 ->setFormType(CKEditorType::class),
             TextField::new('imageFile')
                 ->setFormType(VichImageType::class)
-                ->onlyWhenCreating(),
+                ->onlyOnForms(),
             ImageField::new('file')
                 ->setBasePath('/uploads/imagesHomeblock/')
                 ->setUploadDir('assets/images/'),

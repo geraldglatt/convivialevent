@@ -16,7 +16,7 @@ class IngredientType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('quantity', IntegerType::class)
-            ->add('quantity_name', IntegerType::class)
+            ->add('quantity_name', TextType::class)
         ;
     }
 

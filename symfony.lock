@@ -1,4 +1,7 @@
 {
+    "cocur/slugify": {
+        "version": "v4.3.0"
+    },
     "composer/pcre": {
         "version": "3.0.0"
     },
@@ -115,6 +118,9 @@
     },
     "ergebnis/phpstan-rules": {
         "version": "1.0.0"
+    },
+    "fakerphp/faker": {
+        "version": "v1.21.0"
     },
     "friendsofphp/php-cs-fixer": {
         "version": "3.8",
