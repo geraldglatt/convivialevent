@@ -3,9 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Recipe;
+use App\Model\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Recipe>
@@ -17,37 +19,57 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class RecipeRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
+    public function __construct(
+        ManagerRegistry $registry,
+        private PaginatorInterface $paginatorInterface
+    ) {
         parent::__construct($registry, Recipe::class);
     }
 
-    public function findTypeAndDifficulty(Recipe $recipe): array {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.type = :type')
-            ->setParameter(':type', $recipe->getType())
-            ->andWhere('r.difficulty = :diff')
-            ->setParameter(':diff', $recipe->getDifficulty())
+    /**
+     * Get published recipes
+     * 
+     * @param int $page
+     * @return PaginationInterface
+     */
+    public function findPublished(int $page): PaginationInterface
+    {
+        $data = $this->createQueryBuilder('r')
+            ->where('r.state LIKE :state')
+            ->setParameter('state', '%STATE_PUBLISHED%')
+            ->addOrderBy('r.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
 
+            $recipes = $this->paginatorInterface->paginate($data, $page, 6);
+
+            return $recipes;
     }
 
-    public function add(Recipe $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+    /**
+     * @param SearchData $searchData
+     * @return PaginationInterface
+     */
+    public function findBySearch(SearchData $searchData): PaginationInterface
+        {
+        $data = $this->createQueryBuilder('r')
+            ->where('r.state LIKE :state')
+            ->setParameter('state', '%STATE_PUBLISHED%')
+            ->addOrderBy('r.createdAt', 'DESC');
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
+        if(!empty($searchData->q)) {
+            $data = $data
+                ->andWhere('r.title LIKE :q')
+                ->setParameter('q', "%{$searchData->q}%");
         }
-    }
+        $data = $data
+            ->getQuery()
+            ->getResult();
 
-    public function remove(Recipe $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
+        $recipes = $this->paginatorInterface->paginate($data, $searchData->page, 6);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        return $recipes;
+
+        
     }
 }

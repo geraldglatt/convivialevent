@@ -3,40 +3,47 @@
 namespace App\Controller;
 
 use App\Entity\Recipe;
-use App\Form\RecipeType;
+use App\Form\SearchType;
+use App\Model\SearchData;
 use App\Repository\ImageRepository;
 use App\Repository\RecipeIngredientRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/receipts', name: 'receipts_', methods: ['GET', 'POST'])]
+#[Route('/receipts', name: 'receipts_')]
 class ReceiptsController extends AbstractController
 {
-    #[Route('/', name: 'list')]
-    public function list(RecipeRepository $recipeRepository, Request $request): Response
+    #[Route('/', name: 'list', methods: ['GET'])]
+    public function list(
+        RecipeRepository $recipeRepository, 
+        PaginatorInterface $paginatorInterface , 
+        Request $request
+        ): Response
     {
-        $recipe = new Recipe();
-        $recipes = new Recipe();
 
-        $form = $this->createForm(RecipeType::class, $recipes);
+        $searchData = new SearchData;
+        $form = $this->createForm(SearchType::class, $searchData);
+
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $recipes = $form->getData();
+        if ($form->isSubmitted() && $form->isValid()) { 
+            $searchData->page = $request->query->getInt('page', 1);
+            $recipes = $recipeRepository->findBySearch($searchData);
 
-            $recipes = $recipeRepository->findTypeAndDifficulty($recipes);
+            return $this->render('receipts/list.html.twig', [
+                'form' => $form->createView(),
+                'recipes' => $recipes
+            ]);
+
         }
 
-        $recipe = $recipeRepository->findAll();
-
-        return $this->renderForm('receipts/list.html.twig', [
-            'form' => $form,
-            'receipts' => $recipeRepository->findBy([], ['id' => 'ASC'], 8),
-            'recipes' => $recipes,
-            'recipe' => $recipe,
+        return $this->render('receipts/list.html.twig', [
+            'form' => $form->createView(),
+            'recipes' => $recipeRepository->findPublished($request->query->getInt('page', 1))
         ]);
     }
 

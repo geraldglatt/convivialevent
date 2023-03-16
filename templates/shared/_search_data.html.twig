@@ -1,0 +1,13 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+<div class="form-control mt-5">
+    {{ form_start(form) }}
+    <div class="form-group mt-5">
+        {{ form_widget(form.q) }}
+        <button class="btn btn-primary mt-5" type="submit"><i class="fa-solid fa-magnifying-glass ml-1"></i></button>
+        <div>
+            {{ form_errors(form.q) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>

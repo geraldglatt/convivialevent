@@ -18,6 +18,8 @@ use Symfony\Component\HttpFoundation\File\File;
 #[Vich\Uploadable]
 class Recipe
 {
+    const STATES = ['STATE_DRAFT', 'STATE_PUBLISHED'];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -38,8 +40,17 @@ class Recipe
     #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
     private ?File $imageFile = null;
 
+    #[ORM\Column(type : 'string', length: 255 )]
+    private string $state = Recipe::STATES[0];
+
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $createdAt;
+
+    #[ORM\ManyToOne(inversedBy: 'recipes')]
+    private ?Category $category = null;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeImages;
@@ -147,6 +158,18 @@ class Recipe
         }
     }
 
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    public function setState( string $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
@@ -155,6 +178,30 @@ class Recipe
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
@@ -289,4 +336,5 @@ class Recipe
     {
         return $this->title;
     }
+
 }
