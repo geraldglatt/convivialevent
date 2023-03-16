@@ -3,10 +3,12 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-<section class="container" id="bgRecipePageTxtSection2">
-    <div class="row">
-        <div class="col mb-4 mt-5 pb-4 text-center">
-            <p class="listrecipePagetxtSection3">Les recettes que </br> vous propose </br> Convivial Event</p>
+<section class="pt-5 pt-md-5" id="bgRecipePageTxtSection2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="listrecipePagetxtSection3">Les recettes que </br> vous propose </br> Convivial Event</p>
+            </div>
         </div>
     </div>
 </section>
@@ -22,62 +24,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 mx-auto">
-            {{ form_start(form) }}
-
-            <div class="form-group mb-5">
-                {{ form_label(form.type) }}
-                {{ form_widget(form.type) }}
-                <div>
-                    {{ form_errors(form.type) }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                {{ form_label(form.difficulty) }}
-                {{ form_widget(form.difficulty) }}
-                <div>
-                    {{ form_errors(form.difficulty) }}
-                </div>
-            </div>
-
-            <div class="text-center mt-5 mb-5 mx-auto">
-                {{ form_row(form.submit) }}
-            </div>
-
-            {{ form_end(form) }}
-        </div>
+    {% include 'shared/_search_data.html.twig' with {
+        form:form
+    } only %}
     </div>
 </section>
-<section class="container mt-5">
-        <div class="row">
-            <div class="card-group space-between">
-            {% for res in recipe %}
-                <div class="card" style="width:16rem">
-                    <img class="card-img-top rounded" 
-                        src="{{ vich_uploader_asset(res, 'imageFile') }}" 
-                        alt="photo recette" style="min-width:250px; min-heigth:200px"
-                    >  
-                    <div class="card-body text-center">
-                        <P class="card-title">
-                            <a href="{{ path('receipts_detail', 
-                            {slug:res.slug}) }}" 
-                            src="recipe image">{{ res.title|capitalize }}
-                            </a>
-                        </P>
-                    </div>
-                    <div class="row mx-auto my-auto mb-5">
-                        <div class="card-footer col-6">
-                            <p class="textSection5">{{ res.time ~ ' minutes'}}</p>
-                        </div>
-                        <div class="card-footer col-6">
-                            <p class="textSection5">{{ res.difficulty}}</p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-            </div>
-        </div>
+<section class="container-fluid">
+    {% include 'shared/_card.html.twig' %}
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        {{ knp_pagination_render(recipes, 'shared/_pagination.html.twig') }}
+    </div>   
 </section>
 {% endblock %}
 {% block javascript %}
