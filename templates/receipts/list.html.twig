@@ -17,7 +17,7 @@
                 <img class="imgHomeFixeS4" src="{{ asset('/build/images/boulPizz.0648ce00.webp') | imagine_filter('my_thumb') }}" alt="photo image home fixe">
             </div>
     <div class="row">
-        <div class="col mb-4 mt-5 pb-4 mt-5 text-center">
+        <div class="col mb-4 mt-5 text-center">
             <div class="contenantSection4">
                 <p class="txtSection3List"><span class="span1ListS3">Une sélection de recettes</br>à faire chez vous oû</br>à partager avec vos amis !!!</span></p>
             </div>
@@ -29,7 +29,7 @@
     } only %}
     </div>
 </section>
-<section class="container-fluid">
+<section class="container">
     {% include 'shared/_card.html.twig' %}
     <div class="d-flex justify-content-center mt-5 mb-5">
         {{ knp_pagination_render(recipes, 'shared/_pagination.html.twig') }}
