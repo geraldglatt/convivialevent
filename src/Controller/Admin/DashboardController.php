@@ -41,7 +41,7 @@ class DashboardController extends AbstractDashboardController
   {
     yield MenuItem::linkToRoute('back to the website', 'fas fa-home', 'app_home');
     yield MenuItem::linkToCrud('HomeBlock', 'fas fa-book', HomeBlock::class);
-    yield MenuItem::section('page');
+    yield MenuItem::section('page(A Charger avant la partie homeblock)');
     yield MenuItem::linkToCrud('Page', 'fas fa-book', Page::class);
     yield MenuItem::section('images');
     yield MenuItem::linkToCrud('images', 'fas fa-book', Images::class);
