@@ -9,19 +9,17 @@ use App\Repository\ImageRepository;
 use App\Repository\RecipeIngredientRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/receipts', name: 'receipts_')]
+#[Route('/recettes', name: 'recettes_')]
 class ReceiptsController extends AbstractController
 {
     #[Route('/', name: 'list', methods: ['GET'])]
     public function list(
         RecipeRepository $recipeRepository, 
-        PaginatorInterface $paginatorInterface , 
         Request $request
         ): Response
     {
