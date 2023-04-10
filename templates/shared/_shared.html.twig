@@ -1,6 +1,6 @@
 <div class="p-2">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ 
-    absolute_url(path('receipts_detail', {slug: recipe.slug})) }}"
+    absolute_url(path('recettes_detail', {slug: recipe.slug})) }}"
     class="">
     <!-- Facebook -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -8,7 +8,7 @@
         </svg>
     </a>
     <a href="https://twitter.com/intent/tweet?text={{ recipe.title|url_encode }}%20
-    {{ absolute_url(path('receipts_detail', {slug: recipe.slug})) }}%20@blog" 
+    {{ absolute_url(path('recettes_detail', {slug: recipe.slug})) }}%20@blog" 
     class="">
     <!-- Twitter -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
