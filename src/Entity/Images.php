@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ImagesRepository;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
 #[Vich\Uploadable]
@@ -18,7 +18,7 @@ class Images
 
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $title;
-   
+
     #[ORM\Column(type: 'integer')]
     private $position;
 
@@ -32,9 +32,8 @@ class Images
     #[ORM\Column(type: 'string', length: 255)]
     private $file;
 
-    #[Vich\UploadableField(mapping:'page_images', fileNameProperty:'file')]
+    #[Vich\UploadableField(mapping: 'page_images', fileNameProperty: 'file')]
     private $imageFile;
-
 
     public function getId(): ?int
     {
@@ -76,6 +75,7 @@ class Images
 
         return $this;
     }
+
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
@@ -108,7 +108,7 @@ class Images
     public function setImageFile(?File $file = null): void
     {
         $this->imageFile = $file;
-        
+
         if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
@@ -120,5 +120,4 @@ class Images
     {
         return $this->title;
     }
-
 }

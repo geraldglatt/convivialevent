@@ -7,6 +7,7 @@ parameters:
     page_images: /uploads/imagesPage
     homeblock_images: /uploads/imagesHomeblock
     recipe_images: /uploads/imagesRecipe
+    page_pdfs: /uploads/pagePdfs
 
 services:
     # default configuration for services in *this* file
