@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\HomeBlock;
 use App\Entity\Images;
 use App\Entity\Page;
+use App\Entity\PagePdf;
 use App\Entity\Recipe;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -45,6 +46,8 @@ class DashboardController extends AbstractDashboardController
     yield MenuItem::linkToCrud('Page', 'fas fa-book', Page::class);
     yield MenuItem::section('images');
     yield MenuItem::linkToCrud('images', 'fas fa-book', Images::class);
+    yield MenuItem::section('pagePdf');
+    yield MenuItem::linkToCrud('PagePdf', 'fas fa-file-pdf', PagePdf::class);
     yield MenuItem::section('Recipe');
     yield MenuItem::linkToCrud('Recipe', 'fas fa-book', Recipe::class);
   }

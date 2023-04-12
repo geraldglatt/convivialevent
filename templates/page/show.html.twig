@@ -57,9 +57,10 @@
             {% for pdf in findPdfs %}
             <div>
                 <button type="button" class="mx-auto active" id="buttonpdf">
-                <a class="" href="{{ asset('build/pdfs/'~ pdf.title) }}"
+                <a class="" href="{{ vich_uploader_asset(pdf, 'pdfsFile') }}"
+                target="_blank"
                 alt="{{ pdf.title }}">
-                {{ pdf.title }}  <i class=""><i class="fa-regular fa-file-pdf pl-2"></i></i>
+                {{ pdf.title }}<i class="fa-regular fa-file-pdf pl-2"></i>
                 </a>
                 </button>
             </div>

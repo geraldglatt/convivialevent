@@ -5,8 +5,11 @@ namespace App\Controller\Admin;
 use App\Entity\PagePdf;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 
 class PagePdfCrudController extends AbstractCrudController
 {
@@ -18,8 +21,15 @@ class PagePdfCrudController extends AbstractCrudController
     public function configureFields(string $pagePdf): iterable
     {
         return [
-            AssociationField::new('page'),
             TextField::new('title'),
+            TextField::new('pdfsFile')
+            ->setFormType(VichImageType::class)
+            ->onlyOnForms(),
+            ImageField::new('file')
+                ->setBasePath('/uploads/pdfsPage/')->onlyOnIndex()
+                ->setUploadDir('assets/pdfs/'),
+            IntegerField::new('position'),
+            AssociationField::new('page')
         ];
     }
 }
