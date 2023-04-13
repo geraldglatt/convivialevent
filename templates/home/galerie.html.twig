@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+        <h1 class="mb-5 mt-5 mx-auto text-center">
+            Notre galerie d'images
+        </h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-3 mt-3">
+            {% for img in galerie %}
+
+            <div class="col mt-5">
+                <div class="card h-100" style="width:20rem" id="clickable-card">
+                    <img class="card-img-top rounded"  
+                        data-aos="zoom-in-up" 
+                        data-aos-easing="ease-in-back"
+                        data-aos-duration="900"
+                        src="{{ vich_uploader_asset(img, 'imageFile') }}" 
+                        alt="images convivial" style="min-width:250px; min-heigth:200px"
+                    >
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}
