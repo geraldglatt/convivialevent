@@ -32,9 +32,9 @@ class HomeController extends AbstractController
     }
 
     #[Route('/galerie', name: 'galerie')]
-    public function gallerie(ImagesRepository $galerie): Response
+    public function galerie(ImagesRepository $galerie): Response
     {
-        return $this->render('home/gallerie.html.twig', [
+        return $this->render('home/galerie.html.twig', [
             'galerie' => $galerie->findAll()
         ]);
     }
