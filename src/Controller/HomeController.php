@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\HomeBlockRepository;
+use App\Repository\ImagesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,5 +29,13 @@ class HomeController extends AbstractController
     public function partenaires(): Response
     {
         return $this->render('home/partenaires.html.twig');
+    }
+
+    #[Route('/galerie', name: 'galerie')]
+    public function gallerie(ImagesRepository $galerie): Response
+    {
+        return $this->render('home/gallerie.html.twig', [
+            'galerie' => $galerie->findAll()
+        ]);
     }
 }
