@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PagePdf;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -31,5 +32,11 @@ class PagePdfCrudController extends AbstractCrudController
             IntegerField::new('position'),
             AssociationField::new('page')
         ];
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('index', 'Pdf')
+            ->setPageTitle('edit', 'Modifier le pdf');
     }
 }

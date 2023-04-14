@@ -70,11 +70,15 @@ class Recipe
     #[ORM\Column(type: 'integer', length: 60)]
     private $time;
 
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Commentaire::class)]
+    private $commentaires;
+
     public function __construct()
     {
         $this->recipeImages = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
+        $this->commentaires = new ArrayCollection();
     }
 
     #[ORM\PrePersist]
@@ -335,6 +339,36 @@ class Recipe
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): self
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getRecette() === $this) {
+                $commentaire->setRecette(null);
+            }
+        }
+
+        return $this;
     }
 
 }

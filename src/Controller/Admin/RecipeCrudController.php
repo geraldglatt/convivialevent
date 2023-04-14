@@ -26,7 +26,9 @@ class RecipeCrudController extends AbstractCrudController
     {
         return $crud
             ->setNumberFormat('%.2d')
-            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
+            ->setPageTitle('index', 'Recettes')
+            ->setPageTitle('edit', 'Modifier les recettes');;
     }
 
     public function configureFields(string $recipe): iterable
