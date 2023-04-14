@@ -28,6 +28,9 @@ class Commentaire
     #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'commentaires')]
     private $recette;
 
+    #[ORM\Column(type: 'boolean')]
+    private $isPublished;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Commentaire
     public function setRecette(?Recipe $recette): self
     {
         $this->recette = $recette;
+
+        return $this;
+    }
+
+    public function isIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }
