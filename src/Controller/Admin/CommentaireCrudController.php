@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -22,15 +23,15 @@ class CommentaireCrudController extends AbstractCrudController
     }
 
     
-    public function configureFields(string $pageName): iterable
+    public function configureFields(string $commentaire): iterable
     {
         return [
-            TextField::new('auteur')->hideOnForm(),
-            EmailField::new('email')->onlyOnForms(),
-            DateTimeField::new('createdAt'),
-            TextareaField::new('contenu'),
-            BooleanField::new('isPublished'),
-            AssociationField::new('recette'),
+            yield TextField::new('auteur'),
+            yield EmailField::new('email')->onlyOnForms(),
+            yield DateTimeField::new('createdAt'),
+            yield TextareaField::new('contenu'),
+            yield BooleanField::new('isPublished'),
+            yield AssociationField::new('recette'),
         ];
     }
 

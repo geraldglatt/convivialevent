@@ -2,13 +2,17 @@
 
 namespace App\Controller;
 
+use App\Entity\Commentaire;
 use App\Entity\Recipe;
+use App\Form\CommentaireType;
 use App\Form\SearchType;
 use App\Model\SearchData;
+use App\Repository\CommentaireRepository;
 use App\Repository\ImageRepository;
 use App\Repository\RecipeIngredientRepository;
 use App\Repository\RecipeRepository;
 use App\Repository\RecipeStepRepository;
+use App\Service\CommentaireService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,14 +53,36 @@ class ReceiptsController extends AbstractController
     public function detail(
     Recipe $recipe, 
     RecipeIngredientRepository $recipeIngredients, 
-    RecipeStepRepository $recipeSteps, ImageRepository $recipeImage
+    RecipeStepRepository $recipeSteps,
+    ImageRepository $recipeImage,
+    Request $request,
+    CommentaireService $commentaireService,
+    CommentaireRepository $commentaireRepository
     ): Response
     {
+        $commentaires = $commentaireRepository->findCommentaires($recipe);
+        $commentaire = new Commentaire();
+        $form = $this->createForm(CommentaireType::class, $commentaire);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $commentaire = $form->getData();
+            $commentaireService->persistCommentaire($commentaire,$recipe);
+
+            $this->addFlash('success', 'Votre commentaire a bien été envoyé,nous vous en remercions !
+            Il sera publié après vérification par l\'administrateur ');
+
+            return $this->redirectToRoute('recettes_detail', ['slug' => $recipe->getSlug()]);
+
+        }
+
         return $this->render('receipts/detail.html.twig', [
             'recipe' => $recipe,
             'recipeIngredients' => $recipeIngredients->findIngredientByRecipe($recipe->getId(), $recipeIngredients),
             'recipeSteps' => $recipeSteps->findBy(['recipe' => $recipe]),
             'recipeImage' => $recipeImage->findImageByRecipe($recipe->getId(), $recipeImage),
+            'form' => $form->createView(),
+            'commentaires' => $commentaires
         ]);
     }
 }

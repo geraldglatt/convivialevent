@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\File\File;
 #[Vich\Uploadable]
 class Recipe
 {
-    const STATES = ['STATE_DRAFT', 'STATE_PUBLISHED'];
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -40,8 +39,8 @@ class Recipe
     #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
     private ?File $imageFile = null;
 
-    #[ORM\Column(type : 'string', length: 255 )]
-    private string $state = Recipe::STATES[0];
+    #[ORM\Column]
+    private ?bool $isPublished = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
@@ -61,6 +60,9 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
 
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Commentaire::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $commentaires;
+
     #[ORM\Column(type: 'string', columnDefinition:"ENUM('entrée', 'pièces cocktail', 'plat principal', 'dessert')", length: 255)]
     private $type;
 
@@ -69,9 +71,6 @@ class Recipe
 
     #[ORM\Column(type: 'integer', length: 60)]
     private $time;
-
-    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Commentaire::class)]
-    private $commentaires;
 
     public function __construct()
     {
@@ -162,14 +161,14 @@ class Recipe
         }
     }
 
-    public function getState(): string
+    public function isIsPublished(): ?bool
     {
-        return $this->state;
+        return $this->isPublished;
     }
 
-    public function setState( string $state): self
+    public function setIsPublished(bool $isPublished): self
     {
-        $this->state = $state;
+        $this->isPublished = $isPublished;
 
         return $this;
     }

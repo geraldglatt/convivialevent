@@ -50,7 +50,7 @@ class DashboardController extends AbstractDashboardController
     yield MenuItem::linkToCrud('Pdf', 'fas fa-file-pdf', PagePdf::class);
     yield MenuItem::section('Recettes');
     yield MenuItem::linkToCrud('Recettes', 'fas fa-book', Recipe::class);
-    yield MenuItem::section('Commentaires');
-    yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Commentaire::class);
+    yield MenuItem::section('Commentaire');
+    yield MenuItem::linkToCrud('Commentaire', 'fas fa-comment', Commentaire::class);
   }
 }

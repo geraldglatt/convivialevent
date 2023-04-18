@@ -4,7 +4,7 @@
 
 {% block body %}
 <section class="container-fluid">
-    <div class="row">
+    <div class="d-flex flex-row">
         <div class="col">
             <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
         </div>
@@ -78,7 +78,13 @@
         {% include 'shared/_shared.html.twig' %}
         </div>
          <div class="">
-            <button class="textSection3"><a href="{{ path('recettes_list') }}">Retour vers les Recettes</button>
+            <a class="textSection3"><a href="{{ path('recettes_list') }}">Retour vers les Recettes</a>
         </div>
+</section>
+<section class="container">
+    <div class="text-center">
+        {% include 'commentaire/form.html.twig' %}
+        {% include 'commentaire/commentaires.html.twig' %}
+    </div>
 </section>
 {% endblock %}
