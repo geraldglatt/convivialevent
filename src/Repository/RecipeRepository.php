@@ -35,8 +35,7 @@ class RecipeRepository extends ServiceEntityRepository
     public function findPublished(int $page): PaginationInterface
     {
         $data = $this->createQueryBuilder('r')
-            ->where('r.state LIKE :state')
-            ->setParameter('state', '%STATE_PUBLISHED%')
+            ->where('r.isPublished = true')
             ->addOrderBy('r.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
@@ -53,8 +52,7 @@ class RecipeRepository extends ServiceEntityRepository
     public function findBySearch(SearchData $searchData): PaginationInterface
         {
         $data = $this->createQueryBuilder('r')
-            ->where('r.state LIKE :state')
-            ->setParameter('state', '%STATE_PUBLISHED%')
+            ->where('r.isPublished = true')
             ->addOrderBy('r.createdAt', 'DESC');
 
         if(!empty($searchData->q)) {

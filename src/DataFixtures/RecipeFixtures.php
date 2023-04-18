@@ -27,7 +27,7 @@ class RecipeFixtures extends Fixture
         $recipe->setTitle('title1')
                ->setNbPortion(1)
                ->setType('entrée')
-               ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+               ->setIsPublished(false)
                ->setFile('saumon-laque.webp')
                ->setDifficulty('facile')
                ->setTime(45);
@@ -38,7 +38,7 @@ class RecipeFixtures extends Fixture
         $recipe2->setTitle('title2')
                ->setNbPortion(4)
                ->setType('pièces cocktail')
-               ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+               ->setIsPublished(false)
                ->setFile('saumon-laque.webp')
                ->setDifficulty('difficile')
                ->setTime(115);
@@ -49,7 +49,7 @@ class RecipeFixtures extends Fixture
         $recipe3->setTitle('title3')
                 ->setNbPortion(1)
                 ->setType('plat principal')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('moyen')
                 ->setTime(76);
@@ -60,7 +60,7 @@ class RecipeFixtures extends Fixture
         $recipe4->setTitle('title4')
                 ->setNbPortion(1)
                 ->setType('dessert')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('Facile')
                 ->setTime(90);
@@ -71,7 +71,7 @@ class RecipeFixtures extends Fixture
         $recipe5->setTitle('title5')
                 ->setNbPortion(4)
                 ->setType('entrée')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('difficile')
                 ->setTime(60);
@@ -82,7 +82,7 @@ class RecipeFixtures extends Fixture
         $recipe6->setTitle('title6')
                 ->setNbPortion(1)
                 ->setType('plat principal')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('moyen')
                 ->setTime(115);
@@ -93,7 +93,7 @@ class RecipeFixtures extends Fixture
         $recipe7->setTitle('title7')
                 ->setNbPortion(1)
                 ->setType('pièces cocktail')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('Facile')
                 ->setTime(90);
@@ -104,7 +104,7 @@ class RecipeFixtures extends Fixture
         $recipe8->setTitle('title8')
                 ->setNbPortion(1)
                 ->setType('dessert')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('Facile')
                 ->setTime(90);
@@ -115,7 +115,7 @@ class RecipeFixtures extends Fixture
         $recipe9->setTitle('title4')
                 ->setNbPortion(1)
                 ->setType('plat principal')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('Facile')
                 ->setTime(80);
@@ -126,7 +126,7 @@ class RecipeFixtures extends Fixture
         $recipe10->setTitle('title10')
                 ->setNbPortion(1)
                 ->setType('dessert')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('Facile')
                 ->setTime(90);
@@ -137,7 +137,7 @@ class RecipeFixtures extends Fixture
         $recipe11->setTitle('title11')
                 ->setNbPortion(1)
                 ->setType('dessert')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('moyen')
                 ->setTime(50);
@@ -148,7 +148,7 @@ class RecipeFixtures extends Fixture
         $recipe12->setTitle('title12')
                 ->setNbPortion(4)
                 ->setType('dessert')
-                ->setState(mt_rand(0,2) === 1 ? Recipe::STATES[0] : Recipe::STATES[1])
+                ->setIsPublished(false)
                 ->setFile('saumon-laque.webp')
                 ->setDifficulty('difficile')
                 ->setTime(90);

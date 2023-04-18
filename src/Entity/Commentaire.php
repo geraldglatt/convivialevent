@@ -25,8 +25,11 @@ class Commentaire
     #[ORM\Column(type: 'datetime_immutable')]
     private $createdAt;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'commentaires')]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'commentaires', cascade: [ "persist" ])]
     private $recette;
+
+    #[ORM\Column(type: 'boolean')]
+    private $isPublished;
 
     public function getId(): ?int
     {
@@ -89,6 +92,18 @@ class Commentaire
     public function setRecette(?Recipe $recette): self
     {
         $this->recette = $recette;
+
+        return $this;
+    }
+
+    public function isIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

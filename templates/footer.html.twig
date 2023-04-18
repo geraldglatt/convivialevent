@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-6">
                 <h5 class="text-white">Èvènementiel</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path("home") }}">Accueil</a></li>
+                    <li><a class="footerFontSizeAccueil" href="{{ path("app_home") }}">Accueil</a></li>
                     {% for footer in home.getHome %}
                     <li><a class="footerFontSize" href="{{ path('page_show', {slug:footer.page.slug}) }}">{{ footer.title | raw }}</a></li>
                     {% endfor %}
@@ -14,7 +14,7 @@
             <div class="col-lg-2 col-md-6">
                 <h5 class="text-white mb-3">Autres liens</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path("partenaires") }}">Partenaires</a></li>
+                    <li><a class="footerFontSizeAccueil" href="{{ path("app_partenaires") }}">Partenaires</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
                     <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
@@ -23,7 +23,7 @@
             <div class="col-lg-2 col-md-6">
                 <h5 class="text-white mb-3">Autres liens</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path('mentions_legales') }}">Mentions légales</a></li>
+                    <li><a class="footerFontSizeAccueil" href="{{ path('app_mentions_legales') }}">Mentions légales</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
                     <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
                     <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
