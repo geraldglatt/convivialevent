@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\HomeBlock;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -10,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class HomeBlockCrudController extends AbstractCrudController
 {
@@ -27,13 +29,18 @@ class HomeBlockCrudController extends AbstractCrudController
     public function configureFields(string $homeBlock): iterable
     {
         return [
-            AssociationField::new('page'),
-            TextField::new('title'),
-            ImageField::new('image')
-                ->setBasePath('images/')
-                ->setUploadDir('public/images/convivialevent_images'),
-            TextEditorField::new('content'),
+            TextField::new('title')
+                ->setFormType(CKEditorType::class),
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->onlyOnForms(),
+            ImageField::new('file')
+                ->setBasePath('/uploads/imagesHomeblock/')
+                ->setUploadDir('assets/images/'),
+            TextEditorField::new('content')
+                ->setFormType(CKEditorType::class),
             IntegerField::new('position'),
+            AssociationField::new('page'),
         ];
     }
 }

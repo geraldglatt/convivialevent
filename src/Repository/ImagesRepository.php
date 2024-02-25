@@ -39,6 +39,12 @@ class ImagesRepository extends ServiceEntityRepository
         }
     }
 
+    public function findImageBypage($id,ImagesRepository $imagesPageRepository){
+        return $imagesPageRepository->findBy([
+            'page' => $id,
+        ]);
+    }
+
 //    /**
 //     * @return Images[] Returns an array of Images objects
 //     */

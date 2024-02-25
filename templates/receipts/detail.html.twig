@@ -3,21 +3,14 @@
 {% block title %}Détails de {{ recipe.title }}{% endblock %}
 
 {% block body %}
-<section1 class="container-fluid">
-    <div class="row">
-        <div class="text-center mt-3 pb-3 ">
-            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-        </div>
-    </div>
-</section1>
-<section2 class="container-fluid">
-    <div class="row">
+<section class="container-fluid">
+    <div class="d-flex flex-row">
         <div class="col">
             <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
         </div>
     </div>
-</section2>
-<section3 class="container-fluid">
+</section>
+<section class="container-fluid">
     <div class="row">
         <div class="col">
             <h2 class="textSection3">{{ recipe.title}}</h2>
@@ -41,12 +34,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col" id="imgSection3Details">
-            <img class="recipePageImgSection5" src="{{ vich_uploader_asset(recipe.image[0],'imageFile') }}" alt="image recette">
+        <div class="col" id="imgSection3Details" style:"width:150px; heigth:150px">
+            {% for img in recipeImage %}
+                <img class="figure-img img-fluid rounded" 
+                src="{{ vich_uploader_asset(recipeImage, 'imageFile') }}" 
+                alt="photo recette"
+                >              
+            {% endfor %}
         </div>
     </div>
-</section3>
-<section4 class="container">
+</section>
+<section class="container">
     <div class="row">
         <div class="col" id="section4">
             <ul>Ingrédients 
@@ -58,24 +56,35 @@
             </ul>
         </div>
     </div>
-</section4>
-<section5 class="container">
+</section>
+<section class="container mb-5">
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8" id="section5">
             {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">étapes {{ recipeStep.position }} :
+            <ul id="recipePageLiSection5">étapes {{ recipeStep.position  }} :
                 <li id="recipePageLiSection4">
-                    {{ recipeStep.content }}
+                    {{ recipeStep.content | raw }}
                 </li>
             </ul>
             {% endfor %}
         </div>
-        <div class="col-2"></div>
-</section5>
-<section6 class="container-fluid">
-    <div class="card-body">
-        <p class="textSection3"><a href="{{ path('receipts_list') }}" src="">Retour vers les Recettes</p>
+        <div class="d-flex justify-content-center">
+            <h1>
+                Partager sur vos réseaux préférés...
+            </h1>
+        </div>
+        <div class="d-flex justify-content-center pr-2">
+        {% include 'shared/_shared.html.twig' %}
+        </div>
+         <div class="">
+            <a class="textSection3"><a href="{{ path('recettes_list') }}">Retour vers les Recettes</a>
+        </div>
+</section>
+<section class="container">
+    <div class="text-center">
+        {% include 'commentaire/form.html.twig' %}
+        {% include 'commentaire/commentaires.html.twig' %}
     </div>
-</section6>
+</section>
 {% endblock %}

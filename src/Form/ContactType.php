@@ -62,21 +62,21 @@ class ContactType extends AbstractType
                 'label' => 'Date de votre évènement',
                 
             ])
-            ->add('AdultGuest', NumberType::class, ['html5' => true], [
+            ->add('adultGuest', NumberType::class, [
                 'attr' => [
                     'class' => 'form-control',
                     'label' => 'Vos invités'
                 ],
-                'label' => 'Nombre d\'adulte',
+                'label' => 'Nombre d\'adultes',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
             ])
-            ->add('childGuest', NumberType::class, ['html5' => true], [
+            ->add('childGuest', NumberType::class, [
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Nombre d\'enfant',
+                'label' => 'Nombre d\'enfants',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ]
@@ -103,7 +103,7 @@ class ContactType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4'
+                    'class' => 'btn btn-secondary text-center'
                 ],
                 'label' => 'Envoyer votre demande'
             ])

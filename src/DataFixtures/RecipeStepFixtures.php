@@ -12,7 +12,7 @@ class RecipeStepFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         foreach ([RecipeFixtures::RECIPE_REFERENCE1, RecipeFixtures::RECIPE_REFERENCE2] as $ref) {
-            for ($i = 0; $i < 10; ++$i) {
+            for ($i = 0; $i < 4; ++$i) {
                 $recipeStep = new RecipeStep();
                 $recipeStep->setTitle('title'.$i);
                 $recipeStep->setContent('content'.$i);

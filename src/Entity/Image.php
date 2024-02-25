@@ -16,34 +16,35 @@ class Image
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: false)]
-    private $image;
-
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
-
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'images', cascade: [ "persist" ])]
+    #[ORM\ManyToOne(targetEntity: Recipe::class, inversedBy: 'recipeImages', cascade: [ "persist" ])]
+    #[ORM\JoinColumn(nullable: false)]
     private $recipe;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $file;
+
+    #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getImage(): ?string
+    public function getFile(): ?string
     {
-        return $this->image;
+        return $this->file;
     }
 
-    public function setImage(?string $image): self
+    public function setFile(string $file): self
     {
-        $this->image = $image;
+        $this->file = $file;
 
         return $this;
     }
@@ -53,14 +54,14 @@ class Image
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $file = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
         
-        if (null !== $imageFile) {
+        if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable('now');
         }
     }
 
@@ -102,6 +103,7 @@ class Image
 
     public function __toString()
     {
-        return $this->image;
+        return $this->file;
     }
+
 }
