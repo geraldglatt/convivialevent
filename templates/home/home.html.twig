@@ -4,123 +4,80 @@
     
 {% block body %}
 
-<section class="container mb-5 mt-5">
-    <div class="row mb-2">
-        <div class="col"> 
-            <h1 class="txtSection2">
-            Votre traiteur événementiel Conviviale & Responsable
-            </h1>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-        <h1 class="txtSection2">Présent dans l'Aube & dans l'Yonne</h1> 
-        </div>
-    </div>
-    <div class="row mb-1">
-        <div class="col">
-            <p class="txtSmallSection2">
-            Qu'il soit champêtre, dinatoire ou conviviale, 
-            nous personnaliserons vôtre mariage.
-            </p>
-        </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col">
-            <p class="txtSmallSection2">
-            Selon vos désirs, ambiance, repas, brunch et surtout timing, 
-            tout sera à votre image !
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 class="txtSection2">Vous en rêviez , Convivial Event l'a fait !</h1>
-        </div>
+<section class="presentation_traiteur">
+    <div class="pres">
+        <h2 class="pres1">Votre traiteur événementiel Conviviale & Responsable</h2>
+        <h2 class="pres2">Présent dans l'Aube & dans l'Yonne</h2>
+        <h3 class="pres3"> Qu'il soit champêtre, dinatoire ou conviviale, 
+        nous personnaliserons vôtre mariage.</h3>
+        <h3 class="pres4">Selon vos désirs, ambiance, repas, brunch et surtout timing, 
+        tout sera à votre image !</h3>
+        <h2 class="pres5">Vous en rêviez , Convivial Event l'a fait !</h2>
     </div>
 </section>
-<section class="container mb-4">
-        <div class="row no-gutters"
-        >
-            {% for key, wedding in weddings %}
-                {% if loop.index % 2 %}
-                <div class="col-12 d-flex mt-2 mb-3">
-                    <div class="card card-row shadow-light-lg mb-4 mt-4 lift 
-                    lift-lg" 
-                    data-aos="zoom-in-right"
-                    data-aos-easing="ease-in-back"
-                    data-aos-duration="1100"
-                    >
-                        <div class="row no-gutters mx-auto">
-                            <div class="col-md-5">
-                                    <img class="figure-img img-fluid rounded" 
-                                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
-                                    alt="photo convivialevent"
-                                    >  
-                            </div>
-                            <div class="col-md-7 align-self-center ml-5">
-                                <div class="card-body">
-                                    <h2 class="card-title">
-                                    {{ wedding.title | raw }}
-                                    </h2>
-                                    <p class="card-text">
-                                    {{ wedding.content | raw }}
-                                    </p>
-                                    <a class="" id="lienS3Home" 
-                                    href="{{ path('page_show', 
-                                    {slug:wedding.page.slug}) }}">
-                                    Clicker ici pour découvrir
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% else %}
-                <div class="row">
-                    <div class="col-12 d-flex mt-2 mb-3">
-                        <div class="card card-row shadow-light-lg mt-4 mb-4 lift lift-lg" 
-                        data-aos="zoom-in-left"
-                        data-aos-easing="ease-in-back"
-                        data-aos-duration="1100"
-                        >
-                            <div class="row no-gutters mx-auto">
-                                <div class="col-md-7 align-self-center ml-5">
-                                    <div class="card-body">
-                                        <h2 class="card-title">{{ wedding.title | raw }}</h2>
-                                        <p class="card-text">{{ wedding.content | raw }}</p>
-                                        <a class="" id="lienS3Home" 
-                                        href="{{ path('page_show', {slug:wedding.page.slug}) }}"
-                                        >Clicker ici pour découvrir
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                        <img class="figure-img img-fluid rounded" 
-                                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
-                                        alt="photo convivialevent"
-                                        >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+<section class="ambiances">
+    <h2 class="txt_ambiances">~ Nos ambiances ~</h2>
 </section>
-<section class="container-fluid mb-5" id="contenantSection4">
-    <div class="row" id="bgGrey">
-        <div class="col" id="contenantSection4">
-            <div class="">
-                <p class="txtSection4">
-                    <span class="span1HomeS4">CONVIVIALEVENT</span>
-                    </br><span class="span2HomeS4">l'autre façon de recevoir...</span>
-                </p>
+<section class="container_wedding">  
+    {% for key, wedding in weddings %}
+        {% if loop.index % 2 %}
+            <div class="weddings1">
+                <div class="wedding1">
+                        <img class="figure-img img-fluid rounded" 
+                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                        alt="photo convivialevent"
+                        >  
+                </div>
+                <div class="wedding2">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                        {{ wedding.title | raw }}
+                        </h2>
+                        <p class="card-text">
+                        {{ wedding.content | raw }}
+                        </p>
+                        <a class="" id="lienS3Home" 
+                        href="{{ path('page_show', 
+                        {slug:wedding.page.slug}) }}">
+                        Clicker ici pour découvrir
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% else %}
+            <div class="weddings2">
+                <div class="wedding3">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ wedding.title | raw }}</h2>
+                        <p class="card-text">{{ wedding.content | raw }}</p>
+                        <a class="" id="lienS3Home" 
+                        href="{{ path('page_show', {slug:wedding.page.slug}) }}"
+                        >Clicker ici pour découvrir
+                        </a>
+                    </div>
+                </div>
+                <div class="wedding4">
+                        <img class="figure-img img-fluid rounded" 
+                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                        alt="photo convivialevent"
+                        >
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
+<section class="convivial-text">
+    <div class="convivial-text-content">
+        <p class="convivial-text-content-p1">
+            CONVIVIALEVENT
+        </p>
+        <p class="convivial-text-content-p2">            
+            l'autre façon de recevoir...
+        </p>
     </div>
+</section>
+<section class="ambiances">
+    <h2 class="txt_ambiances">~ Ce que l'on dit de nous ~</h2>
 </section>
 <section class="container backgroundS4 mt-5 mb-4 ">
     <div class="row">
@@ -129,29 +86,6 @@
             src="{{ asset('build/images/badge-rated-10.webp') }}" alt="logo mariage.net">
         </div>
     </div>
-{# </div>
-    <div class="row">
-        <div class="col temoignages">
-            <h3 class-"mt-3 mb-3">
-                Mariage de Kris et Carry(le 30/07/2022)
-            </h3>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <p class="mt-4 mb-4">
-                    Que dire de Convivial Évent? Une équipe au top, nous avons été reçu pour la dégustation
-                    par Francis et avons été épaté. C'était succulent, les bouchées des pièces de cocktail sont
-                    très copieuses contrairement à d'autres traîteurs ou le foie gras n'est pas plus gros que le pouce. 
-                    Son risotto au chaource est une tuerie, tout était parfait. Les cuisiniers sont jovials, 
-                    aiment taquiner ce qui a été très apprécié par nos invités et avaient le sourire, 
-                    les serveurs(ses)sont attentionnés et discrets. Rien a redire sur cette équipe de choc. 
-                    Nous avons eu que de bons retours. Je recommande vivement.
-                    </p>
-                </div>
-                <div class="col-2"></div>
-            </div>
-        </div> #}
-    {# </div> #}
     <div class="row">
         <div class="col-12 col-lg-4">
             <button class="buttonSection5 mt-3 mb-5 mx-auto">
@@ -162,10 +96,10 @@
         </div>
     </div>
 </section>
+<section class="ambiances">
+    <h2 class="txt_ambiances">~ Nos partenaires & lieux d'exceptions ~</h2>
+</section>
 <section class="container-fluid mt-5 mb-4">
-    <div class="row6">
-        <div class="col"><h2 class="titreS6">PARTENAIRES & LIEUX D'EXCEPTIONS</h2></div>
-    </div>
 </section>
 <section class="container">
     <div class="row">
@@ -227,6 +161,9 @@
         </div>
     </div>
 </section>
+<section class="ambiances">
+    <h2 class="txt_ambiances">~ Des recettes entre amis... ~</h2>
+</section>
 <section class="container">
     <div class="row" id="bgGrey">
         <div class="contenantSection7">
@@ -240,7 +177,7 @@
 </section>
 <section class="container">
     <div class="slider-area text-center">
-        <h2 class="font mt-5">Ils nous ont fait confiance en 2022</h2>
+        <h2 class="font mt-5">Ils nous ont fait confiance en 2023</h2>
         <div class="wrapper mx-auto">
             <div class="item mx-auto mt-4 mb-4"><img 
             src="{{ asset('build/images/logo-amf-bas (1).png') | 
@@ -259,6 +196,9 @@
             </div>
         </div>
     </div>
+</section>
+<section class="ambiances">
+    <h2 class="txt_ambiances">~ Un devis, une question... ~</h2>
 </section>
 <section class="container-fluid" id="bgColorSectionContact">
     <div class="row">
