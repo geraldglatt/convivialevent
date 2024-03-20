@@ -23,7 +23,7 @@
         {% if loop.index % 2 %}
             <div class="weddings1">
                 <div class="wedding1">
-                        <img class="figure-img img-fluid rounded" 
+                        <img class="img_wedding" 
                         src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
                         alt="photo convivialevent"
                         >  
@@ -48,8 +48,12 @@
             <div class="weddings2">
                 <div class="wedding3">
                     <div class="card-body">
-                        <h2 class="card-title">{{ wedding.title | raw }}</h2>
-                        <p class="card-text">{{ wedding.content | raw }}</p>
+                        <h2 class="card-title">
+                        {{ wedding.title | raw }}
+                        </h2>
+                        <p class="card-text">
+                        {{ wedding.content | raw }}
+                        </p>
                         <a class="" id="lienS3Home" 
                         href="{{ path('page_show', {slug:wedding.page.slug}) }}"
                         >Clicker ici pour découvrir
@@ -57,10 +61,10 @@
                     </div>
                 </div>
                 <div class="wedding4">
-                        <img class="figure-img img-fluid rounded" 
-                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
-                        alt="photo convivialevent"
-                        >
+                    <img class="img_wedding" 
+                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                    alt="photo convivialevent"
+                    >
                 </div>
             </div>
         {% endif %}
@@ -77,22 +81,22 @@
     </div>
 </section>
 <section class="ambiances">
-    <h2 class="txt_ambiances">~ Ce que l'on dit de nous ~</h2>
+    <h2 class="txt_ambiances"> Ce que l'on dit de nous </h2>
 </section>
-<section class="container backgroundS4 mt-5 mb-4 ">
-    <div class="row">
-        <div class="col text-center">
-            <img class="logoHomeSection5 mt-3 mb-3" 
-            src="{{ asset('build/images/badge-rated-10.webp') }}" alt="logo mariage.net">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-4">
-            <button class="buttonSection5 mt-3 mb-5 mx-auto">
-                <a class="textButtonSection5" 
-                href='https://www.mariages.net/traiteur-mariage/convivial-event--e136299' 
-                target="blank">Nos commentaires</a>
-            </button>
+<section class="testimanials">
+    <div class="container">
+        <div class="testimanials-content">
+            <div class="testimanials-elem1">
+                <img class="testimanials-img" 
+                src="{{ asset('build/images/badge-rated-10.webp') }}" alt="logo mariage.net">
+            </div>
+            <div class="testimanials-elem2">
+                <button class="testimonials-button">
+                    <a class="testimonials-text" 
+                    href='https://www.mariages.net/traiteur-mariage/convivial-event--e136299' 
+                    target="blank">Nos commentaires</a>
+                </button>
+            </div>
         </div>
     </div>
 </section>
@@ -162,13 +166,13 @@
     </div>
 </section>
 <section class="ambiances">
-    <h2 class="txt_ambiances">~ Des recettes entre amis... ~</h2>
+    <h2 class="txt_ambiances"> Des recettes entre amis... </h2>
 </section>
 <section class="container">
     <div class="row" id="bgGrey">
         <div class="contenantSection7">
             <img class="imgHomeFixeS7" 
-            src="{{ asset('build/images/recip-book.webp') | imagine_filter('my_thumb') }}" 
+            src="{{ asset('build/images/ai-generated-8587027_1280.webp') | imagine_filter('my_thumb') }}" 
             alt="photo image home fixe">
             <a class="txtSection7" href="{{ path('recettes_list') }}">Voir les Recettes</a>
         </div>
@@ -198,7 +202,7 @@
     </div>
 </section>
 <section class="ambiances">
-    <h2 class="txt_ambiances">~ Un devis, une question... ~</h2>
+    <h2 class="txt_ambiances"> Un devis, une question... </h2>
 </section>
 <section class="container-fluid" id="bgColorSectionContact">
     <div class="row">

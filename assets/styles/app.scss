@@ -278,41 +278,46 @@ section.ambiances {
   }
 }
 section.container_wedding {
-  margin-bottom: 0px !important;
+  // margin-bottom: 0px !important;
   div.weddings1 {
-    margin-bottom: 0px !important;
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: column;
+    flex: 1;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    margin-bottom: 50px !important;
     @include mediaquerries(sm) {
-      flex-direction: column;
+      margin-bottom: 50px !important;
     }
     @include mediaquerries(md) {
       flex-direction: row;
+      flex: 2;
       border: none;
+      margin-bottom: 0px !important;
     }
     @include mediaquerries(lg) {
       flex-direction: row;
+      flex: 2;
       border: none;
-      padding: 0;
+      margin-bottom: 0px !important;
     }
     div.wedding1 {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0px !important;
-      @include mediaquerries(sm) {
-        flex: 1;
-      }
-      @include mediaquerries(md) {
-        flex: 2;
-      }
-      @include mediaquerries(lg) {
-        flex: 2;
+      img.img_wedding {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 100%;
+        @include mediaquerries(sm) {
+          flex-direction: column;
+        }
+        @include mediaquerries(md) {
+          flex-direction: row;
+        }
+        @include mediaquerries(lg) {
+          flex-direction: row;
+        }
       }
     }
     div.wedding2 {
@@ -322,39 +327,60 @@ section.container_wedding {
       padding: 0;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0px !important;
       @include mediaquerries(sm) {
         flex: 1;
+        flex-direction: column;
       }
       @include mediaquerries(md) {
-        flex: 2;
+        flex: 1;
+        flex-direction: row;
       }
       @include mediaquerries(lg) {
-        flex: 2;
-        align-items: center;
+        flex: 1;
+        flex-direction: row;
       }
       div.card-body {
-        width: 400px;
+        width: 250px;
+        @include mediaquerries(sm) {
+          width: 250px;
+        }
+        @include mediaquerries(md) {
+          width: 400px;
+        }
+        @include mediaquerries(lg) {
+          width: 400px;
+        }
       }
     }
   }
   div.weddings2 {
-    margin-bottom: 0px !important;
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: column;
+    flex: 1;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    margin-bottom: 50px !important;
     @include mediaquerries(sm) {
-      flex-direction: column;
+      margin-bottom: 50px !important;
     }
     @include mediaquerries(md) {
+      display: flex;
       flex-direction: row;
+      flex: 2;
+      align-items: center;
+      justify-content: center;
       border: none;
+      margin-bottom: 0px !important;
     }
     @include mediaquerries(lg) {
+      display: flex;
       flex-direction: row;
+      flex: 2;
+      align-items: center;
+      justify-content: center;
       border: none;
+      margin-bottom: 0px !important;
     }
     div.wedding3 {
       flex: 1;
@@ -363,33 +389,47 @@ section.container_wedding {
       padding: 0;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0px !important;
       @include mediaquerries(sm) {
         flex: 1;
+        flex-direction: column;
       }
       @include mediaquerries(md) {
-        flex: 2;
+        flex: 1;
+        flex-direction: row;
       }
       @include mediaquerries(lg) {
-        flex: 2;
+        flex: 1;
+        flex-direction: row;
       }
       div.card-body {
-        width: 400px;
+        width: 250px;
+        @include mediaquerries(sm) {
+          width: 200px;
+        }
+        @include mediaquerries(md) {
+          width: 400px;
+        }
+        @include mediaquerries(lg) {
+          width: 400px;
+        }
       }
     }
     div.wedding4 {
       flex: 1;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 0px !important;
-      @include mediaquerries(sm) {
-        flex: 1;
-      }
-      @include mediaquerries(md) {
-        flex: 2;
-      }
-      @include mediaquerries(lg) {
-        flex: 2;
+      img.img_wedding {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 100%;
+        @include mediaquerries(sm) {
+          flex-direction: column;
+        }
+        @include mediaquerries(md) {
+          flex-direction: row;
+        }
+        @include mediaquerries(lg) {
+          flex-direction: row;
+        }
       }
     }
   }
@@ -401,22 +441,87 @@ section.convivial-text {
   background: url(../images/barman-gently-pours-finished-cocktail-600nw-1689689371.webp);
   background-size: cover;
   width: 100%;
-  min-height: 450px;
+  min-height: 250px;
   justify-content: center;
   align-items: center;
-  margin: 100px 0px 100px 0px;
+  margin: 30px 0px 30px 0px;
+  @include mediaquerries(sm) {
+    min-height: 250px;
+  }
+  @include mediaquerries(md) {
+    min-height: 400px;
+    margin: 100px 0px 100px 0px;
+  }
+  @include mediaquerries(lg) {
+    min-height: 450px;
+    margin: 100px 0px 100px 0px;
+  }
   div.convivial-text-content {
-    flex: 1;
     max-width: 100%;
     color: white;
+    justify-content: center;
+    align-items: center;
     p.convivial-text-content-p1 {
       flex: 1;
-      font-size: 4rem;
+      font-size: 2rem;
       padding-right: 250px;
+      justify-content: center;
+      align-items: center;
+      @include mediaquerries(sm) {
+        font-size: 2rem;
+      }
+      @include mediaquerries(md) {
+        font-size: 4rem;
+      }
+      @include mediaquerries(lg) {
+        font-size: 4rem;
+      }
     }
     p.convivial-text-content-p2 {
       flex: 1;
-      font-size: 3rem;
+      font-size: 2rem;
+      justify-content: center;
+      align-items: center;
+      @include mediaquerries(sm) {
+        font-size: 2rem;
+      }
+      @include mediaquerries(md) {
+        font-size: 3rem;
+      }
+      @include mediaquerries(lg) {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+section.testimanials {
+  div.container {
+    background: #333;
+    div.testimanials-content {
+      div.testimanials-elem1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .testimanials-img{
+          margin: 50px 0px 0px 0px;
+        }
+      }
+      div.testimanials-elem2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        button.testimonials-button {
+          margin: 50px 0px 50px 0px;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          a.testimonials-text{
+            color: #f1c40f;
+          }
+        }
+      }
     }
   }
 }
@@ -2788,7 +2893,6 @@ section.convivial-text {
     width: 500px;
     min-height: 50px;
     margin-bottom: 50px;
-    margin-left: 300px;
     justify-content: space-between;
     a {
       text-decoration: none;
