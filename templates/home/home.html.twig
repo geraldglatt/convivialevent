@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
@@ -6,13 +7,13 @@
 
 <section class="presentation_traiteur">
     <div class="pres">
-        <h2 class="pres1">Votre traiteur événementiel Conviviale & Responsable</h2>
-        <h2 class="pres2">Présent dans l'Aube & dans l'Yonne</h2>
-        <h3 class="pres3"> Qu'il soit champêtre, dinatoire ou conviviale, 
-        nous personnaliserons vôtre mariage.</h3>
-        <h3 class="pres4">Selon vos désirs, ambiance, repas, brunch et surtout timing, 
-        tout sera à votre image !</h3>
-        <h2 class="pres5">Vous en rêviez , Convivial Event l'a fait !</h2>
+        <p class="pres1">Votre traiteur événementiel Conviviale & Responsable</p>
+        <p class="pres2">Présent dans l'Aube & dans l'Yonne</p>
+        <p class="pres3"> Qu'il soit champêtre, dinatoire ou conviviale, 
+        nous personnaliserons vôtre mariage.</p>
+        <p class="pres4">Selon vos désirs, ambiance, repas, brunch et surtout timing, 
+        tout sera à votre image !</p>
+        <p class="pres5">Vous en rêviez , Convivial Event l'a fait !</p>
     </div>
 </section>
 <section class="ambiances">
@@ -179,64 +180,26 @@
     </div>
     <div class="row" id="bgGrey"></div>
 </section>
-<section class="container">
-    <div class="slider-area text-center">
-        <h2 class="font mt-5">Ils nous ont fait confiance en 2023</h2>
-        <div class="wrapper mx-auto">
-            <div class="item mx-auto mt-4 mb-4"><img 
-            src="{{ asset('build/images/logo-amf-bas (1).png') | 
-            imagine_filter('my_thumb') }}" 
-            alt="logo amf"
-            ></div>
-            <div class="item mx-auto mt-4 mb-4">
-                <img src="{{ asset('build/images/1200px-Logo_UTT_2018.svg (1).png') 
-                | imagine_filter('my_thumb') }}" 
-            alt="logo utt">
-            </div>
-            <div class="item mx-auto mt-4 mb-4">
-                <img src="{{ asset('build/images/téléchargement (1).jpg') 
-                | imagine_filter('my_thumb') }}" 
-                alt="logo estp">
-            </div>
-        </div>
-    </div>
-</section>
 <section class="ambiances">
     <h2 class="txt_ambiances"> Un devis, une question... </h2>
 </section>
-<section class="container-fluid" id="bgColorSectionContact">
-    <div class="row">
-        <div class="col text-center">
-            <h2 class="titreS8">Comment nous contacter :</h2>
+<section class="contact">
+    <div class="container">
+        <div class="sectionContact-titre">
+            <h2 class="">Comment nous contacter :</h2>
         </div>
-    </div>
-    <div class="row">
-        <div class="col text-center" id="divHomeS8">
+        {# <div class="col text-center" id="divHomeS8">
             <a id="buttonS8" href="{{ path('contact') }}" role="button">
             Contactez-nous !</a>
+        </div> #}
+        <div class="sectionContact-tel">
+            <p class="tailleTxtFlex1">06 75 33 08 23</p>
         </div>
-    </div>
-</section>
-<section class="container-fluid">
-    <div class="row section9" id="section9">
-        <div class="col-7">
-            <div class="section9Flex1"><h3>Nous contacter :</h3></div>
-            <div class="section9Flex1-1">
-                <img class="imgHomePhoneFlex1-1" src="
-                {{ asset('build/images/phonelink-ring--v2.webp') }}" 
-                alt="icone phone home fixe">
-                <span class="tailleTxtFlex1-1">: 06 75 33 08 23</span>
-            </div>
-            <div class="section9Flex1-2">
-                <img class="section9FleximgMail" 
-                src="{{ asset('build/images/apple-mail.webp') 
-                | imagine_filter('my_thumb') }}" 
-                alt="icones home mail">
-                <span class="section9FlexTxtMail">convivialevent@yahoo.fr</span>
-            </div>
+        <div class="sectionContact-mail">
+            <p class="section9FlexTxtMail">convivialevent@yahoo.fr</p>
         </div>
-        <div class="col-5">
-            <div class="section9Flex2">
+        <div class="sectionContact-horaires">
+            <div class="tailleTxtFlex2">
                 <h3>Horaires :</h3>
             </div>
             <div class="section9Flex2-2">
