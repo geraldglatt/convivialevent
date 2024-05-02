@@ -3,6 +3,7 @@
 {% block title %}Page contact{% endblock %}
 
 {% block body %}
+<section class="devis">
     <div class="container" id="h1ContactMarginTop">
         {% for message in app.flashes('success') %}
             <div class="alert alert-success mt-4 text-center">
@@ -12,19 +13,18 @@
         <div class="">
             <h1 class="text-center">Demander votre devis</h1>
         </div>
-        <div class="row mx-auto">
-            <div class="col-2"></div>
-            <div class="col-8">
+        <div class="">
+            <div class="">
                 {{ form_start(form) }}
 
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.fullName) }}
                     {{ form_widget(form.fullName) }}
                     <div>
                         {{ form_errors(form.fullName) }}
                     </div>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.email) }}
                     {{ form_widget(form.email) }}
                     <div>
@@ -32,14 +32,14 @@
                     </div>
                 </div>
 
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.phone) }}
                     {{ form_widget(form.phone) }}
                     <div>
                         {{ form_errors(form.phone) }}
                     </div>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.eventDate) }}
                     {{ form_widget(form.eventDate) }}
                     <div>
@@ -48,10 +48,9 @@
                 </div>
                 <div class="bgInviteForm">
                     <h2 class="titreInviteForm">Vos Invités</h2>
-                    <div class="row">
-                        <div class="col-6"></div>
-                            <div class="col-6">
-                                <div class="form-group mb-5">
+                    <div class="">
+                            <div class="">
+                                <div class="form-group">
                                     {{ form_label(form.adultGuest) }}
                                     {{ form_widget(form.adultGuest) }}
                                 <div>
@@ -60,10 +59,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                            <div class="col-6">
-                                <div class="form-group mb-5">
+                    <div class="">
+                            <div class="">
+                                <div class="form-group">
                                     {{ form_label(form.childGuest) }}
                                     {{ form_widget(form.childGuest) }}
                                 <div>
@@ -73,54 +71,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.brunch) }}
                     {{ form_widget(form.brunch) }}
                     <div>
                         {{ form_errors(form.brunch) }}
                     </div>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group">
                     {{ form_label(form.message) }}
                     {{ form_widget(form.message) }}
                     <div>
                         {{ form_errors(form.message) }}
                     </div>
                 </div>
-                <div class="form-group mb-5" id="buttonContactCenter">
+                <div class="form-group" id="buttonContactCenter">
                     {{ form_row(form.submit) }}
                 </div>
                 {{ form_end(form) }}
-            </div>
-        </div>
-        <div class="col-2"></div>
-    </div>
-<section class="container-fluid" id="bgColorSectionContact">
-    <div class="row">
-        <div class="col text-center">
-            <h2 class="titreS8">Comment nous contacter :</h2>
-        </div>
-    </div>
-</section>
-<section class="container-fluid">
-    <div class="row section9" id="section9">
-        <div class="col-7">
-            <div class="section9Flex1"><h3>Nous contacter :</h3></div>
-            <div class="section9Flex1-1">
-                <img class="imgHomePhoneFlex1-1" src="{{ asset('build/images/phonelink-ring--v2.webp') }}" alt="icone phone home fixe">
-                <span class="tailleTxtFlex1-1">: 06 75 33 08 23</span>
-            </div>
-            <div class="section9Flex1-2">
-                <img class="section9FleximgMail" src="{{ asset('build/images/apple-mail.webp') | imagine_filter('my_thumb') }}" alt="icones home mail">
-                <span class="section9FlexTxtMail">convivialevent@yahoo.fr</span>
-            </div>
-        </div>
-        <div class="col-5">
-            <div class="section9Flex2">
-                <h3>Horaires :</h3>
-            </div>
-            <div class="section9Flex2-2">
-                <p><span class="section9Flex2-2Txt">Du lundi au vendredi de 8h00 à 19h00</span></p>
             </div>
         </div>
     </div>

@@ -104,94 +104,80 @@
 <section class="ambiances">
     <h2 class="txt_ambiances">~ Nos partenaires & lieux d'exceptions ~</h2>
 </section>
-<section class="container-fluid mt-5 mb-4">
-</section>
-<section class="container">
-    <div class="row">
-        <div class="col mb-4 mt-2 pb-4">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">
-                        <img class="img rounded-4 hover-shadow w-75" 
-                        src="{{ asset('build/images/Château-du-Fey.webp') | imagine_filter('my_thumb_scale') }}" 
-                        alt="image partenaire">
-                        <div class="carousel-caption" id="divCarouselCaptionS6Bis">
-                            <h5 class="carousel-size" id="carouselSizeS6Bis">Château du Fey</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                        <img class="img rounded-4 hover-shadow w-75" 
-                        src="{{ asset('build/images/Abbaye-Vauluisant.webp') | imagine_filter('my_thumb_scale') }}" 
-                        alt="abbaye-vauluisant">
-                        <div class="carousel-caption" id="divCarouselCaptionS6Bis">
-                            <h5 class="carousel-size" id="carouselSizeS6Bis">Abbaye de Vauluisant</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                        <img class="img rounded-4 hover-shadow w-75" 
-                        src="{{ asset('build/images/carre-de-lailly.jpg') | imagine_filter('my_thumb_scale') }}" 
-                        alt="carre de lailly">
-                        <div class="carousel-caption" id="divCarouselCaptionS6Bis">
-                            <h5 class="carousel-size" id="carouselSizeS6Bis">Carré de Lailly</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                        <img class="img rounded-4 hover-shadow w-75" 
-                        src="{{ asset('build/images/Les-Beauchots.webp') | imagine_filter('my_thumb_scale') }}" 
-                        alt="image partenaire">
-                        <div class="carousel-caption" id="divCarouselCaptionS6Bis">
-                            <h5 class="carousel-size" id="carouselSizeS6Bis">Les Beauchots</h5>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                        <img class="img rounded-4 hover-shadow w-75" 
-                        src="{{ asset('build/images/Chateau-Montabert.webp') | imagine_filter('my_thumb_scale') }}" 
-                        alt="image partenaire">
-                        <div class="carousel-caption" id="divCarouselCaptionS6Bis">
-                            <h5 class="carousel-size" id="carouselSizeS6Bis">Château de Montabert</h5>
-                        </div>
-                    </div>
+<section class="partenaire">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">
+                <img class="img rounded-4 hover-shadow w-75" 
+                src="{{ asset('build/images/Château-du-Fey.webp') | imagine_filter('my_thumb_scale') }}" 
+                alt="image partenaire">
+                <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                    <h5 class="carousel-size" id="carouselSizeS6Bis">Château du Fey</h5>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" 
-                data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" 
-                data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                <img class="img rounded-4 hover-shadow w-75" 
+                src="{{ asset('build/images/Abbaye-Vauluisant.webp') | imagine_filter('my_thumb_scale') }}" 
+                alt="abbaye-vauluisant">
+                <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                    <h5 class="carousel-size" id="carouselSizeS6Bis">Abbaye de Vauluisant</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                <img class="img rounded-4 hover-shadow w-75" 
+                src="{{ asset('build/images/carre-de-lailly.jpg') | imagine_filter('my_thumb_scale') }}" 
+                alt="carre de lailly">
+                <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                    <h5 class="carousel-size" id="carouselSizeS6Bis">Carré de Lailly</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                <img class="img rounded-4 hover-shadow w-75" 
+                src="{{ asset('build/images/Les-Beauchots.webp') | imagine_filter('my_thumb_scale') }}" 
+                alt="image partenaire">
+                <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                    <h5 class="carousel-size" id="carouselSizeS6Bis">Les Beauchots</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
+                <img class="img rounded-4 hover-shadow w-75" 
+                src="{{ asset('build/images/Chateau-Montabert.webp') | imagine_filter('my_thumb_scale') }}" 
+                alt="image partenaire">
+                <div class="carousel-caption" id="divCarouselCaptionS6Bis">
+                    <h5 class="carousel-size" id="carouselSizeS6Bis">Château de Montabert</h5>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" 
+        data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" 
+        data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
 <section class="ambiances">
     <h2 class="txt_ambiances"> Des recettes entre amis... </h2>
 </section>
-<section class="container">
-    <div class="row" id="bgGrey">
-        <div class="contenantSection7">
-            <img class="imgHomeFixeS7" 
-            src="{{ asset('build/images/ai-generated-8587027_1280.webp') | imagine_filter('my_thumb') }}" 
-            alt="photo image home fixe">
-            <a class="txtSection7" href="{{ path('recettes_list') }}">Voir les Recettes</a>
+<section class="recettes">
+    <div class="container">
+        <div class="recettes_background_img">
+            <a class="recettes_background_lien" href="{{ path('recettes_list') }}">Voir les Recettes</a>
         </div>
     </div>
-    <div class="row" id="bgGrey"></div>
 </section>
 <section class="ambiances">
     <h2 class="txt_ambiances"> Un devis, une question... </h2>
 </section>
-<section class="contact">
+{# <section class="contact">
     <div class="container">
         <div class="sectionContact-titre">
             <h2 class="">Comment nous contacter :</h2>
         </div>
-        {# <div class="col text-center" id="divHomeS8">
-            <a id="buttonS8" href="{{ path('contact') }}" role="button">
-            Contactez-nous !</a>
-        </div> #}
         <div class="sectionContact-tel">
             <p class="tailleTxtFlex1">06 75 33 08 23</p>
         </div>
@@ -207,7 +193,8 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

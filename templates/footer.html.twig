@@ -1,40 +1,38 @@
 <!-- FOOTER -->
-<footer class="w-100 flex-shrink-0 text-center">
-    <div class="container mt-5">
-        <div class="row gy-4">
-            <div class="col-lg-2 col-md-6">
-                <h5 class="text-white">Èvènementiel</h5>
-                <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path("app_home") }}">Accueil</a></li>
-                    {% for footer in home.getHome %}
-                    <li><a class="footerFontSize" href="{{ path('page_show', {slug:footer.page.slug}) }}">{{ footer.title | raw }}</a></li>
-                    {% endfor %}
-                </ul>
+<footer class="footer">
+    <div class="container">
+        <div class="section1">
+            <h5 class="section-titre">Événementiel</h5>
+            <ul class="section1-ul">
+                <li><a class="footerFontSizeAccueil" href="{{ path("app_home") }}">Accueil</a></li>
+                {% for footer in home.getHome %}
+                <li><a class="footerFontSize" href="{{ path('page_show', {slug:footer.page.slug}) }}">{{ footer.title | raw }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section2">
+            <h5 class="section-titre">Autres liens</h5>
+            <ul class="section2-ul">
+                <li><a class="footerFontSizeAccueil" href="{{ path("app_partenaires") }}">Partenaires</a></li>
+                <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
+                <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
+                <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="section3">
+            <h5 class="section-titre">Autres liens</h5>
+            <ul class="section3-ul">
+                <li><a class="footerFontSizeAccueil" href="{{ path('app_mentions_legales') }}">Mentions légales</a></li>
+                <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
+                <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
+                <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="section4">
+            <div class="section4-ul">
+                <img class="section4-ul-img" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Autres liens</h5>
-                <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path("app_partenaires") }}">Partenaires</a></li>
-                    <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
-                    <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
-                    <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Autres liens</h5>
-                <ul class="list-unstyled text-white">
-                    <li><a class="footerFontSizeAccueil" href="{{ path('app_mentions_legales') }}">Mentions légales</a></li>
-                    <li><a class="footerFontSizeAccueil" href="{{ path('recettes_list') }}">Recettes</a></li>
-                    <li><a class="footerFontSizeAccueil" href="{{ path("contact") }}">Demander un devis</a></li>
-                    <li><a class="footerFontSizeAccueil" href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="text-center mt-5 mb-5 pb-3 ">
-                    <img class="imageLogo1Convivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-                </div>
-                <p class="small text-white mb-0 text-center">Copyrights &copy;2022. All rights reserved. <a class="text-white mb-3 mt-3" href="#">convivialevent.com</a></p>
-            </div>
+            <p class="section4-ul-p">Copyrights &copy;2022. All rights reserved. <a class="text-white mb-3 mt-3" href="#">convivialevent.com</a></p>
         </div>
     </div>
 </footer>

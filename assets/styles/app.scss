@@ -14,6 +14,20 @@ body {
   padding: 0;
   height: 100vh;
 }
+button {
+  display: block;
+  background-color: #333;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1px solid #f1c40f;
+  width: 200px;
+  align-items: center;
+  margin-bottom: 50px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
 /* Début Navbar **/
 header {
   font-family: "Long Cang", cursive;
@@ -357,6 +371,8 @@ section.container_wedding {
       }
       div.card-body {
         width: 250px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         @include mediaquerries(sm) {
           width: 250px;
         }
@@ -368,38 +384,40 @@ section.container_wedding {
         }
         h2.card-title {
           font-size: 2rem;
-          @include mediaquerries (sm) {
+          @include mediaquerries(sm) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (md) {
+          @include mediaquerries(md) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (lg) {
+          @include mediaquerries(lg) {
             font-size: 2.2rem;
           }
         }
         p.card-text {
           font-size: 2rem;
-          @include mediaquerries (sm) {
+          max-width: 90%;
+          @include mediaquerries(sm) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (md) {
+          @include mediaquerries(md) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (lg) {
+          @include mediaquerries(lg) {
             font-size: 2.2rem;
           }
         }
         a#lienS3Home {
-          font-size: 2rem;
+          font-size: 1.3rem;
           color: #f1c40f;
-          @include mediaquerries (sm) {
+          text-decoration: none;
+          @include mediaquerries(sm) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (md) {
+          @include mediaquerries(md) {
             font-size: 2.2rem;
           }
-          @include mediaquerries (lg) {
+          @include mediaquerries(lg) {
             font-size: 2.2rem;
           }
         }
@@ -456,6 +474,8 @@ section.container_wedding {
       }
       div.card-body {
         width: 250px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         @include mediaquerries(sm) {
           width: 200px;
         }
@@ -464,6 +484,45 @@ section.container_wedding {
         }
         @include mediaquerries(lg) {
           width: 400px;
+        }
+        h2.card-title {
+          font-size: 2rem;
+          @include mediaquerries(sm) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2.2rem;
+          }
+        }
+        p.card-text {
+          font-size: 2rem;
+          max-width: 80%;
+          @include mediaquerries(sm) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2.2rem;
+          }
+        }
+        a#lienS3Home {
+          font-size: 1.3rem;
+          color: #f1c40f;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2.2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2.2rem;
+          }
         }
       }
     }
@@ -567,10 +626,19 @@ section.testimanials {
         align-items: center;
         justify-content: center;
         button.testimonials-button {
-          margin: 50px 0px 50px 0px;
+          margin: 20px 0px 20px 0px;
           align-items: center;
           justify-content: center;
           color: white;
+          @include mediaquerries(sm) {
+            margin: 20px 0px 20px 0px;
+          }
+          @include mediaquerries(md) {
+            margin: 50px 0px 50px 0px;
+          }
+          @include mediaquerries(lg) {
+            margin: 50px 0px 50px 0px;
+          }
           a.testimonials-text {
             color: #f1c40f;
           }
@@ -579,6 +647,141 @@ section.testimanials {
     }
   }
 }
+/* section partenaire**/
+.carousel-size {
+  font-size: 2em;
+  color: black;
+}
+
+.row6 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+#carousel-row {
+  margin-left: 50px;
+}
+.carousel-size {
+  font-size: 1em;
+  color: black;
+}
+#carouselItemS6Bis {
+  position: relative;
+  text-align: center;
+}
+#carouselSizeS6Bis {
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  transform: translate(-50%, -20%);
+}
+#divCarouselCaptionS6Bis {
+  padding-top: 80px;
+  text-align: center;
+}
+/* section partenaire**/
+section.recettes {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  background: url(../images/ai-generated-8587027_1280.webp);
+  background-size: cover;
+  width: 100%;
+  min-height: 250px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px 30px 0px;
+  @include mediaquerries(sm) {
+    min-height: 350px;
+  }
+  @include mediaquerries(md) {
+    min-height: 450px;
+  }
+  @include mediaquerries(lg) {
+    min-height: 550px;
+  }
+  div.container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    div.recettes_background_img {
+      display: flex;
+      flex-direction: column;
+      a.recettes_background_lien {
+        color: #f1c40f;
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        @include mediaquerries(sm) {
+          font-size: 2.2rem;
+        }
+        @include mediaquerries(md) {
+          font-size: 3rem;
+        }
+        @include mediaquerries(lg) {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+//start of contact
+section.devis {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 1100px;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px 50px 0px;
+  div.container#h1ContactMarginTop {
+    font-size: 1.3 rem;
+    @include mediaquerries(sm) {
+      font-size: 1.8 rem;
+    }
+    @include mediaquerries(md) {
+      font-size: 2.5 rem;
+    }
+    @include mediaquerries(lg) {
+      font-size: 2.5 rem;
+    }
+  }
+}
+#h1ContactMarginTop {
+  margin-top: 20px;
+  padding-top: 50px;
+}
+#buttonContactCenter {
+  color: $convivialColor2;
+}
+div.bgInviteForm {
+  background-color: black;
+  color: #f1c40f;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  border-radius: 8%;
+  @include mediaquerries(sm) {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+  }
+  @include mediaquerries(md) {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+  }
+  @include mediaquerries(lg) {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+  }
+}
+.titreInviteForm {
+  font-size: 2em;
+  text-decoration: underline;
+}
+//End of contact
 section.contact {
   background: url(../images/contact.jpeg) center center/cover;
   margin: 20px 0px 20px 0px;
@@ -620,623 +823,392 @@ section.contact {
     }
   }
 }
-
-// Fin page Home **/
-
-@include mediaquerries(xs) {
-  //start of homePage
-  //section header et subNav
-  button.navbar-toggler {
-    align-items: center;
-    display: block;
-    margin: auto;
-    margin-top: 25px;
-    color: $convivialColor2;
-  }
-  .spanFR {
-    text-align: right;
-    margin-top: 25px;
-  }
-  .navbar-toggler-icon {
-    text-align: center;
-    width: 2vh;
-    height: 2vh;
-  }
-  .imageLogo {
-    width: 10vh;
-    height: 5vh;
-    object-fit: cover;
-    margin-top: 1px;
-    // display: none;
-  }
-  .imageLogo1Convivial {
-    max-width: 40%;
-    height: auto;
-  }
-  .imageLogoListConvivial {
-    width: 80%;
-    height: 80%;
-  }
-  #lienNav {
-    color: $convivialColor2;
-    font-size: 1.2em;
-    text-decoration: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  //end section header et subNav
-  //start of footer
-  .contactSubNav {
-    display: none;
-  }
-  footer {
-    background: #212529;
-  }
-  .footerFontSize {
-    font-size: 0.8em;
-  }
-  .footerFontSizeAccueil {
-    font-size: 1em;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-decoration: none;
-  }
-  a {
-    color: white;
-  }
-  div.container.mt-5 {
-    margin-top: 100px;
-  }
-  //end of footer
-  //page home
-  img.logoHome1 {
-    width: 15vh;
-    height: auto;
-    object-fit: cover;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  //section 2
-  .txtSmallSection2 {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-  }
-  //section 3
-  .card-img-top {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  .card {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px,
-      rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
-    transition: all 0.3s ease-in-out;
-  }
-  .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 19px 43px,
-      rgba(0, 0, 0, 0.45) 0px 4px 11px;
-  }
-  .card.img {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px,
-      rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
-    transition: all 0.3s ease-in-out;
-  }
-  .card.img {
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px,
-      rgba(0, 0, 0, 0.05) 0px 0.5px 1px;
-    transition: all 0.3s ease-in-out;
-  }
-  p {
-    font-size: 1em;
-    text-align: center;
-  }
-  .card-body {
-    margin-top: 20px;
-    font-style: italic;
-  }
-  .card-title {
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  .card-text {
-    margin-top: 10px;
-    text-align: center;
-  }
-  a#lienS3Home {
-    display: block;
-    color: $convivialColor2;
-    font-size: 1.2em;
-    text-decoration: none;
-    text-align: center;
-  }
-  //section 4
-  .imgHomeFixeS4 {
-    width: 95%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-    filter: opacity(30%);
-    -webkit-filter: opacity(30%);
-  }
-  #contenantSection4 {
-    position: relative;
-    background-image: url("../images/barman-gently-pours-finished-cocktail-600nw-1689689371.webp");
-    background-attachment: fixed;
-    object-fit: cover;
-    width: 95%;
-    height: 250px;
-    background-repeat: no-repeat;
-  }
-  p.txtSection4 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.2em;
-    color: black;
-    font-size: 1em;
-  }
-  .span1HomeS4 {
-    padding-right: 90px;
-    font-size: 1.5em;
-    color: white;
-    font-style: italic;
-  }
-  .span2HomeS4 {
-    padding-left: 20px;
-    font-size: 1.5em;
-    color: white;
-  }
-  #lienS4Home {
-    color: $convivialColor2;
-    font-size: 1.5em;
-    text-decoration: underline;
-  }
-  //section 5
-  button.buttonSection5-mt-3 {
-    display: block;
-    margin: auto;
-    align-items: center;
-  }
-  a.textButtonSection5 {
-    width: 50px;
-    height: auto;
-    color: white;
-  }
-  .logoHomeSection5 {
-    width: 25%;
-    height: auto;
-    text-align: center;
-  }
-  .backgroundS4 {
-    background-color: $convivialColor;
-    border-radius: 12px;
-    width: 95%;
-  }
-  #temoignage {
-    font-size: 1.4em;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  #temoignage::before {
-    content: "";
-    width: 40px;
-    border-bottom: 2px solid black;
-    display: inline-block;
-  }
-  #temoignage::after {
-    content: "";
-    width: 40px;
-    border-top: 2px solid black;
-    display: inline-block;
-  }
-  .temoignages {
-    font-size: 1em;
-    text-align: center;
-    margin-top: 35px;
-  }
-  #lienS5Home {
-    color: black;
-    font-size: 0.8em;
-    text-decoration: none;
-    margin-top: 15px;
-    padding-right: 10px;
-    margin-right: 15px;
-  }
-
-  //section 6
-  .titreS6 {
-    color: black;
-  }
-  .row6 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 25px;
-  }
-  #carousel-row {
-    margin-left: 50px;
-  }
-  .carousel-size {
-    font-size: 1em;
-    color: black;
-    margin-left: 47px;
-    margin-top: 15px;
-  }
-  #carouselItemS6Bis {
-    position: relative;
-    text-align: center;
-  }
-  #carouselSizeS6Bis {
-    position: absolute;
-    top: 90%;
-    left: 30%;
-    transform: translate(-50%, -20%);
-  }
-  #divCarouselCaptionS6Bis {
-    padding-top: 80px;
-    text-align: center;
-  }
-  //section 7
-  .imgHomeFixeS7 {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    filter: opacity(40%);
-    -webkit-filter: opacity(30%);
-  }
-  h2.font.mt-5 {
-    font-size: 0.8em;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-  #bgGrey {
-    background-color: rgba(229, 229, 229, 0.44);
-    border: rgba(229, 229, 229, 0.44) solid;
-  }
-  .contenantSection7 {
-    position: relative;
-    text-align: center;
-  }
-  .txtSection7 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-decoration: none;
-    color: black;
-    font-size: 2em;
-  }
-  //section 7 bis
-  h2.font.mt-5 {
-    font-size: 1em;
-  }
-  .slider-area h2 {
-    text-align: center;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 60px;
-    font-weight: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: auto;
-  }
-
-  //fin section 7 bis
-  //section 8
-  .titreS8 {
-    margin-bottom: 40px;
-    color: black;
-    text-align: center;
-    font-size: 1.5em;
-  }
-  #buttonS8 {
-    text-decoration: none;
-    border: 1px solid black;
-    color: black;
-    background-color: $convivialColor;
-    padding: 5px 20px 5px 20px;
-    border-radius: 12px;
-    text-align: center;
-  }
-  //section 9
-  #section9 {
-    background-color: #e8e8e8;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .row.section9 {
-    margin-top: 35px;
-  }
-  .tailleTxtS9 {
-    font-size: 0.9em;
-  }
-  .section9FleximgMail {
-    padding-top: 25px;
-    width: 20%;
-    align-items: center;
-    padding-left: 2px;
-  }
-  span.section9FlexTxtMail {
-    font-size: 0.8em;
-  }
-  .section9Flex1 {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-  }
-  .section9Flex1-1 {
-    margin-left: 5px;
-    justify-content: space-between;
-  }
-  .imgHomePhoneFlex1-1 {
-    padding-top: 5px;
-    width: 15%;
-    align-items: center;
-  }
-  .tailleTxtFlex1-1 {
-    font-size: 0.8em;
-  }
-  .section9Flex1-2 {
-    justify-content: space-between;
-  }
-  .section9Flex2 {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.5em;
-  }
-  .section9Flex2-2 {
-    display: flex;
-  }
-  .section9Flex2-2Txt {
-    font-size: 0.8em;
-  }
-  //section 11
-  .flex1S10 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-  .flex2S10 {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    margin: 20px 20px;
-  }
-  .flex2S11 {
-    display: flex;
-    justify-content: space-around;
-    padding: 30px;
-    margin-bottom: 30px;
-  }
-  .imgHomeIconesS11 {
-    height: 4vh;
-  }
-  //End Of Home Page
-  //start of Page
-  img.rounded.mx-auto.d-block {
-    max-width: 50%;
-    height: auto;
-  }
-  .card {
-    margin-top: 30px;
-  }
-  .imgPage {
-    margin-top: 30px;
-    width: 300px;
-    height: 300px;
-    animation: none;
-  }
-  button {
-    display: block;
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid $convivialColor;
-    width: 200px;
-    align-items: center;
-    margin-bottom: 50px;
-    a {
-      text-decoration: none;
-      color: white;
-    }
-
-    #buttonpdf {
-      text-align: center;
-      margin: auto;
-    }
-  }
-  //end of Page
-  //Start of list Recipes Page
-  #bgListRecipePageS3 {
-    background-image: url("../images/boulPizz.webp");
-  }
-  .listrecipePagetxtSection2 {
-    font-size: 2em;
-    text-align: center;
-  }
-  .recipeListImgSection5 {
-    width: 50%;
-    height: auto;
-  }
-  .listrecipePagetxtSection3 {
-    font-size: 1.5em;
-    text-align: center;
-  }
-  .txtSection3List {
-    position: absolute;
-    top: 67%;
-    left: 50%;
-    transform: translate(-50%, -130%);
-    color: black;
-  }
-  .span1ListS3 {
-    position: relative;
-    margin-right: 20px;
-    color: black;
-    font-style: italic;
-    font-size: 1em;
-    color: black;
-  }
-  #bgRecipePageTxtSection2 {
-    background: black;
-    color: white;
-  }
-  #bgRecipePageTxtSection3 {
-    background: $convivialColor;
-    color: black;
-  }
-  #btnColorPageRecipeSection3 {
-    color: $convivialColor;
-  }
-  .card-footer {
-    border: 2px solid black;
-    height: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: $convivialColor2;
-  }
-  .card-title {
-    margin-top: 3Opx;
-    text-align: center;
-  }
-  .imageLogoListConvivial {
-    width: 70%;
-    height: 50%;
-  }
-
-  //End of list Recipes Pages
-  //Start of details page
-  .imageLogoConvivialRecipeDetail {
-    width: 80%;
-    height: 80%;
-  }
-  .textSection3 {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    text-align: center;
-    align-items: center;
-    float: left;
-    margin-left: 25%;
-    color: black;
-  }
-  .textSection3Bis {
-    text-align: left;
-  }
-  #bgListRecipePageS3 {
-    background-image: url("/assets/images/boulPizz.webp");
-    text-align: center;
-  }
-  #marginRecipeSection3 {
-    margin-bottom: 10px;
-  }
-  .recipePageImgSection3 {
-    width: 30%;
-    margin-bottom: 40px;
-  }
-  #recipePageImgSection3 {
-    width: 30%;
-    margin-bottom: 40px;
-    margin-left: 10px;
-  }
-  .recipePagetxtSection2 {
-    font-size: 2em;
-    text-align: center;
-  }
-  .recipePagetxtSection3 {
-    font-size: 2em;
-    text-align: center;
-  }
-  #dropdownMenuButton1 {
-    text-align: center;
-    align-items: center;
-    margin-left: 140px;
-    border-radius: 12%;
-    background-color: $convivialColor;
-  }
-  #imgSection3Details {
-    align-items: center;
-    text-align: center;
-  }
-  .recipePageImgSection5 {
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-  }
-  #section4 {
-    background-color: black;
-    text-align: center;
-    align-items: center;
-    color: white;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  #section5 {
-    background-color: $convivialColor;
-    text-align: center;
-    align-items: center;
-    color: white;
-    margin-top: 0px;
-    padding-top: 5px;
-  }
-  #recipePageLiSection4 {
-    list-style-type: none;
-    align-items: center;
-  }
-  #recipePageLiSection5 {
-    list-style-type: none;
-    color: black;
-  }
-  //end of Recipe page
-  //start of page
-  col.mb-4.mt-5.ml-5.pb-5.text-center {
-    display: block;
-    margin: auto;
-  }
-  #bgS1Page {
-    background-color: rgba(236, 240, 241);
-    text-align: center;
-  }
-  .colorTxtS1Page {
-    color: $convivialColor;
-  }
-  .imgS2Page {
-    width: 65%;
-    max-height: 100%;
-  }
-  #buttonS5Page {
-    text-decoration: none;
-    border: 1px solid black;
-    color: black;
-    border-radius: 12px;
-  }
-  //end of page
-  //start of contact
-  #h1ContactMarginTop {
-    margin-top: 20px;
-    padding-top: 50px;
-  }
-  #buttonContactCenter {
-    color: $convivialColor2;
-  }
-  .bgInviteForm {
-    background-color: $convivialColor;
-    padding-left: 25px;
-    padding-bottom: 25px;
-    padding-right: 25px;
-    border-radius: 8%;
-  }
-  .titreInviteForm {
-    font-size: 2em;
-    text-decoration: underline;
-  }
-  //End of contact
+.footerFontSizeAccueil {
+  font-size: 1em;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-decoration: none;
 }
+footer.footer {
+  display: flex;
+  flex-direction: column;
+  background: #212529;
+  justify-content: center;
+  align-items: center;
+  div.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    text-align: center;
+    max-width: 1100px;
+    // flex: auto;
+    font-weight: 400;
+    margin: 50px 0px 50px 0px;
+    @include mediaquerries(sm) {
+      flex-direction: column;
+    }
+    @include mediaquerries(md) {
+      flex-direction: row;
+    }
+    @include mediaquerries(lg) {
+      flex-direction: row;
+    }
+    div.section1 {
+      flex: 1;
+      h5.section-titre {
+        color: white;
+        font-size: 1.8rem;
+        @include mediaquerries(sm) {
+          font-size: 1.8rem;
+        }
+        @include mediaquerries(md) {
+          font-size: 2rem;
+        }
+        @include mediaquerries(lg) {
+          font-size: 2rem;
+        }
+      }
+      ul.section1-ul {
+        li a.footerFontSizeAccueil {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.8rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+        li a.footerFontSize {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.5rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    div.section2 {
+      flex: 1;
+      h5.section-titre {
+        color: white;
+        font-size: 1.8rem;
+        @include mediaquerries(sm) {
+          font-size: 1.8rem;
+        }
+        @include mediaquerries(md) {
+          font-size: 2rem;
+        }
+        @include mediaquerries(lg) {
+          font-size: 2rem;
+        }
+      }
+      ul.section2-ul {
+        li a.footerFontSizeAccueil {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.5rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+        li a.footerFontSize {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.8rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    div.section3 {
+      flex: 1;
+      h5.section-titre {
+        color: white;
+        font-size: 1.3rem;
+        @include mediaquerries(sm) {
+          font-size: 1.8rem;
+        }
+        @include mediaquerries(md) {
+          font-size: 2rem;
+        }
+        @include mediaquerries(lg) {
+          font-size: 2rem;
+        }
+      }
+      ul.section3-ul {
+        li a.footerFontSizeAccueil {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.5rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+        li a.footerFontSize {
+          color: #f1c40f;
+          font-size: 1.3rem;
+          text-decoration: none;
+          @include mediaquerries(sm) {
+            font-size: 1.8rem;
+          }
+          @include mediaquerries(md) {
+            font-size: 2rem;
+          }
+          @include mediaquerries(lg) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    div.section4 {
+      flex: 1;
+      div.section4-ul {
+        img.section4-ul-img {
+          max-width: 250px;
+        }
+      }
+      p.section4-ul-p {
+        padding: 20px 0px 20px 0px;
+        color: #f1c40f;
+        a {
+          padding: 20px 0px 20px 0px;
+          color: #f1c40f;
+        }
+      }
+    }
+  }
+}
+// Fin page Home **/
+// @include mediaquerries(xs) {
+//   // //end of footer
+//   // //page home
+//   img.logoHome1 {
+//     width: 15vh;
+//     height: auto;
+//     object-fit: cover;
+//     margin-top: 20px;
+//     margin-bottom: 20px;
+//   }
+//   //End Of Home Page
+//   //start of Page
+//   img.rounded.mx-auto.d-block {
+//     max-width: 50%;
+//     height: auto;
+//   }
+//   .card {
+//     margin-top: 30px;
+//   }
+//   .imgPage {
+//     margin-top: 30px;
+//     width: 300px;
+//     height: 300px;
+//     animation: none;
+//   }
 
+//   #buttonpdf {
+//     text-align: center;
+//     margin: auto;
+//   }
+//   //end of Page
+//   //Start of list Recipes Page
+//   #bgListRecipePageS3 {
+//     background-image: url("../images/boulPizz.webp");
+//   }
+//   .listrecipePagetxtSection2 {
+//     font-size: 2em;
+//     text-align: center;
+//   }
+//   .recipeListImgSection5 {
+//     width: 50%;
+//     height: auto;
+//   }
+//   .listrecipePagetxtSection3 {
+//     font-size: 1.5em;
+//     text-align: center;
+//   }
+//   .txtSection3List {
+//     position: absolute;
+//     top: 67%;
+//     left: 50%;
+//     transform: translate(-50%, -130%);
+//     color: black;
+//   }
+//   .span1ListS3 {
+//     position: relative;
+//     margin-right: 20px;
+//     color: black;
+//     font-style: italic;
+//     font-size: 1em;
+//     color: black;
+//   }
+//   #bgRecipePageTxtSection2 {
+//     background: black;
+//     color: white;
+//   }
+//   #bgRecipePageTxtSection3 {
+//     background: $convivialColor;
+//     color: black;
+//   }
+//   #btnColorPageRecipeSection3 {
+//     color: $convivialColor;
+//   }
+//   .card-footer {
+//     border: 2px solid black;
+//     height: 50px;
+//     margin-top: 30px;
+//     margin-bottom: 30px;
+//     text-align: center;
+//     color: $convivialColor2;
+//   }
+//   .card-title {
+//     margin-top: 3Opx;
+//     text-align: center;
+//   }
+//   .imageLogoListConvivial {
+//     width: 70%;
+//     height: 50%;
+//   }
+
+//   //End of list Recipes Pages
+//   //Start of details page
+//   .imageLogoConvivialRecipeDetail {
+//     width: 80%;
+//     height: 80%;
+//   }
+//   .textSection3 {
+//     text-align: center;
+//     margin-top: 40px;
+//     margin-bottom: 40px;
+//     text-align: center;
+//     align-items: center;
+//     float: left;
+//     margin-left: 25%;
+//     color: black;
+//   }
+//   .textSection3Bis {
+//     text-align: left;
+//   }
+//   #bgListRecipePageS3 {
+//     background-image: url("/assets/images/boulPizz.webp");
+//     text-align: center;
+//   }
+//   #marginRecipeSection3 {
+//     margin-bottom: 10px;
+//   }
+//   .recipePageImgSection3 {
+//     width: 30%;
+//     margin-bottom: 40px;
+//   }
+//   #recipePageImgSection3 {
+//     width: 30%;
+//     margin-bottom: 40px;
+//     margin-left: 10px;
+//   }
+//   .recipePagetxtSection2 {
+//     font-size: 2em;
+//     text-align: center;
+//   }
+//   .recipePagetxtSection3 {
+//     font-size: 2em;
+//     text-align: center;
+//   }
+//   #dropdownMenuButton1 {
+//     text-align: center;
+//     align-items: center;
+//     margin-left: 140px;
+//     border-radius: 12%;
+//     background-color: $convivialColor;
+//   }
+//   #imgSection3Details {
+//     align-items: center;
+//     text-align: center;
+//   }
+//   .recipePageImgSection5 {
+//     width: 100%;
+//     min-height: auto;
+//     text-align: center;
+//   }
+//   #section4 {
+//     background-color: black;
+//     text-align: center;
+//     align-items: center;
+//     color: white;
+//     margin-top: 0px;
+//     padding-top: 5px;
+//   }
+//   #section5 {
+//     background-color: $convivialColor;
+//     text-align: center;
+//     align-items: center;
+//     color: white;
+//     margin-top: 0px;
+//     padding-top: 5px;
+//   }
+//   #recipePageLiSection4 {
+//     list-style-type: none;
+//     align-items: center;
+//   }
+//   #recipePageLiSection5 {
+//     list-style-type: none;
+//     color: black;
+//   }
+//   //end of Recipe page
+//   //start of page
+//   col.mb-4.mt-5.ml-5.pb-5.text-center {
+//     display: block;
+//     margin: auto;
+//   }
+//   #bgS1Page {
+//     background-color: rgba(236, 240, 241);
+//     text-align: center;
+//   }
+//   .colorTxtS1Page {
+//     color: $convivialColor;
+//   }
+//   .imgS2Page {
+//     width: 65%;
+//     max-height: 100%;
+//   }
+//   #buttonS5Page {
+//     text-decoration: none;
+//     border: 1px solid black;
+//     color: black;
+//     border-radius: 12px;
+//   }
+//   //end of page
+// }
 @include mediaquerries(sm) {
   //navbar
   #navbarHome {
@@ -2351,24 +2323,6 @@ section.contact {
     height: 40%;
     animation: none;
   }
-  button {
-    display: block;
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid $convivialColor;
-    width: 400px;
-    min-height: 50px;
-    margin-bottom: 40px;
-    margin-left: 250px;
-    justify-content: space-between;
-    text-align: center;
-    a {
-      text-decoration: none;
-      color: white;
-    }
-  }
-
   #buttonpdf {
     text-align: center;
   }
@@ -2979,21 +2933,6 @@ section.contact {
     height: 40%;
     animation: none;
   }
-  button {
-    display: block;
-    background-color: $convivialColor;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid black;
-    width: 500px;
-    min-height: 50px;
-    margin-bottom: 50px;
-    justify-content: space-between;
-    a {
-      text-decoration: none;
-      color: white;
-    }
-  }
   #buttonpdf {
     text-align: center;
   }
@@ -3190,4 +3129,3 @@ section.contact {
     text-decoration: underline;
   }
 }
-//End of contact
