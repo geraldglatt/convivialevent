@@ -172,7 +172,7 @@ section.presentation_traiteur {
       margin-top: 0.8rem;
       justify-content: center;
       align-content: center;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       @include mediaquerries(sm) {
         font-size: 1.7rem;
       }
@@ -184,14 +184,14 @@ section.presentation_traiteur {
       @include mediaquerries(lg) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
     }
     .pres2 {
       flex: 1;
       margin-bottom: 0.8rem;
       margin-top: 0.8rem;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       @include mediaquerries(sm) {
         font-size: 1.7rem;
       }
@@ -203,33 +203,33 @@ section.presentation_traiteur {
       @include mediaquerries(lg) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
     }
     .pres3 {
       flex: 1;
       margin-bottom: 0.8rem;
       margin-top: 0.8rem;
-      font-size: 1.7rem;
-      @include mediaquerries(sm) {
+      font-size: 1.6rem;
+      @include mediaquerries (sm) {
         font-size: 1.7rem;
-      }
+        }
       @include mediaquerries(md) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
         font-size: 1.9rem;
-      }
+        }
       @include mediaquerries(lg) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
     }
     .pres4 {
       flex: 1;
       margin-bottom: 0.8rem;
       margin-top: 0.8rem;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       @include mediaquerries(sm) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
@@ -238,19 +238,19 @@ section.presentation_traiteur {
       @include mediaquerries(md) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
       @include mediaquerries(lg) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
     }
     .pres5 {
       flex: 1;
       margin-bottom: 0.8rem;
       margin-top: 0.8rem;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       @include mediaquerries(sm) {
         margin-bottom: 0.8rem;
         margin-top: 0.8rem;
@@ -264,7 +264,7 @@ section.presentation_traiteur {
       @include mediaquerries(lg) {
         margin-bottom: 1.5rem;
         margin-top: 0.8rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
       }
     }
   }
@@ -679,13 +679,12 @@ section.testimanials {
   padding-top: 80px;
   text-align: center;
 }
-/* section partenaire**/
+/* fin section partenaire**/
+/* section recettes **/
 section.recettes {
   flex: auto;
   display: flex;
   flex-direction: column;
-  background: url(../images/ai-generated-8587027_1280.webp);
-  background-size: cover;
   width: 100%;
   min-height: 250px;
   justify-content: center;
@@ -701,6 +700,8 @@ section.recettes {
     min-height: 550px;
   }
   div.container {
+    background: url(../images/ai-generated-8587027_1280.webp);
+    background-size: cover;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -708,51 +709,109 @@ section.recettes {
       display: flex;
       flex-direction: column;
       a.recettes_background_lien {
+        width: 100%;
+        min-height: 350px;
         color: #f1c40f;
         font-size: 2rem;
         font-weight: bold;
         text-decoration: none;
         @include mediaquerries(sm) {
+          min-height: 380px;
           font-size: 2.2rem;
         }
         @include mediaquerries(md) {
+          min-height: 550px;
           font-size: 3rem;
         }
         @include mediaquerries(lg) {
           font-size: 3rem;
+          min-height: 550px;
         }
       }
     }
   }
 }
+/* fin section recettes **/
+// Fin page Home **/
 //start of contact
-section.devis {
+section.contact-devis-titre {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  max-height: 1100px;
   align-items: center;
   justify-content: center;
-  margin: 50px 0px 50px 0px;
-  div.container#h1ContactMarginTop {
+  background-color: #333;
+  margin: 10px 0px 10px 0px;
+  @include mediaquerries(sm) {
+    margin: 20px 0px 20px 0px;
+  }
+  @include mediaquerries(md) {
+    margin: 20px 0px 2ch 0px;
+  }
+  @include mediaquerries(lg) {
+    margin: 30px 0px 30px 0px;
+  }
+  h1.form-devis-titre-h1 {
+    color: #f1c40f;
+  }
+  div.form-devis-titre {
+    flex: 1;
+    margin: 10px 0px 10px 0px;
+    @include mediaquerries(sm) {
+      margin: 20px 0px 20px 0px;
+    }
+    @include mediaquerries(md) {
+      margin: 20px 0px 2ch 0px;
+    }
+    @include mediaquerries(lg) {
+      margin: 30px 0px 30px 0px;
+    }
+    h1.form-devis-titre-h1 {
+      color: #f1c40f;
+    }
+  }
+}
+section.contact-devis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div.container-contact-devis {
+    display: flex;
+    width: 75%;
+    min-height: 700px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 50px 0px;
     font-size: 1.3 rem;
     @include mediaquerries(sm) {
       font-size: 1.8 rem;
     }
     @include mediaquerries(md) {
       font-size: 2.5 rem;
+      min-height: 900px;
     }
     @include mediaquerries(lg) {
       font-size: 2.5 rem;
+      min-height: 1200px;
+    }
+    div.form {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 20pxpx 20px 20px;
+      div.form-group {
+        margin: 20px 0px 20px 0px;
+        align-items: center;
+        justify-content: center;
+      }
+      div.form-group#buttonContactCenter {
+        margin: 20px 0px 20px 0px;
+        align-items: center;
+        div.button-form-devis {
+        }
+      }
     }
   }
-}
-#h1ContactMarginTop {
-  margin-top: 20px;
-  padding-top: 50px;
-}
-#buttonContactCenter {
-  color: $convivialColor2;
 }
 div.bgInviteForm {
   background-color: black;
@@ -781,7 +840,6 @@ div.bgInviteForm {
   font-size: 2em;
   text-decoration: underline;
 }
-//End of contact
 section.contact {
   background: url(../images/contact.jpeg) center center/cover;
   margin: 20px 0px 20px 0px;
@@ -823,12 +881,325 @@ section.contact {
     }
   }
 }
-.footerFontSizeAccueil {
-  font-size: 1em;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  text-decoration: none;
+/*End of contact **/
+/* start of galerie **/
+section.galerie_titre {
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  // align-items: center;
+  div.container {
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    h1.galerie_titre {
+      color: #f1c40f;
+      justify-content: center;
+      align-items: center;
+      @include mediaquerries(md) {
+      }
+      @include mediaquerries(lg) {
+      }
+    }
+  }
 }
+section.galerie {
+  padding: 0px 45px;
+  margin:0;
+  @include mediaquerries (md) {
+    padding: 40px 150px;
+  }
+  @include mediaquerries (lg) {
+    padding: 40px 180px;
+  }
+  ul.galerie_img {
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vmin;
+    // margin:25px 0px 25px 0px ;
+    // align-items: center;
+    // justify-content: center;
+    ul.galerie_img::after {
+      content: "";
+      display: block;
+      flex-grow: 10;
+    }
+    li.image_galerie {
+      list-style-type: none;
+      height: 250px;
+      flex-grow: 1;
+      padding: 15px 10px 15px 10px;
+      img.img_galerie_convivial {
+        object-fit: cover;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 5px #bbb;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+/* end of galerie **/
+/* start of recettes **/
+section.recettes_list {
+  background-color: #333;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 250px;
+  margin: 50px 0px 50px 0px;
+  @include mediaquerries(sm) {
+    min-height: 350px;
+  }
+  @include mediaquerries(md) {
+    min-height: 350px;
+  }
+  @include mediaquerries(lg) {
+    min-height: 350px;
+  }
+  div.recettes_text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p.recettes_p {
+      font-size: 2rem;
+      color: #f1c40f;
+      @include mediaquerries(sm) {
+        font-size: 2rem;
+      }
+      @include mediaquerries(md) {
+        font-size: 2.2rem;
+      }
+      @include mediaquerries(lg) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+section.recettes_list_text {
+  background: url(../images/ai-generated-8587027_1280.webp);
+  background-size: cover;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 200px;
+  margin: 30px 0px 30px 0px;
+  @include mediaquerries(sm) {
+    min-height: 250px;
+  }
+  @include mediaquerries(md) {
+    min-height: 450px;
+  }
+  @include mediaquerries(lg) {
+    min-height: 550px;
+  }
+  div.recettes_list {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p.recettes_list_text {
+      font: 700;
+      min-width: 100%;
+      max-height: 300px;
+      color:#f1c40f;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      @include mediaquerries(sm) {
+        font-size: 1.7rem;
+      }
+      @include mediaquerries(md) {
+        font-size: 2rem;
+      }
+      @include mediaquerries(lg) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+section.form_list {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 150px;
+  margin: 30px 0px 30px 0px;
+}
+section.list_recettes_card {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  @include mediaquerries (sm) {
+    gap: 15px;
+    margin-top: 20px;
+  }
+  @include mediaquerries (md) {
+    gap: 100px;
+    margin-top: 20px;
+  }
+  @include mediaquerries (lg) {
+    gap: 100px;
+    margin-top: 20px;
+  }
+  article.card {
+    width: 350px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    @include mediaquerries (sm) {
+      width: 350px;
+    }
+    @include mediaquerries (md) {
+      width: 400px;
+    }
+    @include mediaquerries (lg) {
+      width: 400px;
+    }
+    div.card-img-recette {
+      display: flex;
+      img.card-img.aos-init.aos-animate{
+        width:100%;
+        max-height: 280px;
+        object-fit: cover;
+      }
+    }
+    div.content {
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      h1.card-title-h1 {
+        font-size: 2rem;
+      }
+      p.card-title-p1 {
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 20px;
+      }
+      p.card-title-p2 {
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 20px;
+      }
+      a.card-title-lien {
+        font-size: 2rem;
+        text-decoration: none;
+        color: #f1c40f;
+      }
+    }
+  }
+}
+section.detail_recettes {
+  background-color: #333;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 250px;
+  margin: 50px 0px 50px 0px;
+  @include mediaquerries(sm) {
+    min-height: 350px;
+  }
+  @include mediaquerries(md) {
+    min-height: 350px;
+  }
+  @include mediaquerries(lg) {
+    min-height: 350px;
+  }
+  div.detail_recettes_text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1.detail_recettes_titre {
+      font-size: 2rem;
+      color: #f1c40f;
+    }
+  }
+}
+section.recipe_title_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 0px 30px 0px;
+  div.recipe_title_container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div.recipe_title_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #333;
+      height: 150px;
+      width: 100%;
+      h2.recipe_title_h2 {
+        font-size: 1.7rem;
+        color: #f1c40f;
+      }
+    }
+  }
+}
+section.section_img {
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  div.container_img {
+    img.img_recipe {
+      width: 250px;
+      height: 150px;
+    }
+  }
+}
+section.ingredients {
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  div.container_ingredients {
+
+    div.content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ul {
+        li {
+          color: #f1c40f;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+section.recipe_step {
+
+}
+/* End of recettes **/
+/* start of footer **/
 footer.footer {
   display: flex;
   flex-direction: column;
@@ -841,61 +1212,61 @@ footer.footer {
     flex-direction: column;
     color: #333;
     text-align: center;
-    max-width: 1100px;
+    max-width: 700px;
     // flex: auto;
     font-weight: 400;
     margin: 50px 0px 50px 0px;
     @include mediaquerries(sm) {
       flex-direction: column;
+      max-width: 700px;
     }
     @include mediaquerries(md) {
       flex-direction: row;
+      max-width: 1100px;
     }
     @include mediaquerries(lg) {
       flex-direction: row;
+      max-width: 1100px;
     }
     div.section1 {
       flex: 1;
       h5.section-titre {
         color: white;
-        font-size: 1.8rem;
-        @include mediaquerries(sm) {
-          font-size: 1.8rem;
-        }
+        font-size: 1.2rem;
         @include mediaquerries(md) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
         @include mediaquerries(lg) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
       }
       ul.section1-ul {
         li a.footerFontSizeAccueil {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.8rem;
+            font-size: 1rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.2rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.2rem;
           }
         }
         li a.footerFontSize {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.5rem;
+            font-size: 1rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.2rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.2rem;
           }
         }
       }
@@ -904,44 +1275,44 @@ footer.footer {
       flex: 1;
       h5.section-titre {
         color: white;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         @include mediaquerries(sm) {
-          font-size: 1.8rem;
+          font-size: 1.3rem;
         }
         @include mediaquerries(md) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
         @include mediaquerries(lg) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
       }
       ul.section2-ul {
         li a.footerFontSizeAccueil {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
         }
         li a.footerFontSize {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
         }
       }
@@ -950,44 +1321,44 @@ footer.footer {
       flex: 1;
       h5.section-titre {
         color: white;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         @include mediaquerries(sm) {
-          font-size: 1.8rem;
+          font-size: 1.3rem;
         }
         @include mediaquerries(md) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
         @include mediaquerries(lg) {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
       }
       ul.section3-ul {
         li a.footerFontSizeAccueil {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
         }
         li a.footerFontSize {
           color: #f1c40f;
-          font-size: 1.3rem;
+          font-size: 1rem;
           text-decoration: none;
           @include mediaquerries(sm) {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
           }
           @include mediaquerries(md) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
           @include mediaquerries(lg) {
-            font-size: 2rem;
+            font-size: 1.3rem;
           }
         }
       }
@@ -1010,7 +1381,7 @@ footer.footer {
     }
   }
 }
-// Fin page Home **/
+/* End of footer **/
 // @include mediaquerries(xs) {
 //   // //end of footer
 //   // //page home

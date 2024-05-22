@@ -1,12 +1,12 @@
 <header>
     <h2 class="vp-logo">
-        <a href="">
+        <a href="{{ path("app_home") }}">
         Convivial Event
         </a>
     </h2>
     <ul>
-        <li><a href="#">Galerie</a></li>
-        <li><a href="#">Recettes</a></li>
-        <li><a href="#">Demander un devis</a></li>
+        <li><a href="{{ path("app_galerie") }}">Galerie</a></li>
+        <li><a href="{{ path('recettes_list') }}">Recettes</a></li>
+        <li><a href="{{ path("contact") }}">Demander un devis</a></li>
     </ul>
 </header>

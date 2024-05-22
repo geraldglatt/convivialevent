@@ -25,8 +25,8 @@ class ImagesCrudController extends AbstractCrudController
             ->setFormType(VichImageType::class)
             ->onlyOnForms(),
             ImageField::new('file')
-                ->setBasePath('/uploads/imagesPage/')->onlyOnIndex()
-                ->setUploadDir('assets/images/'),
+                ->setBasePath('/uploads/images')->onlyOnIndex()
+                ->setUploadDir('assets/images'),
             IntegerField::new('position'),
             AssociationField::new('page')
         ];
