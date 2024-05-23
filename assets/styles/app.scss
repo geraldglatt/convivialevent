@@ -373,6 +373,7 @@ section.container_wedding {
         width: 250px;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        text-align: center;
         @include mediaquerries(sm) {
           width: 250px;
         }
