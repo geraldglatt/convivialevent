@@ -56,26 +56,28 @@
     </div>
 </section>
 <section class="recipe_step">
-    <div class="">
-        <div class="col-2"></div>
-        <div class="col-8" id="section5">
-            {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">étapes {{ recipeStep.position  }} :
-                <li id="recipePageLiSection4">
-                    {{ recipeStep.content | raw }}
-                </li>
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="d-flex justify-content-center">
-            <h1>
+    <div class="recipe_step_container">
+        {% for recipeStep in recipeSteps %}
+        <ul class="recipe_step">étapes {{ recipeStep.position  }} :
+            <li id="recipe_text">
+                {{ recipeStep.content | raw }}
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</section>
+<section class="reseaux_sociaux">
+        <div class="container_reseaux">
+            <h2 class="reseaux_text" >
                 Partager sur vos réseaux préférés...
-            </h1>
+            </h2>
         </div>
         <div class="d-flex justify-content-center pr-2">
         {% include 'shared/_shared.html.twig' %}
         </div>
-         <div class="">
+</section>
+<section class="container">
+         <div class="text-center">
             <a class="textSection3"><a href="{{ path('recettes_list') }}">Retour vers les Recettes</a>
         </div>
 </section>

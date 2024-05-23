@@ -1196,7 +1196,32 @@ section.ingredients {
   }
 }
 section.recipe_step {
-
+  display: flex;
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: $convivialColor;
+  div.recipe_step_container {
+    ul.recipe_step {
+      li.recipe_text {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+section.reseaux_sociaux {
+  display: flex;
+  margin: 30px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  div.container_reseaux {
+    display: flex;
+    flex-direction: column;
+    h2.reseaux_text {
+      text-align: center;
+    }
+  }
 }
 /* End of recettes **/
 /* start of footer **/
