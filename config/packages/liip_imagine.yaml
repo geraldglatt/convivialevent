@@ -13,5 +13,8 @@ liip_imagine:
             quality: 75
             filters:
                 scale:
-                    dim: [400,400]
-                    
+                    dim: [1200, 1200]
+                watermark_image:
+                    image: assets/images/logohorizontal1.webp
+                    size: 0.5
+                    position: bottomright        

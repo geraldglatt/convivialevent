@@ -15,8 +15,8 @@
             {% for img in galerie %}
                 <li class="image_galerie">
                     <img class="img_galerie_convivial" 
-                        src="{{ vich_uploader_asset(img, 'imageFile') }}" 
-                        alt="images convivial">
+                        src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('my_thumb') }}" 
+                        alt="{{ img.title }}">
                 </li>
             {% endfor %}
         </ul>

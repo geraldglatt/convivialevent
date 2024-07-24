@@ -710,6 +710,9 @@ section.recettes {
       display: flex;
       flex-direction: column;
       a.recettes_background_lien {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         min-height: 350px;
         color: #f1c40f;
@@ -808,8 +811,6 @@ section.contact-devis {
       div.form-group#buttonContactCenter {
         margin: 20px 0px 20px 0px;
         align-items: center;
-        div.button-form-devis {
-        }
       }
     }
   }
@@ -908,7 +909,7 @@ section.galerie_titre {
   }
 }
 section.galerie {
-  padding: 0px 45px;
+  padding: 0px 35px;
   margin:0;
   @include mediaquerries (md) {
     padding: 40px 150px;
@@ -933,7 +934,7 @@ section.galerie {
       list-style-type: none;
       height: 250px;
       flex-grow: 1;
-      padding: 15px 10px 15px 10px;
+      padding: 15px 10px 15px 0px;
       img.img_galerie_convivial {
         object-fit: cover;
         padding: 10px;
@@ -1181,8 +1182,8 @@ section.ingredients {
   display: flex;
   flex-direction: column;
   background-color: #333;
+  max-width: 500px;
   div.container_ingredients {
-
     div.content {
       display: flex;
       align-items: center;
