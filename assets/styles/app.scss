@@ -1191,23 +1191,22 @@ section.contact-devis-titre {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #333;
-  margin: 10px 0px 10px 0px;
+  background-color:#071c34;
+  margin-top: 150px;
   @include mediaquerries(sm) {
-    margin: 20px 0px 20px 0px;
+    margin-top: 150px;
   }
   @include mediaquerries(md) {
-    margin: 20px 0px 2ch 0px;
+    margin-top: 150px;
   }
   @include mediaquerries(lg) {
-    margin: 30px 0px 30px 0px;
+    margin-top: 150px;
   }
   h1.form-devis-titre-h1 {
     color: #f1c40f;
   }
   div.form-devis-titre {
     flex: 1;
-    margin: 10px 0px 10px 0px;
     @include mediaquerries(sm) {
       margin: 20px 0px 20px 0px;
     }
