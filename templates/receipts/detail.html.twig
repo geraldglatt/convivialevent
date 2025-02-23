@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Détails de {{ recipe.title }}{% endblock %}
+{% block title %}Détails de {{ recipes.title }}{% endblock %}
 
 {% block body %}
 <section class="detail_recettes">
@@ -11,7 +11,7 @@
 <section class="recipe_title_section">
     <div class="recipe_title_container">
         <div class="recipe_title_text">
-            <h2 class="recipe_title_h2">{{ recipe.title}}</h2>
+            <h2 class="recipe_title_h2">{{ recipes.title}}</h2>
         </div>
         {# <div class="row">
             <div class="col-2"></div>
@@ -32,10 +32,10 @@
         </div> #}
     </div>
     <section class="section_img">
-        <div class="container_img" id="imgSection3Details" style:"width:150px; heigth:150px">
-            {% for img in recipe %}
+        <div class="container_img" id="imgSection3Details">
+            {% for img in recipes %}
                 <img class="img_recipe" 
-                src="{{ vich_uploader_asset(img, 'imageFile') }}" 
+                src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('miniature')  }}" 
                 alt="photo recette"
                 >              
             {% endfor %}

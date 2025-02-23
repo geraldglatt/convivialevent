@@ -5,27 +5,73 @@
     
 {% block body %}
 
-<section class="presentation_traiteur">
+{# <section class="presentation_traiteur">
     <div class="pres">
-        <p class="pres1">Votre traiteur événementiel Conviviale & Responsable</p>
-        <p class="pres2">Présent dans l'Aube & dans l'Yonne</p>
-        <p class="pres3"> Qu'il soit champêtre, dinatoire ou conviviale, 
-        nous personnaliserons vôtre mariage.</p>
-        <p class="pres4">Selon vos désirs, ambiance, repas, brunch et surtout timing, 
-        tout sera à votre image !</p>
-        <p class="pres5">Vous en rêviez , Convivial Event l'a fait !</p>
+        <p class="pres1">POUR UN JOUR J CONVIVIAL & RESPONSABLE</p>
+        <p class="pres2">Vous rêvez d'un mariage champêtre, d'un repas gastronomique, 
+        d'ateliers dinatoires, d'une garden-party</p>
+        <p class="pres3">Vous êtes végétarien, de contrée lointaine ou souhaitez un concept original</p>
+        <p class="pres4">Amoureux de la bonne chair, vous voulez une cuisine généreuse à base de produits frais mais 
+        que votre mariage soit respecteux de l'environnement</p>
+        <p class="pres5">Bref, vous voulez un mariage qui vous ressemble vraiment</p>
+        <p class="pres5">Du devis sur mesure à la réalisation de votre événement</p>
+        <p class="pres1">Convivial Event, une équipe traiteur à l'écoute de vos rêves...</p>
     </div>
-</section>
+</section> #}
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{{ asset('build/images/Sel repas 2 webp/assiette15.add7de23.webp')| imagine_filter('miniature')}}" 
+            alt="photo convivialevent" class="">
+            <div class="carousel-caption">
+                <h3>POUR UN JOUR J CONVIVIAL & RESPONSABLE</h3>
+                <p class="pres2">Vous rêvez d'un mariage champêtre, d'un repas gastronomique, 
+                d'ateliers dinatoires, d'une garden-party ?</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="8000">
+            <img src="{{ asset('build/images/Sel repas 2 webp/assiette16.f9cec003.webp')| imagine_filter('miniature')}}" 
+                alt="photo convivialevent" class="">
+            <div class="carousel-caption">
+                <p class="pres5">Vous êtes végétarien, de contrée lointaine ou souhaitez un concept original <br></p>
+                <p class="pres5">Amoureux de la bonne chair, vous voulez une cuisine généreuse à base de produits frais<br>
+                                 Mais que votre mariage soit respecteux de l'environnement</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="8000">
+            <img src="{{ asset('build/images/Sel repas 2 webp/assiette5.webp')| imagine_filter('miniature')}}" 
+                alt="photo convivialevent" class="">
+            <div class="carousel-caption">
+                <p class="pres5">Bref, vous voulez un mariage qui vous ressemble vraiment.</p>
+                <p class="pres5">Du devis sur mesure à la réalisation de votre événement</p>
+                <h3>Convivial Event<br>une équipe traiteur à l'écoute de vos rêves...</h3>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 <section class="ambiances">
-    <h2 class="txt_ambiances">~ Nos ambiances ~</h2>
+    <h2 class="txt_ambiances"> Nos ambiances </h2>
 </section>
 <section class="container_wedding">  
     {% for key, wedding in weddings %}
         {% if loop.index % 2 %}
             <div class="weddings1">
                 <div class="wedding1">
-                        <img class="img_wedding" 
-                        src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                        <img class="img_wedding"
+                        src="{{ vich_uploader_asset(wedding, 'imageFile')|imagine_filter('miniature') }}" 
                         alt="photo convivialevent"
                         >  
                 </div>
@@ -35,12 +81,12 @@
                         {{ wedding.title | raw }}
                         </h2>
                         <p class="card-text">
-                        {{ wedding.content | raw }}
+                        {{ wedding.content | striptags | slice(0, 0, true) }}
                         </p>
                         <a class="" id="lienS3Home" 
                         href="{{ path('page_show', 
                         {slug:wedding.page.slug}) }}">
-                        Clicker ici pour découvrir
+                        Cliquez ici ...
                         </a>
                     </div>
                 </div>
@@ -53,17 +99,17 @@
                         {{ wedding.title | raw }}
                         </h2>
                         <p class="card-text">
-                        {{ wedding.content | raw }}
+                        {{ wedding.content | striptags | slice(0, 0, true) }}
                         </p>
                         <a class="" id="lienS3Home" 
                         href="{{ path('page_show', {slug:wedding.page.slug}) }}"
-                        >Clicker ici pour découvrir
+                        >Cliquez ici ...
                         </a>
                     </div>
                 </div>
                 <div class="wedding4">
                     <img class="img_wedding" 
-                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                    src="{{ vich_uploader_asset(wedding, 'imageFile')|imagine_filter('miniature') }}" 
                     alt="photo convivialevent"
                     >
                 </div>
@@ -71,6 +117,33 @@
         {% endif %}
     {% endfor %}
 </section>
+{# <section class="container_wedding">  
+    {% for key, wedding in weddings %}
+        <div class="weddings1">
+            <div class="wedding1">
+                    <img class="img_wedding" 
+                    src="{{ vich_uploader_asset(wedding, 'imageFile') }}" 
+                    alt="photo convivialevent"
+                    >  
+            </div>
+            <div class="wedding2">
+                <div class="card-body">
+                    <h2 class="card-title">
+                    {{ wedding.title | raw }}
+                    </h2>
+                    <p class="card-text">
+                    {{ wedding.content | raw }}
+                    </p>
+                    <a class="" id="lienS3Home" 
+                    href="{{ path('page_show', 
+                    {slug:wedding.page.slug}) }}">
+                    Clicker ici pour découvrir
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section> #}
 <section class="convivial-text">
     <div class="convivial-text-content">
         <p class="convivial-text-content-p1">
@@ -81,15 +154,15 @@
         </p>
     </div>
 </section>
-<section class="ambiances">
+{# <section class="ambiances">
     <h2 class="txt_ambiances"> Ce que l'on dit de nous </h2>
-</section>
+</section> #}
 <section class="testimanials">
     <div class="container">
         <div class="testimanials-content">
             <div class="testimanials-elem1">
                 <img class="testimanials-img" 
-                src="{{ asset('build/images/badge-rated-10.webp') }}" alt="logo mariage.net">
+                src="{{ asset('build/images/badge-rated-10.webp')| imagine_filter('miniature') }}" alt="logo mariage.net">
             </div>
             <div class="testimanials-elem2">
                 <button class="testimonials-button">
@@ -102,46 +175,46 @@
     </div>
 </section>
 <section class="ambiances">
-    <h2 class="txt_ambiances">~ Nos partenaires & lieux d'exceptions ~</h2>
+    <h2 class="txt_ambiances"> Nos partenaires & lieux d'exceptions </h2>
 </section>
 <section class="partenaire">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="6000" id="carouselItemS6Bis">
-                <img class="img rounded-4 hover-shadow w-75" 
-                src="{{ asset('build/images/Château-du-Fey.webp') | imagine_filter('my_thumb_scale') }}" 
+                <img class="img rounded-4 hover-shadow" 
+                src="{{ asset('build/images/Château-du-Fey.webp') | imagine_filter('miniature') }}" 
                 alt="image partenaire">
                 <div class="carousel-caption" id="divCarouselCaptionS6Bis">
                     <h5 class="carousel-size" id="carouselSizeS6Bis">Château du Fey</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                <img class="img rounded-4 hover-shadow w-75" 
-                src="{{ asset('build/images/Abbaye-Vauluisant.webp') | imagine_filter('my_thumb_scale') }}" 
+                <img class="img rounded-4 hover-shadow" 
+                src="{{ asset('build/images/Abbaye-Vauluisant.webp') | imagine_filter('miniature') }}" 
                 alt="abbaye-vauluisant">
                 <div class="carousel-caption" id="divCarouselCaptionS6Bis">
                     <h5 class="carousel-size" id="carouselSizeS6Bis">Abbaye de Vauluisant</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                <img class="img rounded-4 hover-shadow w-75" 
-                src="{{ asset('build/images/carre-de-lailly.jpg') | imagine_filter('my_thumb_scale') }}" 
+                <img class="img rounded-4 hover-shadow" 
+                src="{{ asset('build/images/carre-de-lailly.jpg') | imagine_filter('miniature') }}" 
                 alt="carre de lailly">
                 <div class="carousel-caption" id="divCarouselCaptionS6Bis">
                     <h5 class="carousel-size" id="carouselSizeS6Bis">Carré de Lailly</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                <img class="img rounded-4 hover-shadow w-75" 
-                src="{{ asset('build/images/Les-Beauchots.webp') | imagine_filter('my_thumb_scale') }}" 
+                <img class="img rounded-4 hover-shadow" 
+                src="{{ asset('build/images/Les-Beauchots.webp') | imagine_filter('miniature') }}" 
                 alt="image partenaire">
                 <div class="carousel-caption" id="divCarouselCaptionS6Bis">
                     <h5 class="carousel-size" id="carouselSizeS6Bis">Les Beauchots</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000" id="carouselItemS6Bis">
-                <img class="img rounded-4 hover-shadow w-75" 
-                src="{{ asset('build/images/Chateau-Montabert.webp') | imagine_filter('my_thumb_scale') }}" 
+                <img class="img rounded-4 hover-shadow" 
+                src="{{ asset('build/images/Chateau-Montabert.webp') | imagine_filter('miniature') }}" 
                 alt="image partenaire">
                 <div class="carousel-caption" id="divCarouselCaptionS6Bis">
                     <h5 class="carousel-size" id="carouselSizeS6Bis">Château de Montabert</h5>
@@ -170,9 +243,7 @@
         </div>
     </div>
 </section>
-<section class="ambiances">
-    <h2 class="txt_ambiances"> Un devis, une question... </h2>
-</section>
+
 {# <section class="contact">
     <div class="container">
         <div class="sectionContact-titre">

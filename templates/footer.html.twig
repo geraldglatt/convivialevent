@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<footer class="footer">
+{# <footer class="footer">
     <div class="container">
         <div class="section1">
             <h5 class="section-titre">Événementiel</h5>
@@ -35,4 +35,50 @@
             <p class="section4-ul-p">Copyrights &copy;2022. All rights reserved. <a class="text-white mb-3 mt-3" href="#">convivialevent.com</a></p>
         </div>
     </div>
-</footer>
+</footer> #}
+<head>
+	<script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<footer class="footer">
+		<div class="container row">
+			<div class="footer-col">
+				<h4>convivialevent</h4>
+				<ul>
+                    <li><a href="{{ path("app_home") }}">Accueil</a></li>
+					<li><a href="{{ path('recettes_list') }}">Recettes</a></li>
+					<li><a href="{{ path('app_partenaires') }}">Partenaires</a></li>
+					<li><a href="{{ path("app_galerie") }}">Galerie</a></li>
+					<li><a href="{{ path("contact") }}">Nous Contacter</a></li>
+				</ul>
+			</div>
+            <div class="footer-col">
+				<h4>Ambiances</h4>
+				<ul>
+					<li>{% for footer in home.getHome %}
+                        <a href="{{ path('page_show', {slug:footer.page.slug}) }}">{{ footer.title | raw }}</a>
+                        </a>
+                        {% endfor %}
+                    </li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Autres</h4>
+				<ul>
+					<li><a href="{{ path('app_mentions_legales') }}">Mentions Legales</a></li>
+					<li><a href="#">shipping</a></li>
+					<li><a href="#">returns</a></li>
+					<li><a href="#">order status</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Retrouvez-Nous</h4>
+				<div class="social-links">
+					<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>

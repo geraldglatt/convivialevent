@@ -3,11 +3,11 @@
 {% block title %}{{ pages.title | striptags | raw }}{% endblock %}
 
 {% block body %}
-<section class="">
+<section class="show">
     <div class="container-fluid" id="">
         <div class="row">
-            <div class="col text-center mt-5 mb-3">
-                <h1 class="">
+            <div class="col text-center">
+                <h1 class="showTitle">
                 {{ pages.title | striptags | raw  }}
                 </h1>
             </div>
@@ -33,6 +33,11 @@
     {% elseif page.id == 4 %}
         {% include "shared/_blockPage4.html.twig" 
         with{'slug': 'entreprise'} 
+        only 
+        %}
+    {% elseif page.id == 6 %}
+        {% include "shared/_blockPage5.html.twig" 
+        with{'slug': 'brunch & cocktail'} 
         only 
         %}
     {% endif %}
@@ -76,7 +81,7 @@
         </div>
         <div class="row">
             <div class="col mb-4 mt-5 ml-5 pb-5 text-center">
-                <div id="carouselExampleControls" 
+                {# <div id="carouselExampleControls" 
                 class="carousel slide" 
                 data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -103,7 +108,19 @@
                         </div>
                     {% endfor %}
                     </div>
-                </div>
+                </div> #}
+                <section class="galerie">
+                    <ul class="galerie_img">
+                        {% for pageImg in findImages %}
+                            <li class="image_galerie">
+                                <img
+                                class="img_galerie_convivial"
+                                src="{{ vich_uploader_asset(pageImg, 'imageFile')| imagine_filter('welcome') }}" 
+                                alt="{{ pageImg.title }}">
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
