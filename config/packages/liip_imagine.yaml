@@ -3,15 +3,22 @@ liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
     filter_sets:
-        my_thumb:
+        miniature:
             quality: 75
             filters:
                 thumbnail:
                     size: [600,330]
                     mode: outbound
-        my_thumb_scale:
+                watermark_image:
+                    image: assets/images/logohorizontal1.webp
+                    size: 0.2
+                    position: bottomright
+        welcome:
             quality: 75
             filters:
                 scale:
-                    dim: [400,400]
-                    
+                    dim: [1200, 1200]
+                watermark_image:
+                    image: assets/images/logohorizontal1.webp
+                    size: 0.2
+                    position: bottomright        

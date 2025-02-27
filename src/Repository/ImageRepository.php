@@ -39,6 +39,12 @@ class ImageRepository extends ServiceEntityRepository
         }
     }
 
+    public function findImageByRecipe($id,ImageRepository $image){
+        return $image->findBy([
+            'recipe' => $id,
+        ]);
+    }
+
 //    /**
 //     * @return Image[] Returns an array of Image objects
 //     */

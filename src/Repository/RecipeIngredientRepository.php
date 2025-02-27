@@ -39,20 +39,23 @@ class RecipeIngredientRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return RecipeIngredient[] Returns an array of RecipeIngredient objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+   /**
+    * @return RecipeIngredient[] Returns an array of RecipeIngredient objects
+    */
+    public function findIdByRecipeIngredient($id): array
+    {
+        return $this->createQueryBuilder('p')
+        ->andWhere('p.id = :id')
+        ->setParameter(':id', $id)
+        ->getQuery()
+        ->getResult();
+    }
+
+    public function findIngredientByRecipe($id,RecipeIngredientRepository $recipeIngredient){
+        return $recipeIngredient->findBy([
+            'recipe' => $id,
+        ]);
+    }
 
 //    public function findOneBySomeField($value): ?RecipeIngredient
 //    {

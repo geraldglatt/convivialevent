@@ -2,16 +2,23 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RecipeRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[UniqueEntity('title')]
+#[Vich\Uploadable]
 class Recipe
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -26,14 +33,35 @@ class Recipe
     #[ORM\Column(type: 'integer')]
     private $nb_portion;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    #[Vich\UploadableField(mapping:'recipe_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column]
+    private ?bool $isPublished = null;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $updatedAt;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $createdAt;
+
+    #[ORM\ManyToOne(inversedBy: 'recipes')]
+    private ?Category $category = null;
+
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Image::class , orphanRemoval: true, cascade: [ "persist" ])]
-    private $images;
+    private $recipeImages;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeIngredient::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $ingredients;
 
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: RecipeStep::class, orphanRemoval: true, cascade: [ "persist" ])]
     private $recipeSteps;
+
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Commentaire::class, orphanRemoval: true, cascade: [ "persist" ])]
+    private $commentaires;
 
     #[ORM\Column(type: 'string', columnDefinition:"ENUM('entrée', 'pièces cocktail', 'plat principal', 'dessert')", length: 255)]
     private $type;
@@ -46,9 +74,22 @@ class Recipe
 
     public function __construct()
     {
-        $this->images = new ArrayCollection();
+        $this->recipeImages = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->recipeSteps = new ArrayCollection();
+        $this->commentaires = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function prePersist()
+    {
+        $this->slug = (new Slugify())->Slugify($this->title);
+    }
+
+    #[ORM\PreUpdate]
+    public function preUpdate()
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -92,30 +133,106 @@ class Recipe
         return $this;
     }
 
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $file = null): void
+    {
+        $this->imageFile = $file;
+        
+        if ($file) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable('now');
+        }
+    }
+
+    public function isIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Image>
      */
-    public function getImage(): Collection
+    public function getRecipeImages(): Collection
     {
-        return $this->images;
+        return $this->recipeImages;
     }
 
-    public function addImage(Image $image): self
+    public function addRecipeImage(Image $recipeImage): self
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setRecipe($this);
+        if (!$this->recipeImages->contains($recipeImage)) {
+            $this->recipeImages[] = $recipeImage;
+            $recipeImage->setRecipe($this);
         }
 
         return $this;
     }
 
-    public function removeImage(Image $image): self
+    public function removeRecipeImage(Image $recipeImage): self
     {
-        if ($this->images->removeElement($image)) {
+        if ($this->recipeImages->removeElement($recipeImage)) {
             // set the owning side to null (unless already changed)
-            if ($image->getRecipe() === $this) {
-                $image->setRecipe(null);
+            if ($recipeImage->getRecipe() === $this) {
+                $recipeImage->setRecipe(null);
             }
         }
 
@@ -222,4 +339,35 @@ class Recipe
     {
         return $this->title;
     }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): self
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getRecette() === $this) {
+                $commentaire->setRecette(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

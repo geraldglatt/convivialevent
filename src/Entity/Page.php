@@ -23,7 +23,7 @@ class Page
     #[Assert\Regex(pattern: "/^[a-z0-9\-]+$/")]
     private $slug;
 
-    #[ORM\Column(type: 'string', length: 60)]
+    #[ORM\Column(type: 'string', length: 120)]
     private $title;
 
     #[ORM\Column(type: 'text')]
@@ -32,11 +32,11 @@ class Page
     #[ORM\Column(type: 'text')]
     private $metaDesc;
 
-    #[ORM\Column(type: 'string', length: 60, nullable: true)]
-    private $image;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
 
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
+    #[Vich\UploadableField(mapping:'page_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
@@ -48,13 +48,13 @@ class Page
     private $pageImages;
 
     #[ORM\OneToMany(mappedBy: 'page', targetEntity: HomeBlock::class, orphanRemoval: true, cascade: [ "persist" ])]
-    private $homeBlocks;
+    private $filesHomeblock;
 
     public function __construct()
     {
         $this->pagePdfs = new ArrayCollection();
         $this->pageImages = new ArrayCollection();
-        $this->homeBlocks = new ArrayCollection();
+        $this->filesHomeblock = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,14 +110,14 @@ class Page
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getFile(): ?string
     {
-        return $this->image;
+        return $this->file;
     }
 
-    public function setImage(?string $image): self
+    public function setFile(string $file): self
     {
-        $this->image = $image;
+        $this->file = $file;
 
         return $this;
     }
@@ -127,14 +127,14 @@ class Page
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $file = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
         
-        if (null !== $imageFile) {
+        if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable('now');
         }
     }
 
@@ -188,22 +188,22 @@ class Page
         return $this->pageImages;
     }
 
-    public function addPageImage(Images $pageImage): self
+    public function addPageImage(Images $image): self
     {
-        if (!$this->pageImages->contains($pageImage)) {
-            $this->pageImages[] = $pageImage;
-            $pageImage->setPage($this);
+        if (!$this->pageImages->contains($image)) {
+            $this->pageImages[] = $image;
+            $image->setPage($this);
         }
 
         return $this;
     }
 
-    public function removePageImage(Images $pageImage): self
+    public function removePageImage(Images $image): self
     {
-        if ($this->pageImages->removeElement($pageImage)) {
+        if ($this->pageImages->removeElement($image)) {
             // set the owning side to null (unless already changed)
-            if ($pageImage->getPage() === $this) {
-                $pageImage->setPage(null);
+            if ($image->getPage() === $this) {
+                $image->setPage(null);
             }
         }
 
@@ -215,13 +215,13 @@ class Page
      */
     public function getHomeBlocks(): Collection
     {
-        return $this->homeBlocks;
+        return $this->filesHomeblock;
     }
 
     public function addHomeBlock(HomeBlock $homeBlock ): self
     {
-        if (!$this->homeBlocks->contains($homeBlock)) {
-            $this->homeBlocks[] = $homeBlock;
+        if (!$this->filesHomeblock->contains($homeBlock)) {
+            $this->filesHomeblock[] = $homeBlock;
             $homeBlock->setPage($this);
         }
 
@@ -230,7 +230,7 @@ class Page
 
     public function removeHomeBlock(HomeBlock $homeBlock): self
     {
-        if ($this->page->removeElement($homeBlock)) {
+        if ($this->filesHomeblock->removeElement($homeBlock)) {
             // set the owning side to null (unless already changed)
             if ($homeBlock->getPage() === $this) {
                 $homeBlock->setPage(null);
@@ -244,4 +244,5 @@ class Page
     {
         return $this->title;
     }
+
 }

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur serveur{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="text-center">
+        <h1 class="text-center">Erreur serveur</h1>
+        <p class="text-center">Le serveur est actuellement incapable de traiter la requête</p>
+        <p>Code de l'erreur : {{ status_code }}</p>
+        <p>Message de l'erreur : {{ status_text }}</p>
+    </div>
+</section>
+{% endblock %}

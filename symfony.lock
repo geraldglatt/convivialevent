@@ -1,4 +1,7 @@
 {
+    "cocur/slugify": {
+        "version": "v4.3.0"
+    },
     "composer/pcre": {
         "version": "3.0.0"
     },
@@ -98,6 +101,9 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+    "dompdf/dompdf": {
+        "version": "v2.0.0"
+    },
     "easycorp/easyadmin-bundle": {
         "version": "4.3",
         "recipe": {
@@ -112,6 +118,9 @@
     },
     "ergebnis/phpstan-rules": {
         "version": "1.0.0"
+    },
+    "fakerphp/faker": {
+        "version": "v1.21.0"
     },
     "friendsofphp/php-cs-fixer": {
         "version": "3.8",
@@ -189,6 +198,9 @@
             "config/routes/liip_imagine.yaml"
         ]
     },
+    "masterminds/html5": {
+        "version": "2.7.6"
+    },
     "monolog/monolog": {
         "version": "2.6.0"
     },
@@ -203,6 +215,12 @@
     },
     "phar-io/version": {
         "version": "3.2.1"
+    },
+    "phenx/php-font-lib": {
+        "version": "0.5.4"
+    },
+    "phenx/php-svg-lib": {
+        "version": "0.4.1"
     },
     "php-cs-fixer/diff": {
         "version": "v2.0.2"
@@ -268,6 +286,9 @@
     },
     "psr/log": {
         "version": "3.0.0"
+    },
+    "sabberworm/php-css-parser": {
+        "version": "8.4.0"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"

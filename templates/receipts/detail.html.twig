@@ -1,36 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Détails de {{ recipe.title }}{% endblock %}
+{% block title %}Détails de {{ recipes.title }}{% endblock %}
 
 {% block body %}
-<section1 class="container-fluid">
-    <div class="row">
-        <div class="text-center mt-3 pb-3 ">
-            <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-        </div>
+<section class="detail_recettes">
+    <div class="detail_recettes_text">
+        <h1 class="detail_recettes_titre">Les recettes que vous propose </br> Convivial Event</h1>
     </div>
-</section1>
-<section2 class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h1 class="recipePagetxtSection2">Les recettes que vous propose </br> Convivial Event</h1>
+</section>
+<section class="recipe_title_section">
+    <div class="recipe_title_container">
+        <div class="recipe_title_text">
+            <h2 class="recipe_title_h2">{{ recipes.title}}</h2>
         </div>
-    </div>
-</section2>
-<section3 class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h2 class="textSection3">{{ recipe.title}}</h2>
-        </div>
-        <div class="row">
+        {# <div class="row">
             <div class="col-2"></div>
             <div class="col-5">
                 <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
                 <span><img class="recipePageImgSection3" src="{{ asset('build/images/toque.webp') }}" alt="icone difficulty"></span>
             </div>
             <div class="col-5"><p class="textSection3Bis">{{ recipe.difficulty}}</p></div>
-        </div>
-        <div class="row">
+        </div> #}
+        {# <div class="row">
             <div class="col-2"></div>
             <div class="col-5" id="marginRecipeSection3">
                 <span><img id="recipePageImgSection3" src="{{ asset('build/images/time.webp') }}" alt="icone time"></span>
@@ -38,44 +29,62 @@
             <div class="col-5">
                 <p class="textSection3Bis">{{ recipe.time }}</p>
             </div>
-        </div>
+        </div> #}
     </div>
-    <div class="row">
-        <div class="col" id="imgSection3Details">
-            <img class="recipePageImgSection5" src="{{ vich_uploader_asset(recipe.image[0],'imageFile') }}" alt="image recette">
+    <section class="section_img">
+        <div class="container_img" id="imgSection3Details">
+            {% for img in recipes %}
+                <img class="img_recipe" 
+                src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('miniature')  }}" 
+                alt="photo recette"
+                >              
+            {% endfor %}
         </div>
-    </div>
-</section3>
-<section4 class="container">
-    <div class="row">
-        <div class="col" id="section4">
+    </section>
+</section>
+<section class="ingredients">
+    <div class="container_ingredients">
+        <div class="content">
             <ul>Ingrédients 
             {% for recipeIngredient in recipeIngredients %}
-                <li id="recipePageLiSection4">
+                <li id="">
                     {{ recipeIngredient.quantity }}-{{ recipeIngredient.quantityName }}-{{ recipeIngredient.name }}
                 </li>
             {% endfor %}
             </ul>
         </div>
     </div>
-</section4>
-<section5 class="container">
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8" id="section5">
-            {% for recipeStep in recipeSteps %}
-            <ul id="recipePageLiSection5">étapes {{ recipeStep.position }} :
-                <li id="recipePageLiSection4">
-                    {{ recipeStep.content }}
-                </li>
-            </ul>
-            {% endfor %}
-        </div>
-        <div class="col-2"></div>
-</section5>
-<section6 class="container-fluid">
-    <div class="card-body">
-        <p class="textSection3"><a href="{{ path('receipts_list') }}" src="">Retour vers les Recettes</p>
+</section>
+<section class="recipe_step">
+    <div class="recipe_step_container">
+        {% for recipeStep in recipeSteps %}
+        <ul class="recipe_step">étapes {{ recipeStep.position  }} :
+            <li id="recipe_text">
+                {{ recipeStep.content | raw }}
+            </li>
+        </ul>
+        {% endfor %}
     </div>
-</section6>
+</section>
+<section class="reseaux_sociaux">
+        <div class="container_reseaux">
+            <h2 class="reseaux_text" >
+                Partager sur vos réseaux préférés...
+            </h2>
+        </div>
+        <div class="d-flex justify-content-center pr-2">
+        {% include 'shared/_shared.html.twig' %}
+        </div>
+</section>
+<section class="container">
+         <div class="text-center">
+            <a class="textSection3"><a href="{{ path('recettes_list') }}">Retour vers les Recettes</a>
+        </div>
+</section>
+<section class="container">
+    <div class="text-center">
+        {% include 'commentaire/form.html.twig' %}
+        {% include 'commentaire/commentaires.html.twig' %}
+    </div>
+</section>
 {% endblock %}

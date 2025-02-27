@@ -1,70 +1,106 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ pages.title | striptags | raw }}{% endblock %}
 
 {% block body %}
-<section1 class="section1">
-    <div class="container-fluid" id="bgS1Page">
+<section class="show">
+    <div class="container-fluid" id="">
         <div class="row">
-            <div class="col text-center mt-5">
-                <h1 class="colorTxtS1Page">{{ page.title | striptags }}</h1>
+            <div class="col text-center">
+                <h1 class="showTitle">
+                {{ pages.title | striptags | raw  }}
+                </h1>
             </div>
         </div>
     </div>
-</section1>
-<section2 class="wrapper">
+</section>
+{% for page in findId %}
+    {% if page.id == 1 %}
+        {% include "shared/_blockPage1.html.twig" 
+        with{'slug': 'mariage-champetre'} 
+        only 
+        %}
+    {% elseif page.id == 2 %}
+        {% include "shared/_blockPage2.html.twig" 
+        with{'slug': 'mariage-tradition-prestige'} 
+        only 
+        %}
+    {% elseif page.id == 3 %}
+        {% include "shared/_blockPage3.html.twig" 
+        with{'slug': 'bbq-cochon'} 
+        only 
+        %}
+    {% elseif page.id == 4 %}
+        {% include "shared/_blockPage4.html.twig" 
+        with{'slug': 'entreprise'} 
+        only 
+        %}
+    {% elseif page.id == 6 %}
+        {% include "shared/_blockPage5.html.twig" 
+        with{'slug': 'brunch & cocktail'} 
+        only 
+        %}
+    {% endif %}
+{% endfor %}
+<section class="section">
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col text-center">
+                <h3>Pour connaitre nos options et détails
+                </br>
+                <span class="spanPageS4">
+                Télécharger nos brochures :
+                </span>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
     <div class="container">
         <div class="row">
-            <card class="col mb-4 mt-5 pb-4 text-center">
-                <img class="card-img-top" style="max-width: 700px" src="{{ asset('build/images/' ~ page.image) | imagine_filter('my_thumb') }}" alt="photo convivialevent">
-                <div class="card-body">
-                    <p class="card-text mt-5">{{ page.content | striptags }}</p>
-                </div>
-            </card>
-        </div>
-    </div>
-</section2>
-<section3 class="section4">
-    <div class="container-fluid" id="">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h3>Pour connaitre nos options et détails</br><span class="spanPageS4">Télécharger nos brochures :</span></h3>
+            {% for pdf in findPdfs %}
+            <div>
+                <button type="button" class="mx-auto active" id="buttonpdf">
+                <a class="" href="{{ vich_uploader_asset(pdf, 'pdfsFile') }}"
+                target="_blank"
+                alt="{{ pdf.title }}">
+                {{ pdf.title }}<i class="fa-regular fa-file-pdf pl-2"></i>
+                </a>
+                </button>
             </div>
-        </div>
-    </div>
-</section3>
-<section4 class="section5">
-    <div class="container-fluid" id="">
-        <div class="row">
-            {% for pdf in pagePdf %}
-            <div class="col text-center" id="divButtonS5Page">
-                <a id="buttonS5Page" href="#" role="button">{{ pdf.title }}</a>   
-            </div> 
             {% endfor %}
-            </div>
+             
         </div>
-    </section4>
-</section4>
-<section5 class="container-fluid" id="bgS1Page">
+    </div>
+</section>
+<section class="container" id="bgS1Page">
     <div class="row">
         <div class="col text-center">
-            <h2 class="colorTxtS1Page">Notre Galerie</h2>
+            <h2 class="GalerieShowPage mt-3">Notre Galerie</h2>
         </div>
         <div class="row">
-            <div class="col mb-4 mt-5 ml-5 pb-4 text-center align-items-center">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="col mb-4 mt-5 ml-5 pb-5 text-center">
+                {# <div id="carouselExampleControls" 
+                class="carousel slide" 
+                data-bs-ride="carousel">
                     <div class="carousel-inner">
-                    {% for pageImg in images %}
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    {% for pageImg in findImages %}
+                        <div id="carouselExampleInterval" 
+                        class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="{{ asset('build/images/'~ pageImg.title) }}" style="max-width: 400px" alt="image mariage">
+                                <div class="carousel-item {% if loop.first == 0 %}
+                                active{% endif %}" data-bs-interval="10000">
+                                <img src="{{ vich_uploader_asset(pageImg, 'imageFile') }}" 
+                                style="max-width: 400px" alt="{{ pageImg.title }}">
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" 
+                            data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" 
+                            data-bs-target="#carouselExampleInterval" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -72,9 +108,22 @@
                         </div>
                     {% endfor %}
                     </div>
+                </div> #}
+                <section class="galerie">
+                    <ul class="galerie_img">
+                        {% for pageImg in findImages %}
+                            <li class="image_galerie">
+                                <img
+                                class="img_galerie_convivial"
+                                src="{{ vich_uploader_asset(pageImg, 'imageFile')| imagine_filter('welcome') }}" 
+                                alt="{{ pageImg.title }}">
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
 </div>
-</section5>
+</section>
 {% endblock %}

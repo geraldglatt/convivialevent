@@ -3,60 +3,38 @@
 {% block title %}Liste des recettes{% endblock %}
 
 {% block body %}
-    <section1 class="container-fluid">
+<section class="recettes_list">
+    <div class="recettes_text">
+        <p class="recettes_p">Les recettes que vous propose Convivial Event</p>
+    </div>
+</section>
+<section class="recettes_list_text">
+    <div class="recettes_list ">
+        <p class="recettes_list_text">Une sélection de recettes à faire chez vous oû à partager avec vos amis !!!</p>
+    </div>
+</section>
+<section class="form_list">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="text-center mt-3 pb-3 ">
-                <img class="imageLogoConvivial" src="{{ asset('build/images/logohorizontal2.webp') }}" alt="logo convivial">
-            </div>
-        </div>
-        <div class="col-1"></div>
+    {% include 'shared/_search_data.html.twig' with {
+        form:form
+    } only %}
     </div>
-</section1>
-<section2 class="container-fluid">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <p class="listrecipePagetxtSection2">Les recettes que </br> vous propose </br> Convivial Event</p>
-        </div>
-        <div class="col-1"></div>
-    </div>
-</section2>
-<section3 class="container-fluid" id="bgListRecipePageS3">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <p class="listrecipePagetxtSection3">Une sélection de recettes </br> à faire chez vous oû </br> à partager avec vos amis !!!</p>
-        </div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {{ form(form) }}     
-        </div>
-    </div>
-</section4>
-<section5 class="wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                {% for res in recipes %}
-                <card>
-                    <img class="card-img-top" src="{{ vich_uploader_asset(res.image[0],'imageFile') }}" alt="photo recettes">
-                    <div class="card-body">
-                        <P class="card-title"><a href="{{ path('receipts_detail', {slug:res.slug}) }}" src="recipe image">{{ res.slug }}</a></P>
-                    </div>
-                    <div class="card-footer">
-                        <p class="textSection5">{{ res.difficulty}}</p>
-                    </div>
-                </card>
-                {% endfor %}
-                <div class="navigation">
-                        {{ knp_pagination_render(recipes) }}
-                </div>
-            </div>
-        </div>
-    </div>
-</section5>
+</section>
+<section class="list_recettes_card">
+        {% include 'shared/_card.html.twig' %}     
+</section>
+<section>
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        {{ knp_pagination_render(recipes, 'shared/_pagination.html.twig') }}
+    </div>  
+</section>
+{% endblock %}
+{% block javascript %}
+    {{ parent() }}
+
+<script>
+    $(document).ready(function() {
+        $('select').formSelect();
+    });
+</script>
 {% endblock %}

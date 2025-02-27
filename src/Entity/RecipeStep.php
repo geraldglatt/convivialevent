@@ -16,7 +16,7 @@ class RecipeStep
     #[ORM\Column(type: 'string', length: 100)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'text')]
     private $content;
 
     #[ORM\Column(type: 'integer')]

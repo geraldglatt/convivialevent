@@ -16,14 +16,14 @@ class HomeBlock
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 100)]
+    #[ORM\Column(type: 'string', length: 120)]
     private $title;
 
-    #[ORM\Column(type: 'string', length: 60, nullable: true)]
-    private $image;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
 
-    #[Vich\UploadableField(mapping:'uploads', fileNameProperty:'image')]
-    private $imageFile;
+    #[Vich\UploadableField(mapping:'homeblock_images', fileNameProperty:'file')]
+    private ?File $imageFile = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
@@ -31,13 +31,13 @@ class HomeBlock
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $link;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'text')]
     private $content;
 
     #[ORM\Column(type: 'integer')]
     private $position;
 
-    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'homeBlocks')]
+    #[ORM\ManyToOne(targetEntity: Page::class, inversedBy: 'filesHomeblock')]
     #[ORM\JoinColumn(nullable: false)]
     private $page;
 
@@ -58,31 +58,19 @@ class HomeBlock
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
 
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $file = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
         
-        if (null !== $imageFile) {
+        if ($file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable('now');
         }
     }
 
@@ -142,6 +130,18 @@ class HomeBlock
     public function setPage(?Page $page): self
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
 
         return $this;
     }

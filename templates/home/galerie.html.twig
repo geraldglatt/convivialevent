@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie{% endblock %}
+
+{% block body %}
+<section class="galerie_titre">
+    <div class="container">
+        <h1 class="galerie_titre">
+            Notre galerie d'images
+        </h1>
+    </div>
+</section>
+<section class="galerie"> 
+        <ul class="galerie_img">
+            {% for img in galerie %}
+                <li class="image_galerie">
+                    <img class="img_galerie_convivial" 
+                        src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('miniature') }}" 
+                        alt="{{ img.title }}">
+                </li>
+            {% endfor %}
+        </ul>
+</section>
+{% endblock %}

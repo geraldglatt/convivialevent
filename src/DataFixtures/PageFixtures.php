@@ -22,6 +22,7 @@ class PageFixtures extends Fixture
         standard dummy text ever since the 1500s, when an unknown
         printer took a galley of type and scrambled it to make a type specimen book.');
         $page1->setMetaDesc('Mariage Champêtre');
+        $page1->setFile('champêtre-2.webp');
         $page1->setUpdatedAt(new \DateTimeImmutable('now'));
 
         $manager->persist($page1);
@@ -34,6 +35,7 @@ class PageFixtures extends Fixture
         standard dummy text ever since the 1500s, when an unknown
         printer took a galley of type and scrambled it to make a type specimen book.');
         $page2->setMetaDesc('Mariage Tradition & Prestige');
+        $page2->setFile('champêtre-2.webp');
         $page2->setUpdatedAt(new \DateTimeImmutable('now'));
         $manager->persist($page2);
         $this->addReference(self::PAGE_REFERENCE2, $page2);
@@ -45,6 +47,7 @@ class PageFixtures extends Fixture
         standard dummy text ever since the 1500s, when an unknown
         printer took a galley of type and scrambled it to make a type specimen book.');
         $page3->setMetaDesc('BBQ & Cochon');
+        $page3->setFile('champêtre-2.webp');
         $page3->setUpdatedAt(new \DateTimeImmutable('now'));
         $manager->persist($page3);
         $this->addReference(self::PAGE_REFERENCE3, $page3);
@@ -56,6 +59,7 @@ class PageFixtures extends Fixture
         standard dummy text ever since the 1500s, when an unknown
         printer took a galley of type and scrambled it to make a type specimen book.');
         $page4->setMetaDesc('Entreprise');
+        $page4->setFile('champêtre-2.webp');
         $page4->setUpdatedAt(new \DateTimeImmutable('now'));
         $manager->persist($page4);
         $this->addReference(self::PAGE_REFERENCE4, $page4);

@@ -1,18 +1,100 @@
-<header class="container-fluid">  
-    <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ path("app_home") }}"><img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto ml-5 mb-lg-0">
-                <li class="nav-item">
-                    <a class="navbar-brand" href="{{ path("app_home") }}">Accueil<img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a> 
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand" href="{{ path("app_contact") }}">Contact<img class="imageLogo1Convivial" src="{{ asset('build/images/logo1.webp') }}" alt="logo convivial"></a> 
-                </li>
-            </ul>
+{# <header>
+    <h2 class="vp-logo">
+        <a href="{{ path("app_home") }}">
+        Convivial Event
+        </a>
+    </h2>
+    <ul>
+        <li><a href="{{ path("app_galerie") }}">Galerie</a></li>
+        <li><a href="{{ path('recettes_list') }}">Recettes</a></li>
+        <li><a href="{{ path("contact") }}">Nous Contacter</a></li>
+    </ul>
+</header> #}
+{# <section class="logo">
+    <div class="container">
+        <div class="logo-convivial" 
+        data-aos="zoom-out-up" 
+        data-aos-easing="linear"
+        data-aos-duration="1000">
+            <img class="logo-convivial-img" src="{{ asset('images/logo-convivial.png') }}" alt="logo-convivial-2">
         </div>
-    </nav>
-</header>
+    </div>
+</section> #}
+{# <div class="aprmenu">
+	<ul>
+        <li>
+            <a href="{{ path("app_home") }}">
+                Accueil
+            </a>
+        </li>
+        <li>
+            <a href="{{ path("app_galerie") }}">
+                Galerie
+            </a>
+        </li>
+        {# <li><a href="{{ path('recettes_list') }}">Recettes</a></li> #}
+        {# <li>
+            <a href="{{ path("contact") }}">
+                Nous Contacter
+            </a>
+        </li>
+	</ul> #}
+{# </div> #} 
+{# <nav class="main"> #}
+    {# <div class="logo">
+        <a href="{{ path("app_home") }}">
+            <img class="logo-convivial-img" src="{{ asset('images/logo-convivial.png') }}" alt="logo-convivial-2">
+        </a>
+    </div>
+        <ul class="navigation">
+            <li>
+            <a href="/">Home</a>
+            </li>
+            <li>
+            <a href="/about/">About</a>
+            </li>
+            <li>
+            <a href="/contact/">Contact</a>
+            </li>
+            <li class="icon">
+            <a href="#" onclick="openNav()">&#9776;</a>
+            </li>
+        </ul>
+</nav> #}
+<nav class="navbar navbar-expand-lg static-top">
+  <div class="container">
+    <a class="navbar-brand" href="{{ path("app_home") }}">
+            <img class="logo-convivial-img" src="{{ asset('images/logo-convivial.png') }}" alt="logo-convivial-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ path("app_home") }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ path("app_galerie") }}">Galerie</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ambiances
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li>{% for nav in home.getHome %}
+                <a href="{{ path('page_show', {slug:nav.page.slug}) }}">{{ nav.title | raw }}</a>
+                </a>
+                {% endfor %}
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path("contact") }}">Nous Contacter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
